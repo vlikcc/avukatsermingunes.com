@@ -1,0 +1,43 @@
+﻿@using guneshukuk.WebUIv2.Areas.Admin.Models.Dtos.ConsultancyDtos
+@model CreateConsultancyDto
+@{
+    ViewData["Title"] = "CreateConsultancy";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+<div class="content">
+	<div class="container-fluid">
+		<h4 class="page-title">HİZMETLERİMİZ BİLGİ GİRİŞİ</h4>
+		<div class="row">
+			<div class="col-md-12">
+				<form method="post">
+					<div class="card">
+
+						
+							<div class="form-group">
+								<label for="ConsultancyTitle">Başlık  Giriniz</label>
+							<input type="text" class="form-control" id="ConsultancyTitle" name="ConsultancyTitle" asp-for="ConsultancyTitle">
+							</div>
+							<div class="form-group">
+								<label for="ConsultancyContent">Hizmet İçeriği Giriniz</label>
+							<textarea rows="5" class="form-control" id="ConsultancyContent" name="ConsultancyContent" asp-for="ConsultancyContent"></textarea>
+							</div>
+						<div class="card-body">
+							<div class="form-group">
+								<label for="ImageUrl">Resim Linki Giriniz</label>
+								<input type="text" class="form-control" id="imageUrl" name="ImageUrl" asp-for="ImageUrl">
+							</div>
+						</div>
+						<div class="card-action">
+							<button class="btn btn-primary">Hizmet Bilgisi Ekle</button>
+
+						</div>
+					</div>
+				</form>
+			</div>
+
+
+		</div>
+	</div>
+</div>
+
+

@@ -1,0 +1,27 @@
+﻿@model List<ResultAboutDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Layout/Index.cshtml";
+}
+
+<section class="home-section home-full-height bg-dark-30" id="home" data-background="/TitanTheme/live/assets/images/background.jpg">
+    @foreach(var item in Model)
+    {
+        <div class="module bg-dark-60 about-page-header" data-background="@item.ImageUrl">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-sm-offset-1">
+                        <h2 class="module-title font-alt">@item.Title</h2>
+                        <div class="module-subtitle font-serif">@item.Description</div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        
+       
+       
+
+    }
+    
+    
+</div>

@@ -1,0 +1,64 @@
+﻿
+@using guneshukuk.WebUIv2.Areas.Admin.Models.Dtos.BookingDateDtos
+@model CreateBookingDateDto
+
+@{
+    ViewData["Title"] = "CreateBookingDate";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="content">
+	<div class="container-fluid">
+		<h4 class="page-title">	RANDEVU TARİHİ GİRİŞİ</h4>
+		<div class="row">
+			<div class="col-md-12">
+				<form method="post">
+					<div class="card">
+
+						<div class="card-body">
+
+							
+							<div class="form-group">
+								<label for="AvailableDates">Randevu Tarihleri</label>
+                                
+								
+								<input id="datepicker" name="Dates" asp-for ="Dates"/>
+
+							</div>
+
+						</div>
+						<div class="card-action">
+							<button type="submit" class="btn btn-primary" action="submit">Randevu Tarihi Ekle </button>
+
+						</div>
+					</div>
+				</form>
+			</div>
+
+
+		</div>
+	</div>
+</div>
+
+
+
+
+
+<script>
+	const picker = new easepick.create({
+		element: document.getElementById('datepicker'),
+		css: [
+			'https://cdn.jsdelivr.net/npm/@@easepick/bundle@1.2.1/dist/index.css',
+		],
+		plugins: ['RangePlugin'],
+		lang: 'tr-TR',
+		format: 'DD/MM/YYYY',
+		autoApply: false,
+		
+
+	});	
+	
+  
+</script>
+
+

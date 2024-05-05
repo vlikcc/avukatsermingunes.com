@@ -1,0 +1,26 @@
+﻿@{
+    Layout = null;
+}
+@*LAYOUT INDEX*@
+<!DOCTYPE html>
+<html lang="tr-TR" dir="ltr">
+@await Component.InvokeAsync("_LayoutHeaderComponentPartial")
+
+<body>
+    <main>
+        <div class="page-loader">
+            <div class="loader">Loading...</div>
+        </div>
+        @await Component.InvokeAsync("_LayoutNavbarComponentPartial")
+        <section class="home-section home-full-height bg-dark-30" id="home" data-background="/TitanTheme/live/assets/images/background.jpg">
+            @RenderBody()
+
+        </section>
+
+        @await Component.InvokeAsync("_LayoutFooterComponentPartial")
+       
+    </main>
+    @await Component.InvokeAsync("_LayoutScriptComponentPartial")
+  
+</body>
+</html>

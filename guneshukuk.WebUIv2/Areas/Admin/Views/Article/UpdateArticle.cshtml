@@ -1,0 +1,47 @@
+﻿@using guneshukuk.WebUIv2.Areas.Admin.Models.Dtos.ArticleDtos
+@model UpdateArticleDto
+@{
+    ViewData["Title"] = "UpdateArticle";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+<div class="content">
+	<div class="container-fluid">
+		<h4 class="page-title">MAKALE  GÜNCELLEME</h4>
+		<div class="row">
+			<div class="col-md-12">
+				<form method="post">
+					<div class="card">
+
+						<div class="card-body">
+							@Html.TextBoxFor(x => x.ArticleId, new { @hidden = "true", @readonly = "readonly" })
+							
+							<div class="form-group">
+								<label for="ArticleTitle">Makale Başlığı  Giriniz</label>
+								@Html.TextBoxFor(x => x.ArticleTitle, new { @class = "form-control" })
+							</div>
+							<div class="form-group">
+								<label for="ArticleImageUrl">Resim Linki Giriniz</label>
+								@Html.TextBoxFor(x => x.ArticleImageUrl, new { @class = "form-control" })
+
+							</div>
+							<div class="form-group">
+								<label for="ArticleContent">Makale İçeriği Giriniz</label>
+								@Html.TextAreaFor(x => x.ArticleContent, new { @class = "form-control" })
+							</div>
+
+						</div>
+						<div class="card-action">
+							<button class="btn btn-primary">Makale  Güncelle</button>
+
+						</div>
+					</div>
+				</form>
+			</div>
+
+
+		</div>
+	</div>
+</div>
+
+
+

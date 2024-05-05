@@ -1,0 +1,39 @@
+﻿@using guneshukuk.WebUIv2.Areas.Admin.Models.Dtos.Identity
+@model LoginDto
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+<div id="layoutAuthentication_content">
+    <main>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-5">
+                    <div class="card shadow-lg border-0 rounded-lg mt-5">
+                        <div class="card-header"><h3 class="text-center font-weight-light my-4">Login</h3></div>
+                        <div class="card-body">
+                            <form method="post">
+                                <div class="form-floating mb-3">
+                                    <input class="form-control" id="UserName" name="UserName" type="text" placeholder="kullanıcı adınız"  asp-for="UserName"/>
+                                    <label for="UserName">Kullanıcı Adınız</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input class="form-control" id="Password"  name ="Password" type="password" placeholder="Password" asp-for="Password" />
+                                    <label for="Password">Password</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <button class="btn btn-block btn-round btn-b"> Giriş Yap</button>
+                                </div>
+                                
+                                
+                            </form>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+

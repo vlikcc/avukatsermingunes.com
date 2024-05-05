@@ -1,0 +1,46 @@
+﻿@using guneshukuk.WebUIv2.Areas.Admin.Models.Dtos.SocialMediaDtos
+@model UpdateSocialMediaDto
+@{
+    ViewData["Title"] = "UpdateSocialMedia";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+
+<div class="content">
+	<div class="container-fluid">
+		<h4 class="page-title">SOSYAL MEDYA BİLGİ GÜNCELLEME</h4>
+		<div class="row">
+			<div class="col-md-12">
+				<form method="post">
+					<div class="card">
+
+						<div class="card-body">
+							@Html.TextBoxFor(x => x.SocialMediaId, new { @hidden = "true", @readonly = "readonly" })
+							<div class="form-group">
+								<label for="SocialMediaName">Sosyal Medya Adı Giriniz</label>
+								@Html.TextBoxFor(x => x.SocialMediaName, new { @class = "form-control" })
+
+							</div>
+							<div class="form-group">
+								<label for="SocialMediaUrl">Sosyal Medya Linki  Giriniz</label>
+								@Html.TextBoxFor(x => x.SocialMediaUrl, new { @class = "form-control" })
+							</div>
+							<div class="form-group">
+								<label for="SocialMediaIcon">Sosyal Medya İkon Linki Giriniz</label>
+								@Html.TextBoxFor(x => x.SocialMediaIcon, new { @class = "form-control" })
+							</div>
+
+						</div>
+						<div class="card-action">
+							<button class="btn btn-primary">Sosyal Medya Bilgisi Güncelle</button>
+
+						</div>
+					</div>
+				</form>
+			</div>
+
+
+		</div>
+	</div>
+</div>
+

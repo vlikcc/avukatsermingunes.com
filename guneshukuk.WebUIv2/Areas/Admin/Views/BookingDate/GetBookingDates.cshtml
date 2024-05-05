@@ -1,0 +1,43 @@
+﻿@using guneshukuk.WebUIv2.Areas.Admin.Models.Dtos.BookingDateDtos
+@model ResultBookingDateDto
+@{
+    ViewData["Title"] = "GetBookingDates";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+@Html.ListBoxFor(m => m.AvailableDates, new SelectList(Model.AvailableDates), new { @id = "listbox",@class = "form-control",@hidden="true" })
+
+<input id="datepicker"  />
+<script>
+   
+    const allowedDates = [
+
+    ];
+    const dateListBox = document.getElementById("listbox");
+
+    // Tüm listbox seçeneklerini almak için bir döngü
+    for (let i = 0; i < dateListBox.options.length; i++) {
+        // Seçeneğin değerini alıp allowedDates dizisine ekleyin
+        allowedDates.push(dateListBox.options[i].value);
+    }
+    
+    const picker = new easepick.create({
+        element: document.getElementById('datepicker'),
+        css: [
+            'https://cdn.jsdelivr.net/npm/@@easepick/bundle@1.2.1/dist/index.css',
+        ],
+        plugins: ['LockPlugin'],
+        LockPlugin: {
+            filter(date, picked) {
+                return allowedDates.includes(date.format('YYYY-MM-DD'));
+            },
+        },
+        lang:'tr-TR',
+        autoApply: false,
+        locale: {
+            cancel:'İptal',
+            apply:'Seç',
+        }
+    });
+    console.log(allowedDates.format('YYYY-MM-DD')
+</script>
+

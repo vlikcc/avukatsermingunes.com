@@ -1,0 +1,42 @@
+﻿@using guneshukuk.WebUIv2.Areas.Admin.Models.Dtos.SocialMediaDtos
+@model CreateSocialMediaDto
+@{
+    ViewData["Title"] = "CreateSocialMedia";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="content">
+	<div class="container-fluid">
+		<h4 class="page-title">SOSYAL MEDYA BİLGİ GİRİŞİ</h4>
+		<div class="row">
+			<div class="col-md-12">
+				<form method="post">
+					<div class="card">
+
+
+						<div class="form-group">
+							<label for="SocialMediaName">Sosyal Medya İsmi  Giriniz</label>
+							<input type="text" class="form-control" id="SocialMediaName" name="SocialMediaName" asp-for="SocialMediaName">
+						</div>
+						<div class="form-group">
+							<label for="SocialMediaUrl">Sosyal Medya Linki Giriniz</label>
+							<input type="text" class="form-control" id="SocialMediaUrl" name="SocialMediaUrl" asp-for="SocialMediaUrl">
+						</div>
+						<div class="card-body">
+							<div class="form-group">
+								<label for="SocialMediaIcon">Resim Linki Giriniz</label>
+								<input type="text" class="form-control" id="SocialMediaIcon" name="SocialMediaIcon" asp-for="SocialMediaIcon">
+							</div>
+						</div>
+						<div class="card-action">
+							<button class="btn btn-primary">Sosyal Medya Bilgisi Ekle</button>
+
+						</div>
+					</div>
+				</form>
+			</div>
+
+
+		</div>
+	</div>
+

@@ -1,0 +1,45 @@
+﻿@using guneshukuk.WebUIv2.Areas.Admin.Models.Dtos.ArticleDtos
+@model CreateArticleDto
+@{
+    ViewData["Title"] = "CreateArticle";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="content">
+	<div class="container-fluid">
+		<h4 class="page-title">MAKALE BİLGİ GİRİŞİ</h4>
+		<div class="row">
+			<div class="col-md-12">
+				<form method="post">
+					<div class="card">
+
+						<div class="card-body">
+							
+							<div class="form-group">
+								<label for="ArticleTitle">Başlık  Giriniz</label>
+								<input type="text" class="form-control" id="ArticleTitle" name="ArticleTitle" asp-for="ArticleTitle">
+							</div>
+							<div class="form-group">
+								<label for="ArticleImageUrl">Makale Resim Linki Giriniz</label>
+								<input type="text" class="form-control" id="ArticleImageUrl" name="ArticleImageUrl" asp-for="ArticleImageUrl">
+							</div>
+							<div class="form-group">
+								<label for="ArticleContent">Makale İçeriği Giriniz</label>
+								<textarea rows="16" class="form-control" id="texteditor" name="ArticleContent" asp-for="ArticleContent"></textarea>
+								
+							</div>
+
+						</div>
+						<div class="card-action">
+							<button class="btn btn-primary">Makale  Ekle</button>
+
+						</div>
+					</div>
+				</form>
+			</div>
+
+
+		</div>
+	</div>
+</div>
+
