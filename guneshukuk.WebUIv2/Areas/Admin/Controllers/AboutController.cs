@@ -24,7 +24,7 @@ namespace guneshukuk.WebUIv2.Areas.Admin.Controllers
             var httpClient = httpClientFactory.CreateClient();
             var jsonData = JsonConvert.SerializeObject(createAboutDto);
             StringContent content = new StringContent(jsonData,Encoding.UTF8, "application/json");
-            var responseMessage = await httpClient.PostAsync("https://localhost:7183/api/About/CreateAbout", content);
+            var responseMessage = await httpClient.PostAsync("https://guneshukukwebapi20240505152248.azurewebsites.net/api/About/CreateAbout", content);
             if(responseMessage.IsSuccessStatusCode)
             {
                 return RedirectToAction("ListAbouts");
@@ -37,12 +37,16 @@ namespace guneshukuk.WebUIv2.Areas.Admin.Controllers
         public async Task<IActionResult> ListAbouts()
         {
 			HttpClient httpClient = httpClientFactory.CreateClient();
-			var responseMessage = await httpClient.GetAsync("https://localhost:7183/api/About/GetAll");
+			var responseMessage = await httpClient.GetAsync("https://guneshukukwebapi20240505152248.azurewebsites.net/api/About/GetAll");
 			if (responseMessage.IsSuccessStatusCode)
 			{
 				var jsonData = await responseMessage.Content.ReadAsStringAsync();
 				var values = JsonConvert.DeserializeObject<List<ResultAboutDto>>(jsonData);
-				return View(values);
+				if(values!=null)
+				{
+					return View(values);
+				}
+				return View();
 			}
 
 			return View();
@@ -54,7 +58,7 @@ namespace guneshukuk.WebUIv2.Areas.Admin.Controllers
 		public async Task<IActionResult> DeleteAbout(int id)
 		{
 			HttpClient httpClient = httpClientFactory.CreateClient();
-			var response = await httpClient.DeleteAsync($"https://localhost:7183/api/About/DeleteAbout/{id}");
+			var response = await httpClient.DeleteAsync($"https://guneshukukwebapi20240505152248.azurewebsites.net/api/About/DeleteAbout/{id}");
 			if(response.IsSuccessStatusCode)
 			{
                 return RedirectToAction("ListAbouts");
@@ -70,7 +74,7 @@ namespace guneshukuk.WebUIv2.Areas.Admin.Controllers
 		public async Task<IActionResult> UpdateAbout(int Id)
 		{
 			HttpClient httpclient = httpClientFactory.CreateClient();
-			var responseMessage = await httpclient.GetAsync($"https://localhost:7183/api/About/GetAboutById?Id={Id}");
+			var responseMessage = await httpclient.GetAsync($"https://guneshukukwebapi20240505152248.azurewebsites.net/api/About/GetAboutById?Id={Id}");
 
 
 
@@ -78,8 +82,13 @@ namespace guneshukuk.WebUIv2.Areas.Admin.Controllers
 			{
 				var jsonData = await responseMessage.Content.ReadAsStringAsync();
 				var value = JsonConvert.DeserializeObject<UpdateAboutDto>(jsonData);
+				if(value !=null)
+				{
+					return View(value);
+				}
+				return View();
 
-				return View(value);
+				
 			}
 			return View();
 
@@ -91,7 +100,7 @@ namespace guneshukuk.WebUIv2.Areas.Admin.Controllers
 			HttpClient httpClient = httpClientFactory.CreateClient();
 			var jsonData = JsonConvert.SerializeObject(updateAboutDto);
 			StringContent content = new StringContent(jsonData, Encoding.UTF8, "application/json");
-			var responseMessage = await httpClient.PutAsync("https://localhost:7183/api/About/UpdateAbout", content);
+			var responseMessage = await httpClient.PutAsync("https://guneshukukwebapi20240505152248.azurewebsites.net/api/About/UpdateAbout", content);
 			if (responseMessage.IsSuccessStatusCode)
 			{
 				return RedirectToAction("ListAbouts");

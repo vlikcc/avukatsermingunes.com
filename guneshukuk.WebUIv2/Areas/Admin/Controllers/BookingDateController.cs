@@ -32,7 +32,7 @@ namespace guneshukuk.WebUIv2.Areas.Admin.Controllers
             createBookingDateDto.AvailableDates = dates;
 			var jsonData = JsonConvert.SerializeObject(createBookingDateDto);
 			StringContent content = new StringContent(jsonData,Encoding.UTF8,"application/json");
-            var responseMessage = await httpClient.PostAsync("https://localhost:7183/api/BookingDate/CreateBookingDate",content);
+            var responseMessage = await httpClient.PostAsync("https://guneshukukwebapi20240505152248.azurewebsites.net/api/BookingDate/CreateBookingDate", content);
             if(responseMessage.IsSuccessStatusCode) 
             {
                 return RedirectToAction("CreateBookingDate");
@@ -48,7 +48,7 @@ namespace guneshukuk.WebUIv2.Areas.Admin.Controllers
         public async Task<IActionResult> GetBookingDates( ResultBookingDateDto resultBookingDateDto)
         {
             var httpClient = httpClientFactory.CreateClient();
-            var responseMessage = await httpClient.GetAsync("https://localhost:7183/api/BookingDate/GetAll");
+            var responseMessage = await httpClient.GetAsync("https://guneshukukwebapi20240505152248.azurewebsites.net/api/BookingDate/GetAll");
            List<DateOnly> bookedDates = new List<DateOnly>();
             List<string> tempData = new List<string>();
             List<string> tempDates = new List<string>(); ;
@@ -59,29 +59,34 @@ namespace guneshukuk.WebUIv2.Areas.Admin.Controllers
                
                 
                var results = JsonConvert.DeserializeObject<List<ResultBookingDateDto>>(jsonData);
-                foreach(var item in results)
+                if(results!=null)
                 {
-                    tempData.Add(item.Dates);
-                    
-                }
+					foreach (var item in results)
+					{
+						tempData.Add(item.Dates);
+
+					}
+
+					foreach (var item in tempData)
+					{
+
+						var value = item.Split("-").First();
+						var value2 = item.Split("-")[1];
+						DateOnly start = DateOnly.Parse(value);
+						DateOnly end = DateOnly.Parse(value2);
+						for (DateOnly date = start; date <= end; date = date.AddDays(1))
+						{
+
+							bookedDates.Add(date);
+						}
+					}
+					resultBookingDateDto.AvailableDates = bookedDates;
+
+
+					return View(resultBookingDateDto);
+				}
+                 return View();
                 
-                foreach(var item in tempData)
-                {
-                    
-                    var value = item.Split("-").First();
-                    var value2 = item.Split("-")[1];
-                    DateOnly start = DateOnly.Parse(value);
-                    DateOnly end = DateOnly.Parse(value2);
-                    for (DateOnly date = start; date <= end; date = date.AddDays(1)) 
-                    {
-                       
-                        bookedDates.Add(date);
-                    }
-                }
-                resultBookingDateDto.AvailableDates = bookedDates;
-              
-             
-                return View(resultBookingDateDto);
 			}
             return View("CreateBookingDate");
         }

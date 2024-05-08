@@ -32,18 +32,24 @@
 								</tr>
 							</thead>
 							<tbody>
-								@foreach (var item in Model)
-								{
-									<tr>
-										<td>@item.AboutId</td>
-										<td>@item.ImageUrl</td>
-										<td>@item.Title</td>
-										<td>@item.Description</td>
-										<td><a href="/Admin/About/DeleteAbout/@item.AboutId" class="btn btn-outline-danger">Sil</a></td>
-										<td><a href="/Admin/About/UpdateAbout/@item.AboutId" class="btn btn-outline-success">Güncelle</a></td>
-									</tr>
+								@{
+									if(Model!=null)
+									{
+										@foreach (var item in Model)
+										{
+											<tr>
+												<td>@item.AboutId</td>
+												<td>@item.ImageUrl</td>
+												<td>@item.Title</td>
+												<td>@item.Description</td>
+												<td><a href="/Admin/About/DeleteAbout/@item.AboutId" class="btn btn-outline-danger">Sil</a></td>
+												<td><a href="/Admin/About/UpdateAbout/@item.AboutId" class="btn btn-outline-success">Güncelle</a></td>
+											</tr>
 
+										}
+									}
 								}
+								
 
 
 							</tbody>

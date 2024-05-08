@@ -21,7 +21,7 @@ namespace guneshukuk.WebUIv2.Areas.Admin.Controllers
 			var httpClient = httpClientFactory.CreateClient();
 			var jsonData = JsonConvert.SerializeObject(createContactDto);
 			StringContent content = new StringContent(jsonData, Encoding.UTF8, "application/json");
-			var responseMessage = await httpClient.PostAsync("https://localhost:7183/api/Contact/CreateContact", content);
+			var responseMessage = await httpClient.PostAsync("https://guneshukukwebapi20240505152248.azurewebsites.net/api/Contact/CreateContact", content);
 			if (responseMessage.IsSuccessStatusCode)
 			{
 				return RedirectToAction("ListContacts");
@@ -34,12 +34,16 @@ namespace guneshukuk.WebUIv2.Areas.Admin.Controllers
 		public async Task<IActionResult> ListContacts()
 		{
 			HttpClient httpClient = httpClientFactory.CreateClient();
-			var responseMessage = await httpClient.GetAsync("https://localhost:7183/api/Contact/GetAll");
+			var responseMessage = await httpClient.GetAsync("https://guneshukukwebapi20240505152248.azurewebsites.net/api/Contact/GetAll");
 			if (responseMessage.IsSuccessStatusCode)
 			{
 				var jsonData = await responseMessage.Content.ReadAsStringAsync();
 				var values = JsonConvert.DeserializeObject<List<ResultContactDto>>(jsonData);
-				return View(values);
+				if(values!=null)
+				{
+					return View(values);
+				}
+				return View();
 			}
 
 			return View();
@@ -51,7 +55,7 @@ namespace guneshukuk.WebUIv2.Areas.Admin.Controllers
 		public async Task<IActionResult> DeleteContact(int id)
 		{
 			HttpClient httpClient = httpClientFactory.CreateClient();
-			var response = await httpClient.DeleteAsync($"https://localhost:7183/api/Contact/Deletecontact/{id}");
+			var response = await httpClient.DeleteAsync($"https://guneshukukwebapi20240505152248.azurewebsites.net/api/Contact/Deletecontact/{id}");
 			if (response.IsSuccessStatusCode)
 			{
 				return RedirectToAction("ListContacts");
@@ -67,7 +71,7 @@ namespace guneshukuk.WebUIv2.Areas.Admin.Controllers
 		public async Task<IActionResult> UpdateContact(int Id)
 		{
 			HttpClient httpclient = httpClientFactory.CreateClient();
-			var responseMessage = await httpclient.GetAsync($"https://localhost:7183/api/Contact/GetContactById?Id={Id}");
+			var responseMessage = await httpclient.GetAsync($"https://guneshukukwebapi20240505152248.azurewebsites.net/api/Contact/GetContactById?Id={Id}");
 
 
 
@@ -88,7 +92,7 @@ namespace guneshukuk.WebUIv2.Areas.Admin.Controllers
 			HttpClient httpClient = httpClientFactory.CreateClient();
 			var jsonData = JsonConvert.SerializeObject(updateContactDto);
 			StringContent content = new StringContent(jsonData, Encoding.UTF8, "application/json");
-			var responseMessage = await httpClient.PutAsync("https://localhost:7183/api/Contact/UpdateContact", content);
+			var responseMessage = await httpClient.PutAsync("https://guneshukukwebapi20240505152248.azurewebsites.net/api/Contact/UpdateContact", content);
 			if (responseMessage.IsSuccessStatusCode)
 			{
 				return RedirectToAction("ListContacts");

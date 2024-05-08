@@ -22,7 +22,7 @@ namespace guneshukuk.WebUIv2.Areas.Admin.Controllers
 			var httpClient = httpClientFactory.CreateClient();
 			var jsonData = JsonConvert.SerializeObject(createConsultancyDto);
 			StringContent content = new StringContent(jsonData, Encoding.UTF8, "application/json");
-			var responseMessage = await httpClient.PostAsync("https://localhost:7183/api/Consultancy/CreateConsultancy", content);
+			var responseMessage = await httpClient.PostAsync("https://guneshukukwebapi20240505152248.azurewebsites.net/api/Consultancy/CreateConsultancy", content);
 			if (responseMessage.IsSuccessStatusCode)
 			{
 				return RedirectToAction("ListConsultancies");
@@ -35,12 +35,17 @@ namespace guneshukuk.WebUIv2.Areas.Admin.Controllers
 		public async Task<IActionResult> ListConsultancies()
 		{
 			HttpClient httpClient = httpClientFactory.CreateClient();
-			var responseMessage = await httpClient.GetAsync("https://localhost:7183/api/Consultancy/GetAll");
+			var responseMessage = await httpClient.GetAsync("https://guneshukukwebapi20240505152248.azurewebsites.net/api/Consultancy/GetAll");
 			if (responseMessage.IsSuccessStatusCode)
 			{
 				var jsonData = await responseMessage.Content.ReadAsStringAsync();
 				var values = JsonConvert.DeserializeObject<List<ResultConsultancyDto>>(jsonData);
-				return View(values);
+				if (values != null)
+				{
+					return View(values);
+				}
+
+				return View();
 			}
 
 			return View();
@@ -52,7 +57,7 @@ namespace guneshukuk.WebUIv2.Areas.Admin.Controllers
 		public async Task<IActionResult> DeleteConsultancy(int id)
 		{
 			HttpClient httpClient = httpClientFactory.CreateClient();
-			var response = await httpClient.DeleteAsync($"https://localhost:7183/api/Consultancy/DeleteConsultancy/{id}");
+			var response = await httpClient.DeleteAsync($"https://guneshukukwebapi20240505152248.azurewebsites.net/api/Consultancy/DeleteConsultancy/{id}");
 			if (response.IsSuccessStatusCode)
 			{
 				return RedirectToAction("ListConsultancies");
@@ -68,7 +73,7 @@ namespace guneshukuk.WebUIv2.Areas.Admin.Controllers
 		public async Task<IActionResult> UpdateConsultancy(int Id)
 		{
 			HttpClient httpclient = httpClientFactory.CreateClient();
-			var responseMessage = await httpclient.GetAsync($"https://localhost:7183/api/Consultancy/GetConsultancyById?Id={Id}");
+			var responseMessage = await httpclient.GetAsync($"https://guneshukukwebapi20240505152248.azurewebsites.net/api/Consultancy/GetConsultancyById?Id={Id}");
 
 			if (responseMessage.IsSuccessStatusCode)
 			{
@@ -87,7 +92,7 @@ namespace guneshukuk.WebUIv2.Areas.Admin.Controllers
 			HttpClient httpClient = httpClientFactory.CreateClient();
 			var jsonData = JsonConvert.SerializeObject(updateConsultancyDto);
 			StringContent content = new StringContent(jsonData, Encoding.UTF8, "application/json");
-			var responseMessage = await httpClient.PutAsync("https://localhost:7183/api/Consultancy/UpdateConsultancy", content);
+			var responseMessage = await httpClient.PutAsync("https://guneshukukwebapi20240505152248.azurewebsites.net/api/Consultancy/UpdateConsultancy", content);
 			if (responseMessage.IsSuccessStatusCode)
 			{
 				return RedirectToAction("ListConsultancies");
