@@ -361,7 +361,7 @@ textarea {
 
 button,
 select {
-  text-transform: none;
+   : none;
 }
 
 [role=button] {
@@ -576,7 +576,7 @@ progress {
 
 .initialism {
   font-size: 0.875em;
-  text-transform: uppercase;
+   : uppercase;
 }
 
 .blockquote {
@@ -5566,7 +5566,7 @@ textarea.form-control-lg {
   text-align: start;
   text-decoration: none;
   text-shadow: none;
-  text-transform: none;
+   : none;
   letter-spacing: normal;
   word-break: normal;
   white-space: normal;
@@ -5676,7 +5676,7 @@ textarea.form-control-lg {
   text-align: start;
   text-decoration: none;
   text-shadow: none;
-  text-transform: none;
+   : none;
   letter-spacing: normal;
   word-break: normal;
   white-space: normal;
@@ -8024,15 +8024,15 @@ textarea.form-control-lg {
 }
 
 .text-lowercase {
-  text-transform: lowercase !important;
+   : lowercase !important;
 }
 
 .text-uppercase {
-  text-transform: uppercase !important;
+   : uppercase !important;
 }
 
 .text-capitalize {
-  text-transform: capitalize !important;
+   : capitalize !important;
 }
 
 .text-wrap {
@@ -10989,7 +10989,7 @@ body {
   padding: 1.75rem 1rem 0.75rem;
   font-size: 0.75rem;
   font-weight: bold;
-  text-transform: uppercase;
+   : uppercase;
 }
 .sb-sidenav .sb-sidenav-menu .nav .nav-link {
   display: flex;

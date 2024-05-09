@@ -295,7 +295,7 @@ textarea {
 
 button,
 select {
-  text-transform: none;
+   : none;
 }
 
 [role=button] {

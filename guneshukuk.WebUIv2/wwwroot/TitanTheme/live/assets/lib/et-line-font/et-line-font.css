@@ -16,7 +16,7 @@
 	speak: none;
 	font-weight: normal;
 	font-variant: normal;
-	text-transform: none;
+	 : none;
 	line-height: 1;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -35,7 +35,7 @@ you can use the generic selector below, but it's slower:
 	font-style: normal;
 	font-weight: normal;
 	font-variant: normal;
-	text-transform: none;
+	 : none;
 	line-height: 1;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;

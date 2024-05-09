@@ -23,7 +23,7 @@ namespace guneshukuk.WebUIv2.Areas.Admin.Controllers
         {
             var httpClient = httpClientFactory.CreateClient();
             var jsonData = JsonConvert.SerializeObject(createAboutDto);
-            StringContent content = new StringContent(jsonData,Encoding.UTF8, "application/json");
+            StringContent content = new(jsonData,Encoding.UTF8, "application/json");
             var responseMessage = await httpClient.PostAsync("https://guneshukukwebapi20240505152248.azurewebsites.net/api/About/CreateAbout", content);
             if(responseMessage.IsSuccessStatusCode)
             {

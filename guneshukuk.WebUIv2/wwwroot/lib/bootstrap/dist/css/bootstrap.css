@@ -348,7 +348,7 @@ textarea {
 
 button,
 select {
-  text-transform: none;
+   : none;
 }
 
 [role=button] {
@@ -567,7 +567,7 @@ progress {
 
 .initialism {
   font-size: 0.875em;
-  text-transform: uppercase;
+   : uppercase;
 }
 
 .blockquote {
@@ -5702,7 +5702,7 @@ textarea.form-control-lg {
   text-align: start;
   text-decoration: none;
   text-shadow: none;
-  text-transform: none;
+   : none;
   letter-spacing: normal;
   word-break: normal;
   word-spacing: normal;
@@ -5804,7 +5804,7 @@ textarea.form-control-lg {
   text-align: start;
   text-decoration: none;
   text-shadow: none;
-  text-transform: none;
+   : none;
   letter-spacing: normal;
   word-break: normal;
   word-spacing: normal;
@@ -7621,15 +7621,15 @@ textarea.form-control-lg {
 }
 
 .text-lowercase {
-  text-transform: lowercase !important;
+   : lowercase !important;
 }
 
 .text-uppercase {
-  text-transform: uppercase !important;
+   : uppercase !important;
 }
 
 .text-capitalize {
-  text-transform: capitalize !important;
+   : capitalize !important;
 }
 
 .text-wrap {

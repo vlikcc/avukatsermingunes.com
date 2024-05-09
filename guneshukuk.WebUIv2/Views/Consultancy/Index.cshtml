@@ -1,9 +1,8 @@
-﻿@model List<ResultArticleDto>
+﻿@model List<ResultConsultancyDto>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Layout/Index.cshtml";
 }
-
 
 <section class="home-section home-full-height bg-dark-30" id="home" data-background="/TitanTheme/live/assets/images/background.jpg">
     @foreach (var item in Model)
@@ -12,9 +11,9 @@
             <div class="container">
                 <div class="row">
                     <div class="content-box">
-                        <h3 class="content-box-title font-serif">@item.ArticleTitle</h3>
-                        <div class="content-box-image"><img src="@item.ArticleImageUrl" /></div>
-                        <p class="content-box"> @item.ArticleContent</p>
+                        <h3 class="content-box-title font-serif">@item.ConsultancyTitle</h3>
+                        <div class="content-box-image"><img src="@item.ImageUrl" /></div>
+                        <p class="content-box"> @item.ConsultancyContent</p>
 
                     </div>
                 </div>
@@ -22,6 +21,4 @@
         </section>
     }
 </section>
-
-
 

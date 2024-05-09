@@ -122,7 +122,7 @@ button {
 }
 button,
 select {
-  text-transform: none;
+   : none;
 }
 button,
 html input[type="button"],
@@ -1325,13 +1325,13 @@ mark,
   white-space: nowrap;
 }
 .text-lowercase {
-  text-transform: lowercase;
+   : lowercase;
 }
 .text-uppercase {
-  text-transform: uppercase;
+   : uppercase;
 }
 .text-capitalize {
-  text-transform: capitalize;
+   : capitalize;
 }
 .text-muted {
   color: #777;
@@ -1472,7 +1472,7 @@ abbr[data-original-title] {
 }
 .initialism {
   font-size: 90%;
-  text-transform: uppercase;
+   : uppercase;
 }
 blockquote {
   padding: 10px 20px;
@@ -5999,7 +5999,7 @@ button.close {
   text-align: start;
   text-decoration: none;
   text-shadow: none;
-  text-transform: none;
+   : none;
   letter-spacing: normal;
   word-break: normal;
   word-spacing: normal;
@@ -6118,7 +6118,7 @@ button.close {
   text-align: start;
   text-decoration: none;
   text-shadow: none;
-  text-transform: none;
+   : none;
   letter-spacing: normal;
   word-break: normal;
   word-spacing: normal;

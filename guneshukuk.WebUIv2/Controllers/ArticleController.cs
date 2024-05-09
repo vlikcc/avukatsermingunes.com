@@ -15,7 +15,11 @@ namespace guneshukuk.WebUIv2.Controllers
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
                 var values = JsonConvert.DeserializeObject<List<ResultArticleDto>>(jsonData);
-                return View(values);
+                if(values!=null)
+                {
+					return View(values);
+				}
+                return View();
             }
             return View();
         }

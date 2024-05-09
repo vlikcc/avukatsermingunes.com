@@ -1266,15 +1266,15 @@
 }
 
 .text-lowercase {
-  text-transform: lowercase !important;
+   : lowercase !important;
 }
 
 .text-uppercase {
-  text-transform: uppercase !important;
+   : uppercase !important;
 }
 
 .text-capitalize {
-  text-transform: capitalize !important;
+   : capitalize !important;
 }
 
 .text-wrap {
