@@ -18,7 +18,7 @@ namespace guneshukuk.WebAPI.Controllers
 
 			string[] tempData = createBookingDateDto.Dates.Split('-');
             DateOnly start = DateOnly.Parse(tempData[0]);
-            DateOnly end = DateOnly.Parse(tempData[1]);
+            DateOnly end = DateOnly.ParseExact(tempData[1],"dd/MM/yyyy");
             List<DateOnly> dates = new List<DateOnly>();
 
             for (var date = start; date < end; date = date.AddDays(1))
