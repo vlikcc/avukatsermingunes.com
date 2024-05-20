@@ -21,7 +21,7 @@ namespace guneshukuk.WebAPI.Controllers
             DateOnly end = DateOnly.Parse(tempData[1]);
             List<DateOnly> dates = new List<DateOnly>();
 
-            for (var date = start; date < end; date = date.AddDays(1))
+            for (var date = start; date <= end; date = date.AddDays(1))
             {
                 dates.Add(date);
             }
@@ -30,6 +30,7 @@ namespace guneshukuk.WebAPI.Controllers
 			bookingDate.Dates = createBookingDateDto.Dates;
 			bookingDate.AvailableDates = dates;
 			bookingDateService.TAdd(bookingDate);
+			
 			return Ok(bookingDate);
 
 
