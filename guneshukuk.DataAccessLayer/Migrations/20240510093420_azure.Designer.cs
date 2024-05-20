@@ -12,8 +12,8 @@ using guneshukuk.DataAccessLayer.Concrete;
 namespace guneshukuk.DataAccessLayer.Migrations
 {
     [DbContext(typeof(GuneshukukContext))]
-    [Migration("20240502213427_BookingUpdateV4")]
-    partial class BookingUpdateV4
+    [Migration("20240510093420_azure")]
+    partial class azure
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

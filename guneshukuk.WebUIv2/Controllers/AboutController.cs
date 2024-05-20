@@ -7,6 +7,7 @@ namespace guneshukuk.WebUIv2.Controllers
 {
     public class AboutController (IHttpClientFactory httpClientFactory): Controller
     {
+        [HttpGet]
         public  async Task< IActionResult> Index()
         {
             HttpClient httpClient = httpClientFactory.CreateClient();

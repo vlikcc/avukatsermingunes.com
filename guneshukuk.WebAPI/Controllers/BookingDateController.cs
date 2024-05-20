@@ -15,19 +15,27 @@ namespace guneshukuk.WebAPI.Controllers
 
 		public IActionResult CreateBookingDate (CreateBookingDateDto createBookingDateDto )
 		{
-			
-			foreach(var date in createBookingDateDto.AvailableDates) 
-			{
-				BookingDate bookingDate = new BookingDate();
-				bookingDate.AvailableDate = date;
-				bookingDate.Dates=createBookingDateDto.Dates;
-				bookingDateService.TAdd(bookingDate);
-			}
-			return Ok();
 
-		}
+			string[] tempData = createBookingDateDto.Dates.Split('-');
+            DateOnly start = DateOnly.Parse(tempData[0]);
+            DateOnly end = DateOnly.Parse(tempData[1]);
+            List<DateOnly> dates = new List<DateOnly>();
 
-		[HttpGet("GetAll")]
+            for (var date = start; date < end; date = date.AddDays(1))
+            {
+                dates.Add(date);
+            }
+
+			BookingDate bookingDate = new BookingDate();
+			bookingDate.Dates = createBookingDateDto.Dates;
+			bookingDate.BookingDates = dates;
+			bookingDateService.TAdd(bookingDate);
+			return Ok(bookingDate);
+
+
+        }
+
+        [HttpGet("GetAll")]
 
 		public IActionResult GetBookingDates()
 		{

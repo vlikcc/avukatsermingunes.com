@@ -5,20 +5,24 @@
 }
 
 <section class="home-section home-full-height bg-dark-30" id="home" data-background="/TitanTheme/live/assets/images/background.jpg">
-    @foreach (var item in Model)
+    @if(Model!=null)
     {
-        <section class="module">
-            <div class="container">
-                <div class="row">
-                    <div class="content-box">
-                        <h3 class="content-box-title font-serif">@item.ConsultancyTitle</h3>
-                        <div class="content-box-image"><img src="@item.ImageUrl" /></div>
-                        <p class="content-box"> @item.ConsultancyContent</p>
+        @foreach (var item in Model)
+        {
+            <section class="module">
+                <div class="container">
+                    <div class="row">
+                        <div class="content-box">
+                            <h3 class="content-box-title font-serif">@item.ConsultancyTitle</h3>
+                            <div class="content-box-image"><img src="@item.ImageUrl" /></div>
+                            <p class="content-box"> @item.ConsultancyContent</p>
 
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        }
     }
+   
 </section>
 

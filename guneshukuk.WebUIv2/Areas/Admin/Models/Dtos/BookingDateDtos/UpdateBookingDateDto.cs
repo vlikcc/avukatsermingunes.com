@@ -8,7 +8,6 @@ namespace guneshukuk.WebUIv2.Areas.Admin.Models.Dtos.BookingDateDtos
 {
     public class UpdateBookingDateDto
     {
-        public int BookingDateId { get; set; }
-        public DateOnly BookingDate { get; set; }
+        public string Dates { get; set; }
     }
 }
