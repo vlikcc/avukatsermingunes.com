@@ -1,10 +1,10 @@
-name: Build and deploy .NET Core application to Web App guneshukukWebAPI20240505152248
+name: Build and deploy .NET Core application to Web App guneshukukWebAPI
 on:
   push:
     branches:
     - master
 env:
-  AZURE_WEBAPP_NAME: guneshukukWebAPI20240505152248
+  AZURE_WEBAPP_NAME: guneshukukWebAPI
   AZURE_WEBAPP_PACKAGE_PATH: guneshukuk.WebAPI\publish
   CONFIGURATION: Release
   DOTNET_CORE_VERSION: 8.0.x
@@ -44,5 +44,5 @@ jobs:
       uses: azure/webapps-deploy@v2
       with:
         app-name: ${{ env.AZURE_WEBAPP_NAME }}
-        publish-profile: ${{ secrets.guneshukukWebAPI20240505152248_8540 }}
+        publish-profile: ${{ secrets.guneshukukWebAPI_3977 }}
         package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
