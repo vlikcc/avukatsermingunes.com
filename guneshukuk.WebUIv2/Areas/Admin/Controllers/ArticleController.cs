@@ -16,7 +16,7 @@ namespace guneshukuk.WebUIv2.Areas.Admin.Controllers
         public async Task<IActionResult> ListArticles()
         {
             HttpClient httpClient = httpClientFactory.CreateClient();
-            var responseMessage = await httpClient.GetAsync("https://guneshukukwebapi20240505152248.azurewebsites.net/api/Article/GetAll");
+            var responseMessage = await httpClient.GetAsync("https://guneshukukwebapi.azurewebsites.net/api/Article/GetAll");
             if(responseMessage.IsSuccessStatusCode) 
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
@@ -41,7 +41,7 @@ namespace guneshukuk.WebUIv2.Areas.Admin.Controllers
 			var httpClient = httpClientFactory.CreateClient();
 			var jsonData = JsonConvert.SerializeObject(createArticleDto);
 			StringContent content = new StringContent(jsonData, Encoding.UTF8, "application/json");
-			var responseMessage = await httpClient.PostAsync("https://guneshukukwebapi20240505152248.azurewebsites.net/api/Article/CreateArticle", content);
+			var responseMessage = await httpClient.PostAsync("https://guneshukukwebapi.azurewebsites.net/api/Article/CreateArticle", content);
 			if (responseMessage.IsSuccessStatusCode)
 			{
 				return RedirectToAction("ListArticles");
@@ -53,7 +53,7 @@ namespace guneshukuk.WebUIv2.Areas.Admin.Controllers
         public async Task<IActionResult> UpdateArticle(int Id)
         {
             HttpClient httpclient = httpClientFactory.CreateClient();
-            var responseMessage = await httpclient.GetAsync($"https://guneshukukwebapi20240505152248.azurewebsites.net/api/Article/GetArticleById?Id={Id}");
+            var responseMessage = await httpclient.GetAsync($"https://guneshukukwebapi.azurewebsites.net/api/Article/GetArticleById?Id={Id}");
 
 
 
@@ -75,7 +75,7 @@ namespace guneshukuk.WebUIv2.Areas.Admin.Controllers
             HttpClient httpClient = httpClientFactory.CreateClient();
             var jsonData = JsonConvert.SerializeObject(updateArticleDto);
             StringContent content = new StringContent(jsonData, Encoding.UTF8, "application/json");
-            var responseMessage = await httpClient.PutAsync("https://guneshukukwebapi20240505152248.azurewebsites.net/api/Article/UpdateArticle", content);
+            var responseMessage = await httpClient.PutAsync("https://guneshukukwebapi.azurewebsites.net/api/Article/UpdateArticle", content);
             if (responseMessage.IsSuccessStatusCode)
             {
                 return RedirectToAction("ListArticles");
@@ -87,7 +87,7 @@ namespace guneshukuk.WebUIv2.Areas.Admin.Controllers
 		public async Task<IActionResult> DeleteArticle(int id)
 		{
 			HttpClient httpClient = httpClientFactory.CreateClient();
-			var response = await httpClient.DeleteAsync($"https://guneshukukwebapi20240505152248.azurewebsites.net/api/Article/DeleteArticle/{id}");
+			var response = await httpClient.DeleteAsync($"https://guneshukukwebapi.azurewebsites.net/api/Article/DeleteArticle/{id}");
 			if (response.IsSuccessStatusCode)
 			{
 				return RedirectToAction("ListArticles");

@@ -24,7 +24,7 @@
       "dotnetRunMessages": true,
       "launchBrowser": true,
       "launchUrl": "swagger",
-      "applicationUrl": "https://guneshukukwebapi20240505152248.azurewebsites.net;http://localhost:5097",
+      "applicationUrl": "https://guneshukukwebapi.azurewebsites.net;http://localhost:5097",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

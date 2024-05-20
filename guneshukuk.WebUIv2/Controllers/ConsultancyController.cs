@@ -9,7 +9,7 @@ namespace guneshukuk.WebUIv2.Controllers
 		public async Task<IActionResult> Index()
 		{
 			HttpClient httpClient = httpClientFactory.CreateClient();
-			var responseMessage = await httpClient.GetAsync("https://guneshukukwebapi20240505152248.azurewebsites.net/api/Consultancy/GetAll");
+			var responseMessage = await httpClient.GetAsync("https://guneshukukwebapi.azurewebsites.net/api/Consultancy/GetAll");
 			if (responseMessage.IsSuccessStatusCode)
 			{
 				var jsonData = await responseMessage.Content.ReadAsStringAsync();
