@@ -28,14 +28,14 @@ namespace guneshukuk.WebAPI.Controllers
 
 			BookingDate bookingDate = new BookingDate();
 			bookingDate.Dates = createBookingDateDto.Dates;
-			bookingDate.BookingDates = dates;
+			bookingDate.AvailableDates = dates;
 			bookingDateService.TAdd(bookingDate);
 			return Ok(bookingDate);
 
 
         }
 
-        [HttpGet("GetAll")]
+        [HttpGet("GetBookingDates")]
 
 		public IActionResult GetBookingDates()
 		{

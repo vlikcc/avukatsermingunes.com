@@ -8,9 +8,8 @@ namespace guneshukuk.WebAPI.AutoMapper
     {
         public BookingDateMapper()
         {
-            CreateMap<BookingDate,CreateBookingDateDto>().ReverseMap();
-			CreateMap<List<BookingDate>, CreateBookingDateDto>().ReverseMap();
-			CreateMap<BookingDate, UpdateBookingDateDto>().ReverseMap();    
+            CreateMap<BookingDate, CreateBookingDateDto>().ReverseMap();
         }
+			
     }
 }

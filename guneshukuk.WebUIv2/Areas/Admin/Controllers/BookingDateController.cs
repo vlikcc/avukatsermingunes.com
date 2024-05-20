@@ -37,11 +37,11 @@ namespace guneshukuk.WebUIv2.Areas.Admin.Controllers
       
 
         [HttpGet]
-        [AllowAnonymous]
+    
         public async Task<IActionResult> GetBookingDates( ResultBookingDateDto resultBookingDateDto)
         {
             var httpClient = httpClientFactory.CreateClient();
-            var responseMessage = await httpClient.GetAsync("https://guneshukukwebapi20240505152248.azurewebsites.net/api/BookingDate/GetAll");
+            var responseMessage = await httpClient.GetAsync("https://guneshukukwebapi20240505152248.azurewebsites.net/api/BookingDate/GetBookingDates");
           
             
             if(responseMessage.IsSuccessStatusCode)
@@ -55,7 +55,7 @@ namespace guneshukuk.WebUIv2.Areas.Admin.Controllers
                 {
 					foreach (var item in values)
 					{
-						foreach (var date in item.BookingDates)
+						foreach (var date in item.AvailableDates)
                         {
                             dates.Add(date);
                         }

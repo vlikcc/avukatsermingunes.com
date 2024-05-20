@@ -5,11 +5,11 @@
     Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
     
     var dateStrings = Model.Dates.Select(d => d.ToString("yyyy-MM-dd")).ToList();
-    ViewData["BookingDate"] = Newtonsoft.Json.JsonConvert.SerializeObject(dateStrings);
+    ViewData["AvailableDates"] = Newtonsoft.Json.JsonConvert.SerializeObject(dateStrings);
 }
 @using (Html.BeginForm())
 {
-    <input type="text" id="datepicker" name="bookingDates" readonly />
+    <input type="text" id="datepicker" name="availableDates" readonly />
     <input type="submit" value="Randevu Oluştur" />
 }
 
@@ -21,7 +21,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/json2/20160511/json2.min.js"></script>
     <script>
         $(function () {
-            var bookingDates = @Html.Raw(ViewData["BookingDate"]);
+            var availableDates = @Html.Raw(ViewData["AvailableDates"]);
 
            
 
@@ -29,12 +29,11 @@
                 dateFormat: 'yy-mm-dd',
                 beforeShowDay: function (date) {
                     var stringDate = $.datepicker.formatDate('yy-mm-dd', date);
-                    var isAvailable = bookingDates.includes(stringDate);
+                    var isAvailable = availableDates.includes(stringDate);
                     return [isAvailable, "", isAvailable ? "Available" : "Unavailable"];
                 }
             });
         });
     </script>
     }
->
 

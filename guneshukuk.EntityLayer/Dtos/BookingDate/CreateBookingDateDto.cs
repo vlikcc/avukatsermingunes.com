@@ -9,6 +9,6 @@ namespace guneshukuk.EntityLayer.Dtos.BookingDate
     public class CreateBookingDateDto
     {
 		public string Dates { get; set; }
-		public List<DateOnly> AvailableDates { get; set; }
+		
     }
 }

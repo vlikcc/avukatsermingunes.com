@@ -10,6 +10,6 @@ namespace guneshukuk.EntityLayer.Entities
     {
         public int BookingDateId { get; set; }
         public string Dates { get; set; }
-        public List<DateOnly> BookingDates { get; set; }
+        public List<DateOnly> AvailableDates { get; set; }
     }
 }
