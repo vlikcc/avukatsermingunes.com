@@ -21,7 +21,7 @@ namespace guneshukuk.WebAPI.Controllers
             DateOnly end = DateOnly.ParseExact(tempData[1].Trim(),"dd/MM/yyyy");
             List<DateOnly> dates = new List<DateOnly>();
 
-            for (var date = start; date < end; date = date.AddDays(1))
+            for (var date = start; date <= end; date = date.AddDays(1))
             {
                 dates.Add(date);
             }
