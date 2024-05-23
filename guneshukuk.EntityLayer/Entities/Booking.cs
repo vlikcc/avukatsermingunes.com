@@ -11,8 +11,8 @@
         public int BookingDateId { get; set; }
         public virtual BookingDate BookingDate { get; set; }
 
-        public int BookingTimeId { get; set; }
-        public virtual BookingTime BookingTime { get; set; }
+        //public int BookingTimeId { get; set; }
+        //public virtual BookingTime BookingTime { get; set; }
         
     }
 }

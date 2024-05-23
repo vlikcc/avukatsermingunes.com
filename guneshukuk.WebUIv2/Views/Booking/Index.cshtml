@@ -1,45 +1,38 @@
-﻿
-@model ListBookingDateDto
+﻿@model ListBookingDateDto
 
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Layout/Index.cshtml";
-    var dateStrings = Model.ResultBookingDateDto.Dates.Select(d => d.ToString("dd-MM-yyyy")).ToList();
-    ViewData["AvailableDates"] = Newtonsoft.Json.JsonConvert.SerializeObject(dateStrings);
 }
 
-
-
 <section class="home-section home-full-height bg-dark-30" id="home" data-background="/TitanTheme/live/assets/images/background.jpg">
-
-
     <div class="module">
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
                     <h4 class="font-alt">RANDEVU BİLGİLERİNİ GİRİNİZ</h4><br />
-                    <form id="contactForm" role="form" method="post">
+                    <form id="contactForm" role="form" method="post" asp-action="Index" asp-controller="Booking">
                         <div class="form-group">
                             <label class="sr-only" for="BookingName">ADINIZ SOYADINIZ</label>
-                            <input class="form-control" type="text" id="name" name="BookingName" placeholder="ADINIZ SOYADINIZ" required="required" data-validation-required-message="Please enter your name." asp-for="CreateBookingDto.BookingName" />
+                            <input class="form-control" type="text" id="name" name="CreateBookingDto.BookingName" placeholder="ADINIZ SOYADINIZ" required="required" data-validation-required-message="Please enter your name." asp-for="CreateBookingDto.BookingName" />
                             <p class="help-block text-danger"></p>
                         </div>
                         <div class="form-group">
                             <label class="sr-only" for="email">E-POSTA ADRESİNİZ</label>
-                            <input class="form-control" type="email" id="BookingEmail" name="BookingEmail" placeholder="E-POSTA ADRESİNİZ*" required="required" data-validation-required-message="Please enter your email address." asp-for="CreateBookingDto.BookingEmail" />
+                            <input class="form-control" type="email" id="BookingEmail" name="CreateBookingDto.BookingEmail" placeholder="E-POSTA ADRESİNİZ*" required="required" data-validation-required-message="Please enter your email address." asp-for="CreateBookingDto.BookingEmail" />
                             <p class="help-block text-danger"></p>
                         </div>
                         <div class="form-group">
                             <label class="sr-only" for="phone">TELEFON NUMARANIZ</label>
-                            <input class="form-control" type="tel" id="BookingPhone" name="BookingPhone" placeholder="TELEFON NUMARANIZ*" required="required" data-validation-required-message="Please enter your telephone number." asp-for="CreateBookingDto.BookingPhone" />
+                            <input class="form-control" type="tel" id="BookingPhone" name="CreateBookingDto.BookingPhone" placeholder="TELEFON NUMARANIZ*" required="required" data-validation-required-message="Please enter your telephone number." asp-for="CreateBookingDto.BookingPhone" />
                             <p class="help-block text-danger"></p>
                         </div>
                         <div class="form-group">
-                            <textarea class="form-control" rows="7" id="BookingMessage" name="BookingMessage" placeholder="Your Message*" required="required" data-validation-required-message="Please enter your message." asp-for="CreateBookingDto.BookingMessage"></textarea>
+                            <textarea class="form-control" rows="7" id="BookingMessage" name="CreateBookingDto.BookingMessage" placeholder="Your Message*" required="required" data-validation-required-message="Please enter your message." asp-for="CreateBookingDto.BookingMessage"></textarea>
                             <p class="help-block text-danger"></p>
                         </div>
                         <div class="form-group">
-                            <div class='input-group date' id='datetimepicker' >
+                            <div class='input-group date' id='datetimepicker'>
                                 <input type='text' class="form-control" id="datepicker" name="datepicker" asp-for="CreateBookingDto.BookingDate" />
                                 <span class="input-group-addon">
                                     <span class="glyphicon glyphicon-calendar"></span>
@@ -50,14 +43,16 @@
                             <button class="btn btn-block btn-round btn-d" id="cfsubmit" type="submit">KAYDET</button>
                         </div>
                     </form>
-
                 </div>
-
             </div>
         </div>
-
     </div>
 </section>
+
+@{
+    var dateStrings = Model.ResultBookingDateDto.Dates.Select(d => d.ToString("dd-MM-yyyy")).ToList();
+    ViewData["AvailableDates"] = Newtonsoft.Json.JsonConvert.SerializeObject(dateStrings);
+}
 
 @section Scripts {
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -67,8 +62,6 @@
     <script>
         $(function () {
             var availableDates = @Html.Raw(ViewData["AvailableDates"]);
-
-
 
             $("#datepicker").datepicker({
                 dateFormat: 'dd-mm-yy',
@@ -81,10 +74,3 @@
         });
     </script>
 }
-
-
-
-
-
-
-

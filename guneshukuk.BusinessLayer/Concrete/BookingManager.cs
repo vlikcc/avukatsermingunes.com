@@ -23,7 +23,7 @@ namespace guneshukuk.BusinessLayer.Concrete
         {
             var availableDates = _bookingDateDal.GetAll();
             var availableTimes = _bookingTimeDal.GetAll();
-            if (availableDates.Contains(entity.BookingDate) & availableTimes.Contains(entity.BookingTime)) 
+            if (availableDates.Contains(entity.BookingDate) ) 
             {
                 throw new Exception("deneme");
             }
