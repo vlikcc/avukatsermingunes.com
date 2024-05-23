@@ -37,6 +37,7 @@ namespace guneshukuk.WebUIv2.Areas.Admin.Controllers
       
 
         [HttpGet]
+        [AllowAnonymous]
     
         public async Task<IActionResult> GetBookingDates( ResultBookingDateDto resultBookingDateDto)
         {
