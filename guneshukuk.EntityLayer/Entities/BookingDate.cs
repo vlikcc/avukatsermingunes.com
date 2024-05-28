@@ -11,6 +11,6 @@ namespace guneshukuk.EntityLayer.Entities
         public int BookingDateId { get; set; }
         public string Dates { get; set; }
         public List<DateOnly> AvailableDates { get; set; }
-         public virtual ICollection<Booking> Bookings { get; set; }
+        public virtual ICollection<Booking> Bookings { get; set; }
     }
 }

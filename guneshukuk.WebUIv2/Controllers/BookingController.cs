@@ -57,6 +57,14 @@ namespace guneshukuk.WebUIv2.Controllers
                 {
                     Dates = new List<DateOnly>()
                 };
+                var values = bookingDateService.TGetAll();
+                for (int i = 0; i < values.Count; i++)
+                {
+                    foreach (var date in values[i].AvailableDates)
+                    {
+                        listBookingDateDto.ResultBookingDateDto.Dates.Add(date);
+                    }
+                }
             }
 
             if (ModelState.IsValid)

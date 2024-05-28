@@ -72,5 +72,13 @@
                 }
             });
         });
+
+        $("#datepicker").change(function () {
+            var selectedDate = $(this).val();
+            var bookingDate = selectedDate;
+            $("#CreateBookingDto.BookingDate").val(bookingDate);
+            console.log(bookingDate)
+        });
+               
     </script>
 }

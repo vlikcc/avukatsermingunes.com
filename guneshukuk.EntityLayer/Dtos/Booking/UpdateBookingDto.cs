@@ -10,6 +10,6 @@ namespace guneshukuk.EntityLayer.Dtos.Booking
         public string BookingPhone { get; set; }
         public string BookingMessage { get; set; }
         public int BookingDateId { get; set; }
-        public int BookingTimeId { get; set; }
+        
     }
 }
