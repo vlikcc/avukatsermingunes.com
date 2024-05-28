@@ -52,19 +52,24 @@ namespace guneshukuk.WebUIv2.Areas.Admin.Controllers
 
                 var values = JsonConvert.DeserializeObject<List<BookingDate>>(jsonData);
                 List<DateOnly> dates = new List<DateOnly>();
+                List<int> dateId = new List<int>();
                 if (values!=null)
                 {
 					foreach (var item in values)
 					{
-						foreach (var date in item.AvailableDates)
+                        dateId.Add(item.BookingDateId);
+                        foreach (var date in item.AvailableDates)
                         {
                             dates.Add(date);
+                           
                         }
+                      
 
 					}
 
 					
 					resultBookingDateDto.Dates = dates;
+                    resultBookingDateDto.BookingDateId = dateId;
 
 
 					

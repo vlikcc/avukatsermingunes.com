@@ -25,13 +25,16 @@ namespace guneshukuk.WebUIv2.Controllers
         {
             ResultBookingDateDto resultBookingDateDto = new ResultBookingDateDto
             {
-                Dates = new List<DateOnly>()
+                Dates = new List<DateOnly>(),
+                BookingDateId = new List<int>()
             };
 
             var values = bookingDateService.TGetAll();
-            for (int i = 0; i < values.Count; i++)
+
+            foreach (var item in values) 
             {
-                foreach (var date in values[i].AvailableDates)
+                resultBookingDateDto.BookingDateId.Add(item.BookingDateId);
+                foreach (var date in item.AvailableDates)
                 {
                     resultBookingDateDto.Dates.Add(date);
                 }
@@ -55,12 +58,15 @@ namespace guneshukuk.WebUIv2.Controllers
             {
                 listBookingDateDto.ResultBookingDateDto = new ResultBookingDateDto
                 {
-                    Dates = new List<DateOnly>()
+                    Dates = new List<DateOnly>(),
+                    BookingDateId= new List<int>()  
                 };
                 var values = bookingDateService.TGetAll();
-                for (int i = 0; i < values.Count; i++)
+                values.Select(d=>d.)
+                foreach(var item in values) 
                 {
-                    foreach (var date in values[i].AvailableDates)
+                    listBookingDateDto.ResultBookingDateDto.BookingDateId.Add(listBookingDateDto.CreateBookingDto.BookingDateId);
+                    foreach (var date in item.AvailableDates)
                     {
                         listBookingDateDto.ResultBookingDateDto.Dates.Add(date);
                     }
