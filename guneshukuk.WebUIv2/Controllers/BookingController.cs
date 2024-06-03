@@ -53,24 +53,6 @@ namespace guneshukuk.WebUIv2.Controllers
         [HttpPost]
         public async Task<IActionResult> Index(ListBookingDateDto listBookingDateDto)
         {
-            ResultBookingDateDto resultBookingDateDto = new ResultBookingDateDto
-            {
-                Dates = new List<DateOnly>(),
-                BookingDateId = new List<int>()
-            };
-
-            var values = bookingDateService.TGetAll();
-
-            foreach (var item in values)
-            {
-                resultBookingDateDto.BookingDateId.Add(item.BookingDateId);
-                foreach (var date in item.AvailableDates)
-                {
-                    resultBookingDateDto.Dates.Add(date);
-                }
-            }
-            listBookingDateDto.ResultBookingDateDto = resultBookingDateDto;
-
             // Reinitialize ResultBookingDateDto to avoid null reference exception
             if (listBookingDateDto.ResultBookingDateDto == null)
             {
@@ -79,7 +61,8 @@ namespace guneshukuk.WebUIv2.Controllers
                     Dates = new List<DateOnly>(),
                     BookingDateId= new List<int>()  
                 };
-               
+                var values = bookingDateService.TGetAll();
+                values.Select(d=>d.)
                 foreach(var item in values) 
                 {
                     listBookingDateDto.ResultBookingDateDto.BookingDateId.Add(listBookingDateDto.CreateBookingDto.BookingDateId);
@@ -89,12 +72,11 @@ namespace guneshukuk.WebUIv2.Controllers
                     }
                 }
             }
-            var jsonData = JsonConvert.SerializeObject(listBookingDateDto.CreateBookingDto);
 
             if (ModelState.IsValid)
             {
                 HttpClient httpClient = httpClientFactory.CreateClient();
-                //var jsonData = JsonConvert.SerializeObject(listBookingDateDto.CreateBookingDto);
+                var jsonData = JsonConvert.SerializeObject(listBookingDateDto.CreateBookingDto);
                 StringContent content = new StringContent(jsonData, Encoding.UTF8, "application/json");
                 var responseMessage = await httpClient.PostAsync("https://guneshukukwebapi.azurewebsites.net/api/Booking/CreateBooking", content);
                 if (responseMessage.IsSuccessStatusCode)

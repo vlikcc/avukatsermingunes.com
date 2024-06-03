@@ -34,8 +34,7 @@
                         </div>
                         <div class="form-group">
                             <label class="sr-only" for="CreateBookingDto.BookingDateId">RANDEVU TARİHİ</label>
-                            <input type="hidden" id="selectedDate" name="selectedDate" />                            
-                            <input type="hidden" id="selectedDateId" name="ResultBookingDateDto.BookingDateId" asp-for="ResultBookingDateDto.BookingDateId" />
+                            <input type="hidden" id="CreateBookingDto_BookingDateId" name="CreateBookingDto.BookingDateId" asp-for="CreateBookingDto.BookingDate" />
                             <div class='input-group date' id='datetimepicker'>
                                 <input type='text' class="form-control" id="datepicker" name="CreateBookingDto.BookingDate" asp-for="CreateBookingDto.BookingDate" />
                                 <span class="input-group-addon">
@@ -55,11 +54,7 @@
 
 @{
     var dateStrings = Model.ResultBookingDateDto.Dates.Select(d => d.ToString("yyyy-MM-dd")).ToList();
-    var dateIndex = Model.ResultBookingDateDto.BookingDateId.Select(d => d.ToString()).ToList();
-
     ViewData["AvailableDates"] = Newtonsoft.Json.JsonConvert.SerializeObject(dateStrings);
-    ViewData["DateIndex"] = Newtonsoft.Json.JsonConvert.SerializeObject(dateIndex);
-
 }
 
 @section Scripts {
@@ -76,14 +71,15 @@
                 beforeShowDay: function (date) {
                     var stringDate = $.datepicker.formatDate('yy-mm-dd', date);
                     return [availableDates.includes(stringDate), "", availableDates.includes(stringDate) ? "Available" : "Unavailable"];
-                },
-                onSelect: function (dateText) {
-                    var selectedIndex = availableDates.indexOf(dateText);
-                    if (selectedIndex !== -1) {
-                        $("#selectedDate").val(dateText);
-                        $("#selectedDateId").val(dateIndex[selectedIndex]);
-                    }
                 }
+            });
+
+            $("#datepicker").change(function () {
+                var selectedDate = $(this).val();
+                var bookingDateId = @Html.Raw(JsonConvert.SerializeObject(Model.ResultBookingDateDto.Dates))
+                                                .find(d => d === selectedDate) || '';
+                $("#CreateBookingDto_BookingDateId").val(bookingDateId);
             });
         });
     </script>
+}

@@ -1,6 +1,5 @@
 ﻿using guneshukuk.EntityLayer.Entities;
 
-
 namespace guneshukuk.EntityLayer.Dtos.Booking
 {
     public class CreateBookingDto
@@ -11,8 +10,6 @@ namespace guneshukuk.EntityLayer.Dtos.Booking
         public string BookingPhone { get; set; }
         public string BookingMessage { get; set; }
         public int BookingDateId { get; set; }
-
-        public virtual guneshukuk.EntityLayer.Entities.BookingDate BookingDate { get; set; }
          
     }
 }
