@@ -21,19 +21,6 @@ namespace guneshukuk.BusinessLayer.Concrete
 
         public void TAdd(Booking entity)
         {
-            var availableDates = _bookingDateDal.GetAll();
-            List<int> ids = new List<int>();
-            foreach(var date in availableDates)
-            {
-                ids.Add(date.BookingDateId);
-            }
-
-            var availableTimes = _bookingTimeDal.GetAll();
-            if (ids.Contains(entity.BookingDateId) ) 
-            {
-                throw new Exception("deneme");
-            }
-            
           _bookingDal.Add(entity);
             
         }
