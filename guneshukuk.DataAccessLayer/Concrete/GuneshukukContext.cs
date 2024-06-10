@@ -8,6 +8,7 @@ namespace guneshukuk.DataAccessLayer.Concrete
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+            //optionsBuilder.UseSqlServer(@"Server=SRMNVLI\SQLEXPRESS;Initial Catalog=guneshukuk2;TrustServerCertificate=True;Integrated Security=True");
             optionsBuilder.UseSqlServer(@"Server=tcp:vlikcc.database.windows.net,1433;Initial Catalog=avukatsermingunes;Persist Security Info=False;User ID=vlikcc;Password=Srmn1931.;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
         }
         public DbSet<About> Abouts { get; set; }

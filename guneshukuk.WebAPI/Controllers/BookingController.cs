@@ -35,11 +35,16 @@ namespace guneshukuk.WebAPI.Controllers
         [HttpPost("CreateBooking")]
         public IActionResult CreateBooking(CreateBookingDto createBookingDto)
         {
-           
-          
-            
-            var value = _mapper.Map<Booking>(createBookingDto);
-            _bookingService.TAdd(value);
+
+            Booking booking = new Booking()
+            {
+                BookingDateId = createBookingDto.BookingDateId,
+                BookingName = createBookingDto.BookingName,
+                BookingEmail = createBookingDto.BookingEmail,
+                BookingMessage = createBookingDto.BookingMessage,
+                BookingPhone = createBookingDto.BookingPhone
+            };
+            _bookingService.TAdd(booking);
 
            
             return Ok();
