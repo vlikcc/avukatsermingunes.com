@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace guneshukuk.EntityLayer.Dtos.BookingDate
+namespace guneshukuk.EntityLayer.Dtos.BookingDateDtos
 {
     public class CreateBookingDateDto
     {
-		public string Dates { get; set; }
+		public List<DateOnly> Dates { get; set; }
 		
     }
 }

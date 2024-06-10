@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using guneshukuk.EntityLayer.Dtos.BookingDate;
+using guneshukuk.EntityLayer.Dtos.BookingDateDtos;
 using guneshukuk.EntityLayer.Entities;
 
 namespace guneshukuk.WebAPI.AutoMapper

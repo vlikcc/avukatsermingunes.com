@@ -7,7 +7,7 @@
     ViewData["Title"] = "GetBookingDates";
     Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
     
-    var dateStrings = Model.Dates.Select(d => d.ToString("yyyy-MM-dd")).ToList();
+    var dateStrings = Model.BookingDates.Select(d => d.Date.ToString("yyyy-MM-dd")).ToList();
     ViewData["AvailableDates"] = Newtonsoft.Json.JsonConvert.SerializeObject(dateStrings);
 }
 @using (Html.BeginForm())

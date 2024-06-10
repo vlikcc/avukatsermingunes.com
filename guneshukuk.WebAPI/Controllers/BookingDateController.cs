@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using guneshukuk.BusinessLayer.Abstract;
-using guneshukuk.EntityLayer.Dtos.BookingDate;
+using guneshukuk.EntityLayer.Dtos.BookingDateDtos;
 using guneshukuk.EntityLayer.Entities;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -15,23 +15,14 @@ namespace guneshukuk.WebAPI.Controllers
 
 		public IActionResult CreateBookingDate (CreateBookingDateDto createBookingDateDto )
 		{
+			foreach(var date in createBookingDateDto.Dates)
+			{
+				BookingDate bookingDate = new BookingDate();
+				bookingDate.Date = date;
+				bookingDateService.TAdd(bookingDate);
+			}
 
-			string[] tempData = createBookingDateDto.Dates.Split('-');
-            DateOnly start = DateOnly.ParseExact(tempData[0].Trim(),"dd/MM/yyyy");
-            DateOnly end = DateOnly.ParseExact(tempData[1].Trim(),"dd/MM/yyyy");
-            List<DateOnly> dates = new List<DateOnly>();
-
-            for (var date = start; date <= end; date = date.AddDays(1))
-            {
-                dates.Add(date);
-            }
-
-			BookingDate bookingDate = new BookingDate();
-			bookingDate.Dates = createBookingDateDto.Dates;
-			bookingDate.AvailableDates = dates;
-			bookingDateService.TAdd(bookingDate);
-			
-			return Ok(bookingDate);
+			return Ok();
 
 
         }

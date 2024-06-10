@@ -8,8 +8,7 @@ namespace guneshukuk.WebAPI.AutoMapper
     {
         public BookingMapper()
         {
-            CreateMap<Booking, ResultBookingDto>().ReverseMap();
-            CreateMap<Booking, CreateBookingDto>().ReverseMap();
+            CreateMap<Booking, ResultBookingDto>().ReverseMap();            
             CreateMap<Booking, UpdateBookingDto>().ReverseMap();
             CreateMap<Booking, GetBookingDto>().ReverseMap();
 

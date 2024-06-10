@@ -6,8 +6,7 @@ namespace guneshukuk.WebUIv2.Areas.Admin.Models.Dtos.BookingDateDtos
     [AllowAnonymous]
     public class ResultBookingDateDto
     {
-        public List<DateOnly> Dates { get; set; }
-        public List<int> BookingDateId { get; set; }
+       public List<BookingDate> BookingDates { get; set; }
         
     }
 }
