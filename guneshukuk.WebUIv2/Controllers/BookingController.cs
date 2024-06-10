@@ -55,11 +55,12 @@ namespace guneshukuk.WebUIv2.Controllers
             var responseMessage = await httpClient.PostAsync("https://guneshukukwebapi.azurewebsites.net/api/Booking/CreateBooking", content);
             if(responseMessage.IsSuccessStatusCode)
             {
-                return View("Index");
+                return RedirectToAction("Index");
+
             }
             return RedirectToAction("Index");
-           
-            
+
+
         }
     }
 }
