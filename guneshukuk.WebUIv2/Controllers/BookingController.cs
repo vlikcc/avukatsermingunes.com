@@ -36,7 +36,7 @@ namespace guneshukuk.WebUIv2.Controllers
         [HttpPost]
         public async Task<IActionResult> Index(CreateBookingViewModel createBookingViewModel , [FromForm] string selectedDate)
         {
-            DateOnly bookingDate = DateOnly.Parse(selectedDate);
+            DateOnly bookingDate = DateOnly.ParseExact(selectedDate.Trim(),"yyyy-MM-dd");
             ResultBookingDateDto resultBookingDateDto= new ResultBookingDateDto();
             resultBookingDateDto.BookingDates = bookingDateService.TGetAll();
             createBookingViewModel.ResultBookingDate = resultBookingDateDto;

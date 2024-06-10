@@ -41,7 +41,7 @@ namespace guneshukuk.WebAPI.Controllers
             var value = _mapper.Map<Booking>(createBookingDto);
             _bookingService.TAdd(value);
 
-            _emailService.SendBookingConfirmationEmail(value);
+           
             return Ok();
 
         }

@@ -11,12 +11,11 @@ namespace guneshukuk.EntityLayer.Entities
         public string BookingEmail { get; set; }
         public string BookingPhone { get; set; }
         public string BookingMessage { get; set; }
+
         [ForeignKey("BookingDateId")]
         public int BookingDateId { get; set; }
-        public virtual BookingDate BookingDate { get; set; }
-
-        //public int BookingTimeId { get; set; }
-        //public virtual BookingTime BookingTime { get; set; }
+       
+       
         
     }
 }

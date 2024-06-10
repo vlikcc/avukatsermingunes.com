@@ -25,7 +25,7 @@ namespace guneshukuk.BusinessLayer.Concrete
 
                 // E-posta başlığı ve içeriği
                 string subject = "Booking Confirmation";
-                string body = $"Dear {booking.BookingName},\n\nYour booking has been confirmed. Thank you for choosing our service!\n\nBooking Details:\n\nDate: {booking.BookingDate}\nMessage: {booking.BookingMessage}";
+                string body = $"Dear {booking.BookingName},\n\nYour booking has been confirmed. Thank you for choosing our service!\n\nBooking Details:\n\nDate: {booking.BookingDateId}\nMessage: {booking.BookingMessage}";
 
                 // SMTP istemcisini oluştur
                 using (SmtpClient client = new SmtpClient("smtp-mail.outlook.com"))
