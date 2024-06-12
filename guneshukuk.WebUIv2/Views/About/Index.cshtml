@@ -4,28 +4,49 @@
     Layout = "~/Views/Layout/Index.cshtml";
 }
 
-<section class="home-section home-full-height bg-dark-30" id="home" data-background="/TitanTheme/live/assets/images/background.jpg">
+
     @if(Model!=null)
     {
-        @foreach (var item in Model)
-        {
-            <div class="module bg-dark-60 about-page-header" data-background="@item.ImageUrl">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-6 col-sm-offset-1">
-                            <h2 class="module-title font-alt">@item.Title</h2>
-                            <div class="module-subtitle font-serif">@item.Description</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        
+        <div class="text-white" style="display: flex; align-items: center; justify-content: center; height: 100vh; width:80%; ">
+
+        <table style="background-color:transparent;backface-visibility:visible;font-palette:dark;display:flex">
+               @foreach(var item in Model)
+            {
+                <tr>
+                    <td>
+                        <a style="background-image:url('@item.ImageUrl')"></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @item.Title
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @{
+                            var paragraflar = item.Description.Split(new[] { "\r\n", "\r", "\n" }, StringSplitOptions.None);
+                            foreach (var paragraf in paragraflar)
+                            {
+                                <p class="text-white"  style="text-indent each-line:2em">@paragraf</p>
+                            }
+                        }
+                           
+                       
+                        
+                    </td>
+                </tr>
+            }
+        </table>         
+                        
+                          
+               
+        </div>
 
 
-
-
-        }
     }
     
     
     
-</section>
+

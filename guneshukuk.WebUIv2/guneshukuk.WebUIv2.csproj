@@ -25,7 +25,14 @@
 
   <ItemGroup>
     <Folder Include="Areas\Admin\Data\" />
-    <Folder Include="wwwroot\TitanTheme\live\assets\images\gallery\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\View\.DS_Store" />
+    <None Include="wwwroot\View\css\.DS_Store" />
+    <None Include="wwwroot\View\fonts\.DS_Store" />
+    <None Include="wwwroot\View\images\.DS_Store" />
+    <None Include="wwwroot\View\scss\.DS_Store" />
   </ItemGroup>
 
 

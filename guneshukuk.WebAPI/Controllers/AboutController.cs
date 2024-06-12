@@ -3,6 +3,7 @@ using guneshukuk.BusinessLayer.Abstract;
 using guneshukuk.EntityLayer.Dtos.About;
 using guneshukuk.EntityLayer.Entities;
 using Microsoft.AspNetCore.Mvc;
+using System.Web;
 
 namespace guneshukuk.WebAPI.Controllers
 {
@@ -27,6 +28,7 @@ namespace guneshukuk.WebAPI.Controllers
         [HttpPost("CreateAbout")]
         public IActionResult CreateAbout(CreateAboutDto createAboutDto)
         {
+            
             var value = _mapper.Map<About>(createAboutDto);
             _aboutService.TAdd(value);
             return Ok();

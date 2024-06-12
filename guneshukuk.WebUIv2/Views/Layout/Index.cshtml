@@ -7,19 +7,22 @@
 @await Component.InvokeAsync("_LayoutHeaderComponentPartial")
 
 <body>
-    <main>
-        <div class="page-loader">
-            <div class="loader">Loading...</div>
-        </div>
+
+    
         @await Component.InvokeAsync("_LayoutNavbarComponentPartial")
-        <section class="home-section home-full-height bg-dark-30" id="home" data-background="/TitanTheme/live/assets/images/background.jpg">
-            @RenderBody()
 
-        </section>
 
+
+  
+    
+
+    <div class="hero"   style="background-image:url('/View/images/Hero_1.jpg')">
+        @RenderBody()
+        </div>
+    
         @await Component.InvokeAsync("_LayoutFooterComponentPartial")
        
-    </main>
+   
     @await Component.InvokeAsync("_LayoutScriptComponentPartial")
     @RenderSection("Scripts", required: false)
 </body>

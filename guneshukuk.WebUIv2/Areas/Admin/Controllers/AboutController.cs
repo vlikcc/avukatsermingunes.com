@@ -5,7 +5,8 @@ using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Net.Http;
 using System.Text;
-
+using System.Text.Unicode;
+using System.Web;
 namespace guneshukuk.WebUIv2.Areas.Admin.Controllers
 {
     [Area("Admin")]
@@ -23,7 +24,8 @@ namespace guneshukuk.WebUIv2.Areas.Admin.Controllers
         {
             var httpClient = httpClientFactory.CreateClient();
             var jsonData = JsonConvert.SerializeObject(createAboutDto);
-            StringContent content = new(jsonData,Encoding.UTF8, "application/json");
+			var decodedContent = HttpUtility.HtmlDecode(jsonData);
+            StringContent content = new StringContent(decodedContent,Encoding.UTF8,"application/json");
             var responseMessage = await httpClient.PostAsync("https://guneshukukwebapi.azurewebsites.net/api/About/CreateAbout", content);
             if(responseMessage.IsSuccessStatusCode)
             {
