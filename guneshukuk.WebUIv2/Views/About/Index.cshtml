@@ -4,14 +4,11 @@
     Layout = "~/Views/Layout/Index.cshtml";
 }
 
-
-    @if(Model!=null)
-    {
-        
-        <div class="text-white" style="display: flex; align-items: center; justify-content: center; height: 100vh; width:80%; ">
-
-        <table style="background-color:transparent;backface-visibility:visible;font-palette:dark;display:flex">
-               @foreach(var item in Model)
+@if (Model != null)
+{
+    <div class="content-container">
+        <table class="styled-table">
+            @foreach (var item in Model)
             {
                 <tr>
                     <td>
@@ -29,24 +26,12 @@
                             var paragraflar = item.Description.Split(new[] { "\r\n", "\r", "\n" }, StringSplitOptions.None);
                             foreach (var paragraf in paragraflar)
                             {
-                                <p class="text-white"  style="text-indent each-line:2em">@paragraf</p>
+                                <p class="text-black">@paragraf</p>
                             }
                         }
-                           
-                       
-                        
                     </td>
                 </tr>
             }
-        </table>         
-                        
-                          
-               
-        </div>
-
-
-    }
-    
-    
-    
-
+        </table>
+    </div>
+}

@@ -323,3 +323,46 @@ a {
         width: auto; }
         .site-mobile-menu .site-nav-wrap[data-class="social"] > li:first-child a {
           padding-left: 15px !important; }
+
+.content-container {
+    display:flex;
+    position:absolute;
+    top:40px;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width:100%;
+    padding-left:100px;
+    padding-right:100px;
+    padding-top:0px;
+    
+  
+    
+}
+
+.styled-table {
+    background-color: rgba(255, 255, 255, 0.7); /* Yarý saydam beyaz */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    height:300px;
+}
+
+    .styled-table td {
+        padding: 10px;
+    }
+
+    .styled-table a {
+        display: block;
+        width: 100px;
+        height: 100px;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .styled-table p {
+        text-indent:2em;
+        color: black; /* Yazýlarý siyah yapmak için */
+       
+    }
