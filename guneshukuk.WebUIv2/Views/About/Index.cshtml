@@ -12,12 +12,12 @@
             {
                 <tr>
                     <td>
-                        <a style="background-image:url('@item.ImageUrl')"></a>
+                        <br />
                     </td>
                 </tr>
                 <tr>
-                    <td>
-                        @item.Title
+                    <td style="text-align:center">
+                        <h1>@item.Title</h1>
                     </td>
                 </tr>
                 <tr>
@@ -26,7 +26,7 @@
                             var paragraflar = item.Description.Split(new[] { "\r\n", "\r", "\n" }, StringSplitOptions.None);
                             foreach (var paragraf in paragraflar)
                             {
-                                <p class="text-black">@paragraf</p>
+                                <p> @paragraf</p>
                             }
                         }
                     </td>

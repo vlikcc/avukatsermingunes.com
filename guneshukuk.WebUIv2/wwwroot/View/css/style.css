@@ -327,14 +327,14 @@ a {
 .content-container {
     display:flex;
     position:absolute;
-    top:40px;
-    align-items: center;
+    top:20px;
+    align-items:flex-start;
     justify-content: center;
     height: 100%;
     width:100%;
     padding-left:100px;
     padding-right:100px;
-    padding-top:0px;
+    padding-top:80px;
     
   
     
@@ -342,11 +342,11 @@ a {
 
 .styled-table {
     background-color: rgba(255, 255, 255, 0.7); /* Yarý saydam beyaz */
-    padding: 20px;
+    padding: 10px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: left;
-    height:300px;
+    height:150px;
 }
 
     .styled-table td {
