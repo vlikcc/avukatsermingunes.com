@@ -18,10 +18,11 @@
 
     <div class="hero"   style="background-image:url('/View/images/Hero_1.jpg')">
         @RenderBody()
-        </div>
+        
+    </div>
     
         @await Component.InvokeAsync("_LayoutFooterComponentPartial")
-       
+   
    
     @await Component.InvokeAsync("_LayoutScriptComponentPartial")
     @RenderSection("Scripts", required: false)

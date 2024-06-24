@@ -37,5 +37,7 @@ namespace guneshukuk.BusinessLayer.Concrete
         {
             _articleDal.Update(entity);
         }
+
+       
     }
 }

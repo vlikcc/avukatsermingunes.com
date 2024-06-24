@@ -1,5 +1,6 @@
 ﻿using guneshukuk.DataAccessLayer.Abstract;
 using guneshukuk.DataAccessLayer.Concrete;
+using guneshukuk.EntityLayer.Entities;
 
 namespace guneshukuk.DataAccessLayer.Repositories
 {
@@ -38,6 +39,11 @@ namespace guneshukuk.DataAccessLayer.Repositories
         {
             _context.Update(entity);
             _context.SaveChanges();
+        }
+
+        public IQueryable<Article> GetQueryable()
+        {
+            return _context.Articles;
         }
     }
 }

@@ -4,5 +4,6 @@ namespace guneshukuk.DataAccessLayer.Abstract
 {
     public interface IArticleDal : IGenericDal<Article>
     {
+       
     }
 }

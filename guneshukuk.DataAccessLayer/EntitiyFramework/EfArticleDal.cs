@@ -2,6 +2,7 @@
 using guneshukuk.DataAccessLayer.Concrete;
 using guneshukuk.DataAccessLayer.Repositories;
 using guneshukuk.EntityLayer.Entities;
+using Microsoft.Identity.Client;
 
 namespace guneshukuk.DataAccessLayer.EntitiyFramework
 {
@@ -9,6 +10,9 @@ namespace guneshukuk.DataAccessLayer.EntitiyFramework
     {
         public EfArticleDal(GuneshukukContext context) : base(context)
         {
+            
         }
+
+      
     }
 }

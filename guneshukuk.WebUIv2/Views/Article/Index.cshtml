@@ -1,31 +1,108 @@
-﻿@model List<ResultArticleDto>
+﻿@using guneshukuk.WebUIv2.Models.ViewModels
+@model ArticleListViewModel
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Layout/Index.cshtml";
 }
 
-
-<section class="home-section home-full-height bg-dark-30" id="home" data-background="/TitanTheme/live/assets/images/background.jpg">
-    @if(Model!=null)
-    {
-        @foreach (var item in Model)
+<div style="justify-content:center;">
+    <div class="article-list" >
+        @foreach (var article in Model.Articles)
         {
-            <section class="module">
-                <div class="container">
-                    <div class="row">
-                        <div class="content-box">
-                            <h3 class="content-box-title font-serif">@item.ArticleTitle</h3>
-                            <div class="content-box-image"><img src="@item.ArticleImageUrl" /></div>
-                            <p class="content-box"> @item.ArticleContent</p>
+            <div class="article-item">
+                <div class="article-image" style="background-image: url('@article.ArticleImageUrl');" >
+                    <a href="#">
 
-                        </div>
-                    </div>
+                    </a>
                 </div>
-            </section>
+                <div class="article-title" >
+                    <a href="#">@article.ArticleTitle</a>
+                </div>
+            </div>
         }
+    </div>
+
+    <div class="pagination">
+        @if (Model.CurrentPage > 1)
+        {
+            <a href="@Url.Action("Index", new { page = Model.CurrentPage - 1 })">Previous</a>
+        }
+        @for (int i = 1; i <= Model.TotalPages; i++)
+        {
+            <a href="@Url.Action("Index", new { page = i })" class="@(i == Model.CurrentPage ? "active" : "")">@i</a>
+        }
+        @if (Model.CurrentPage < Model.TotalPages)
+        {
+            <a href="@Url.Action("Index", new { page = Model.CurrentPage + 1 })">Next</a>
+        }
+    </div>
+</div>
+
+
+<style>
+    .article-list-section {
+        margin-top: 20px;
     }
 
-</section>
+    .article-list-container {
+        display: flex;
+        justify-content: center;
+    }
 
+    .article-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        max-width: 100%; /* İstediğiniz genişliği burada ayarlayabilirsiniz */
+        padding-top:80px;
+        padding-left:100px;
+        padding-right:100px;
+        
+       
+    }
 
+    .article-item {
+        width: 30%;
+        margin: 1%;
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+       
+    }
 
+    .article-image {
+        width: 100%;
+        height: 200px;
+        background-size: cover;
+        background-position: center;
+        margin-bottom: 10px;
+    }
+
+    .article-title {
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    .pagination {
+        text-align: center;
+        margin-top: 20px;
+        padding-left:600px;
+        padding-right:600px;
+        
+        
+    }
+
+        .pagination a {
+            margin: 0 5px;
+            text-decoration: none;
+            color: white;
+        }
+
+        .pagination .active {
+            font-weight: bold;
+            text-decoration: underline;
+            color:white;
+            font-size:20px;
+            
+        }
+</style>
