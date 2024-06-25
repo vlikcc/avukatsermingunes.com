@@ -11,12 +11,12 @@
         {
             <div class="article-item">
                 <div class="article-image" style="background-image: url('@article.ArticleImageUrl');" >
-                    <a href="#">
+                    <a href="@Url.Action("ArticleDetail","Article",new {articleId=article.ArticleId})">
 
                     </a>
                 </div>
                 <div class="article-title" >
-                    <a href="#">@article.ArticleTitle</a>
+                    <a href="@Url.Action("ArticleDetail","Article",new {articleId=article.ArticleId})">@article.ArticleTitle</a>
                 </div>
             </div>
         }

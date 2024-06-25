@@ -1,0 +1,68 @@
+﻿@using guneshukuk.EntityLayer.Entities
+@model Article
+@{
+    ViewData["Title"] = "ArticleDetail";
+    Layout = "~/Views/Layout/Index.cshtml";
+}
+
+<title>@Model.ArticleTitle</title>
+<style>
+    .article-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 40px 0; /* Üst ve alt boşluk eklemek için */
+       
+    }
+
+    .article-box {
+        background-color: rgba(255, 255, 255, 0.9); /* Yarı saydam beyaz kutu */
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        max-width: 800px;
+        width: 100%;
+        box-sizing: border-box;
+        overflow: hidden; /* İçeriğin taşmasını engelle */
+    }
+
+    .article-image {
+        width: 100%;
+        height: 300px;
+        background-size: cover;
+        background-position: center;
+        border-radius: 10px;
+        margin-bottom: 20px;
+    }
+
+    .article-title {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .article-content {
+        font-size: 18px;
+        line-height: 1.6;
+        max-height: 500px; /* Maksimum yüksekliği belirleyin */
+        overflow-y: auto; /* Dikeyde taşma olursa kaydırma çubuğu ekleyin */
+    }
+</style>
+
+<body>
+    <div class="content-container">
+        <div class="article-box">
+            <div class="article-image" style="background-image: url('@Model.ArticleImageUrl');"></div>
+            <div class="article-title">@Model.ArticleTitle</div>
+            <div class="article-content">@Model.ArticleContent</div>
+        </div>
+    </div>
+    <div style="text-align: center; margin-top: 20px;">
+        <a href="@Url.Action("Index", "Article")">Geri Dön</a>
+    </div>
+</body>
+
+
+
+
