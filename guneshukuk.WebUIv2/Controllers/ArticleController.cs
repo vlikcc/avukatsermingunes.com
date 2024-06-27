@@ -35,5 +35,24 @@ namespace guneshukuk.WebUIv2.Controllers
             }
             return View();
         }
+
+        public async Task<IActionResult> ArticleDetail(int articleId)
+        {
+            HttpClient httpClient = httpClientFactory.CreateClient();
+            string link = "https://guneshukukwebapi.azurewebsites.net/api/Article/GetArticleById?Id=" + articleId;
+            var response = await httpClient.GetAsync(link);
+            if (response.IsSuccessStatusCode)
+            {
+                var jsonData = await response.Content.ReadAsStringAsync();
+                var article = JsonConvert.DeserializeObject<Article>(jsonData);
+                if (article == null)
+                {
+                    return NotFound();
+                }
+                return View(article);
+            }
+            return NotFound();
+
+        }
     }
 }

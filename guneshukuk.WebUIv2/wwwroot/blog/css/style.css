@@ -1444,62 +1444,16 @@ select.form-control:not([size]):not([multiple]) {
 /*-------------------------------
 footer
 -------------------------------*/
-.footer-section {
-  background: #f8f8f8;
-  background: #000;
-  padding: 60px 0px 0px;
-  margin-top: 150px;
-  position: relative;
-}
 
-.footer-section .copyright {
-  padding-top: 20px;
-  margin-top: 20px;
-  border-top: 1px solid rgba(255, 255, 255, 0.09);
-  color: rgba(255, 255, 255, 0.7);
-}
+
+
 
 .copyright {
   font-size: 14px;
   padding-top: 20px;
 }
 
-.footer-socials li,
-.footer-socials-2 li {
-  margin: 0px 25px;
-}
 
-.footer-socials li a,
-.footer-socials-2 li a {
-  text-transform: uppercase;
-  font-size: 12px;
-  letter-spacing: 1px;
-  font-weight: 600;
-}
-
-.footer-socials li a:hover,
-.footer-socials-2 li a:hover {
-  color: #ce8460;
-}
-
-.footer-socials li a {
-  color: #fff;
-  opacity: 0.8;
-}
-
-.footer-socials-2 li a {
-  color: #000;
-  opacity: 0.8;
-}
-
-.footer-socials li a i,
-.footer-socials-2 li a i {
-  color: #777;
-}
-
-.footer-logo {
-  color: #fff;
-}
 
 .instagram-photo-section {
   padding-bottom: 50px;
