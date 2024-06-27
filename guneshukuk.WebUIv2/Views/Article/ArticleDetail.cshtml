@@ -12,30 +12,36 @@
         margin: 0;
     }
 
-   
+
 
     .content-wrap {
         flex: 1;
     }
 
-    
+
 
     .article-container {
+      
         display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 40px 0;
+        position: absolute;
+        top: 20px;
+        align-items: flex-start;
+        justify-content: center;       
+        width: 100%;        
+        padding-top: 80px;
+        height:auto;
     }
+    
 
     .article-box {
-        background-color: rgba(255, 255, 255, 0.9);
-        padding: 20px;
+        background-color: rgba(255, 255, 255, 0.9);      
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         border-radius: 10px;
         max-width: auto;
         width: 100%;
         box-sizing: border-box;
         overflow: hidden;
+        padding:10px;
     }
 
     .article-image {
@@ -45,6 +51,7 @@
         background-position: center;
         border-radius: 10px;
         margin-bottom: 20px;
+
     }
 
     .article-title {
@@ -55,15 +62,17 @@
     }
 
     .article-content {
-        font-size: 18px;
-        line-height: 1.6;
-        max-height: 500px;
+        font-size: 16px;
+        line-height: 1.5;      
         overflow-y: auto;
+        overflow-x:auto;
+        
+        width:100%
     }
 </style>
 
 <body>
-    <div class="content-container">
+    <div class="article-container">
         <div class="article-box">
             <div class="article-image" style="background-image: url('@Model.ArticleImageUrl');"></div>
             <div class="article-title">@Model.ArticleTitle</div>
@@ -72,8 +81,9 @@
                 <a href="@Url.Action("Index", "Article")">Geri Dön</a>
             </div>
         </div>
-        
+
     </div>
-    
+
 </body>
+
 

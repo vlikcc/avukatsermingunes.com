@@ -6,7 +6,7 @@
 <html lang="tr-TR" dir="ltr">
 @await Component.InvokeAsync("_LayoutHeaderComponentPartial")
 
-<body>
+
 
     
         @await Component.InvokeAsync("_LayoutNavbarComponentPartial")
@@ -14,17 +14,19 @@
 
 
   
-    
+ <body style="height:100%">
 
-    <div class="hero"   style="background-image:url('/View/images/Hero_1.jpg')">
+   
+
+    <div class="hero" style="background-image:url('/View/images/Hero_1.jpg');height: 100vh; background-size: cover; background-position: center;" >
         @RenderBody()
         
     </div>
-    
+</body>
         @await Component.InvokeAsync("_LayoutFooterComponentPartial")
    
    
     @await Component.InvokeAsync("_LayoutScriptComponentPartial")
     @RenderSection("Scripts", required: false)
-</body>
+
 </html>
