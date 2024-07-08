@@ -2,88 +2,256 @@
 @model Article
 @{
     ViewData["Title"] = "ArticleDetail";
-    Layout = "~/Views/Layout/Index.cshtml";
+    Layout = null;
+
 }
 
 <title>@Model.ArticleTitle</title>
-<style>
-    body, html {
-        height: 100%;
-        margin: 0;
-    }
+
+
+<!DOCTYPE html>
+<html lang="tr-TR" dir="ltr">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="/View/fonts/icomoon/style.css">
+
+
+    <link rel="stylesheet" href="/View/css/owl.carousel.min.css">
+
+    <!-- Bootstrap CSS -->
+
+    <link rel="stylesheet" href="/View/css/bootstrap.min.css">
+
+    <!-- Style -->
+
+    <link rel="stylesheet" href="/View/css/style.css">
+
+    <title>AVUKAT SERMİN GÜNEŞ KEÇECİ</title>
+
+    <!-- THEME CSS
+    ================================================== -->
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="/blog/plugins/bootstrap/css/bootstrap.min.css">
+    <!-- Themify -->
+    <link rel="stylesheet" href="/blog/plugins/themify/css/themify-icons.css">
+    <link rel="stylesheet" href="/blog/plugins/slick-carousel/slick-theme.css">
+    <link rel="stylesheet" href="/blog/plugins/slick-carousel/slick.css">
+    <!-- Slick Carousel -->
+    <link rel="stylesheet" href="/blog/plugins/owl-carousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="/blog/plugins/owl-carousel/owl.theme.default.min.css">
+    <link rel="stylesheet" href="/blog/plugins/magnific-popup/magnific-popup.css">
+    <!-- manin stylesheet -->
+    <link rel="stylesheet" href="/blog/css/style.css">
+
+
+</head>
 
 
 
-    .content-wrap {
-        flex: 1;
-    }
 
+<div class="site-mobile-menu">
+    <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+            <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+    </div>
+    <div class="site-mobile-menu-body"></div>
+</div>
+<header class="site-navbar" role="banner">
 
-
-    .article-container {
-      
-        display: flex;
-        position: absolute;
-        top: 20px;
-        align-items: flex-start;
-        justify-content: center;       
-        width: 100%;        
-        padding-top: 80px;
-        height:auto;
-    }
-    
-
-    .article-box {
-        background-color: rgba(255, 255, 255, 0.9);      
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        border-radius: 10px;
-        max-width: auto;
-        width: 100%;
-        box-sizing: border-box;
-        overflow: hidden;
-        padding:10px;
-    }
-
-    .article-image {
-        width: 100%;
-        height: 300px;
-        background-size: cover;
-        background-position: center;
-        border-radius: 10px;
-        margin-bottom: 20px;
-
-    }
-
-    .article-title {
-        font-size: 24px;
-        font-weight: bold;
-        margin-bottom: 20px;
-        text-align: center;
-    }
-
-    .article-content {
-        font-size: 16px;
-        line-height: 1.5;      
-        overflow-y: auto;
-        overflow-x:auto;
-        
-        width:100%
-    }
-</style>
-
-<body>
-    <div class="article-container">
-        <div class="article-box">
-            <div class="article-image" style="background-image: url('@Model.ArticleImageUrl');"></div>
-            <div class="article-title">@Model.ArticleTitle</div>
-            <div class="article-content">@Model.ArticleContent</div>
-            <div style="text-align: center; margin-top: 20px;">
-                <a href="@Url.Action("Index", "Article")">Geri Dön</a>
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-11 col-xl-2">
+                <h1 class="mb-0 site-logo"><a class="text-white mb-0"></a></h1>
             </div>
+
+            <div class="col-11 col-md-10 d-none d-xl-block">
+                <nav class="site-navigation position-relative text-right" role="navigation">
+
+                    <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block">
+                        <li class="active"><a href="/Home/Index"><span>Anasayfa</span></a></li>
+                        <li><a href="/About/Index"><span>Hakkımda</span></a></li>
+                        <li><a href="/Article/Index"><span>Makaleler</span></a></li>
+                        <li><a href="/Consultancy/Index"><span>Hizmetlerimiz</span></a></li>
+                        <li><a href="/Contact/Index"><span>İletişim</span></a></li>
+                        <li><a href="/Booking/Index"><span>Randevu Al</span></a></li>
+                    </ul>
+                </nav>
+            </div>
+
+
+            <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-white"><span class="icon-menu h3"></span></a></div>
+
         </div>
 
     </div>
+    </div>
 
+</header>
+
+
+
+
+<body style="height:100%">
+
+
+
+    <div class="hero" style="background-image:url('/View/images/Hero_1.jpg');height: 100vh; background-size: cover; background-position: center;">
+
+        <title>@Model.ArticleTitle</title>
+        <style>
+            body, html {
+                height: 100%;
+                margin: 0;
+            }
+
+
+
+            .content-wrap {
+                flex: 1;
+            }
+
+
+
+            .article-container {
+                display: flex;
+                position: absolute;
+                top: 20px;
+                align-items: flex-start;
+                justify-content: center;
+                width: 100%;
+                padding-top: 80px;
+                height: auto;
+            }
+
+
+            .article-box {
+                background-color: rgba(255, 255, 255, 0.9);
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                border-radius: 10px;
+                max-width: auto;
+                width: 100%;
+                box-sizing: border-box;
+                overflow: hidden;
+                padding: 10px;
+            }
+
+            .article-image {
+                width: 100%;
+                height: 300px;
+                background-size: cover;
+                background-position: center;
+                border-radius: 10px;
+                margin-bottom: 20px;
+            }
+
+            .article-title {
+                font-size: 24px;
+                font-weight: bold;
+                margin-bottom: 20px;
+                text-align: center;
+            }
+
+            .article-content {
+                font-size: 16px;
+                line-height: 1.5;
+                overflow-y: auto;
+                overflow-x: auto;
+                width: 100%
+            }
+        </style>
+
+        <body>
+            <div class="article-container">
+                <div class="article-box">
+                    <div class="article-image" style="background-image: url('@Model.ArticleImageUrl');"></div>
+                    <div class="article-title">@Model.ArticleTitle</div>
+                    <div class="article-content"> @Model.ArticleContent</div>
+                    <div style="text-align: center; margin-top: 20px;">
+                        <a href="/Article">Geri Dön</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <script src="/_framework/aspnetcore-browser-refresh.js"></script>
+        </body>
+
+
+
+
+    </div>
+
+    <!--
+    JavaScripts
+    =============================================
+    -->
+
+
+
+    <script src="/View/js/jquery-3.3.1.min.js"></script>
+    <script src="/View/js/popper.min.js"></script>
+    <script src="/View/js/bootstrap.min.js"></script>
+    <script src="/View/js/jquery.sticky.js"></script>
+    <script src="/View/js/main.js"></script>
+    <!-- THEME JAVASCRIPT FILES
+    ================================================== -->
+    <!-- initialize jQuery Library -->
+    <script src="/blog/plugins/jquery/jquery.js"></script>
+    <!-- Bootstrap jQuery -->
+    <script src="/blog/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/blog/plugins/bootstrap/js/popper.min.js"></script>
+    <!-- Owl caeousel -->
+    <script src="/blog/plugins/owl-carousel/owl.carousel.min.js"></script>
+    <script src="/blog/plugins/slick-carousel/slick.min.js"></script>
+    <script src="/blog/plugins/magnific-popup/magnific-popup.js"></script>
+
+
+    <!-- main js -->
+    <script src="/blog/js/custom.js"></script>
+
+
+
+
+
+
+
+    <!-- Visual Studio Browser Link -->
+    <script type="text/javascript" src="/_vs/browserLink" async="async" id="__browserLink_initializationData" data-requestId="636a09d7640d4e20a444a90834fe5c91" data-requestMappingFromServer="false" data-connectUrl="http://localhost:54829/4009294fc5bc43deb50df6e0903bdf76/browserLink"></script>
+    <!-- End Browser Link -->
 </body>
 
+
+
+<div class="footer">
+
+    <p class="copyright font-alt" style="-webkit-text-fill-color:white; text-align:center">&copy; 2024&nbsp;<a style="-webkit-text-fill-color:white; text-align:center" href="/Home/Index">Avukat Sermin Güneş Keçeci</a>, Tüm Hakları Saklıdır</p>
+
+</div>
+<style>
+    .footer {
+        background-color: #343a40;
+        color: white;
+        height: 50px;
+        width: 100%;
+        text-align: center;
+        position: absolute;
+        align-items: center;
+        margin-top:100vh;
+    }
+
+</style>
+
+
+
+
+
+
+</html>
 
