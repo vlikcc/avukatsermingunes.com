@@ -90,8 +90,7 @@ namespace guneshukuk.DataAccessLayer.Migrations
                 {
                     BookingDateId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Dates = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    AvailableDate = table.Column<DateOnly>(type: "date", nullable: false)
+                    Date = table.Column<DateOnly>(type: "date", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -273,23 +272,16 @@ namespace guneshukuk.DataAccessLayer.Migrations
                     BookingPhone = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     BookingMessage = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     BookingDateId = table.Column<int>(type: "int", nullable: false),
-                    BookingTimeId = table.Column<int>(type: "int", nullable: false)
+                    BookingTimeId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Bookings", x => x.BookingId);
                     table.ForeignKey(
-                        name: "FK_Bookings_BookingDates_BookingDateId",
-                        column: x => x.BookingDateId,
-                        principalTable: "BookingDates",
-                        principalColumn: "BookingDateId",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
                         name: "FK_Bookings_BookingTimes_BookingTimeId",
                         column: x => x.BookingTimeId,
                         principalTable: "BookingTimes",
-                        principalColumn: "BookingTimeId",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "BookingTimeId");
                 });
 
             migrationBuilder.CreateIndex(
@@ -332,11 +324,6 @@ namespace guneshukuk.DataAccessLayer.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Bookings_BookingDateId",
-                table: "Bookings",
-                column: "BookingDateId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Bookings_BookingTimeId",
                 table: "Bookings",
                 column: "BookingTimeId");
@@ -367,6 +354,9 @@ namespace guneshukuk.DataAccessLayer.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
+                name: "BookingDates");
+
+            migrationBuilder.DropTable(
                 name: "Bookings");
 
             migrationBuilder.DropTable(
@@ -383,9 +373,6 @@ namespace guneshukuk.DataAccessLayer.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
-
-            migrationBuilder.DropTable(
-                name: "BookingDates");
 
             migrationBuilder.DropTable(
                 name: "BookingTimes");

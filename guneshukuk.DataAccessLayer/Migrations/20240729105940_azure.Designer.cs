@@ -12,8 +12,8 @@ using guneshukuk.DataAccessLayer.Concrete;
 namespace guneshukuk.DataAccessLayer.Migrations
 {
     [DbContext(typeof(GuneshukukContext))]
-    [Migration("20240520105234_Booking")]
-    partial class Booking
+    [Migration("20240729105940_azure")]
+    partial class azure
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -311,12 +311,10 @@ namespace guneshukuk.DataAccessLayer.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("BookingTimeId")
+                    b.Property<int?>("BookingTimeId")
                         .HasColumnType("int");
 
                     b.HasKey("BookingId");
-
-                    b.HasIndex("BookingDateId");
 
                     b.HasIndex("BookingTimeId");
 
@@ -331,13 +329,8 @@ namespace guneshukuk.DataAccessLayer.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("BookingDateId"));
 
-                    b.Property<string>("AvailableDates")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Dates")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateOnly>("Date")
+                        .HasColumnType("date");
 
                     b.HasKey("BookingDateId");
 
@@ -488,21 +481,9 @@ namespace guneshukuk.DataAccessLayer.Migrations
 
             modelBuilder.Entity("guneshukuk.EntityLayer.Entities.Booking", b =>
                 {
-                    b.HasOne("guneshukuk.EntityLayer.Entities.BookingDate", "BookingDate")
-                        .WithMany()
-                        .HasForeignKey("BookingDateId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("guneshukuk.EntityLayer.Entities.BookingTime", "BookingTime")
+                    b.HasOne("guneshukuk.EntityLayer.Entities.BookingTime", null)
                         .WithMany("Bookings")
-                        .HasForeignKey("BookingTimeId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("BookingDate");
-
-                    b.Navigation("BookingTime");
+                        .HasForeignKey("BookingTimeId");
                 });
 
             modelBuilder.Entity("guneshukuk.EntityLayer.Entities.BookingTime", b =>

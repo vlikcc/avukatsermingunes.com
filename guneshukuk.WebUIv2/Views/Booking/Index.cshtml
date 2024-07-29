@@ -6,12 +6,12 @@
     Layout = "~/Views/Layout/Index.cshtml";
 }
 
-<section class="home-section home-full-height bg-dark-30" id="home" data-background="/TitanTheme/live/assets/images/background.jpg">
-    <div class="module">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-6">
-                    <h4 class="font-alt">RANDEVU BİLGİLERİNİ GİRİNİZ</h4><br />
+
+
+        <div class="booking-container">
+            <div class="row" style="align-self:center; align-content:center">
+                <div class="col-sm-12">
+                    <h4 class="font-alt" style="text-align:center">RANDEVU BİLGİLERİNİ GİRİNİZ</h4><br />
                     <form id="contactForm" role="form" method="post" asp-action="Index" asp-controller="Booking">
                         <div class="form-group">
                             <label class="sr-only" for="CreateBookingDto.BookingName">ADINIZ SOYADINIZ</label>
@@ -36,22 +36,22 @@
                             <label class="sr-only" >RANDEVU TARİHİ</label>
                             
                             <div class='input-group date' id='datetpicker'>
-                                <input type='text' class="form-control" id="datepicker"  />
-                                <input typeof="hidden" id="selectedDate" name="selectedDate" />
-                                <span class="input-group-addon">
-                                    <span class="glyphicon glyphicon-calendar"></span>
-                                </span>
+                                <input type='text' class="form-control" id="datepicker" style="width:100%" />
+                        
+                                <input typeof="hidden" id="selectedDate" name="selectedDate" style="visibility:hidden" />
+                       
                             </div>
+                    <div class="text-center" style="align-content:center;margin-left:35%">
+                        <button class="btn btn-info btn-round" id="cfsubmit" type="submit">KAYDET</button>                        
+                    </div>
                         </div>
-                        <div class="text-center">
-                            <button class="btn btn-block btn-round btn-d" id="cfsubmit" type="submit">KAYDET</button>
-                        </div>
+                       
                     </form>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    
+
 
 
 @section Scripts {
@@ -76,3 +76,19 @@
         });
     </script>
 }
+<style>
+    .booking-container {
+        display:flex;
+        position:absolute;
+        top: 90px;
+        align-items: flex-start;
+        justify-content: center;
+        width: 100%;
+        padding-top: 100px;
+        height: auto;
+        align-items:center;
+        align-self:center;
+        background-color: rgba(255, 255, 255, 0.9);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+</style>

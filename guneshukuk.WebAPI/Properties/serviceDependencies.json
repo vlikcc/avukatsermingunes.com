@@ -3,9 +3,6 @@
     "apis1": {
       "type": "apis"
     },
-    "apis2": {
-      "type": "apis"
-    },
     "secrets1": {
       "type": "secrets"
     },
@@ -13,6 +10,9 @@
       "type": "appInsights",
       "connectionId": "APPLICATIONINSIGHTS_CONNECTION_STRING",
       "dynamicId": null
+    },
+    "apis2": {
+      "type": "apis"
     }
   }
 }
