@@ -53,4 +53,4 @@ jobs:
           app-name: 'avukatsermingunesWebAPI'
           slot-name: 'Production'
           package: .
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_E086C0DA66F3419AA91264AEB6E90BB2 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_346278792E9F40CEBAF662045505B17A }}
