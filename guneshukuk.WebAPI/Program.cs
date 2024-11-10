@@ -41,11 +41,7 @@ builder.Services.AddScoped<IBookingTimeDal, EfBookingTimeDal>();
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen(c =>
-{
-    c.SwaggerDoc("v1", new OpenApiInfo { Title = "AvukatSerminGunes", Version = "v1" });
-});
-
+builder.Services.AddSwaggerGen();
 builder.Services.AddCors();
 builder.Services.AddApplicationInsightsTelemetry(new Microsoft.ApplicationInsights.AspNetCore.Extensions.ApplicationInsightsServiceOptions
 {
@@ -55,14 +51,13 @@ builder.Services.AddApplicationInsightsTelemetry(new Microsoft.ApplicationInsigh
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
+
     app.UseSwagger();
     app.UseSwaggerUI(c =>
     {
         c.SwaggerEndpoint("/swagger/v1/swagger.json", "AvukatSerminGunes V1");
     });
-}
+
 
 app.UseCors(builder => builder.WithOrigins("https://localhost:7108/").AllowAnyHeader());
 app.UseHttpsRedirection();
