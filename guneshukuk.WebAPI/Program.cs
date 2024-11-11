@@ -53,10 +53,7 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 
     app.UseSwagger();
-    app.UseSwaggerUI(c =>
-    {
-        c.SwaggerEndpoint("/swagger/v1/swagger.json", "AvukatSerminGunes V1");
-    });
+app.UseSwaggerUI();
 
 
 app.UseCors(builder => builder.WithOrigins("https://localhost:7108/").AllowAnyHeader());
