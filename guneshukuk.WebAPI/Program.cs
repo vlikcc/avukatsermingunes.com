@@ -41,7 +41,18 @@ builder.Services.AddScoped<IBookingTimeDal, EfBookingTimeDal>();
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+
+builder.Services.AddSwaggerGen(c =>
+{
+	c.SwaggerDoc("v1", new OpenApiInfo
+	{
+		Title = "GunesHukuk API",
+		Version = "v1",
+		Description = "GunesHukuk Web API documentation",
+	});
+});
+
+
 builder.Services.AddCors();
 builder.Services.AddApplicationInsightsTelemetry(new Microsoft.ApplicationInsights.AspNetCore.Extensions.ApplicationInsightsServiceOptions
 {
@@ -52,8 +63,14 @@ var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 
-    app.UseSwagger();
-app.UseSwaggerUI();
+// Swagger Middleware
+app.UseSwagger();
+app.UseSwaggerUI(c =>
+{
+	c.SwaggerEndpoint("/swagger/v1/swagger.json", "GunesHukuk API v1");
+	c.RoutePrefix = string.Empty; // Ana sayfada Swagger UI'yi kök olarak ayarlamak için
+});
+
 
 
 app.UseCors(builder => builder.WithOrigins("https://localhost:7108/").AllowAnyHeader());
