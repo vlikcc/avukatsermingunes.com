@@ -40,7 +40,7 @@ namespace guneshukuk.WebUIv2.Areas.Admin.Controllers
            
 			var jsonData = JsonConvert.SerializeObject(createBookingDateDto);
 			StringContent content = new StringContent(jsonData,Encoding.UTF8,"application/json");
-            var responseMessage = await httpClient.PostAsync("https://guneshukukwebapi.azurewebsites.net/api/BookingDate/CreateBookingDate", content);
+            var responseMessage = await httpClient.PostAsync("https://guneshukukwebapi1.azurewebsites.net/api/BookingDate/CreateBookingDate", content);
             if(responseMessage.IsSuccessStatusCode) 
             {
                 return RedirectToAction("CreateBookingDate");
@@ -57,7 +57,7 @@ namespace guneshukuk.WebUIv2.Areas.Admin.Controllers
         public async Task<IActionResult> GetBookingDates( Models.Dtos.BookingDateDtos.ResultBookingDateDto resultBookingDateDto)
         {
             var httpClient = httpClientFactory.CreateClient();
-            var responseMessage = await httpClient.GetAsync("https://guneshukukwebapi.azurewebsites.net/api/BookingDate/GetBookingDates");
+            var responseMessage = await httpClient.GetAsync("https://guneshukukwebapi1.azurewebsites.net/api/BookingDate/GetBookingDates");
           
             
             if(responseMessage.IsSuccessStatusCode)

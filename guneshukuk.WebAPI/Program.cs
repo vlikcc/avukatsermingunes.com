@@ -65,11 +65,11 @@ var app = builder.Build();
 
 // Swagger Middleware
 app.UseSwagger();
-app.UseSwaggerUI(c =>
-{
-	c.SwaggerEndpoint("/swagger/v1/swagger.json", "GunesHukuk API v1");
-	c.RoutePrefix = string.Empty; // Ana sayfada Swagger UI'yi kök olarak ayarlamak için
-});
+//app.UseSwaggerUI(c =>
+//{
+//	c.SwaggerEndpoint("/swagger/v1/swagger.json", "GunesHukuk API v1");
+//	c.RoutePrefix = string.Empty; // Ana sayfada Swagger UI'yi kök olarak ayarlamak için
+//});
 
 
 

@@ -1,0 +1,72 @@
+﻿@using guneshukuk.WebUIv2.Areas.Admin.Models.Dtos.BookingDtos
+@model List<ResultBookingDto>
+@{
+    ViewData["Title"] = "ListBookings";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="content">
+	<div class="container-fluid">
+		<h4 class="page-title">Randevu İşlemleri</h4>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="card">
+					<div class="card-header">
+						<div class="card-title">Randevu Bilgileri</div>
+					</div>
+					<div class="card-body">
+						<div class="card-sub">
+							Rendevular ile ilgili işlemleri aşağıdan gerçekleştirebilirsiniz.
+						</div>
+						<table class="table mt-3">
+							<thead>
+
+								//  public int BookingId { get; set; }
+								public string BookingName { get; set; }
+								public string BookingEmail { get; set; }
+								public string BookingPhone { get; set; }
+								public string BookingMessage { get; set; }
+								public DateTime BookingDate { get; set; }
+								//
+								<tr>
+									<th scope="col">#</th>
+									<th scope="col">Adı Soyadı</th>
+									<th scope="col">E-Posta Adresi</th>
+									<th scope="col">Telefonu</th>
+									<th scope="col">Mesajı</th>
+									<th scope="col">Randevu Tarihi</th>
+									<th scope="col">Sil</th>
+									<th scope="col">Güncelle</th>
+
+								</tr>
+							</thead>
+							<tbody>
+								@foreach (var item in Model)
+								{
+									<tr>
+										<td>@item.BookingId</td>
+										<td>@item.BookingName</td>
+										<td>@item.BookingEmail</td>
+										<td>@item.BookingPhone</td>
+										<td>@item.BookingMessage</td>
+										<td>@item.BookingDate</td>
+										<td><a href="/Admin/Booking/DeleteBooking/@item.BookingId" class="btn btn-outline-danger">Sil</a></td>
+										<td><a href="/Admin/Article/Updatebooking/@item.BookingId" class="btn btn-outline-success">Güncelle</a></td>
+									</tr>
+
+								}
+
+
+							</tbody>
+						</table>
+						<a href="/Admin/Article/CreateArticle/" class="btn btn-outline-primary"> Yeni Makale  Girişi</a>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+</div>
+
+

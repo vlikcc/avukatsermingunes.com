@@ -52,7 +52,7 @@ namespace guneshukuk.WebUIv2.Controllers
             var httpClient = httpClientFactory.CreateClient();
             var jsonData = JsonSerializer.Serialize(createBookingDto);
             StringContent content = new StringContent(jsonData,Encoding.UTF8,"application/json");
-            var responseMessage = await httpClient.PostAsync("https://guneshukukwebapi.azurewebsites.net/api/Booking/CreateBooking", content);
+            var responseMessage = await httpClient.PostAsync("https://guneshukukwebapi1.azurewebsites.net/api/Booking/CreateBooking", content);
             if(responseMessage.IsSuccessStatusCode)
             {
                 return RedirectToAction("Index");

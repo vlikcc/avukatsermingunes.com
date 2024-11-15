@@ -16,7 +16,7 @@ namespace guneshukuk.WebUIv2.Areas.Admin.Controllers
         public async Task<IActionResult> ListArticles()
         {
             HttpClient httpClient = httpClientFactory.CreateClient();
-            var responseMessage = await httpClient.GetAsync("https://guneshukukwebapi.azurewebsites.net/api/Article/GetAll");
+            var responseMessage = await httpClient.GetAsync("https://guneshukukwebapi1.azurewebsites.net/api/Article/GetAll");
             if(responseMessage.IsSuccessStatusCode) 
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
