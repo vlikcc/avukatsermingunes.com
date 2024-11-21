@@ -13,21 +13,23 @@ namespace guneshukuk.WebAPI.Controllers
         private readonly IBookingService _bookingService;
         private readonly IEmailService _emailService;
         private readonly IMapper _mapper;
+        private readonly IBookingDateService _bookingDateService;
 
-        public BookingController(IBookingService bookingService, IMapper mapper, IEmailService emailService)
+        public BookingController(IBookingService bookingService, IMapper mapper, IEmailService emailService,IBookingDateService bookingDateService)
         {
             _bookingService = bookingService;
             _mapper = mapper;
             _emailService = emailService;
+            _bookingDateService = bookingDateService;
         }
         [HttpGet("GetAll")]
         public IActionResult GetAll()
         {
-            var values = _bookingService.TGetAll();
+            var values = _bookingService.TGetAll();           
             return Ok(values);
         }
         [HttpGet("GetBookingById")]
-        public IActionResult GetArticleById(int id)
+        public IActionResult GetBookingById(int id)
         {
             var value = _bookingService.TGetById(id);
             return Ok(value);

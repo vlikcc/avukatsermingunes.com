@@ -26,6 +26,7 @@ namespace guneshukuk.WebUIv2.Areas.Admin.Controllers
                 var values = JsonConvert.DeserializeObject<List<ResultBookingDto>>(jsonData);
                 if(values!=null)
                 {
+                   
                     return View(values);
                 }
                 return View();
