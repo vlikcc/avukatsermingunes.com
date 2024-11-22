@@ -35,5 +35,12 @@ namespace guneshukuk.WebAPI.Controllers
 			return Ok(values);
 
 		}
+
+		[HttpGet("GetBookingDateById")]
+		 public IActionResult GetBookingDateById(int id)
+		{
+			var value = bookingDateService.TGetById(id);
+			return Ok(value);
+		}
 	}
 }
