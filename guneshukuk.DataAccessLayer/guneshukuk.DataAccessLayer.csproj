@@ -29,4 +29,10 @@
     <Folder Include="Migrations\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="guneshukuk.EntityLayer">
+      <HintPath>..\guneshukuk.EntityLayer\bin\Debug\net8.0\guneshukuk.EntityLayer.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

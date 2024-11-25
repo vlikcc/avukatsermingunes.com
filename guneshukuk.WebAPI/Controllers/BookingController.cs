@@ -26,24 +26,9 @@ namespace guneshukuk.WebAPI.Controllers
         public IActionResult GetAll()
         {
             var values = _bookingService.TGetAll();
-            List<GetBookingDto> result = new List<GetBookingDto>();
-            foreach (var value in values)
-            {
-                var date = _bookingDateService.TGetById(value.BookingDateId);
-                GetBookingDto getBookingDto = new GetBookingDto()
-              { 
-                  BookingId = value.BookingId,
-                  BookingDate = Convert.ToDateTime(date),   
-                  BookingEmail = value.BookingEmail,
-                  BookingMessage = value.BookingMessage,
-                  BookingName = value.BookingName,
-                  BookingPhone = value.BookingPhone,
-              };
-                result.Add(getBookingDto);
-            }
+           
             
-            
-            return Ok(result);
+            return Ok(values);
         }
         [HttpGet("GetBookingById")]
         public IActionResult GetBookingById(int id)

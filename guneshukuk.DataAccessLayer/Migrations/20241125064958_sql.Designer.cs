@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using guneshukuk.DataAccessLayer.Concrete;
 
@@ -11,9 +12,11 @@ using guneshukuk.DataAccessLayer.Concrete;
 namespace guneshukuk.DataAccessLayer.Migrations
 {
     [DbContext(typeof(GuneshukukContext))]
-    partial class GuneshukukContextModelSnapshot : ModelSnapshot
+    [Migration("20241125064958_sql")]
+    partial class sql
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -313,8 +316,6 @@ namespace guneshukuk.DataAccessLayer.Migrations
 
                     b.HasKey("BookingId");
 
-                    b.HasIndex("BookingDateId");
-
                     b.HasIndex("BookingTimeId");
 
                     b.ToTable("Bookings");
@@ -480,17 +481,9 @@ namespace guneshukuk.DataAccessLayer.Migrations
 
             modelBuilder.Entity("guneshukuk.EntityLayer.Entities.Booking", b =>
                 {
-                    b.HasOne("guneshukuk.EntityLayer.Entities.BookingDate", "BookingDate")
-                        .WithMany()
-                        .HasForeignKey("BookingDateId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("guneshukuk.EntityLayer.Entities.BookingTime", null)
                         .WithMany("Bookings")
                         .HasForeignKey("BookingTimeId");
-
-                    b.Navigation("BookingDate");
                 });
 
             modelBuilder.Entity("guneshukuk.EntityLayer.Entities.BookingTime", b =>

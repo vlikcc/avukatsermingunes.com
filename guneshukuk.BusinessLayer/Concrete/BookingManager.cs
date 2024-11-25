@@ -17,7 +17,10 @@ namespace guneshukuk.BusinessLayer.Concrete
             _bookingTimeDal = bookingTimeDal;
         }
 
-     
+        public List<Booking> GetAllBookingsWithDate()
+        {
+            return _bookingDal.GetAllIncluding(b => b.BookingDate);
+        }
 
         public void TAdd(Booking entity)
         {

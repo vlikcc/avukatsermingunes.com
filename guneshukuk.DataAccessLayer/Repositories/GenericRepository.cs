@@ -6,7 +6,7 @@ namespace guneshukuk.DataAccessLayer.Repositories
 {
     public class GenericRepository<T> : IGenericDal<T> where T : class
     {
-        private readonly GuneshukukContext _context;
+        public readonly GuneshukukContext _context;
         public GenericRepository(GuneshukukContext context)
         {
             _context = context;
