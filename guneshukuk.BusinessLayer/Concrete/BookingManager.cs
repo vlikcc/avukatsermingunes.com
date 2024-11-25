@@ -19,7 +19,7 @@ namespace guneshukuk.BusinessLayer.Concrete
 
         public List<Booking> GetAllBookingsWithDate()
         {
-            return _bookingDal.GetAllIncluding(b => b.BookingDate.Date);
+            return _bookingDal.GetAllIncluding(b => b.BookingDate);
         }
 
         public void TAdd(Booking entity)
