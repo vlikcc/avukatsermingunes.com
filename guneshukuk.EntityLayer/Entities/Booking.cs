@@ -15,7 +15,7 @@ namespace guneshukuk.EntityLayer.Entities
         [ForeignKey("BookingDateId")]
         public int BookingDateId { get; set; }
 
-        public BookingDate BookingDate { get; set; }
+        public BookingDate? BookingDate { get; set; }
        
        
         
