@@ -25,7 +25,7 @@ namespace guneshukuk.WebAPI.Controllers
         [HttpGet("GetAll")]
         public IActionResult GetAll()
         {
-            var values = _bookingService.TGetAll();
+            var values = _bookingService.GetAllBookingsWithDate();
            
             
             return Ok(values);
