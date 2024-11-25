@@ -35,25 +35,29 @@
 								</tr>
 							</thead>
 							<tbody>
-								@foreach (var item in Model)
+								@if(Model!=null)
 								{
-									<tr>
-										<td>@item.BookingId</td>
-										<td>@item.BookingName</td>
-										<td>@item.BookingEmail</td>
-										<td>@item.BookingPhone</td>
-										<td>@item.BookingMessage</td>
-										<td>@item.BookingDate.Date</td>
-										<td><a href="/Admin/Booking/DeleteBooking/@item.BookingId" class="btn btn-outline-danger">Sil</a></td>
-										<td><a href="/Admin/Article/Updatebooking/@item.BookingId" class="btn btn-outline-success">Güncelle</a></td>
-									</tr>
+									@foreach (var item in Model)
+									{
+										<tr>
+											<td>@item.BookingId</td>
+											<td>@item.BookingName</td>
+											<td>@item.BookingEmail</td>
+											<td>@item.BookingPhone</td>
+											<td>@item.BookingMessage</td>
+											<td>@item.BookingDate.Date</td>
+											<td><a href="/Admin/Booking/DeleteBooking/@item.BookingId" class="btn btn-outline-danger">Sil</a></td>
+											<td><a href="/Admin/Booking/Updatebooking/@item.BookingId" class="btn btn-outline-success">Güncelle</a></td>
+										</tr>
 
+									}
 								}
+								
 
 
 							</tbody>
 						</table>
-						<a href="/Admin/Article/CreateArticle/" class="btn btn-outline-primary"> Yeni Makale  Girişi</a>
+						<a href="/Admin/Booking/CreateBooking/" class="btn btn-outline-primary"> Yeni Randevu  Girişi</a>
 					</div>
 				</div>
 

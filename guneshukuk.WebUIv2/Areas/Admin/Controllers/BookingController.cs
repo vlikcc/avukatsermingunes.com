@@ -6,8 +6,9 @@ using System.Text;
 
 namespace guneshukuk.WebUIv2.Areas.Admin.Controllers
 {
-    [Authorize(Policy = "RequireAdminRole")]
     [Area("Admin")]
+    [Authorize(Policy = "RequireAdminRole")]
+   
     public class BookingController (IHttpClientFactory httpClientFactory): Controller
     {
         public IActionResult CreateBooking()
@@ -63,6 +64,17 @@ namespace guneshukuk.WebUIv2.Areas.Admin.Controllers
 
             }
             return View();
+        }
+
+        public async Task<IActionResult> DeleteBooking (int id)
+        {
+            HttpClient client = httpClientFactory.CreateClient();
+            var response = await client.DeleteAsync($"https://guneshukukwebapi.azurewebsites.net/api/Booking/DeleteBooking/{id}");
+            if (response.IsSuccessStatusCode)
+            {
+                return RedirectToAction("ListBookings");
+            }
+            return View("ListBookings");  
         }
     }
     
