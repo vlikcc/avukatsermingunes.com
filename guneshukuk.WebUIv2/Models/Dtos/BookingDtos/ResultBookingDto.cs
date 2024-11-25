@@ -1,4 +1,6 @@
-﻿namespace guneshukuk.WebUIv2.Models.Dtos.BookingDtos
+﻿using guneshukuk.EntityLayer.Entities;
+
+namespace guneshukuk.WebUIv2.Models.Dtos.BookingDtos
 {
     public class ResultBookingDto
     {
@@ -7,7 +9,7 @@
         public string BookingEmail { get; set; }
         public string BookingPhone { get; set; }
         public string BookingMessage { get; set; }
-        public int BookingDateId { get; set; }
+        public BookingDate BookingDate { get; set; }
        
     }
 }

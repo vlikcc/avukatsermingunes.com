@@ -34,7 +34,36 @@ namespace guneshukuk.WebUIv2.Areas.Admin.Controllers
             return View();
         }
 
-       
+        [HttpPost]
+        public async Task<IActionResult> UpdateBooking(UpdateBookingDto updateBookingDto)
+        {
+            HttpClient httpClient = httpClientFactory.CreateClient();
+            var jsonData = JsonConvert.SerializeObject(updateBookingDto);
+            StringContent content = new StringContent(jsonData, Encoding.UTF8, "application/json");
+            var responseMessage = await httpClient.PutAsync("https://guneshukukwebapi.azurewebsites.net/api/Booking/UpdateBooking", content);
+            if (responseMessage.IsSuccessStatusCode)
+            {
+                return RedirectToAction("ListBookings");
+            }
+            return View();
+
+        }
+
+        [HttpGet]
+
+        public async Task<IActionResult> UpdateBooking (int id)
+        {
+           HttpClient client = httpClientFactory.CreateClient();
+            var responseMessage = await client.GetAsync($"https://guneshukukwebapi.azurewebsites.net/api/Booking/GetBookingById?Id={id}");
+            if(responseMessage.IsSuccessStatusCode)
+            {
+                var jsonData = await responseMessage.Content.ReadAsStringAsync(); 
+                var value = JsonConvert.DeserializeObject(jsonData);
+                return View(value);
+
+            }
+            return View();
+        }
     }
     
 }
