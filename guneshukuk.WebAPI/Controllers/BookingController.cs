@@ -33,7 +33,7 @@ namespace guneshukuk.WebAPI.Controllers
         [HttpGet("GetBookingById")]
         public IActionResult GetBookingById(int id)
         {
-            var value = _bookingService.GetAllBookingsWithDate().Where<Booking>(b=>b.BookingId == id);
+            var value = _bookingService.GetAllBookingsWithDate().Select(b=>b.BookingDateId==id);
             return Ok(value);
         }
         [HttpPost("CreateBooking")]
