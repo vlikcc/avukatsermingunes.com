@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using System.Linq;
+using AutoMapper;
 using guneshukuk.BusinessLayer.Abstract;
 using guneshukuk.EntityLayer.Dtos.Booking;
 using guneshukuk.EntityLayer.Entities;
@@ -33,7 +34,7 @@ namespace guneshukuk.WebAPI.Controllers
         [HttpGet("GetBookingById")]
         public IActionResult GetBookingById(int id)
         {
-            var value = _bookingService.GetAllBookingsWithDate().Select(b=>b.BookingDateId==id);
+            var value = _bookingService.GetAllBookingsWithDate().Where<Booking>(b=>b.BookingDateId==id);
             return Ok(value);
         }
         [HttpPost("CreateBooking")]
