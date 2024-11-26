@@ -1,4 +1,5 @@
-﻿using guneshukuk.EntityLayer.Entities;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using guneshukuk.EntityLayer.Entities;
 
 namespace guneshukuk.WebUIv2.Areas.Admin.Models.Dtos.BookingDtos
 {
@@ -9,6 +10,10 @@ namespace guneshukuk.WebUIv2.Areas.Admin.Models.Dtos.BookingDtos
         public string BookingEmail { get; set; }
         public string BookingPhone { get; set; }
         public string BookingMessage { get; set; }
-        public BookingDate BookingDate { get; set; }
+
+        [ForeignKey("BookingDateId")]
+        public int BookingDateId { get; set; }
+
+        public BookingDate? BookingDate { get; set; }
     }
 }
