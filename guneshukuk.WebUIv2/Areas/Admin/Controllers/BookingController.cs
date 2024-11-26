@@ -41,7 +41,7 @@ namespace guneshukuk.WebUIv2.Areas.Admin.Controllers
             HttpClient httpClient = httpClientFactory.CreateClient();
             var jsonData = JsonConvert.SerializeObject(updateBookingDto);
             StringContent content = new StringContent(jsonData, Encoding.UTF8, "application/json");
-            var responseMessage = await httpClient.PutAsync("https://guneshukukwebapi.azurewebsites.net/api/Booking/UpdateBooking", content);
+            var responseMessage = await httpClient.PutAsync("https://guneshukukwebapi1.azurewebsites.net/api/Booking/UpdateBooking", content);
             if (responseMessage.IsSuccessStatusCode)
             {
                 return RedirectToAction("ListBookings");
@@ -55,7 +55,7 @@ namespace guneshukuk.WebUIv2.Areas.Admin.Controllers
         public async Task<IActionResult> UpdateBooking (int id)
         {
            HttpClient client = httpClientFactory.CreateClient();
-            var responseMessage = await client.GetAsync($"https://guneshukukwebapi.azurewebsites.net/api/Booking/GetBookingById?Id={id}");
+            var responseMessage = await client.GetAsync($"https://guneshukukwebapi1.azurewebsites.net/api/Booking/GetBookingById?Id={id}");
             if(responseMessage.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync(); 
@@ -69,7 +69,7 @@ namespace guneshukuk.WebUIv2.Areas.Admin.Controllers
         public async Task<IActionResult> DeleteBooking (int id)
         {
             HttpClient client = httpClientFactory.CreateClient();
-            var response = await client.DeleteAsync($"https://guneshukukwebapi.azurewebsites.net/api/Booking/DeleteBooking/{id}");
+            var response = await client.DeleteAsync($"https://guneshukukwebapi1.azurewebsites.net/api/Booking/DeleteBooking/{id}");
             if (response.IsSuccessStatusCode)
             {
                 return RedirectToAction("ListBookings");
