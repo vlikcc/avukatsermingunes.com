@@ -59,8 +59,8 @@ namespace guneshukuk.WebUIv2.Areas.Admin.Controllers
             if(responseMessage.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync(); 
-                var value = JsonConvert.DeserializeObject(jsonData);
-                return View(value);
+                List<UpdateBookingDto> value = JsonConvert.DeserializeObject<List<UpdateBookingDto>>(jsonData);
+                return View(value[0]);
 
             }
             return View();

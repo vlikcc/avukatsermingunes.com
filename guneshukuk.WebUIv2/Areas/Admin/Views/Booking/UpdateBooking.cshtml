@@ -14,7 +14,7 @@
 
 						<div class="card-body">
 							@Html.TextBoxFor(x => x.BookingId, new { @hidden = "true", @readonly = "readonly" })
-
+							@Html.TextBoxFor(x => x.BookingDate.BookingDateId, new { @hidden = "true", @readonly = "readonly" })
 							<div class="form-group">
 								<label for="ArticleTitle">Adı Soyadı</label>
 								@Html.TextBoxFor(x => x.BookingName, new { @class = "form-control" })
