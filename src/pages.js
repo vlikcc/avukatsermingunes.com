@@ -88,8 +88,9 @@ export function home(lang) {
         <a class="link-quiet" href="${paths.areas[lang]}">${de ? 'Rechtsgebiete ansehen' : 'Çalışma alanlarını inceleyin'}</a>
       </div>
     </div>
-    <figure class="hero-figure">
-      <img src="/img/logo-720.png" width="480" height="433" alt="${de ? 'Logo von Avukat Sermin Güneş Keçeci' : 'Av. Sermin Güneş Keçeci logosu'}" fetchpriority="high">
+    <figure class="hero-figure portrait portrait-arch">
+      <img src="/img/portre-ana.jpg" width="689" height="900" alt="${de ? 'Avukat (Türkei) Sermin Güneş Keçeci' : 'Av. Sermin Güneş Keçeci'}" fetchpriority="high">
+      <img class="hero-badge" src="/img/logo-160.png" width="160" height="144" alt="">
     </figure>
   </div>
   <div class="wrap">${timelineBlock(lang, 'timeline-hero')}</div>
@@ -259,7 +260,7 @@ export function about(lang) {
 
 <section class="section section-tight">
   <div class="wrap split">
-    <figure class="about-figure"><img src="/img/logo-720.png" width="360" height="325" alt="" loading="lazy"></figure>
+    <figure class="about-figure portrait"><img src="/img/portre-hakkimda.jpg" width="591" height="514" alt="${de ? 'Avukat (Türkei) Sermin Güneş Keçeci' : 'Av. Sermin Güneş Keçeci'}" loading="lazy"></figure>
     <div class="prose">
       ${
         de
@@ -586,9 +587,12 @@ export function contactPage(lang) {
     : { name: 'Ad soyad', email: 'E-posta', phone: 'Telefon (isteğe bağlı)', subject: 'Konu', message: 'Mesajınız', send: 'Mesajı gönder' };
   const body = `
 <header class="page-head">
-  <div class="wrap">
-    <h1>${de ? 'Kontakt' : 'İletişim'}</h1>
-    <p class="page-lead">${de ? 'Schreiben Sie eine Nachricht oder buchen Sie direkt einen Gesprächstermin.' : 'Mesaj gönderebilir veya doğrudan görüşme randevusu alabilirsiniz.'}</p>
+  <div class="wrap page-head-grid">
+    <div>
+      <h1>${de ? 'Kontakt' : 'İletişim'}</h1>
+      <p class="page-lead">${de ? 'Schreiben Sie eine Nachricht oder buchen Sie direkt einen Gesprächstermin.' : 'Mesaj gönderebilir veya doğrudan görüşme randevusu alabilirsiniz.'}</p>
+    </div>
+    <figure class="portrait page-head-photo"><img src="/img/portre-iletisim.jpg" width="562" height="800" alt="${de ? 'Avukat (Türkei) Sermin Güneş Keçeci an ihrem Schreibtisch' : 'Av. Sermin Güneş Keçeci çalışma masasında'}"></figure>
   </div>
 </header>
 <section class="section section-tight">
@@ -667,13 +671,16 @@ export function bookingPage(lang) {
   const tzLabel = de ? 'deutscher Zeit' : 'Almanya saatine';
   const body = `
 <header class="page-head">
-  <div class="wrap">
-    <h1>${de ? 'Termin buchen' : 'Randevu al'}</h1>
-    <p class="page-lead">${
-      de
-        ? `Gespräche dauern etwa ${B.durationMinutes} Minuten. Ihre Anfrage wird geprüft und per E-Mail bestätigt.`
-        : `Görüşmeler yaklaşık ${B.durationMinutes} dakika sürer. Randevu talebiniz incelendikten sonra e-posta ile onaylanır.`
-    }</p>
+  <div class="wrap page-head-grid">
+    <div>
+      <h1>${de ? 'Termin buchen' : 'Randevu al'}</h1>
+      <p class="page-lead">${
+        de
+          ? `Gespräche dauern etwa ${B.durationMinutes} Minuten. Ihre Anfrage wird geprüft und per E-Mail bestätigt.`
+          : `Görüşmeler yaklaşık ${B.durationMinutes} dakika sürer. Randevu talebiniz incelendikten sonra e-posta ile onaylanır.`
+      }</p>
+    </div>
+    <figure class="portrait page-head-photo page-head-photo-sm"><img src="/img/portre-randevu.jpg" width="268" height="503" alt="${de ? 'Avukat (Türkei) Sermin Güneş Keçeci' : 'Av. Sermin Güneş Keçeci'}"></figure>
   </div>
 </header>
 <section class="section section-tight">

@@ -44,7 +44,7 @@ function jsonLd(lang) {
     '@type': 'Attorney',
     name: `${lang === 'de' ? L.titleDe : L.titleTr} ${L.name}`,
     url: absUrl(paths.home[lang]),
-    image: absUrl('/img/logo-720.png'),
+    image: absUrl('/img/portre-ana.jpg'),
     areaServed: ['TR', 'DE'],
     knowsLanguage: ['tr', 'de'],
     address: {
@@ -116,7 +116,7 @@ ${trPath ? `<link rel="alternate" hreflang="x-default" href="${h(absUrl(trPath))
 <meta property="og:title" content="${h(fullTitle)}">
 <meta property="og:description" content="${h(o.description)}">
 <meta property="og:url" content="${h(absUrl(o.path))}">
-<meta property="og:image" content="${h(absUrl('/img/logo-720.png'))}">
+<meta property="og:image" content="${h(absUrl('/img/portre-ana.jpg'))}">
 <meta property="og:locale" content="${s.locale}">
 <meta name="theme-color" content="#163D32">
 <link rel="icon" type="image/png" href="/img/favicon-64.png">

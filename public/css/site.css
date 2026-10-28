@@ -530,3 +530,32 @@ code { font-size: 0.9em; background: var(--beige); padding: 0.1em 0.35em; border
 /* Cormorant'ın eski stil rakamları yerine hizalı rakamlar */
 .steps li::before, .bk-num, .tl-date, .cal-month { font-variant-numeric: lining-nums; }
 .booking-done, .bk-step { scroll-margin-top: 100px; }
+
+/* --------------------------------------------------------------------------
+   Portreler: ince altın çerçeve, fotoğrafın arkasında kaydırılmış
+   -------------------------------------------------------------------------- */
+.portrait { position: relative; margin: 0; isolation: isolate; }
+.portrait > img:first-child { display: block; width: 100%; height: auto; border-radius: var(--radius); background: var(--beige); }
+.portrait::after { content: ''; position: absolute; inset: 16px -16px -16px 16px; border: 1px solid var(--gold); border-radius: var(--radius); z-index: -1; }
+
+/* Ana sayfa: kemerli portre ve logo rozeti */
+.hero-figure { width: min(100%, 420px); justify-self: end; margin-right: 16px; }
+.portrait-arch > img:first-child, .portrait-arch::after { border-radius: 999px 999px var(--radius) var(--radius); }
+.portrait-arch > img:first-child { aspect-ratio: 689 / 900; object-fit: cover; }
+.hero-badge { position: absolute; left: -36px; bottom: 40px; width: 104px; height: auto; padding: 6px; background: var(--paper); border-radius: 50%; box-shadow: 0 10px 30px -12px rgba(22, 61, 50, 0.35); }
+
+/* Hakkımda */
+.about-figure { max-width: 380px; margin-right: 16px; }
+
+/* İç sayfa başlığında fotoğraf */
+.page-head-grid { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: clamp(2rem, 6vw, 5rem); align-items: center; }
+.page-head-photo { width: clamp(200px, 24vw, 300px); margin: 0 16px -1px 0; }
+.page-head-photo-sm { width: clamp(150px, 15vw, 200px); }
+
+@media (max-width: 860px) {
+  .hero-figure { order: -1; justify-self: start; width: min(72%, 300px); }
+  .hero-badge { width: 76px; left: -12px; bottom: 24px; }
+  .page-head-grid { grid-template-columns: 1fr; }
+  .page-head-photo { width: min(60%, 240px); order: -1; }
+  .page-head-photo-sm { display: none; }
+}
