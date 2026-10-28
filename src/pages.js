@@ -680,7 +680,8 @@ export function blogPage(lang) {
   });
 }
 
-export function postPage(lang, p) {
+// preview: yönetim panelindeki önizleme (taslaklar için de çalışır, arama motorlarına kapalı).
+export function postPage(lang, p, { preview = false } = {}) {
   const T = pick(lang);
   const body = `
 <article class="post">
@@ -714,7 +715,8 @@ ${bookingBand(lang)}`;
       return twin ? postPath(l, twin) : paths.blog[l];
     }),
     active: 'blog',
-    body,
+    noindex: preview,
+    body: preview ? `<p class="preview-bar">Önizleme${p.status === 'draft' ? ' — bu yazı taslak, sitede görünmüyor' : ''}. <a href="/yonetim/yazilar/${p.id}">Düzenlemeye dön</a></p>${body}` : body,
   });
 }
 

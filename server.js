@@ -12,7 +12,7 @@ const config = (await import('./site.config.js')).default;
 const { paths, LANGS, langOf } = await import('./src/i18n.js');
 const pages = await import('./src/pages.js');
 const { areas, findArea } = await import('./src/content/areas.js');
-const { findPost, posts } = await import('./src/blog.js');
+const { findPost, posts, getPost, savePost, deletePost } = await import('./src/blog.js');
 const { db, purgeOld } = await import('./src/db.js');
 const booking = await import('./src/booking.js');
 const mail = await import('./src/mail.js');
@@ -273,10 +273,32 @@ async function handleAdmin(req, res, url) {
   }
   if (!session) return send(res, 200, admin.loginPage(), undefined, noStore);
 
+  const postMatch = p.match(/^\/yonetim\/yazilar\/(yeni|\d+)(\/sil|\/onizleme)?$/);
+  const postId = postMatch && postMatch[1] !== 'yeni' ? Number(postMatch[1]) : null;
+  const post = postId ? getPost(postId) : null;
+  if ((postId || postMatch?.[2]) && !post) return send(res, 404, 'Yazı bulunamadı', 'text/plain; charset=utf-8');
+
   if (req.method === 'POST') {
-    const form = new URLSearchParams(await readBody(req, 5000));
+    // Blog yazıları uzun olabileceği için daha geniş bir sınır.
+    const form = new URLSearchParams(await readBody(req, postMatch ? 300_000 : 5000));
     if (form.get('csrf') !== session.csrf) return send(res, 403, 'Geçersiz istek', 'text/plain; charset=utf-8');
     if (p === '/yonetim/cikis') return redirect(res, '/yonetim', { 'Set-Cookie': admin.clearSessionCookie });
+    if (p === '/yonetim/sifre') {
+      if (rateLimited(req, 'login', 8, 900_000)) return send(res, 429, admin.passwordPage(session, { error: 'Çok fazla deneme. Lütfen 15 dakika sonra tekrar deneyin.' }), undefined, noStore);
+      const error = admin.changePassword(form.get('current') || '', form.get('next') || '', form.get('repeat') || '');
+      if (error) return send(res, 422, admin.passwordPage(session, { error }), undefined, noStore);
+      // Eski oturumlar geçersiz olduğu için bu cihaza yeni oturum verilir.
+      return redirect(res, '/yonetim/sifre?degisti=1', { 'Set-Cookie': admin.newSessionCookie(IS_PROD) });
+    }
+    if (postMatch?.[2] === '/sil') {
+      deletePost(postId);
+      return redirect(res, '/yonetim/yazilar');
+    }
+    if (postMatch && !postMatch[2]) {
+      const r = savePost(postId, Object.fromEntries(form));
+      if (r.errors) return send(res, 422, admin.postEditor(session, post, r), undefined, noStore);
+      return redirect(res, `/yonetim/yazilar/${r.id}?kaydedildi=1`);
+    }
     const ap = p.match(/^\/yonetim\/randevu\/(\d+)$/);
     if (ap) {
       admin.updateAppointment(Number(ap[1]), form.get('status'), clean(form.get('admin_note'), 500));
@@ -297,6 +319,10 @@ async function handleAdmin(req, res, url) {
   if (p === '/yonetim') return send(res, 200, admin.dashboard(session, url.searchParams), undefined, noStore);
   if (p === '/yonetim/takvim') return send(res, 200, admin.blockedPage(session), undefined, noStore);
   if (p === '/yonetim/mesajlar') return send(res, 200, admin.messagesPage(session), undefined, noStore);
+  if (p === '/yonetim/sifre') return send(res, 200, admin.passwordPage(session, { ok: url.searchParams.has('degisti') }), undefined, noStore);
+  if (p === '/yonetim/yazilar') return send(res, 200, admin.postsPage(session, url.searchParams), undefined, noStore);
+  if (postMatch?.[2] === '/onizleme') return send(res, 200, pages.postPage(post.lang, post, { preview: true }), undefined, noStore);
+  if (postMatch && !postMatch[2]) return send(res, 200, admin.postEditor(session, post, { saved: url.searchParams.has('kaydedildi') }), undefined, noStore);
   return redirect(res, '/yonetim');
 }
 
@@ -374,7 +400,7 @@ server.listen(PORT, () => {
   if (!config.contact.email) missing.push('contact.email');
   if (!config.contact.phoneDe) missing.push('contact.phoneDe');
   if (!config.insurance.insurer) missing.push('insurance');
-  if (!process.env.ADMIN_PASSWORD) missing.push('ADMIN_PASSWORD (.env)');
+  if (!admin.passwordEnabled()) missing.push('ADMIN_PASSWORD (.env)');
   if (!process.env.SMTP_HOST) missing.push('SMTP (.env)');
   if (missing.length) console.warn('Eksik yapılandırma:', missing.join(', '));
 });

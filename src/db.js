@@ -51,7 +51,32 @@ db.exec(`
     read       INTEGER NOT NULL DEFAULT 0,
     created_at TEXT NOT NULL DEFAULT (strftime('%Y-%m-%dT%H:%M:%fZ','now'))
   );
+
+  -- Blog yazıları (yönetim panelinden yazılır).
+  CREATE TABLE IF NOT EXISTS posts (
+    id          INTEGER PRIMARY KEY AUTOINCREMENT,
+    lang        TEXT NOT NULL,             -- tr | de | en | nl
+    slug        TEXT NOT NULL,
+    title       TEXT NOT NULL,
+    description TEXT NOT NULL DEFAULT '',
+    body        TEXT NOT NULL,             -- Markdown
+    date        TEXT NOT NULL,             -- YYYY-MM-DD, yayım tarihi
+    pair        TEXT,                      -- farklı dillerdeki çevirileri bağlayan ortak anahtar
+    status      TEXT NOT NULL DEFAULT 'draft', -- draft | published
+    created_at  TEXT NOT NULL DEFAULT (strftime('%Y-%m-%dT%H:%M:%fZ','now')),
+    updated_at  TEXT NOT NULL DEFAULT (strftime('%Y-%m-%dT%H:%M:%fZ','now')),
+    UNIQUE (lang, slug)
+  );
+
+  -- Basit ayarlar (ör. yönetim şifresinin özeti).
+  CREATE TABLE IF NOT EXISTS settings (
+    key   TEXT PRIMARY KEY,
+    value TEXT NOT NULL
+  );
 `);
+
+export const getSetting = (key) => db.prepare('SELECT value FROM settings WHERE key = ?').get(key)?.value ?? null;
+export const setSetting = (key, value) => db.prepare('INSERT OR REPLACE INTO settings (key, value) VALUES (?, ?)').run(key, value);
 
 // Saklama süresi dolan kayıtları siler (DSGVO / KVKK).
 export function purgeOld(days) {

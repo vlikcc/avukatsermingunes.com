@@ -1,13 +1,16 @@
 // Yönetim paneli: /yonetim
-// Giriş şifresi ADMIN_PASSWORD ortam değişkeninden okunur.
+// İlk giriş şifresi ADMIN_PASSWORD ortam değişkeninden okunur. Şifre panelden
+// değiştirildiğinde özeti (scrypt) veritabanına yazılır ve bundan sonra o geçerlidir.
 
 import crypto from 'node:crypto';
 import config from '../site.config.js';
-import { db } from './db.js';
+import { db, getSetting, setSetting } from './db.js';
 import { h } from './layout.js';
 import { formatWhen, typeLabel, localDay } from './booking.js';
 import { topicLabel, bookingStatusChanged } from './mail.js';
 import { ASSET_VERSION } from './layout.js';
+import { LANGS, langNames, paths } from './i18n.js';
+import { allPosts, slugify } from './blog.js';
 
 const SECRET = process.env.SESSION_SECRET || crypto.randomBytes(32).toString('hex');
 const SESSION_HOURS = 8;
@@ -19,25 +22,56 @@ const safeEq = (a, b) => {
   return x.length === y.length && crypto.timingSafeEqual(x, y);
 };
 
+/* ------------------------------ şifre ------------------------------ */
+
+const storedHash = () => getSetting('admin_password');
+
+function hashPassword(pw) {
+  const salt = crypto.randomBytes(16);
+  return `scrypt$${salt.toString('hex')}$${crypto.scryptSync(pw, salt, 32).toString('hex')}`;
+}
+
+export const passwordEnabled = () => Boolean(storedHash() || process.env.ADMIN_PASSWORD);
+
+export function checkPassword(pw) {
+  const stored = storedHash();
+  if (stored) {
+    const [, salt, hash] = stored.split('$');
+    return crypto.timingSafeEqual(crypto.scryptSync(String(pw), Buffer.from(salt, 'hex'), 32), Buffer.from(hash, 'hex'));
+  }
+  const expected = process.env.ADMIN_PASSWORD;
+  if (!expected) return false;
+  return safeEq(sign('pw:' + pw), sign('pw:' + expected));
+}
+
+/** Şifreyi değiştirir. Hata varsa açıklamasını, başarılıysa null döner. */
+export function changePassword(current, next, repeat) {
+  if (!checkPassword(current)) return 'Mevcut şifre hatalı.';
+  if (String(next).length < 10) return 'Yeni şifre en az 10 karakter olmalı.';
+  if (next !== repeat) return 'Yeni şifreler birbiriyle aynı değil.';
+  if (next === current) return 'Yeni şifre mevcut şifreden farklı olmalı.';
+  setSetting('admin_password', hashPassword(next));
+  return null;
+}
+
+/* ------------------------------ oturum ------------------------------ */
+
+// Oturum imzasına şifrenin bir parmak izi katılır: şifre değişince eski oturumlar geçersiz olur.
+const pwStamp = () => sign('stamp:' + (storedHash() || process.env.ADMIN_PASSWORD || '')).slice(0, 12);
+
 export function readSession(req) {
   const m = (req.headers.cookie || '').match(/(?:^|;\s*)sid=([^;]+)/);
   if (!m) return null;
   const [exp, sig] = m[1].split('.');
-  if (!exp || !sig || !safeEq(sign(exp), sig) || Date.now() > Number(exp)) return null;
+  if (!exp || !sig || !safeEq(sign(exp + '|' + pwStamp()), sig) || Date.now() > Number(exp)) return null;
   return { id: m[1], csrf: sign('csrf:' + m[1]) };
 }
 
 export function newSessionCookie(secure) {
   const exp = String(Date.now() + SESSION_HOURS * 3600_000);
-  return `sid=${exp}.${sign(exp)}; Path=/yonetim; HttpOnly; SameSite=Strict; Max-Age=${SESSION_HOURS * 3600}${secure ? '; Secure' : ''}`;
+  return `sid=${exp}.${sign(exp + '|' + pwStamp())}; Path=/yonetim; HttpOnly; SameSite=Strict; Max-Age=${SESSION_HOURS * 3600}${secure ? '; Secure' : ''}`;
 }
 export const clearSessionCookie = 'sid=; Path=/yonetim; HttpOnly; SameSite=Strict; Max-Age=0';
-
-export function checkPassword(pw) {
-  const expected = process.env.ADMIN_PASSWORD;
-  if (!expected) return false;
-  return safeEq(sign('pw:' + pw), sign('pw:' + expected));
-}
 
 const STATUS = {
   pending: 'Onay bekliyor',
@@ -58,7 +92,7 @@ function shell(title, body, session) {
   <a class="brand" href="/yonetim"><img src="/img/logo-160.png" width="40" height="36" alt=""><span class="brand-name">Yönetim</span></a>
   ${
     session
-      ? `<nav class="admin-nav"><a href="/yonetim">Randevular</a><a href="/yonetim/takvim">Kapalı günler</a><a href="/yonetim/mesajlar">Mesajlar${unreadBadge()}</a><a href="/" target="_blank" rel="noopener">Siteyi aç</a>
+      ? `<nav class="admin-nav"><a href="/yonetim">Randevular</a><a href="/yonetim/takvim">Kapalı günler</a><a href="/yonetim/mesajlar">Mesajlar${unreadBadge()}</a><a href="/yonetim/yazilar">Yazılar</a><a href="/yonetim/sifre">Şifre</a><a href="/" target="_blank" rel="noopener">Siteyi aç</a>
       <form method="post" action="/yonetim/cikis"><input type="hidden" name="csrf" value="${session.csrf}"><button class="link-btn" type="submit">Çıkış</button></form></nav>`
       : ''
   }
@@ -73,7 +107,7 @@ function unreadBadge() {
 }
 
 export function loginPage(error) {
-  const enabled = Boolean(process.env.ADMIN_PASSWORD);
+  const enabled = passwordEnabled();
   return shell(
     'Giriş',
     `<div class="admin-login">
@@ -247,3 +281,164 @@ export function messagesPage(session) {
     session,
   );
 }
+
+/* ------------------------------ şifre sayfası ------------------------------ */
+
+export function passwordPage(session, { error, ok } = {}) {
+  return shell(
+    'Şifre',
+    `<div class="admin-title"><h1>Şifre değiştir</h1>
+      <p class="muted">Yeni şifre en az 10 karakter olmalı. Şifre değişince diğer cihazlardaki oturumlar kapanır.</p></div>
+    <form method="post" action="/yonetim/sifre" class="form admin-narrow">
+      <input type="hidden" name="csrf" value="${session.csrf}">
+      ${error ? `<p class="form-error" role="alert">${h(error)}</p>` : ''}
+      ${ok ? '<p class="form-ok" role="status">Şifreniz değiştirildi.</p>' : ''}
+      <div class="field"><label for="pw-current">Mevcut şifre</label><input id="pw-current" name="current" type="password" required autocomplete="current-password"></div>
+      <div class="field"><label for="pw-new">Yeni şifre</label><input id="pw-new" name="next" type="password" required minlength="10" autocomplete="new-password"></div>
+      <div class="field"><label for="pw-repeat">Yeni şifre (tekrar)</label><input id="pw-repeat" name="repeat" type="password" required minlength="10" autocomplete="new-password"></div>
+      <button class="btn" type="submit">Şifreyi değiştir</button>
+    </form>`,
+    session,
+  );
+}
+
+/* ------------------------------ yazılar ------------------------------ */
+
+const POST_STATUS = { draft: 'Taslak', published: 'Yayında' };
+const fmtDay = (d) => new Date(d + 'T12:00:00Z').toLocaleDateString('tr-TR', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
+const publicUrl = (p) => `${paths.blog[p.lang]}/${p.slug}`;
+const siblings = (p, list) => (p.pair ? list.filter((x) => x.pair === p.pair && x.id !== p.id) : []);
+
+export function postsPage(session, query) {
+  const all = allPosts();
+  const filter = LANGS.includes(query.get('dil')) ? query.get('dil') : 'all';
+  const rows = filter === 'all' ? all : all.filter((p) => p.lang === filter);
+  const count = (l) => all.filter((p) => p.lang === l).length;
+  const tabs = [['all', `Tümü (${all.length})`], ...LANGS.map((l) => [l, `${langNames[l]} (${count(l)})`])]
+    .map(([k, label]) => `<a href="/yonetim/yazilar${k === 'all' ? '' : `?dil=${k}`}"${k === filter ? ' aria-current="page"' : ''}>${h(label)}</a>`)
+    .join('');
+
+  const list = rows.length
+    ? rows
+        .map((p) => {
+          const tr = siblings(p, all);
+          return `<article class="appt post-row post-${p.status}">
+          <div class="appt-main">
+            <p class="appt-when"><a href="/yonetim/yazilar/${p.id}">${h(p.title)}</a></p>
+            <p class="appt-meta"><span class="lang-tag">${p.lang.toUpperCase()}</span> ${h(fmtDay(p.date))} · <span class="status status-${p.status}">${POST_STATUS[p.status]}</span>${
+              tr.length ? ` · Çevirileri: ${tr.map((x) => `<a href="/yonetim/yazilar/${x.id}">${x.lang.toUpperCase()}</a>`).join(', ')}` : ''
+            }</p>
+            ${p.description ? `<p>${h(p.description)}</p>` : ''}
+          </div>
+          <div class="appt-side post-row-actions">
+            <a class="btn btn-small" href="/yonetim/yazilar/${p.id}">Düzenle</a>
+            ${
+              p.status === 'published'
+                ? `<a class="btn btn-small btn-outline" href="${publicUrl(p)}" target="_blank" rel="noopener">Sitede gör</a>`
+                : `<a class="btn btn-small btn-outline" href="/yonetim/yazilar/${p.id}/onizleme" target="_blank" rel="noopener">Önizle</a>`
+            }
+            <form method="post" action="/yonetim/yazilar/${p.id}/sil"><input type="hidden" name="csrf" value="${session.csrf}">
+              <button class="link-btn danger" data-confirm="“${h(p.title)}” kalıcı olarak silinsin mi?">Sil</button></form>
+          </div>
+        </article>`;
+        })
+        .join('')
+    : '<p class="empty">Bu görünümde yazı bulunmuyor.</p>';
+
+  return shell(
+    'Yazılar',
+    `<div class="admin-title admin-title-row"><div><h1>Yazılar</h1>
+      <p class="muted">Sitedeki “Hukuki Yayınlar” bölümünde görünen blog yazıları. Taslaklar sitede görünmez.</p></div>
+      <a class="btn" href="/yonetim/yazilar/yeni">Yeni yazı</a></div>
+    <nav class="admin-tabs">${tabs}</nav>
+    <div class="appt-list">${list}</div>`,
+    session,
+  );
+}
+
+/**
+ * Yazı düzenleme formu.
+ * @param {object|null} post   Kayıtlı yazı (yeni yazıda null)
+ * @param {object} [o]
+ * @param {object} [o.values]  Hatalı gönderimde formun değerleri
+ * @param {object} [o.errors]
+ * @param {boolean} [o.saved]
+ */
+export function postEditor(session, post, { values, errors = {}, saved } = {}) {
+  const all = allPosts();
+  const today = new Date().toLocaleDateString('en-CA', { timeZone: config.booking.timezone });
+  const v = values || post || { lang: 'tr', title: '', slug: '', description: '', body: '', date: today, status: 'draft' };
+  const linked = values ? Number(values.translationOf) || null : post ? siblings(post, all)[0]?.id ?? null : null;
+  const others = all.filter((p) => !post || p.id !== post.id);
+  const err = (k) => (errors[k] ? `<p class="form-error" id="e-${k}">${h(errors[k])}</p>` : '');
+  const inv = (k) => (errors[k] ? ` aria-invalid="true" aria-describedby="e-${k}"` : '');
+  const action = post ? `/yonetim/yazilar/${post.id}` : '/yonetim/yazilar/yeni';
+
+  return shell(
+    post ? 'Yazıyı düzenle' : 'Yeni yazı',
+    `<p class="admin-back"><a href="/yonetim/yazilar">← Yazılar</a></p>
+    <div class="admin-title"><h1>${post ? 'Yazıyı düzenle' : 'Yeni yazı'}</h1></div>
+    ${saved ? '<p class="form-ok" role="status">Kaydedildi.</p>' : ''}
+    ${Object.keys(errors).length ? '<p class="form-error" role="alert">Yazı kaydedilmedi. Lütfen işaretli alanları düzeltin.</p>' : ''}
+    <form method="post" action="${action}" class="form post-editor">
+      <input type="hidden" name="csrf" value="${session.csrf}">
+      <div class="post-editor-main">
+        <div class="field"><label for="p-title">Başlık</label>
+          <input id="p-title" name="title" value="${h(v.title)}" required maxlength="200"${inv('title')}>${err('title')}</div>
+        <div class="field"><label for="p-body">Metin</label>
+          <textarea id="p-body" name="body" rows="26" required${inv('body')}>${h(v.body)}</textarea>${err('body')}
+          <details class="md-help"><summary>Biçimlendirme yardımı</summary>
+            <ul>
+              <li>Paragraflar arasında bir boş satır bırakın.</li>
+              <li><code>## Ara başlık</code>, <code>### Küçük ara başlık</code></li>
+              <li><code>**kalın**</code>, <code>*italik*</code></li>
+              <li>Madde işaretli liste: satır başında <code>- </code>; numaralı liste: <code>1. </code></li>
+              <li>Bağlantı: <code>[görünen metin](https://adres.com)</code></li>
+              <li>Alıntı: satır başında <code>&gt; </code></li>
+            </ul>
+          </details>
+        </div>
+      </div>
+      <aside class="post-editor-side">
+        <fieldset class="field">
+          <legend>Durum</legend>
+          <label class="choice-inline"><input type="radio" name="status" value="draft"${v.status !== 'published' ? ' checked' : ''}> Taslak</label>
+          <label class="choice-inline"><input type="radio" name="status" value="published"${v.status === 'published' ? ' checked' : ''}> Yayında</label>
+        </fieldset>
+        <div class="field"><label for="p-lang">Dil</label>
+          <select id="p-lang" name="lang">${LANGS.map((l) => `<option value="${l}"${v.lang === l ? ' selected' : ''}>${h(langNames[l])}</option>`).join('')}</select></div>
+        <div class="field"><label for="p-date">Yayım tarihi</label>
+          <input id="p-date" name="date" type="date" value="${h(v.date)}" required></div>
+        <div class="field"><label for="p-slug">Adres</label>
+          <input id="p-slug" name="slug" value="${h(v.slug)}" maxlength="80" placeholder="${h(slugify(v.title) || 'baslik-kendiliginden')}"${inv('slug')}>${err('slug')}
+          <p class="hint">Boş bırakılırsa başlıktan üretilir. Yayındaki bir yazının adresini değiştirmek eski bağlantıları bozar.${
+            post ? `<br><code>${h(publicUrl(post))}</code>` : ''
+          }</p></div>
+        <div class="field"><label for="p-desc">Kısa açıklama</label>
+          <textarea id="p-desc" name="description" rows="3" maxlength="300">${h(v.description)}</textarea>
+          <p class="hint">Yazı listesinde ve arama motoru sonuçlarında görünür (en fazla 300 karakter).</p></div>
+        <div class="field"><label for="p-pair">Çevirisi olduğu yazı</label>
+          <select id="p-pair" name="translationOf"><option value="">Yok</option>${others
+            .map((p) => `<option value="${p.id}"${linked === p.id ? ' selected' : ''}>[${p.lang.toUpperCase()}] ${h(p.title)}</option>`)
+            .join('')}</select>
+          <p class="hint">Aynı yazının başka dildeki hâlini seçerseniz, sitedeki dil seçici iki yazıyı birbirine bağlar.</p></div>
+        <button class="btn" type="submit">Kaydet</button>
+        ${
+          post
+            ? `<p class="post-editor-links"><a href="/yonetim/yazilar/${post.id}/onizleme" target="_blank" rel="noopener">Önizle</a>${
+                post.status === 'published' ? ` · <a href="${publicUrl(post)}" target="_blank" rel="noopener">Sitede gör</a>` : ''
+              }</p>`
+            : ''
+        }
+      </aside>
+    </form>
+    ${
+      post
+        ? `<form method="post" action="/yonetim/yazilar/${post.id}/sil" class="post-delete"><input type="hidden" name="csrf" value="${session.csrf}">
+        <button class="link-btn danger" data-confirm="Bu yazı kalıcı olarak silinsin mi?">Yazıyı sil</button></form>`
+        : ''
+    }`,
+    session,
+  );
+}
+

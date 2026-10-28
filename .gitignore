@@ -5,3 +5,4 @@ data/
 .env.production
 deploy.zip
 .claude/
+.env.github

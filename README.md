@@ -34,9 +34,9 @@ npm start
 | `src/content/crossborder.js` | Türkiye–Almanya başlıkları ve mesleki değerler |
 | `src/pages.js` | Sayfa şablonları |
 | `src/legal.js` | Impressum, gizlilik/KVKK ve çerez metinleri |
-| `content/posts/{tr,de,en,nl}` | Hukuki yayınlar (Markdown) |
+| `content/posts/{tr,de,en,nl}` | İlk kurulumda veritabanına aktarılan örnek yazılar (Markdown) |
 | `public/` | CSS, JavaScript, logo, yazı tipleri |
-| `data/site.db` | Randevular ve mesajlar (yedekleyin; paylaşmayın) |
+| `data/site.db` | Randevular, mesajlar, blog yazıları ve yönetim şifresi (yedekleyin; paylaşmayın) |
 
 ## Randevu sistemi
 
@@ -60,23 +60,27 @@ Randevu ve mesaj kayıtları, `privacy.retentionDays` (varsayılan 180 gün) son
 
 SMTP tanımlı değilse sistem çalışmaya devam eder; talepler yalnızca yönetim panelinde görünür.
 
-## Yeni hukuki yayın eklemek
+## Blog (Hukuki Yayınlar)
 
-`content/posts/tr/` (veya `de/`, `en/`, `nl/`) içine yeni bir `.md` dosyası ekleyin:
+Yazılar yönetim panelindeki **Yazılar** sayfasından yazılır, düzenlenir ve silinir; veritabanında (`data/site.db`) saklanır.
 
+- **Durum:** “Taslak” yazılar sitede görünmez, “Yayında” olanlar dilin yayınlar sayfasında listelenir. Taslaklar **Önizle** bağlantısıyla görülebilir.
+- **Dil:** Her yazı tek bir dildedir (Türkçe, Almanca, İngilizce, Hollandaca).
+- **Çevirisi olduğu yazı:** Aynı yazının başka dildeki hâli seçilirse sitedeki dil seçici bu yazıları birbirine bağlar.
+- **Adres:** Boş bırakılırsa başlıktan üretilir. Yayındaki bir yazının adresini değiştirmek eski bağlantıları bozar.
+- **Metin biçimi:** `##` ara başlık, `-` liste, `**kalın**`, `*italik*`, `[bağlantı](https://...)`. Editördeki “Biçimlendirme yardımı” bölümünde özet vardır.
+
+`content/posts/` klasöründeki Markdown dosyaları yalnızca ilk çalıştırmada bir kez veritabanına aktarılır; sonraki değişiklikler panelden yapılır.
+
+## Yönetim şifresi
+
+İlk giriş `.env` içindeki `ADMIN_PASSWORD` ile yapılır. Şifre panelin **Şifre** sayfasından değiştirilebilir; yeni şifre veritabanında özetlenmiş (scrypt) olarak saklanır ve diğer cihazlardaki oturumlar kapanır.
+
+Şifre unutulursa sunucuda uygulama klasöründe şu komut çalıştırılır; giriş yeniden `ADMIN_PASSWORD` ile yapılır:
+
+```bash
+node scripts/sifre-sifirla.js
 ```
----
-title: Yazının başlığı
-description: Arama sonuçlarında görünecek kısa açıklama
-date: 2026-11-15
-slug: yazinin-adresi
-pair: ortak-anahtar
----
-
-Metin… ## ile ara başlık, - ile liste, **kalın**, [bağlantı](https://...)
-```
-
-`pair` değeri farklı dillerdeki yazılarda aynı olursa dil değiştirici bu yazıları birbirine bağlar. Bir dilde karşılığı olmayan yazıda dil değiştirici o dilin yayınlar sayfasına gider. `draft: true` eklenen yazı yayımlanmaz. Yeni yazılar 30 saniye içinde sitede görünür.
 
 ## Yayına almadan önce yapılacaklar
 
