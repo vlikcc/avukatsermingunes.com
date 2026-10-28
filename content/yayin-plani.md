@@ -8,15 +8,15 @@ Rutin, “Yayınlananlar” listesinde olmayan ilk maddeyi yazar. Madde numarala
 
 ### 5718 sayılı Milletlerarası Özel Hukuk ve Usul Hukuku Hakkında Kanun (MÖHUK)
 - MÖHUK m. 50 – Tenfiz kararı
-- MÖHUK m. 51 – Görevli ve yetkili mahkeme
+- MÖHUK m. 51 – Görev ve yetki
 - MÖHUK m. 52 – Tenfiz istemi
 - MÖHUK m. 53 – Dilekçeye eklenecek belgeler
 - MÖHUK m. 54 – Tenfiz şartları
 - MÖHUK m. 55 – Tebliğ ve itiraz
-- MÖHUK m. 56 – Tenfiz kararı
-- MÖHUK m. 57 – Tenfiz edilen kararın icrası
+- MÖHUK m. 56 – Karar
+- MÖHUK m. 57 – Yerine getirme ve temyiz yolu
 - MÖHUK m. 58 – Tanıma
-- MÖHUK m. 59 – Kesin delil ve kesin hüküm
+- MÖHUK m. 59 – Kesin hüküm ve kesin delil etkisi
 - MÖHUK m. 13 – Evlenmenin hükümleri
 - MÖHUK m. 14 – Boşanma ve ayrılık
 - MÖHUK m. 20 – Miras
@@ -56,6 +56,14 @@ Liste bittiğinde rutin, hedef okuyucuyu ilgilendiren yeni maddelerle (ör. TMK 
 
 Biçim: `tarih | bölüm (mevzuat/blog/gündem) | Türkçe başlık | pair | hedef aramalar | ana kaynaklar` — en yeni en üstte.
 
+- 2026-10-29 | blog | Türkiye’de mirasın reddi: süre, mahkeme ve yurt dışından ret | 2026-10-29-mirasin-reddi | mirasın reddi, mirasın reddi süresi, mirasın reddi yetkili mahkeme, mirasın reddi nasıl yapılır; erbausschlagung türkei; erfenis turkije; inheritance law in turkey | mevzuat.gov.tr (TMK m. 576, 605–619; MÖHUK m. 20, 43; HMK m. 74), gesetze-im-internet.de (BGB § 1944, § 1945)
+- 2026-10-29 | mevzuat | MÖHUK Madde 50 Tenfiz Kararı | 2026-10-29-mohuk-50 | möhuk 50 madde, tenfiz davası, vollstreckung deutsches urteil türkei | mevzuat.gov.tr (5718 sayılı MÖHUK güncel metni, m. 1, 50–60), HCCH Apostil Sözleşmesi taraf listesi
+
 ## Notlar
 
 Doğrulanamadığı için yazılmayan konular ve rutinin diğer notları.
+
+- 2026-10-29: Bulut ortamından mevzuat.gov.tr, resmigazete.gov.tr ve karararama.yargitay.gov.tr adreslerine doğrudan bağlantı zaman aşımına uğradı / reddedildi; metinler WebFetch ile indirilen resmî mevzuat.gov.tr PDF’lerinden (MÖHUK, TMK, HMK) alındı. Yargıtay Karar Arama’ya ulaşılamadığından her iki yazıda da “Yargıtay kararları” bölümü konulmadı. TBMM gerekçe metnine bakılamadığından MÖHUK m. 50 yazısında “Madde gerekçesi” bölümü yok.
+- 2026-10-29: Resmî Gazete 22–28 Ekim 2026 sayıları tarandı; hedef okuyucuyu doğrudan ilgilendiren yeni kanun/yönetmelik görülmedi (22 Ekim’deki AYM kararlarının ve 23 Ekim’deki Yargıtay 4. HD kararının içeriği incelenmedi).
+- 2026-10-29: Mirasın reddi yazısında Hollanda hukukuna (BW 4:191 vd.) ilişkin ayrıntı verilmedi; wetten.overheid.nl metnine ulaşılamadı. Yurt dışında yerleşik mirasbırakan için ret beyanında yetkili sulh mahkemesi “tartışmalı/görüş” olarak işaretlendi. Konsolosluk aracılığıyla ret beyanı ve harç tutarları doğrulanamadığı için yazılmadı.
+- 2026-10-29: Mevzuat sırasındaki bazı madde başlıkları güncel metne göre düzeltildi (m. 51, 56, 57, 59).
