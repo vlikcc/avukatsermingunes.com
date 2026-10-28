@@ -54,7 +54,7 @@ Liste bittiğinde rutin, hedef okuyucuyu ilgilendiren yeni maddelerle (ör. TMK 
 
 ## Yayınlananlar
 
-Biçim: `tarih | bölüm | Türkçe başlık | pair | hedef aramalar | ana kaynaklar` — en yeni en üstte.
+Biçim: `tarih | bölüm (mevzuat/blog/gündem) | Türkçe başlık | pair | hedef aramalar | ana kaynaklar` — en yeni en üstte.
 
 ## Notlar
 
