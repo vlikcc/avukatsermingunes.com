@@ -1,0 +1,154 @@
+# Yayın rutini talimatı
+
+Bu dosya, her gün bulutta çalışan yayın rutininin uyduğu kurallardır. Rutin bu dosyayı okur ve adımları sırayla uygular. Kuralları değiştirmek için bu dosyayı düzenleyin.
+
+Site: Av. Sermin Güneş Keçeci — İzmir Barosu ve Rechtsanwaltskammer Düsseldorf (§ 206 BRAO kapsamında “Avukat (Türkei)”). Hedef okuyucu: Almanya, Hollanda ve Avrupa’nın diğer ülkelerinde yaşayan Türkler ve Türkiye ile hukuki bağlantısı olanlar.
+
+## 1. Ne üretilir, ne zaman
+
+Rutin her gün **Türkiye saatiyle 18:00** civarında çalışır ve **ertesi günün** yazılarını hazırlar. Yazılar ertesi gün **08:00 (Türkiye saati)** yayın zamanıyla, **taslak** olarak eklenir. Avukat yazıları panelden okuyup onaylar; onaylanan yazı 08:00’de kendiliğinden yayına girer.
+
+Hedef gün `D` = Europe/Istanbul saat dilimine göre yarının tarihi (`TZ=Europe/Istanbul date -d tomorrow +%F`).
+
+- **Mevzuat yazısı: her gün bir tane.** `D` tarihli bir mevzuat yazısı zaten varsa yenisini yazma.
+- **Makale (blog): iki günde bir.** `content/posts/tr/` altındaki `category` alanı olmayan veya `category: blog` olan en yeni dosyanın `date` değerine bak. `D` bu tarihten en az 2 gün sonraysa (ya da hiç makale yoksa) bir makale yaz; değilse yazma.
+
+Her yazı **dört dilde** üretilir: Türkçe (`tr`), Almanca (`de`), İngilizce (`en`), Hollandaca (`nl`). Dört dosya aynı `pair` değerini taşır.
+
+## 2. Konu seçimi
+
+### Makaleler (category: blog)
+
+Öncelik sırası:
+
+1. **Türk hukukunda güncel gelişme.** Son 7 günün Resmî Gazete’sini tara (`https://www.resmigazete.gov.tr/eskiler/YYYY/MM/YYYYMMDD.htm`, ör. `.../2026/10/20261028.htm`). Avrupa’da yaşayan Türkleri ilgilendiren yeni kanun, yönetmelik, tebliğ, Anayasa Mahkemesi kararı veya Yargıtay içtihadı birleştirme kararı varsa bunu yaz. Yürürlük tarihini mutlaka belirt.
+2. **Avrupa’da yaşayan Türklerin sık karşılaştığı hukuki sorunlar:** yurt dışı boşanma kararının Türkiye’de tanınması/tenfizi, Türkiye’de boşanma, velayet ve nafaka, Türkiye’deki miras ve mirasın reddi, tapu ve taşınmaz satışı, vekâletname ve apostil, dövizle/bedelli askerlik, çifte vatandaşlık ve Mavi Kart, nüfus kayıtlarının düzeltilmesi, yurt dışından dava takibi, Türkiye’deki icra takipleri, emeklilik ve borçlanma (yalnızca Türk hukuku boyutu), gümrük ve araç getirme kuralları.
+3. **Google’da çok aranan hukuki konular.** Arama talebini kanıtlamak için Google otomatik tamamlama önerilerine bak, ör.:
+   `curl -s "https://suggestqueries.google.com/complete/search?client=firefox&hl=tr&gl=DE&q=almanyada+bo%C5%9Fanma"`
+   (`hl` ve `gl` değerlerini dile ve ülkeye göre değiştir: `hl=de&gl=DE`, `hl=nl&gl=NL`, `hl=tr&gl=TR`). Gerekirse `https://trends.google.com/trending/rss?geo=TR` ve web aramasından yararlan. Seçtiğin konunun hangi aramalara cevap verdiğini plan dosyasına yaz.
+
+`content/yayin-plani.md` dosyasındaki “Yayınlananlar” listesini oku; son 60 günde işlenmiş bir konuyu aynı açıdan tekrar yazma.
+
+### Mevzuat (category: mevzuat)
+
+`content/yayin-plani.md` içindeki **Mevzuat sırası** listesinden, “Yayınlananlar” listesinde olmayan ilk maddeyi al. Her yazı **tek bir kanun maddesini** (ya da birbirine çok sıkı bağlı iki maddeyi) ele alır. Resmî Gazete taramasında hedef okuyucuyu ilgilendiren bir maddenin değiştiğini görürsen sırayı beklemeden o maddeyi yaz ve değişikliği anlat.
+
+## 3. Doğruluk kuralları (en önemli bölüm)
+
+Yanlış bilgi vermek, hiç yazı yayımlamamaktan daha kötüdür. Bu kurallar SEO dahil her şeyin önündedir.
+
+1. **Her hukuki iddia resmî bir kaynağa dayanmalı.** Kullanılacak kaynaklar:
+   - Kanun metni: `https://www.mevzuat.gov.tr` (güncel, değişiklikleri işlenmiş metin) ve Resmî Gazete.
+   - Madde gerekçesi: TBMM kanun tasarısı/teklifi gerekçesi (`https://www.tbmm.gov.tr`) veya Resmî Gazete.
+   - Yargı kararları: Yargıtay Karar Arama (`https://karararama.yargitay.gov.tr`), Anayasa Mahkemesi (`https://kararlarbilgibankasi.anayasa.gov.tr`), Danıştay, UYAP Emsal (`https://emsal.uyap.gov.tr`).
+   - İdari uygulama: ilgili bakanlık ve kurumların resmî siteleri (ör. MSB/ASAL, Dışişleri ve konsolosluklar, NVİ, Tapu Kadastro, GİB, SGK).
+   - Almanya/Hollanda bilgisi: yalnızca resmî kaynaklar (ör. `gesetze-im-internet.de`, `bundesregierung.de`, `rijksoverheid.nl`, `ind.nl`, `wetten.overheid.nl`).
+   Başka avukatların veya hukuk sitelerinin yazıları kaynak değildir; en fazla konu fikri verir. Onlardan metin, yapı ya da cümle kopyalama.
+2. **Madde metni kelimesi kelimesine** mevzuat.gov.tr’deki güncel metinden alınır. Değişiklik notlarını (“Değişik: …/…/… – … sayılı Kanun m. …”) varsa koru. Metni çekemiyorsan o maddeyi yazma; sıradaki maddeye geç ve durumu plan dosyasına not et.
+3. **Gerekçe uydurma.** Resmî gerekçe metnine ulaşamadıysan “Madde gerekçesi” bölümünü hiç koyma. Gerekçeyi özetliyorsan kaynağını göster.
+4. **Karar numarası uydurma.** Bir Yargıtay/AYM kararını yalnızca resmî bir veri tabanında **daire, esas no, karar no ve tarih** bilgileriyle bizzat gördüysen an. Doğrulayamadığın kararı yazma; karar bölümü boş kalacaksa bölümü tamamen çıkar. Kararın ne dediğini abartma; yalnızca kararda gerçekten yazanı aktar.
+5. **Rakamlar ve süreler** (harçlar, dövizle askerlik bedeli, süreler, yaş sınırları, oranlar) resmî kaynaktan güncel olarak doğrulanır ve “2026 itibarıyla” gibi tarih bilgisiyle verilir. Doğrulayamadığın rakamı verme; okuru resmî kaynağa yönlendir.
+6. **Hükmü, yerleşik içtihadı ve görüşü ayır.** Metinde şu dört şey birbirinden açıkça ayrılmalı:
+   - Kanunun açık hükmü (madde numarasıyla),
+   - Yerleşik yargı içtihadı (doğrulanmış kararlarla),
+   - Doktrindeki görüşler,
+   - Yazarın değerlendirmesi.
+7. **Tartışmalı konular.** Bir konuda kanunda açık hüküm yoksa, içtihat yerleşik değilse ya da doktrinde farklı görüşler varsa bunu açıkça yaz. Örnek ifade (Türkçe):
+   > Bu konu tartışmalıdır. Aşağıda aktarılanlar doktrinde ileri sürülen görüşlerdir; kanunda bu konuda açık bir hüküm ve bağlayıcı bir yargı kararı bulunmamaktadır. Somut bir uyuşmazlıkta mahkemenin hangi görüşü benimseyeceği kesin değildir.
+   Diğer dillerde aynı anlamı taşıyan bir ifade kullan. Görüş belirtiyorsan bunun bir görüş olduğunu söyle; görüşü kesin kural gibi sunma.
+8. **Yürürlük ve geçiş hükümleri.** Yeni bir düzenlemeyi yazarken yürürlük tarihini, geçiş hükümlerini ve henüz yürürlüğe girmemiş kısımları belirt. Tasarı/teklif aşamasındaki düzenlemeyi yürürlükteymiş gibi anlatma.
+9. **Mesleki sınır (§ 206 BRAO).** Avukat Almanya’da yalnızca Türk hukuku ve uluslararası hukuk alanında danışmanlık yapabilir. Alman veya Hollanda hukukuna ilişkin bilgiyi yalnızca genel çerçevede, resmî kaynağa dayanarak ver ve bu konularda o ülkede yetkili bir avukata ya da kuruma başvurulması gerektiğini belirt. Alman/Hollanda hukuku hakkında somut tavsiye verme.
+10. **Emin değilsen yazma.** Bir konuyu yeterince doğrulayamıyorsan başka bir konu seç. Hiçbir konuyu doğrulayamazsan o gün yazı üretme ve nedenini plan dosyasına yaz.
+
+## 4. Mesleki kurallar (reklam yasağı)
+
+Avukatlık Kanunu m. 55 ve TBB Meslek Kuralları ile Reklam Yasağı Yönetmeliği gereği yazılar **yalnızca bilgilendirme** amaçlıdır:
+
+- “En iyi”, “uzman”, “garantili”, “kesin sonuç”, “%100” gibi üstünlük ve sonuç vaadi içeren ifadeler kullanma.
+- Müvekkil hikâyesi, başarı oranı, ücret bilgisi, indirim veya “hemen arayın” gibi iş isteme çağrıları yazma. (Sitenin kendi randevu bandı her yazının altında zaten görünür; metne ayrıca eklemeye gerek yok.)
+- Başka avukatlar veya bürolarla karşılaştırma yapma.
+- Almanca, İngilizce ve Hollandaca metinlerde unvan olarak yalnızca “Avukat (Türkei)” kullan; “Rechtsanwalt/Rechtsanwältin”, “lawyer admitted in Germany”, “advocaat” gibi ifadeler kullanma. Hollandaca’da gerekiyorsa “in Turkije toegelaten advocaat” denebilir.
+
+## 5. Yazı yapısı
+
+### Makale
+
+- 900–1500 kelime (Türkçe metin için).
+- Giriş paragrafı, okurun arama sorusuna ilk iki cümlede doğrudan cevap verir.
+- 4–7 adet `##` ara başlık; gerekiyorsa `###` alt başlık.
+- Kanun maddelerine numarasıyla atıf (ör. “TMK m. 166”, “MÖHUK m. 54”).
+- Sonda `## Sık sorulan sorular` bölümü: arama sorgusu biçiminde 3–5 soru, her biri `###` başlık ve kısa cevap.
+- En sonda `## Kaynaklar` bölümü: kullanılan resmî kaynakların bağlantıları (madde işaretli liste).
+
+### Mevzuat (barandogan.av.tr/blog/mevzuat yapısına benzer, ama özgün metinle)
+
+- Başlık (Türkçe): `[Kanun kısaltması] Madde [no] [Madde başlığı]`, ör. `MÖHUK Madde 54 Tenfiz Şartları`. Diğer dillerde: `Art. 54 MÖHUK – Voraussetzungen der Vollstreckbarerklärung` (DE), `Article 54 MÖHUK – Conditions for Enforcement` (EN), `Artikel 54 MÖHUK – Voorwaarden voor tenuitvoerlegging` (NL). Kanunun tam adı ve sayısı ilk paragrafta geçer.
+- Bölümler, bu sırayla:
+  1. Kısa giriş: maddenin hangi kanunda olduğu (tam adı ve sayısı), neyi düzenlediği, kimleri ilgilendirdiği (2–3 cümle).
+  2. `## [Kısaltma] Madde [no] metni` — güncel madde metni alıntı olarak (`>` ile; fıkralar arasında yalnız `>` içeren satır). Diğer dillerde önce “Nichtamtliche Übersetzung / Unofficial translation / Niet-officiële vertaling” notu, ardından çeviri; Türkçe asıl metin de ayrı bir alıntı olarak verilir.
+  3. `## Madde gerekçesi` — yalnızca resmî gerekçeye ulaşıldıysa (özet ve kaynak).
+  4. `## Açıklama` — maddenin sade bir dille açıklaması, unsurları, diğer maddelerle ilişkisi.
+  5. `## Yurt dışında yaşayanlar için uygulamada önemli noktalar` — madde Avrupa’da yaşayan Türkler açısından nasıl karşılarına çıkar.
+  6. `## Yargıtay kararları` — yalnızca doğrulanmış kararlar; her biri için kalın satırda “Yargıtay X. Hukuk Dairesi, E. 2021/…, K. 2022/…, T. …” ve 2–4 cümlelik özet. Doğrulanmış karar yoksa bölümü çıkar.
+  7. `## Sık sorulan sorular` — 2–4 soru.
+  8. `## Kaynaklar`.
+- 600–1200 kelime (madde metni hariç).
+
+### Diller
+
+- Çeviriler kelime kelime değil, o dilin okuru için doğal ve hukuken doğru olmalı. Hukuki terimlerin ilk geçtiği yerde Türkçe karşılığını parantez içinde ver (ör. „Vollstreckbarerklärung (tenfiz)“).
+- Her dilde başlık, açıklama ve adres (slug) **o dilde aranan anahtar kelimelerle** ayrı ayrı oluşturulur (ör. DE: „scheidung türkei anerkennen“, NL: „scheiding turkije erkennen“). Otomatik tamamlama önerilerini her dil için ayrı kontrol et.
+- Almanca ve Hollandaca metinler Almanya’da/Hollanda’da yaşayan okura göre yazılır (ör. konsolosluk, Standesamt/gemeente, apostil süreçleri).
+
+## 6. SEO kuralları
+
+- **Başlık (title):** en fazla 60 karakter, ana anahtar kelime başta. Abartılı veya tık tuzağı başlık yok.
+- **Açıklama (description):** 140–160 karakter, ana anahtar kelimeyi ve yazının sağladığı cevabı içerir. Tek satır.
+- **Slug:** küçük harf, Türkçe karakter yok, tire ile, 3–7 kelime, anahtar kelimeyi içerir. Aynı dilde var olan bir slug’ı tekrar kullanma (`grep -r "^slug:" content/posts/<dil>`).
+- Ana anahtar kelime ilk paragrafta ve en az bir `##` başlıkta geçsin; anahtar kelime doldurma yapma.
+- **İç bağlantılar:** Her yazıda 2–4 iç bağlantı: ilgili çalışma alanı sayfası ve ilgili mevcut yazılar. Kullanılabilecek yollar:
+  - Çalışma alanları: TR `/calisma-alanlari/aile-hukuku`, `miras-hukuku`, `gayrimenkul-hukuku`, `ceza-hukuku`, `is-hukuku`, `tazminat-hukuku`, `tuketici-hukuku`; DE `/de/rechtsgebiete/familienrecht`, `erbrecht`, `immobilienrecht`, `strafrecht`, `arbeitsrecht`, `schadensersatzrecht`, `verbraucherrecht`; EN `/en/practice-areas/family-law`, `inheritance-law`, `real-estate-law`, `criminal-law`, `employment-law`, `compensation-law`, `consumer-law`; NL `/nl/rechtsgebieden/familierecht`, `erfrecht`, `vastgoedrecht`, `strafrecht`, `arbeidsrecht`, `schadevergoedingsrecht`, `consumentenrecht`. Diğer alanların slug’ları `src/content/areas.js` içindedir.
+  - Türkiye–Almanya sayfası: `/turkiye-almanya`, `/de/tuerkei-deutschland`, `/en/turkiye-germany`, `/nl/turkije-duitsland`.
+  - Makaleler: `/yayinlar/<slug>`, `/de/publikationen/<slug>`, `/en/publications/<slug>`, `/nl/publicaties/<slug>`.
+  - Mevzuat: `/yayinlar/mevzuat/<slug>`, `/de/publikationen/gesetze/<slug>`, `/en/publications/legislation/<slug>`, `/nl/publicaties/wetgeving/<slug>`.
+  Yalnızca gerçekten var olan (dosyası depoda bulunan) yazılara bağlantı ver. Bağlantı her zaman aynı dildeki sayfaya gitsin.
+- Dış bağlantılar yalnızca resmî kaynaklara.
+
+## 7. Dosya biçimi
+
+Her dil için bir dosya: `content/posts/<dil>/<D>-<slug>.md`. Biçim:
+
+```
+---
+title: MÖHUK Madde 54 Tenfiz Şartları
+description: Yabancı mahkeme kararının Türkiye’de tenfizi için MÖHUK m. 54’te aranan şartlar, güncel madde metni ve yurt dışında yaşayanlar için uygulama bilgileri.
+date: 2026-10-29
+slug: mohuk-madde-54-tenfiz-sartlari
+pair: 2026-10-29-mohuk-54
+category: mevzuat
+publish_at: 2026-10-29T08:00:00+03:00
+draft: true
+---
+
+Metin…
+```
+
+- `category`: `mevzuat` veya `blog`.
+- `date`: `D`. `publish_at`: `<D>T08:00:00+03:00`. `draft: true` her zaman (avukat onayı olmadan yayımlanmaz).
+- `pair`: `<D>-<kısa-anahtar>`; dört dilde aynı.
+- Ön bilgi değerleri tek satırdır; tırnak kullanma.
+- Metinde desteklenen biçimler yalnızca şunlardır: `##` ve `###` başlık, paragraf (aralarında boş satır), `- ` liste, `1. ` numaralı liste, `**kalın**`, `*italik*`, `[metin](adres)`, `> ` alıntı. **Tablo, görsel, HTML, `#` (H1) başlık kullanma.** Bir listenin her satırı aynı blokta olmalı; liste ile paragrafı aynı blokta karıştırma.
+
+## 8. Kontrol ve yayın
+
+1. Yazdıktan sonra her dosyayı baştan sona yeniden oku ve şu soruları cevapla; biri bile “hayır” ise düzelt ya da yazıyı çıkar:
+   - Her madde numarası, tarih, rakam ve karar künyesi bir kaynakta doğrulandı mı?
+   - Madde metni mevzuat.gov.tr’deki güncel metinle birebir aynı mı?
+   - Tartışmalı noktalar “görüş” olarak işaretlendi mi?
+   - Dört dil içerik olarak aynı bilgiyi veriyor mu (biri diğerinde olmayan bir iddia içermiyor mu)?
+   - Reklam yasağına aykırı bir ifade var mı?
+   - Ön bilgi alanları ve slug kurallara uygun mu?
+2. `content/yayin-plani.md` dosyasında “Yayınlananlar” listesine en üste bir satır ekle: `- D | mevzuat/blog | TR başlık | pair | hedef aramalar | kullanılan ana kaynaklar`. Yazamadığın bir konu varsa “Notlar” bölümüne kısa not düş.
+3. Yalnızca `content/posts/` ve `content/yayin-plani.md` dosyalarını değiştir. Kod, ayar veya başka dosyalara dokunma.
+4. `git add content && git commit -m "Yayın: D — <kısa özet>"` ve `git pull --rebase origin master && git push origin master`. Gönderim siteyi otomatik olarak yeniden kurar; yeni dosyalar taslak olarak panele düşer ve avukata e-posta gider.
+5. Bitirirken Türkçe, kısa bir özet yaz: hangi yazılar (dört dildeki başlıklar) eklendi, hangi kaynaklar kullanıldı, doğrulanamadığı için neler çıkarıldı.

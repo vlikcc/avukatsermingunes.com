@@ -10,7 +10,7 @@ import { formatWhen, typeLabel, localDay } from './booking.js';
 import { topicLabel, bookingStatusChanged } from './mail.js';
 import { ASSET_VERSION } from './layout.js';
 import { LANGS, langNames, paths } from './i18n.js';
-import { allPosts, slugify } from './blog.js';
+import { allPosts, slugify, postUrl, isScheduled } from './blog.js';
 
 const SECRET = process.env.SESSION_SECRET || crypto.randomBytes(32).toString('hex');
 const SESSION_HOURS = 8;
@@ -188,6 +188,7 @@ export function dashboard(session, query) {
     'Randevular',
     `<div class="admin-title"><h1>Randevular</h1>
       <p class="muted">Onay bekleyen: ${counts.pending || 0} · Onaylı: ${counts.confirmed || 0} · Saatler ${h(config.booking.timezone)} saat dilimine göredir.</p></div>
+    ${query.has('yayinlandi') ? '<p class="form-ok" role="status">Yazı ve çevirileri yayına alındı.</p>' : ''}
     <nav class="admin-tabs">${tabs}</nav>
     <div class="appt-list">${list}</div>`,
     session,
@@ -306,16 +307,20 @@ export function passwordPage(session, { error, ok } = {}) {
 
 const POST_STATUS = { draft: 'Taslak', published: 'Yayında' };
 const fmtDay = (d) => new Date(d + 'T12:00:00Z').toLocaleDateString('tr-TR', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
-const publicUrl = (p) => `${paths.blog[p.lang]}/${p.slug}`;
+const publicUrl = postUrl;
+const CATEGORY_LABEL = { blog: 'Makale', mevzuat: 'Mevzuat' };
+// Yayın zamanı Türkiye saatiyle gösterilir.
+const trTime = (iso) => (iso ? new Date(iso).toLocaleTimeString('en-GB', { timeZone: 'Europe/Istanbul', hour: '2-digit', minute: '2-digit' }) : '');
 const siblings = (p, list) => (p.pair ? list.filter((x) => x.pair === p.pair && x.id !== p.id) : []);
 
 export function postsPage(session, query) {
   const all = allPosts();
-  const filter = LANGS.includes(query.get('dil')) ? query.get('dil') : 'all';
-  const rows = filter === 'all' ? all : all.filter((p) => p.lang === filter);
+  const filter = LANGS.includes(query.get('dil')) ? query.get('dil') : query.get('durum') === 'taslak' ? 'taslak' : 'all';
+  const rows = filter === 'all' ? all : filter === 'taslak' ? all.filter((p) => p.status === 'draft') : all.filter((p) => p.lang === filter);
   const count = (l) => all.filter((p) => p.lang === l).length;
-  const tabs = [['all', `Tümü (${all.length})`], ...LANGS.map((l) => [l, `${langNames[l]} (${count(l)})`])]
-    .map(([k, label]) => `<a href="/yonetim/yazilar${k === 'all' ? '' : `?dil=${k}`}"${k === filter ? ' aria-current="page"' : ''}>${h(label)}</a>`)
+  const drafts = all.filter((p) => p.status === 'draft').length;
+  const tabs = [['all', `Tümü (${all.length})`], ['taslak', `Onay bekleyen (${drafts})`], ...LANGS.map((l) => [l, `${langNames[l]} (${count(l)})`])]
+    .map(([k, label]) => `<a href="/yonetim/yazilar${k === 'all' ? '' : k === 'taslak' ? '?durum=taslak' : `?dil=${k}`}"${k === filter ? ' aria-current="page"' : ''}>${h(label)}</a>`)
     .join('');
 
   const list = rows.length
@@ -325,13 +330,21 @@ export function postsPage(session, query) {
           return `<article class="appt post-row post-${p.status}">
           <div class="appt-main">
             <p class="appt-when"><a href="/yonetim/yazilar/${p.id}">${h(p.title)}</a></p>
-            <p class="appt-meta"><span class="lang-tag">${p.lang.toUpperCase()}</span> ${h(fmtDay(p.date))} · <span class="status status-${p.status}">${POST_STATUS[p.status]}</span>${
+            <p class="appt-meta"><span class="lang-tag">${p.lang.toUpperCase()}</span> <span class="lang-tag">${CATEGORY_LABEL[p.category] || 'Makale'}</span> ${h(fmtDay(p.date))}${
+              p.publish_at ? ` ${trTime(p.publish_at)}` : ''
+            } · <span class="status status-${p.status}">${isScheduled(p) ? 'Zamanlandı' : POST_STATUS[p.status]}</span>${
               tr.length ? ` · Çevirileri: ${tr.map((x) => `<a href="/yonetim/yazilar/${x.id}">${x.lang.toUpperCase()}</a>`).join(', ')}` : ''
             }</p>
             ${p.description ? `<p>${h(p.description)}</p>` : ''}
           </div>
           <div class="appt-side post-row-actions">
-            <a class="btn btn-small" href="/yonetim/yazilar/${p.id}">Düzenle</a>
+            ${
+              p.status === 'draft'
+                ? `<form method="post" action="/yonetim/yazilar/${p.id}/yayinla"><input type="hidden" name="csrf" value="${session.csrf}">
+              <button class="btn btn-small" data-confirm="“${h(p.title)}”${tr.length ? ' ve çevirileri' : ''} yayına alınsın mı?${p.publish_at ? ` Yayın zamanı: ${h(fmtDay(p.date))} ${trTime(p.publish_at)} (Türkiye saati).` : ''}">${tr.length ? 'Tüm dilleriyle yayınla' : 'Yayınla'}</button></form>`
+                : ''
+            }
+            <a class="btn btn-small${p.status === 'draft' ? ' btn-outline' : ''}" href="/yonetim/yazilar/${p.id}">Düzenle</a>
             ${
               p.status === 'published'
                 ? `<a class="btn btn-small btn-outline" href="${publicUrl(p)}" target="_blank" rel="noopener">Sitede gör</a>`
@@ -348,7 +361,7 @@ export function postsPage(session, query) {
   return shell(
     'Yazılar',
     `<div class="admin-title admin-title-row"><div><h1>Yazılar</h1>
-      <p class="muted">Sitedeki “Hukuki Yayınlar” bölümünde görünen blog yazıları. Taslaklar sitede görünmez.</p></div>
+      <p class="muted">Sitedeki “Hukuki Yayınlar” (makaleler ve mevzuat) bölümünde görünen yazılar. Taslaklar sitede görünmez; yayın saati gelmemiş yazılar o saatte kendiliğinden görünür.</p></div>
       <a class="btn" href="/yonetim/yazilar/yeni">Yeni yazı</a></div>
     <nav class="admin-tabs">${tabs}</nav>
     <div class="appt-list">${list}</div>`,
@@ -367,7 +380,7 @@ export function postsPage(session, query) {
 export function postEditor(session, post, { values, errors = {}, saved } = {}) {
   const all = allPosts();
   const today = new Date().toLocaleDateString('en-CA', { timeZone: config.booking.timezone });
-  const v = values || post || { lang: 'tr', title: '', slug: '', description: '', body: '', date: today, status: 'draft' };
+  const v = values || (post && { ...post, publishTime: trTime(post.publish_at) }) || { lang: 'tr', category: 'blog', title: '', slug: '', description: '', body: '', date: today, status: 'draft' };
   const linked = values ? Number(values.translationOf) || null : post ? siblings(post, all)[0]?.id ?? null : null;
   const others = all.filter((p) => !post || p.id !== post.id);
   const err = (k) => (errors[k] ? `<p class="form-error" id="e-${k}">${h(errors[k])}</p>` : '');
@@ -407,8 +420,13 @@ export function postEditor(session, post, { values, errors = {}, saved } = {}) {
         </fieldset>
         <div class="field"><label for="p-lang">Dil</label>
           <select id="p-lang" name="lang">${LANGS.map((l) => `<option value="${l}"${v.lang === l ? ' selected' : ''}>${h(langNames[l])}</option>`).join('')}</select></div>
+        <div class="field"><label for="p-cat">Bölüm</label>
+          <select id="p-cat" name="category">${Object.entries(CATEGORY_LABEL).map(([k, label]) => `<option value="${k}"${(v.category || 'blog') === k ? ' selected' : ''}>${label}</option>`).join('')}</select></div>
         <div class="field"><label for="p-date">Yayım tarihi</label>
           <input id="p-date" name="date" type="date" value="${h(v.date)}" required></div>
+        <div class="field"><label for="p-time">Yayın saati (Türkiye saati)</label>
+          <input id="p-time" name="publishTime" type="time" value="${h(v.publishTime || '')}">
+          <p class="hint">Doluysa yazı “Yayında” olsa bile bu tarih ve saatten önce sitede görünmez. Boşsa hemen görünür.</p></div>
         <div class="field"><label for="p-slug">Adres</label>
           <input id="p-slug" name="slug" value="${h(v.slug)}" maxlength="80" placeholder="${h(slugify(v.title) || 'baslik-kendiliginden')}"${inv('slug')}>${err('slug')}
           <p class="hint">Boş bırakılırsa başlıktan üretilir. Yayındaki bir yazının adresini değiştirmek eski bağlantıları bozar.${

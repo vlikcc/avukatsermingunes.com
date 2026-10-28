@@ -79,6 +79,8 @@ const navItems = ['about', 'areas', 'crossborder', 'blog', 'contact'];
  * @param {string} o.body
  * @param {boolean} [o.noindex]
  * @param {string[]} [o.scripts]
+ * @param {{ published: string, modified?: string, section?: string }} [o.article]  Yazı sayfaları için
+ * @param {object[]} [o.jsonLd]  Sayfaya eklenecek ek yapılandırılmış veriler (schema.org)
  */
 export function layout(o) {
   const { lang } = o;
@@ -111,7 +113,10 @@ ${o.noindex ? '<meta name="robots" content="noindex, nofollow">' : ''}
 <link rel="canonical" href="${h(absUrl(o.path))}">
 ${alt ? LANGS.map((l) => `<link rel="alternate" hreflang="${l}" href="${h(absUrl(alt[l]))}">`).join('\n') : ''}
 ${alt ? `<link rel="alternate" hreflang="x-default" href="${h(absUrl(alt.tr))}">` : ''}
-<meta property="og:type" content="website">
+<meta property="og:type" content="${o.article ? 'article' : 'website'}">
+${o.article ? `<meta property="article:published_time" content="${h(o.article.published)}">` : ''}
+${o.article?.modified ? `<meta property="article:modified_time" content="${h(o.article.modified)}">` : ''}
+${o.article?.section ? `<meta property="article:section" content="${h(o.article.section)}">` : ''}
 <meta property="og:title" content="${h(fullTitle)}">
 <meta property="og:description" content="${h(o.description)}">
 <meta property="og:url" content="${h(absUrl(o.path))}">
@@ -124,6 +129,7 @@ ${alt ? `<link rel="alternate" hreflang="x-default" href="${h(absUrl(alt.tr))}">
 <link rel="preload" href="/fonts/montserrat-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/css/site.css?v=${ASSET_VERSION}">
 <script type="application/ld+json">${jsonLd(lang)}</script>
+${(o.jsonLd || []).map((d) => `<script type="application/ld+json">${JSON.stringify(d).replace(/</g, '\\u003c')}</script>`).join('\n')}
 </head>
 <body class="page-${h(o.active || 'other')}">
 <a class="skip" href="#main">${h(s.skip)}</a>

@@ -12,7 +12,7 @@ const config = (await import('./site.config.js')).default;
 const { paths, LANGS, langOf } = await import('./src/i18n.js');
 const pages = await import('./src/pages.js');
 const { areas, findArea } = await import('./src/content/areas.js');
-const { findPost, posts, getPost, savePost, deletePost } = await import('./src/blog.js');
+const { findPost, posts, pairOf, postUrl, getPost, savePost, deletePost, publishGroup, imported } = await import('./src/blog.js');
 const { db, purgeOld } = await import('./src/db.js');
 const booking = await import('./src/booking.js');
 const mail = await import('./src/mail.js');
@@ -139,10 +139,15 @@ function sitemap() {
     const links = LANGS.map((l) => `<xhtml:link rel="alternate" hreflang="${l}" href="${absUrl(alt[l])}"/>`).join('\n');
     for (const l of LANGS) urls.push(`<url><loc>${absUrl(alt[l])}</loc>\n${links}</url>`);
   };
-  for (const k of ['home', 'about', 'areas', 'crossborder', 'blog', 'contact', 'booking', 'imprint', 'privacy', 'cookies']) add(paths[k]);
+  for (const k of ['home', 'about', 'areas', 'crossborder', 'blog', 'mevzuat', 'contact', 'booking', 'imprint', 'privacy', 'cookies']) add(paths[k]);
   for (const a of areas) add(Object.fromEntries(LANGS.map((l) => [l, `${paths.areas[l]}/${a.slug[l]}`])));
   for (const lang of LANGS) {
-    for (const p of posts(lang)) urls.push(`<url><loc>${absUrl(`${paths.blog[lang]}/${p.slug}`)}</loc><lastmod>${p.date}</lastmod></url>`);
+    for (const p of posts(lang)) {
+      // Çevirileri olan yazılar için dil karşılıkları da bildirilir.
+      const twins = LANGS.map((l) => [l, l === lang ? p : pairOf(p, l)]).filter(([, x]) => x);
+      const links = twins.length > 1 ? twins.map(([l, x]) => `\n<xhtml:link rel="alternate" hreflang="${l}" href="${absUrl(postUrl(x))}"/>`).join('') : '';
+      urls.push(`<url><loc>${absUrl(postUrl(p))}</loc><lastmod>${(p.updated_at || p.date).slice(0, 10)}</lastmod>${links}</url>`);
+    }
   }
   return `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
@@ -159,7 +164,8 @@ for (const lang of LANGS) {
   routes.set(paths.about[lang], () => pages.about(lang));
   routes.set(paths.areas[lang], () => pages.areasPage(lang));
   routes.set(paths.crossborder[lang], () => pages.crossborderPage(lang));
-  routes.set(paths.blog[lang], () => pages.blogPage(lang));
+  routes.set(paths.blog[lang], (q) => pages.blogPage(lang, 'blog', q));
+  routes.set(paths.mevzuat[lang], (q) => pages.blogPage(lang, 'mevzuat', q));
   routes.set(paths.contact[lang], () => pages.contactPage(lang));
   routes.set(paths.booking[lang], () => pages.bookingPage(lang));
   routes.set(paths.imprint[lang], () => pages.legalPage('imprint', lang));
@@ -171,6 +177,8 @@ function dynamicPage(pathname) {
   for (const lang of LANGS) {
     const area = pathname.startsWith(paths.areas[lang] + '/') && findArea(lang, pathname.slice(paths.areas[lang].length + 1));
     if (area) return pages.areaPage(lang, area);
+    const law = pathname.startsWith(paths.mevzuat[lang] + '/') && findPost(lang, pathname.slice(paths.mevzuat[lang].length + 1), 'mevzuat');
+    if (law) return pages.postPage(lang, law);
     const post = pathname.startsWith(paths.blog[lang] + '/') && findPost(lang, pathname.slice(paths.blog[lang].length + 1));
     if (post) return pages.postPage(lang, post);
   }
@@ -273,7 +281,7 @@ async function handleAdmin(req, res, url) {
   }
   if (!session) return send(res, 200, admin.loginPage(), undefined, noStore);
 
-  const postMatch = p.match(/^\/yonetim\/yazilar\/(yeni|\d+)(\/sil|\/onizleme)?$/);
+  const postMatch = p.match(/^\/yonetim\/yazilar\/(yeni|\d+)(\/sil|\/onizleme|\/yayinla)?$/);
   const postId = postMatch && postMatch[1] !== 'yeni' ? Number(postMatch[1]) : null;
   const post = postId ? getPost(postId) : null;
   if ((postId || postMatch?.[2]) && !post) return send(res, 404, 'Yazı bulunamadı', 'text/plain; charset=utf-8');
@@ -289,6 +297,10 @@ async function handleAdmin(req, res, url) {
       if (error) return send(res, 422, admin.passwordPage(session, { error }), undefined, noStore);
       // Eski oturumlar geçersiz olduğu için bu cihaza yeni oturum verilir.
       return redirect(res, '/yonetim/sifre?degisti=1', { 'Set-Cookie': admin.newSessionCookie(IS_PROD) });
+    }
+    if (postMatch?.[2] === '/yayinla') {
+      publishGroup(postId);
+      return redirect(res, '/yonetim/yazilar?yayinlandi=1');
     }
     if (postMatch?.[2] === '/sil') {
       deletePost(postId);
@@ -373,7 +385,7 @@ async function handle(req, res) {
   if (pathname.length > 1 && pathname.endsWith('/') && !langHomes.includes(pathname)) pathname = pathname.slice(0, -1);
 
   const render = routes.get(pathname);
-  const html = render ? render() : dynamicPage(pathname);
+  const html = render ? render(url.searchParams) : dynamicPage(pathname);
   if (html) return send(res, 200, html, undefined, { 'Cache-Control': 'no-cache', 'Content-Language': langOf(pathname) });
   return send(res, 404, pages.notFound(langOf(pathname)));
 }
@@ -392,6 +404,12 @@ const purge = () => {
 };
 purge();
 setInterval(purge, 86400_000).unref();
+
+// Yayın rutininin depoya eklediği yeni yazılar bu açılışta aktarıldıysa haber ver.
+if (imported.length) {
+  console.log(`[yazılar] ${imported.length} yeni yazı aktarıldı.`);
+  mail.postsImported(imported);
+}
 
 server.listen(PORT, () => {
   console.log(`Site hazır: http://localhost:${PORT}  (Almanca: /de/, İngilizce: /en/, Felemenkçe: /nl/, yönetim: /yonetim)`);

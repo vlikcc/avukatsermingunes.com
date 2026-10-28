@@ -2,15 +2,14 @@ import config from '../site.config.js';
 import { areas } from './content/areas.js';
 import { crossBorderTopics, values } from './content/crossborder.js';
 import { paths, t, scopeNotice, LANGS, langNames, intlLocale, isForeign } from './i18n.js';
-import { layout, h, strandsSvg, formatDate, missing } from './layout.js';
-import { posts, pairOf, markdown, readingMinutes } from './blog.js';
+import { layout, h, strandsSvg, formatDate, missing, absUrl } from './layout.js';
+import { posts, pairOf, markdown, readingMinutes, postUrl, headings } from './blog.js';
 import { legalPage } from './legal.js';
 import { areaIcon } from './icons.js';
 
 const L = config.lawyer;
 const C = config.contact;
 const areaPath = (lang, a) => `${paths.areas[lang]}/${a.slug[lang]}`;
-const postPath = (lang, p) => `${paths.blog[lang]}/${p.slug}`;
 const allLangs = (fn) => Object.fromEntries(LANGS.map((l) => [l, fn(l)]));
 
 // Dile göre metin seçici: const T = pick(lang); T({ tr: '…', de: '…', en: '…', nl: '…' })
@@ -569,7 +568,7 @@ export function crossborderPage(lang) {
           return `<article class="cb-topic">
             <h3>${h(x.title[lang])}</h3>
             <p>${h(x.text[lang])}</p>
-            ${p ? `<p><a class="link-arrow" href="${postPath(lang, p)}">${T({ tr: 'İlgili yazı', de: 'Zum Beitrag', en: 'Read the article', nl: 'Lees het artikel' })}</a></p>` : ''}
+            ${p ? `<p><a class="link-arrow" href="${postUrl(p)}">${T({ tr: 'İlgili yazı', de: 'Zum Beitrag', en: 'Read the article', nl: 'Lees het artikel' })}</a></p>` : ''}
           </article>`;
         })
         .join('')}
@@ -618,11 +617,58 @@ ${bookingBand(lang)}`;
 /* Hukuki yayınlar                                                     */
 /* ------------------------------------------------------------------ */
 
-export function blogPage(lang) {
+const PAGE_SIZE = 20;
+
+// Bölüm adları ve tanıtım metinleri: "Yazılar" (genel blog) ve "Mevzuat".
+const SECTIONS = {
+  blog: {
+    name: { tr: 'Makaleler', de: 'Beiträge', en: 'Articles', nl: 'Artikelen' },
+    lead: {
+      tr: 'Türk hukukundaki güncel gelişmeler ve Avrupa’da yaşayanların Türkiye’deki hukuki işleri üzerine genel bilgilendirme yazıları.',
+      de: 'Aktuelle Entwicklungen im türkischen Recht und Rechtsfragen in der Türkei für in Europa lebende Menschen – allgemeine Informationen.',
+      en: 'Current developments in Turkish law and legal matters in Türkiye for people living in Europe – general information.',
+      nl: 'Actuele ontwikkelingen in het Turkse recht en juridische zaken in Turkije voor wie in Europa woont – algemene informatie.',
+    },
+    description: {
+      tr: 'Av. Sermin Güneş Keçeci’nin Türk hukukundaki güncel gelişmeler ve Avrupa’da yaşayan Türklerin hukuki sorunları üzerine bilgilendirme yazıları.',
+      de: 'Beiträge von Avukat (Türkei) Sermin Güneş Keçeci zu aktuellen Entwicklungen im türkischen Recht und Rechtsfragen in der Türkei.',
+      en: 'Articles by Avukat (Türkei) Sermin Güneş Keçeci on current developments in Turkish law and legal matters in Türkiye.',
+      nl: 'Artikelen van Avukat (Türkei) Sermin Güneş Keçeci over actuele ontwikkelingen in het Turkse recht en juridische zaken in Turkije.',
+    },
+  },
+  mevzuat: {
+    name: { tr: 'Mevzuat', de: 'Gesetze erklärt', en: 'Legislation explained', nl: 'Wetgeving uitgelegd' },
+    lead: {
+      tr: 'Kanun maddeleri tek tek: güncel madde metni, gerekçesi, açıklaması ve uygulamadaki yeri.',
+      de: 'Türkische Gesetzesartikel einzeln erklärt: aktueller Wortlaut (nichtamtliche Übersetzung), Begründung, Erläuterung und Praxis.',
+      en: 'Turkish statutory provisions one by one: current wording (unofficial translation), legislative reasoning, explanation and practice.',
+      nl: 'Turkse wetsartikelen één voor één: actuele tekst (niet-officiële vertaling), toelichting, uitleg en praktijk.',
+    },
+    description: {
+      tr: 'Türk mevzuatından kanun maddeleri: güncel madde metni, madde gerekçesi, açıklama ve uygulama bilgileri.',
+      de: 'Türkische Gesetzesartikel erklärt: Wortlaut, Begründung und Anwendung in der Praxis – Avukat (Türkei) Sermin Güneş Keçeci.',
+      en: 'Turkish statutory provisions explained: wording, legislative reasoning and application in practice – Avukat (Türkei) Sermin Güneş Keçeci.',
+      nl: 'Turkse wetsartikelen uitgelegd: tekst, toelichting en toepassing in de praktijk – Avukat (Türkei) Sermin Güneş Keçeci.',
+    },
+  },
+};
+const sectionPath = (category) => (category === 'mevzuat' ? paths.mevzuat : paths.blog);
+
+/**
+ * Yayın listesi: genel yazılar (category = blog) veya mevzuat bölümü.
+ * @param {URLSearchParams} [query]  ?page=2 sayfalama
+ */
+export function blogPage(lang, category = 'blog', query) {
   const T = pick(lang);
-  const list = posts(lang);
+  const S = SECTIONS[category];
+  const all = posts(lang, category);
+  const pages = Math.max(1, Math.ceil(all.length / PAGE_SIZE));
+  const page = Math.min(pages, Math.max(1, Number.parseInt(query?.get('page'), 10) || 1));
+  const list = all.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);
+  const base = sectionPath(category)[lang];
+  const pageUrl = (n) => (n === 1 ? base : `${base}?page=${n}`);
   // Henüz bu dilde yazı yoksa, yazıların bulunduğu diller önerilir.
-  const otherLangs = LANGS.filter((l) => l !== lang && posts(l).length);
+  const otherLangs = LANGS.filter((l) => l !== lang && posts(l, category).length);
   const empty = `<p class="empty">${T({
     tr: 'Henüz yayımlanmış bir yazı bulunmuyor.',
     de: 'Derzeit sind keine Beiträge veröffentlicht.',
@@ -631,20 +677,28 @@ export function blogPage(lang) {
   })}${
     otherLangs.length
       ? ` ${T({ tr: 'Diğer dillerdeki yazılar:', de: 'Beiträge in anderen Sprachen:', en: 'Articles in other languages:', nl: 'Artikelen in andere talen:' })} ${otherLangs
-          .map((l) => `<a href="${paths.blog[l]}" hreflang="${l}" lang="${l}">${h(langNames[l])}</a>`)
+          .map((l) => `<a href="${sectionPath(category)[l]}" hreflang="${l}" lang="${l}">${h(langNames[l])}</a>`)
           .join(', ')}`
       : ''
   }</p>`;
+  const tabs = ['blog', 'mevzuat']
+    .map((c) => `<a href="${sectionPath(c)[lang]}"${c === category ? ' aria-current="page"' : ''}>${h(SECTIONS[c].name[lang])}</a>`)
+    .join('');
+  const pager =
+    pages > 1
+      ? `<nav class="pager" aria-label="${T({ tr: 'Sayfalar', de: 'Seiten', en: 'Pages', nl: 'Pagina’s' })}">${
+          page > 1 ? `<a rel="prev" href="${pageUrl(page - 1)}">← ${T({ tr: 'Daha yeni', de: 'Neuere', en: 'Newer', nl: 'Nieuwer' })}</a>` : '<span></span>'
+        }<span>${page} / ${pages}</span>${
+          page < pages ? `<a rel="next" href="${pageUrl(page + 1)}">${T({ tr: 'Daha eski', de: 'Ältere', en: 'Older', nl: 'Ouder' })} →</a>` : '<span></span>'
+        }</nav>`
+      : '';
   const body = `
 <header class="page-head">
   <div class="wrap">
-    <h1>${T({ tr: 'Hukuki Yayınlar', de: 'Publikationen', en: 'Publications', nl: 'Publicaties' })}</h1>
-    <p class="page-lead">${T({
-      tr: 'Türkiye ve Almanya bağlantılı hukuki konularda genel bilgilendirme yazıları.',
-      de: 'Allgemeine Informationen zu Rechtsfragen mit Bezug zur Türkei.',
-      en: 'General information on legal issues connected with Türkiye.',
-      nl: 'Algemene informatie over juridische vragen met een band met Turkije.',
-    })}</p>
+    ${category === 'mevzuat' ? `<nav class="crumbs" aria-label="${T({ tr: 'Sayfa yolu', de: 'Brotkrumen', en: 'Breadcrumb', nl: 'Kruimelpad' })}"><a href="${paths.blog[lang]}">${h(t[lang].nav.blog)}</a></nav>` : ''}
+    <h1>${h(category === 'mevzuat' ? S.name[lang] : t[lang].nav.blog)}</h1>
+    <p class="page-lead">${h(S.lead[lang])}</p>
+    <nav class="section-tabs" aria-label="${T({ tr: 'Bölümler', de: 'Rubriken', en: 'Sections', nl: 'Rubrieken' })}">${tabs}</nav>
   </div>
 </header>
 <section class="section section-tight">
@@ -655,44 +709,70 @@ export function blogPage(lang) {
             .map(
               (p) => `<li><article>
                 <p class="post-meta"><time datetime="${h(p.date)}">${h(fmtFull(p.date, lang))}</time></p>
-                <h2><a href="${postPath(lang, p)}">${h(p.title)}</a></h2>
+                <h2><a href="${postUrl(p)}">${h(p.title)}</a></h2>
                 <p>${h(p.description || '')}</p>
               </article></li>`,
             )
-            .join('')}</ul>`
+            .join('')}</ul>${pager}`
         : empty
     }
   </div>
 </section>`;
+  const title = category === 'mevzuat' ? S.name[lang] : t[lang].nav.blog;
   return layout({
     lang,
-    title: T({ tr: 'Hukuki Yayınlar', de: 'Publikationen', en: 'Publications', nl: 'Publicaties' }),
-    description: T({
-      tr: 'Av. Sermin Güneş Keçeci’nin Türkiye–Almanya bağlantılı hukuki konulardaki bilgilendirme yazıları.',
-      de: 'Beiträge von Avukat (Türkei) Sermin Güneş Keçeci zu türkischem Recht mit Bezug zu Deutschland.',
-      en: 'Articles by Avukat (Türkei) Sermin Güneş Keçeci on Turkish law with a connection to Germany.',
-      nl: 'Artikelen van Avukat (Türkei) Sermin Güneş Keçeci over Turks recht met een band met Duitsland.',
-    }),
-    path: paths.blog[lang],
-    alt: paths.blog,
+    title: page > 1 ? `${title} (${page})` : title,
+    description: S.description[lang],
+    path: pageUrl(page),
+    alt: page > 1 ? null : sectionPath(category),
     active: 'blog',
+    jsonLd: [breadcrumbs(lang, category === 'mevzuat' ? [[t[lang].nav.blog, paths.blog[lang]], [S.name[lang], base]] : [[t[lang].nav.blog, base]])],
     body,
   });
 }
 
+// schema.org BreadcrumbList: items = [[ad, yol], …]
+function breadcrumbs(lang, items) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [[T0(lang), paths.home[lang]], ...items].map(([name, path], i) => ({ '@type': 'ListItem', position: i + 1, name, item: absUrl(path) })),
+  };
+}
+const T0 = (lang) => ({ tr: 'Ana sayfa', de: 'Startseite', en: 'Home', nl: 'Home' })[lang];
+
 // preview: yönetim panelindeki önizleme (taslaklar için de çalışır, arama motorlarına kapalı).
 export function postPage(lang, p, { preview = false } = {}) {
   const T = pick(lang);
+  const mevzuat = p.category === 'mevzuat';
+  const toc = headings(p.body);
+  const published = p.publish_at || `${p.date}T08:00:00+03:00`;
+  const author = {
+    '@type': 'Person',
+    name: `${isForeign(lang) ? L.titleDe : L.titleTr} ${L.name}`,
+    url: absUrl(paths.about[lang]),
+    jobTitle: isForeign(lang) ? L.titleDe : L.titleTr,
+  };
+  const crumbItems = [[t[lang].nav.blog, paths.blog[lang]], ...(mevzuat ? [[SECTIONS.mevzuat.name[lang], paths.mevzuat[lang]]] : []), [p.title, postUrl(p)]];
   const body = `
 <article class="post">
   <header class="page-head">
     <div class="wrap wrap-narrow">
-      <nav class="crumbs" aria-label="${T({ tr: 'Sayfa yolu', de: 'Brotkrumen', en: 'Breadcrumb', nl: 'Kruimelpad' })}"><a href="${paths.blog[lang]}">${h(t[lang].nav.blog)}</a></nav>
+      <nav class="crumbs" aria-label="${T({ tr: 'Sayfa yolu', de: 'Brotkrumen', en: 'Breadcrumb', nl: 'Kruimelpad' })}"><a href="${paths.blog[lang]}">${h(t[lang].nav.blog)}</a>${
+        mevzuat ? ` <span aria-hidden="true">/</span> <a href="${paths.mevzuat[lang]}">${h(SECTIONS.mevzuat.name[lang])}</a>` : ''
+      }</nav>
       <h1>${h(p.title)}</h1>
-      <p class="post-meta"><time datetime="${h(p.date)}">${h(fmtFull(p.date, lang))}</time> <span aria-hidden="true">/</span> ${readingMinutes(p.body)} ${T({ tr: 'dk okuma', de: 'Min. Lesezeit', en: 'min read', nl: 'min. leestijd' })}</p>
+      <p class="post-meta"><time datetime="${h(p.date)}">${h(fmtFull(p.date, lang))}</time> <span aria-hidden="true">/</span> ${readingMinutes(p.body)} ${T({ tr: 'dk okuma', de: 'Min. Lesezeit', en: 'min read', nl: 'min. leestijd' })} <span aria-hidden="true">/</span> ${h(isForeign(lang) ? L.titleDe : 'Av.')} ${h(L.name)}</p>
     </div>
   </header>
   <div class="wrap wrap-narrow section-tight">
+    ${
+      toc.length >= 3
+        ? `<nav class="toc" aria-labelledby="toc-title"><p class="toc-title" id="toc-title">${T({ tr: 'İçindekiler', de: 'Inhalt', en: 'Contents', nl: 'Inhoud' })}</p><ol>${toc
+            .map((x) => `<li><a href="#${h(x.id)}">${h(x.text)}</a></li>`)
+            .join('')}</ol></nav>`
+        : ''
+    }
     <div class="prose prose-article">${markdown(p.body)}</div>
     <aside class="post-disclaimer">
       <p>${T({
@@ -700,7 +780,15 @@ export function postPage(lang, p, { preview = false } = {}) {
         de: 'Dieser Beitrag gibt den Stand zum Zeitpunkt der Veröffentlichung wieder und dient ausschließlich der allgemeinen Information. Er ersetzt keine Beratung im Einzelfall.',
         en: 'This article reflects the law at the time of publication and is for general information only. It does not replace advice on an individual case.',
         nl: 'Dit artikel geeft de stand van het recht weer op het moment van publicatie en is uitsluitend bedoeld als algemene informatie. Het vervangt geen advies in een concreet geval.',
-      })}</p>
+      })}${
+        mevzuat && lang !== 'tr'
+          ? ` ${T({
+              de: 'Die Übersetzung des Gesetzestextes ist nicht amtlich; maßgeblich ist allein der im türkischen Amtsblatt (Resmî Gazete) veröffentlichte türkische Wortlaut.',
+              en: 'The translation of the statutory text is unofficial; only the Turkish text published in the Official Gazette (Resmî Gazete) is authoritative.',
+              nl: 'De vertaling van de wettekst is niet officieel; alleen de Turkse tekst zoals gepubliceerd in het Turkse Staatsblad (Resmî Gazete) is bindend.',
+            })}`
+          : ''
+      }</p>
     </aside>
   </div>
 </article>
@@ -709,13 +797,32 @@ ${bookingBand(lang)}`;
     lang,
     title: p.title,
     description: p.description || p.title,
-    path: postPath(lang, p),
+    path: postUrl(p),
     alt: allLangs((l) => {
       const twin = pairOf(p, l);
-      return twin ? postPath(l, twin) : paths.blog[l];
+      return twin ? postUrl(twin) : sectionPath(p.category)[l];
     }),
     active: 'blog',
     noindex: preview,
+    article: { published, modified: p.updated_at, section: (mevzuat ? SECTIONS.mevzuat : SECTIONS.blog).name[lang] },
+    jsonLd: [
+      {
+        '@context': 'https://schema.org',
+        '@type': mevzuat ? 'Article' : 'BlogPosting',
+        headline: p.title,
+        description: p.description || undefined,
+        inLanguage: lang,
+        datePublished: published,
+        dateModified: p.updated_at || published,
+        author,
+        publisher: author,
+        image: absUrl('/img/portre-ana.jpg'),
+        mainEntityOfPage: absUrl(postUrl(p)),
+        articleSection: (mevzuat ? SECTIONS.mevzuat : SECTIONS.blog).name[lang],
+        wordCount: p.body.split(/\s+/).length,
+      },
+      breadcrumbs(lang, crumbItems),
+    ],
     body: preview ? `<p class="preview-bar">Önizleme${p.status === 'draft' ? ' — bu yazı taslak, sitede görünmüyor' : ''}. <a href="/yonetim/yazilar/${p.id}">Düzenlemeye dön</a></p>${body}` : body,
   });
 }

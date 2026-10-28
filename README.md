@@ -34,7 +34,8 @@ npm start
 | `src/content/crossborder.js` | Türkiye–Almanya başlıkları ve mesleki değerler |
 | `src/pages.js` | Sayfa şablonları |
 | `src/legal.js` | Impressum, gizlilik/KVKK ve çerez metinleri |
-| `content/posts/{tr,de,en,nl}` | İlk kurulumda veritabanına aktarılan örnek yazılar (Markdown) |
+| `content/posts/{tr,de,en,nl}` | Veritabanına aktarılan yazılar (Markdown; yayın rutini buraya ekler) |
+| `content/RUTIN.md`, `content/yayin-plani.md` | Yayın rutininin kuralları, mevzuat sırası ve kayıtları |
 | `public/` | CSS, JavaScript, logo, yazı tipleri |
 | `data/site.db` | Randevular, mesajlar, blog yazıları ve yönetim şifresi (yedekleyin; paylaşmayın) |
 
@@ -70,7 +71,19 @@ Yazılar yönetim panelindeki **Yazılar** sayfasından yazılır, düzenlenir v
 - **Adres:** Boş bırakılırsa başlıktan üretilir. Yayındaki bir yazının adresini değiştirmek eski bağlantıları bozar.
 - **Metin biçimi:** `##` ara başlık, `-` liste, `**kalın**`, `*italik*`, `[bağlantı](https://...)`. Editördeki “Biçimlendirme yardımı” bölümünde özet vardır.
 
-`content/posts/` klasöründeki Markdown dosyaları yalnızca ilk çalıştırmada bir kez veritabanına aktarılır; sonraki değişiklikler panelden yapılır.
+- **Bölüm:** “Makale” yazıları `/yayinlar`, “Mevzuat” yazıları (kanun maddesi açıklamaları) `/yayinlar/mevzuat` altında listelenir.
+- **Yayın saati (Türkiye saati):** Doluysa yazı “Yayında” olsa bile o tarih ve saatten önce sitede görünmez.
+- **Tüm dilleriyle yayınla:** Taslak listesindeki bu düğme, yazıyı ve bağlı çevirilerini birlikte yayına alır.
+
+`content/posts/{tr,de,en,nl}/` klasörüne eklenen her yeni Markdown dosyası, sunucu açılırken bir kez veritabanına aktarılır (panelden silinen yazı geri gelmez). Aktarılan yeni yazılar `NOTIFY_EMAIL` adresine bildirilir.
+
+### Yayın rutini
+
+Her gün Türkiye saatiyle 18:00’de bulutta bir Claude rutini çalışır, ertesi gün için dört dilde (TR/DE/EN/NL) her gün bir mevzuat yazısı, iki günde bir de makale hazırlar ve bunları `content/posts/` altına **taslak** olarak, 08:00 yayın saatiyle ekleyip `master` dalına gönderir. Site yeniden kurulur, taslaklar panele düşer ve e-posta gelir. Yazıları okuyup doğruladıktan sonra “Tüm dilleriyle yayınla” ile onaylayın; ertesi sabah 08:00’de görünürler.
+
+- Kurallar (konu seçimi, doğruluk, reklam yasağı, SEO, dosya biçimi): `content/RUTIN.md`
+- Mevzuat sırası ve yayın kayıtları: `content/yayin-plani.md`
+- Rutinin kendisi: https://claude.ai/code/routines
 
 ## Yönetim şifresi
 

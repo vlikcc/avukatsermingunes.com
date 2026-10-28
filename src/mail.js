@@ -206,4 +206,25 @@ export function contactReceived(m) {
   });
 }
 
+// Yayın rutininin eklediği yazılar (genellikle onay bekleyen taslaklar).
+export function postsImported(list) {
+  const drafts = list.filter((p) => p.status === 'draft');
+  const tr = list.filter((p) => p.lang === 'tr');
+  const when = (p) =>
+    p.publish_at
+      ? new Date(p.publish_at).toLocaleString('tr-TR', { timeZone: 'Europe/Istanbul', dateStyle: 'long', timeStyle: 'short' }) + ' (Türkiye saati)'
+      : p.date;
+  send({
+    to: process.env.NOTIFY_EMAIL,
+    subject: drafts.length ? `${drafts.length} yeni yazı onayınızı bekliyor` : `${list.length} yeni yazı eklendi`,
+    text: `Yayın rutini siteye ${list.length} yeni yazı ekledi${drafts.length ? `; ${drafts.length} tanesi taslak olarak onayınızı bekliyor` : ''}.
+
+${(tr.length ? tr : list).map((p) => `- [${p.category === 'mevzuat' ? 'Mevzuat' : 'Makale'}] ${p.title}\n  Yayın: ${when(p)}\n  ${base()}/yonetim/yazilar/${p.id}`).join('\n\n')}
+
+Yazıları okuyup doğruladıktan sonra yönetim panelindeki “Tüm dilleriyle yayınla” düğmesiyle dört dildeki hâlini birlikte yayına alabilirsiniz. Yayın zamanı gelmeden onaylanan yazılar o saatte kendiliğinden görünür.
+
+${base()}/yonetim/yazilar?durum=taslak`,
+  });
+}
+
 export { topicLabel };

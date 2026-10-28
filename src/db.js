@@ -75,6 +75,14 @@ db.exec(`
   );
 `);
 
+// Sonradan eklenen sütunlar: eski veritabanlarına bir kez eklenir.
+const postCols = db.prepare('PRAGMA table_info(posts)').all().map((c) => c.name);
+if (!postCols.includes('category')) db.exec("ALTER TABLE posts ADD COLUMN category TEXT NOT NULL DEFAULT 'blog'"); // blog | mevzuat
+if (!postCols.includes('publish_at')) db.exec('ALTER TABLE posts ADD COLUMN publish_at TEXT'); // UTC ISO; dolmadan yayında görünmez
+
+// content/posts altından veritabanına aktarılmış dosyalar (bir dosya yalnızca bir kez aktarılır).
+db.exec('CREATE TABLE IF NOT EXISTS imported_files (path TEXT PRIMARY KEY, imported_at TEXT NOT NULL)');
+
 export const getSetting = (key) => db.prepare('SELECT value FROM settings WHERE key = ?').get(key)?.value ?? null;
 export const setSetting = (key, value) => db.prepare('INSERT OR REPLACE INTO settings (key, value) VALUES (?, ?)').run(key, value);
 

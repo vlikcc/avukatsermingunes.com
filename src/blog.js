@@ -1,8 +1,9 @@
 // Hukuki yayınlar (blog): yazılar veritabanında tutulur ve yönetim panelinden
 // yazılır, düzenlenir, silinir. Metinler Markdown biçimindedir.
 //
-// content/posts/{tr,de,en,nl}/*.md dosyaları yalnızca ilk çalıştırmada bir kez
-// veritabanına aktarılır; sonrasında yazılar panelden yönetilir. Dosya biçimi:
+// content/posts/{tr,de,en,nl}/*.md dosyaları sunucu her açıldığında taranır;
+// daha önce aktarılmamış her dosya bir kez veritabanına eklenir (yayın rutininin
+// ürettiği yazılar bu yolla gelir). Panelden silinen yazı geri gelmez. Dosya biçimi:
 //
 // ---
 // title: Başlık
@@ -10,14 +11,16 @@
 // date: 2026-10-01
 // slug: url-adi
 // pair: ortak-anahtar      (diğer dildeki karşılığıyla aynı değer)
-// draft: true              (isteğe bağlı; taslaklar yayımlanmaz)
+// category: mevzuat        (isteğe bağlı; blog | mevzuat, varsayılan blog)
+// publish_at: 2026-10-01T08:00:00+03:00  (isteğe bağlı; bu andan önce sitede görünmez)
+// draft: true              (isteğe bağlı; taslaklar panelden onaylanana kadar yayımlanmaz)
 // ---
 
 import crypto from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
 import { h } from './layout.js';
-import { LANGS } from './i18n.js';
+import { LANGS, paths } from './i18n.js';
 import { db, getSetting, setSetting } from './db.js';
 
 const ROOT = path.resolve(import.meta.dirname, '../content/posts');
@@ -34,44 +37,86 @@ function parse(file) {
   return { ...meta, draft: meta.draft === 'true', body: m[2] };
 }
 
-// Markdown dosyalarındaki yazıları bir kez veritabanına aktarır. Panelden silinen
-// bir yazı, sunucu yeniden başladığında geri gelmesin diye işlem işaretlenir.
+export const CATEGORIES = ['blog', 'mevzuat'];
+
+// "2026-10-01T08:00:00+03:00" -> UTC ISO; geçersizse null.
+const toUtc = (v) => {
+  const d = v ? new Date(v) : null;
+  return d && !Number.isNaN(d.getTime()) ? d.toISOString() : null;
+};
+
+// Markdown dosyalarındaki yeni yazıları veritabanına aktarır ve aktarılan yazıları döndürür.
+// Her dosya yalnızca bir kez aktarılır; panelden silinen bir yazı yeniden gelmez.
 function importFiles() {
-  if (getSetting('posts_imported')) return;
   const ins = db.prepare(
-    `INSERT OR IGNORE INTO posts (lang, slug, title, description, body, date, pair, status)
-     VALUES (?, ?, ?, ?, ?, ?, ?, ?)`,
+    `INSERT OR IGNORE INTO posts (lang, slug, title, description, body, date, pair, status, category, publish_at)
+     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
   );
+  const seen = db.prepare('SELECT 1 FROM imported_files WHERE path = ?');
+  const mark = db.prepare('INSERT OR IGNORE INTO imported_files (path, imported_at) VALUES (?, ?)');
+  // Önceki sürüm dosyaları ilk açılışta topluca aktarıyordu; o dosyalar yalnızca işaretlenir.
+  const legacy = Boolean(getSetting('posts_imported')) && !getSetting('import_tracking');
+  const added = [];
   for (const lang of LANGS) {
     const dir = path.join(ROOT, lang);
     if (!fs.existsSync(dir)) continue;
-    for (const f of fs.readdirSync(dir).filter((x) => x.endsWith('.md'))) {
-      const p = parse(path.join(dir, f));
-      if (!p?.slug || !p.title) continue;
-      ins.run(lang, p.slug, p.title, p.description || '', p.body.trim(), p.date || today(), p.pair || null, p.draft ? 'draft' : 'published');
+    for (const f of fs.readdirSync(dir).filter((x) => x.endsWith('.md')).sort()) {
+      const rel = `${lang}/${f}`;
+      if (seen.get(rel)) continue;
+      const p = legacy ? null : parse(path.join(dir, f));
+      if (p?.slug && p.title) {
+        const category = CATEGORIES.includes(p.category) ? p.category : 'blog';
+        const r = ins.run(lang, p.slug, p.title, p.description || '', p.body.trim(), p.date || today(), p.pair || null, p.draft ? 'draft' : 'published', category, toUtc(p.publish_at));
+        if (r.changes) added.push(getPost(Number(r.lastInsertRowid)));
+      }
+      mark.run(rel, new Date().toISOString());
     }
   }
-  setSetting('posts_imported', new Date().toISOString());
+  setSetting('import_tracking', '1');
+  return added;
 }
 
 const today = () => new Date().toLocaleDateString('en-CA', { timeZone: 'Europe/Berlin' });
 
-importFiles();
+// Yayında olan ve yayın zamanı gelmiş yazılar sitede görünür.
+const LIVE = "status = 'published' AND (publish_at IS NULL OR publish_at <= ?)";
+const now = () => new Date().toISOString();
 
-/** Bir dildeki yayımlanmış yazılar, yeniden eskiye. */
-export const posts = (lang) =>
-  db.prepare("SELECT * FROM posts WHERE lang = ? AND status = 'published' ORDER BY date DESC, id DESC").all(lang);
+/** Sitedeki adresi: /yayinlar/… veya /yayinlar/mevzuat/… */
+export const postUrl = (p) => `${(p.category === 'mevzuat' ? paths.mevzuat : paths.blog)[p.lang]}/${p.slug}`;
 
-export const findPost = (lang, slug) =>
-  db.prepare("SELECT * FROM posts WHERE lang = ? AND slug = ? AND status = 'published'").get(lang, slug);
+/** Bir dildeki görünür yazılar, yeniden eskiye. category verilirse yalnızca o bölüm. */
+export const posts = (lang, category) =>
+  category
+    ? db.prepare(`SELECT * FROM posts WHERE lang = ? AND category = ? AND ${LIVE} ORDER BY date DESC, id DESC`).all(lang, category, now())
+    : db.prepare(`SELECT * FROM posts WHERE lang = ? AND ${LIVE} ORDER BY date DESC, id DESC`).all(lang, now());
+
+export const findPost = (lang, slug, category = 'blog') =>
+  db.prepare(`SELECT * FROM posts WHERE lang = ? AND slug = ? AND category = ? AND ${LIVE}`).get(lang, slug, category, now());
 
 export const pairOf = (post, lang) =>
-  post?.pair ? db.prepare("SELECT * FROM posts WHERE lang = ? AND pair = ? AND status = 'published'").get(lang, post.pair) : undefined;
+  post?.pair ? db.prepare(`SELECT * FROM posts WHERE lang = ? AND pair = ? AND ${LIVE}`).get(lang, post.pair, now()) : undefined;
+
+/** Yayında işaretli ama yayın zamanı henüz gelmemiş mi? */
+export const isScheduled = (p) => p.status === 'published' && Boolean(p.publish_at) && p.publish_at > now();
 
 /* ----------------------------- yönetim ----------------------------- */
 
 export const allPosts = () => db.prepare('SELECT * FROM posts ORDER BY date DESC, id DESC').all();
 export const getPost = (id) => db.prepare('SELECT * FROM posts WHERE id = ?').get(id);
+
+/** Sunucu açılırken content/posts altından aktarılan yeni yazılar. */
+export const imported = importFiles();
+
+/** Yazıyı ve aynı ortak anahtara bağlı tüm çevirilerini yayına alır. */
+export function publishGroup(id) {
+  const p = getPost(id);
+  if (!p) return 0;
+  const r = p.pair
+    ? db.prepare(`UPDATE posts SET status = 'published', updated_at = strftime('%Y-%m-%dT%H:%M:%fZ','now') WHERE pair = ?`).run(p.pair)
+    : db.prepare(`UPDATE posts SET status = 'published', updated_at = strftime('%Y-%m-%dT%H:%M:%fZ','now') WHERE id = ?`).run(id);
+  return Number(r.changes);
+}
 
 // Başlıktan adres üretir: "Türkiye’de Boşanma" -> "turkiyede-bosanma"
 export function slugify(text) {
@@ -103,6 +148,8 @@ export function savePost(id, input) {
     body: String(input.body || '').replace(/\r\n/g, '\n').trim(),
     date: /^\d{4}-\d{2}-\d{2}$/.test(input.date || '') ? input.date : today(),
     status: input.status === 'published' ? 'published' : 'draft',
+    category: CATEGORIES.includes(input.category) ? input.category : 'blog',
+    publishTime: /^\d{2}:\d{2}$/.test(input.publishTime || '') ? input.publishTime : '',
     translationOf: Number(input.translationOf) || null,
   };
   const errors = {};
@@ -124,19 +171,22 @@ export function savePost(id, input) {
     pair = null;
   }
 
-  const row = { ...v, pair };
+  // Yayın saati Türkiye saatiyle girilir (Türkiye 2016'dan beri yıl boyu UTC+3).
+  const row = { ...v, pair, publish_at: v.publishTime ? toUtc(`${v.date}T${v.publishTime}:00+03:00`) : null };
   delete row.translationOf;
+  delete row.publishTime;
   if (id) {
     db.prepare(
       `UPDATE posts SET lang = :lang, slug = :slug, title = :title, description = :description, body = :body, date = :date,
-       pair = :pair, status = :status, updated_at = strftime('%Y-%m-%dT%H:%M:%fZ','now') WHERE id = :id`,
+       pair = :pair, status = :status, category = :category, publish_at = :publish_at,
+       updated_at = strftime('%Y-%m-%dT%H:%M:%fZ','now') WHERE id = :id`,
     ).run({ ...row, id });
     return { id, values: v };
   }
   const r = db
     .prepare(
-      `INSERT INTO posts (lang, slug, title, description, body, date, pair, status)
-       VALUES (:lang, :slug, :title, :description, :body, :date, :pair, :status)`,
+      `INSERT INTO posts (lang, slug, title, description, body, date, pair, status, category, publish_at)
+       VALUES (:lang, :slug, :title, :description, :body, :date, :pair, :status, :category, :publish_at)`,
     )
     .run(row);
   return { id: Number(r.lastInsertRowid), values: v };
@@ -156,6 +206,13 @@ function inline(text) {
     });
 }
 
+// Ara başlıklara bağlantı verilebilsin diye kimlik: "## Madde metni" -> id="madde-metni"
+const headingId = (text) => slugify(text.replace(/[*_[\]()]/g, '')) || 'bolum';
+
+/** Metindeki ## ara başlıklar (içindekiler listesi için). */
+export const headings = (src) =>
+  [...src.matchAll(/^##\s+(.+)$/gm)].map((m) => ({ id: headingId(m[1]), text: m[1].replace(/\*\*?|\[|\]\([^)]*\)/g, '') }));
+
 // Yalın bir Markdown dönüştürücü: başlıklar, paragraflar, listeler, alıntılar.
 export function markdown(src) {
   const out = [];
@@ -165,13 +222,15 @@ export function markdown(src) {
     const hm = block.match(/^(#{2,4})\s+(.+)$/);
     if (hm && lines.length === 1) {
       const lvl = hm[1].length;
-      out.push(`<h${lvl}>${inline(hm[2])}</h${lvl}>`);
+      out.push(`<h${lvl} id="${headingId(hm[2])}">${inline(hm[2])}</h${lvl}>`);
     } else if (lines.every((l) => /^\s*[-*]\s+/.test(l))) {
       out.push(`<ul>${lines.map((l) => `<li>${inline(l.replace(/^\s*[-*]\s+/, ''))}</li>`).join('')}</ul>`);
     } else if (lines.every((l) => /^\s*\d+\.\s+/.test(l))) {
       out.push(`<ol>${lines.map((l) => `<li>${inline(l.replace(/^\s*\d+\.\s+/, ''))}</li>`).join('')}</ol>`);
     } else if (lines.every((l) => l.startsWith('>'))) {
-      out.push(`<blockquote><p>${inline(lines.map((l) => l.replace(/^>\s?/, '')).join(' '))}</p></blockquote>`);
+      // Alıntı içindeki yalnız ">" satırları paragrafları ayırır (ör. kanun maddesinin fıkraları).
+      const paras = lines.map((l) => l.replace(/^>\s?/, '')).join('\n').split(/\n\s*\n/);
+      out.push(`<blockquote>${paras.map((x) => `<p>${inline(x.replace(/\n/g, ' '))}</p>`).join('')}</blockquote>`);
     } else {
       out.push(`<p>${inline(lines.join(' '))}</p>`);
     }
