@@ -5,6 +5,7 @@ import { paths, t, scopeNotice } from './i18n.js';
 import { layout, h, strandsSvg, formatDate, missing } from './layout.js';
 import { posts, pairOf, markdown, readingMinutes } from './blog.js';
 import { legalPage } from './legal.js';
+import { areaIcon } from './icons.js';
 
 const L = config.lawyer;
 const C = config.contact;
@@ -187,8 +188,11 @@ function areaIndex(lang) {
     ${areas
       .map(
         (a) => `<li><a href="${areaPath(lang, a)}">
-          <span class="area-name">${h(a.title[lang])}</span>
-          <span class="area-sum">${h(a.summary[lang])}</span>
+          <span class="area-icon">${areaIcon(a.key)}</span>
+          <span class="area-text">
+            <span class="area-name">${h(a.title[lang])}</span>
+            <span class="area-sum">${h(a.summary[lang])}</span>
+          </span>
         </a></li>`,
       )
       .join('')}

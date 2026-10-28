@@ -559,3 +559,20 @@ code { font-size: 0.9em; background: var(--beige); padding: 0.1em 0.35em; border
   .page-head-photo { width: min(60%, 240px); order: -1; }
   .page-head-photo-sm { display: none; }
 }
+
+/* Çalışma alanı simgeleri */
+.area-index a { display: flex; align-items: flex-start; gap: 1.1rem; }
+.area-icon {
+  flex: none; display: grid; place-items: center;
+  width: 48px; height: 48px; margin-top: 0.1rem;
+  border: 1px solid var(--gold); border-radius: 50%;
+  background: var(--paper); color: var(--green);
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+}
+.area-icon svg { width: 22px; height: 22px; }
+.area-text { min-width: 0; }
+.area-index a:hover .area-icon { background: var(--green); border-color: var(--green); color: var(--paper); }
+@media (max-width: 520px) {
+  .area-icon { width: 40px; height: 40px; }
+  .area-icon svg { width: 19px; height: 19px; }
+}
