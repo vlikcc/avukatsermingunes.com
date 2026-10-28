@@ -1,0 +1,23 @@
+{
+  "name": "sermin-gunes-kececi-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Avukat Sermin Güneş Keçeci — mesleki web sitesi ve randevu sistemi",
+  "type": "module",
+  "main": "server.js",
+  "engines": {
+    "node": ">=22.13"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "deploy": "sh scripts/deploy.sh"
+  },
+  "dependencies": {
+    "nodemailer": "^10.2.1"
+  },
+  "devDependencies": {
+    "@fontsource/cormorant-garamond": "^5.3.0",
+    "@fontsource/montserrat": "^5.3.0"
+  }
+}
