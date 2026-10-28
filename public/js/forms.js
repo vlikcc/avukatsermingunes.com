@@ -2,10 +2,12 @@
 (() => {
   const form = document.querySelector('.js-contact');
   if (!form) return;
-  const de = document.documentElement.lang === 'de';
-  const T = de
-    ? { sending: 'Wird gesendet …', ok: 'Vielen Dank. Ihre Nachricht ist eingegangen; Sie erhalten eine Antwort per E-Mail.', invalid: 'Bitte prüfen Sie die markierten Felder.', rate: 'Zu viele Anfragen. Bitte versuchen Sie es später erneut.', fail: 'Die Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es erneut.' }
-    : { sending: 'Gönderiliyor…', ok: 'Teşekkürler. Mesajınız alındı; yanıt e-posta ile iletilecektir.', invalid: 'Lütfen işaretli alanları kontrol edin.', rate: 'Çok fazla deneme yapıldı. Lütfen daha sonra tekrar deneyin.', fail: 'Mesaj gönderilemedi. Lütfen tekrar deneyin.' };
+  const T = {
+    tr: { sending: 'Gönderiliyor…', ok: 'Teşekkürler. Mesajınız alındı; yanıt e-posta ile iletilecektir.', invalid: 'Lütfen işaretli alanları kontrol edin.', rate: 'Çok fazla deneme yapıldı. Lütfen daha sonra tekrar deneyin.', fail: 'Mesaj gönderilemedi. Lütfen tekrar deneyin.' },
+    de: { sending: 'Wird gesendet …', ok: 'Vielen Dank. Ihre Nachricht ist eingegangen; Sie erhalten eine Antwort per E-Mail.', invalid: 'Bitte prüfen Sie die markierten Felder.', rate: 'Zu viele Anfragen. Bitte versuchen Sie es später erneut.', fail: 'Die Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es erneut.' },
+    en: { sending: 'Sending …', ok: 'Thank you. Your message has been received; you will receive a reply by email.', invalid: 'Please check the highlighted fields.', rate: 'Too many requests. Please try again later.', fail: 'The message could not be sent. Please try again.' },
+    nl: { sending: 'Wordt verstuurd …', ok: 'Hartelijk dank. Uw bericht is ontvangen; u ontvangt een antwoord per e-mail.', invalid: 'Controleer de gemarkeerde velden.', rate: 'Te veel aanvragen. Probeer het later opnieuw.', fail: 'Het bericht kon niet worden verstuurd. Probeer het opnieuw.' },
+  }[document.documentElement.lang] || {};
   const status = form.querySelector('.form-status');
   const button = form.querySelector('button[type="submit"]');
 

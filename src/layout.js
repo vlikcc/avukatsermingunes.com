@@ -1,5 +1,6 @@
 import config from '../site.config.js';
-import { paths, t } from './i18n.js';
+import { paths, t, LANGS, langNames, intlLocale, isForeign } from './i18n.js';
+import { flag } from './flags.js';
 
 export const h = (v) =>
   String(v ?? '')
@@ -15,7 +16,7 @@ export const missing = (lang) => `<span class="missing">[${h(t[lang].missing)}]<
 export const absUrl = (path) => (config.siteUrl ? config.siteUrl + path : path);
 
 export const formatDate = (iso, lang) =>
-  new Date(iso + 'T12:00:00Z').toLocaleDateString(lang === 'de' ? 'de-DE' : 'tr-TR', {
+  new Date(iso + 'T12:00:00Z').toLocaleDateString(intlLocale[lang], {
     day: 'numeric',
     month: 'long',
     year: 'numeric',
@@ -42,7 +43,7 @@ function jsonLd(lang) {
   const data = {
     '@context': 'https://schema.org',
     '@type': 'Attorney',
-    name: `${lang === 'de' ? L.titleDe : L.titleTr} ${L.name}`,
+    name: `${isForeign(lang) ? L.titleDe : L.titleTr} ${L.name}`,
     url: absUrl(paths.home[lang]),
     image: absUrl('/img/portre-ana.jpg'),
     areaServed: ['TR', 'DE'],
@@ -69,11 +70,11 @@ const navItems = ['about', 'areas', 'crossborder', 'blog', 'contact'];
 
 /**
  * @param {object} o
- * @param {'tr'|'de'} o.lang
+ * @param {'tr'|'de'|'en'|'nl'} o.lang
  * @param {string} o.title       Sayfa başlığı (site adı otomatik eklenir)
  * @param {string} o.description Meta açıklama
  * @param {string} o.path        Bu sayfanın yolu
- * @param {string} o.altPath     Diğer dildeki karşılığı
+ * @param {Record<string,string>|null} o.alt  Her dildeki karşılığı: { tr, de, en, nl }
  * @param {string} [o.active]    Aktif menü anahtarı
  * @param {string} o.body
  * @param {boolean} [o.noindex]
@@ -82,13 +83,12 @@ const navItems = ['about', 'areas', 'crossborder', 'blog', 'contact'];
 export function layout(o) {
   const { lang } = o;
   const s = t[lang];
-  const other = lang === 'tr' ? 'de' : 'tr';
+  const foreign = isForeign(lang);
   const L = config.lawyer;
   const fullTitle = o.title
-    ? `${o.title} | ${lang === 'de' ? 'Avukat (Türkei)' : 'Av.'} ${L.name}`
-    : `${lang === 'de' ? 'Avukat (Türkei)' : 'Avukat'} ${L.name} | İzmir · Düsseldorf`;
-  const trPath = lang === 'tr' ? o.path : o.altPath;
-  const dePath = lang === 'de' ? o.path : o.altPath;
+    ? `${o.title} | ${foreign ? 'Avukat (Türkei)' : 'Av.'} ${L.name}`
+    : `${foreign ? 'Avukat (Türkei)' : 'Avukat'} ${L.name} | İzmir · Düsseldorf`;
+  const alt = o.alt ? { ...o.alt, [lang]: o.path } : null;
 
   const nav = navItems
     .map(
@@ -109,9 +109,8 @@ export function layout(o) {
 <meta name="description" content="${h(o.description)}">
 ${o.noindex ? '<meta name="robots" content="noindex, nofollow">' : ''}
 <link rel="canonical" href="${h(absUrl(o.path))}">
-${trPath ? `<link rel="alternate" hreflang="tr" href="${h(absUrl(trPath))}">` : ''}
-${dePath ? `<link rel="alternate" hreflang="de" href="${h(absUrl(dePath))}">` : ''}
-${trPath ? `<link rel="alternate" hreflang="x-default" href="${h(absUrl(trPath))}">` : ''}
+${alt ? LANGS.map((l) => `<link rel="alternate" hreflang="${l}" href="${h(absUrl(alt[l]))}">`).join('\n') : ''}
+${alt ? `<link rel="alternate" hreflang="x-default" href="${h(absUrl(alt.tr))}">` : ''}
 <meta property="og:type" content="website">
 <meta property="og:title" content="${h(fullTitle)}">
 <meta property="og:description" content="${h(o.description)}">
@@ -137,12 +136,19 @@ ${trPath ? `<link rel="alternate" hreflang="x-default" href="${h(absUrl(trPath))
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
       <span class="nav-toggle-bars" aria-hidden="true"></span><span class="nav-toggle-label">${h(s.menu)}</span>
     </button>
-    <nav id="site-nav" class="site-nav" aria-label="${lang === 'de' ? 'Hauptnavigation' : 'Ana menü'}">
+    <nav id="site-nav" class="site-nav" aria-label="${h(s.navLabel)}">
       <ul>${nav}</ul>
       <div class="nav-actions">
         ${
-          o.altPath
-            ? `<a class="lang-switch" href="${h(o.altPath)}" hreflang="${other}" lang="${other}" title="${h(s.otherLang)}"><span aria-hidden="true">${s.otherLangShort}</span><span class="sr-only">${h(s.otherLang)}</span></a>`
+          alt
+            ? `<details class="lang-menu">
+          <summary>${flag(lang)}<span aria-hidden="true">${lang.toUpperCase()}</span><span class="sr-only">${h(s.langLabel)}: ${h(langNames[lang])}</span></summary>
+          <ul>${LANGS.map((l) =>
+            l === lang
+              ? `<li><span aria-current="true">${flag(l)}<span class="lang-name">${h(langNames[l])}</span><small>${l.toUpperCase()}</small></span></li>`
+              : `<li><a href="${h(alt[l])}" hreflang="${l}" lang="${l}">${flag(l)}<span class="lang-name">${h(langNames[l])}</span><small>${l.toUpperCase()}</small></a></li>`,
+          ).join('')}</ul>
+        </details>`
             : ''
         }
         <a class="btn btn-small" href="${paths.booking[lang]}"${o.active === 'booking' ? ' aria-current="page"' : ''}>${h(s.nav.booking)}</a>
@@ -157,7 +163,7 @@ ${o.body}
   <div class="wrap footer-grid">
     <div class="footer-id">
       <img src="/img/logo-160.png" width="88" height="79" alt="${h(L.name)}" loading="lazy">
-      <p class="footer-name">${h(lang === 'de' ? L.titleDe : L.titleTr)} ${h(L.name)}</p>
+      <p class="footer-name">${h(foreign ? L.titleDe : L.titleTr)} ${h(L.name)}</p>
       <p>${h(s.bars)}</p>
     </div>
     <div>

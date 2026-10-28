@@ -42,12 +42,95 @@ async function send({ to, subject, text, attachments }) {
 const base = () => process.env.PUBLIC_URL || config.siteUrl || 'http://localhost:' + (process.env.PORT || 3000);
 const topicLabel = (key, lang) =>
   areas.find((a) => a.key === key)?.title[lang] ??
-  (key === 'crossborder' ? (lang === 'de' ? 'Türkei–Deutschland' : 'Türkiye–Almanya') : lang === 'de' ? 'Sonstiges' : 'Diğer');
+  (key === 'crossborder'
+    ? { tr: 'Türkiye–Almanya', de: 'Türkei–Deutschland', en: 'Türkiye–Germany', nl: 'Turkije–Duitsland' }[lang]
+    : { tr: 'Diğer', de: 'Sonstiges', en: 'Other', nl: 'Overig' }[lang]);
 
 const signature = (lang) =>
-  lang === 'de'
-    ? `\n\n—\n${config.lawyer.name}\nAvukat (Türkei) · Rechtsanwaltskammer Düsseldorf\n${config.contact.addressDe.street}, ${config.contact.addressDe.city}`
-    : `\n\n—\nAv. ${config.lawyer.name}\nİzmir Barosu · Rechtsanwaltskammer Düsseldorf\n${config.contact.addressDe.street}, ${config.contact.addressDe.city}`;
+  lang === 'tr'
+    ? `\n\n—\nAv. ${config.lawyer.name}\nİzmir Barosu · Rechtsanwaltskammer Düsseldorf\n${config.contact.addressDe.street}, ${config.contact.addressDe.city}`
+    : `\n\n—\n${config.lawyer.name}\nAvukat (Türkei) · Rechtsanwaltskammer Düsseldorf\n${config.contact.addressDe.street}, ${config.contact.addressDe.city}`;
+
+// Müvekkile giden e-postaların sitenin diline göre metinleri.
+const M = {
+  tr: {
+    hello: (n) => `Sayın ${n},`,
+    germanTime: 'Almanya saati',
+    when: 'Tarih',
+    type: 'Görüşme türü',
+    topic: 'Konu',
+    ref: 'Referans',
+    note: 'Not',
+    cancelLink: 'İptal bağlantısı',
+    newBooking: 'Yeni randevu',
+    calendar: 'Randevu',
+    receivedSubject: (r) => `Randevu talebiniz ${r}`,
+    receivedText: 'Randevu talebiniz alınmıştır. Talebiniz incelendikten sonra onay e-postası gönderilecektir.',
+    noMandate: 'Randevu talebi avukat–müvekkil ilişkisi kurmaz.',
+    confirmedSubject: (r) => `Randevunuz onaylandı ${r}`,
+    confirmedText: 'Randevunuz onaylanmıştır.',
+    cancelledSubject: (r) => `Randevu iptal edildi ${r}`,
+    cancelledText: (w) => `${w} tarihli randevu iptal edilmiştir.`,
+  },
+  de: {
+    hello: (n) => `Guten Tag ${n},`,
+    germanTime: 'deutsche Zeit',
+    when: 'Termin',
+    type: 'Art',
+    topic: 'Thema',
+    ref: 'Referenz',
+    note: 'Hinweis',
+    cancelLink: 'Stornierung',
+    newBooking: 'Neuen Termin buchen',
+    calendar: 'Termin',
+    receivedSubject: (r) => `Ihre Terminanfrage ${r}`,
+    receivedText: 'vielen Dank für Ihre Terminanfrage. Sie wird geprüft; die Bestätigung erhalten Sie per E-Mail.',
+    noMandate: 'Die Terminanfrage begründet noch kein Mandatsverhältnis.',
+    confirmedSubject: (r) => `Terminbestätigung ${r}`,
+    confirmedText: 'Ihr Termin ist bestätigt.',
+    cancelledSubject: (r) => `Termin storniert ${r}`,
+    cancelledText: (w) => `der Termin am ${w} wurde storniert.`,
+  },
+  en: {
+    hello: (n) => `Dear ${n},`,
+    germanTime: 'German time',
+    when: 'Appointment',
+    type: 'Type',
+    topic: 'Topic',
+    ref: 'Reference',
+    note: 'Note',
+    cancelLink: 'Cancellation',
+    newBooking: 'Book a new appointment',
+    calendar: 'Appointment',
+    receivedSubject: (r) => `Your appointment request ${r}`,
+    receivedText: 'Thank you for your appointment request. It will be reviewed and you will receive confirmation by email.',
+    noMandate: 'An appointment request does not create a lawyer–client relationship.',
+    confirmedSubject: (r) => `Appointment confirmed ${r}`,
+    confirmedText: 'Your appointment has been confirmed.',
+    cancelledSubject: (r) => `Appointment cancelled ${r}`,
+    cancelledText: (w) => `Your appointment on ${w} has been cancelled.`,
+  },
+  nl: {
+    hello: (n) => `Geachte ${n},`,
+    germanTime: 'Duitse tijd',
+    when: 'Afspraak',
+    type: 'Soort',
+    topic: 'Onderwerp',
+    ref: 'Referentie',
+    note: 'Opmerking',
+    cancelLink: 'Annuleren',
+    newBooking: 'Nieuwe afspraak maken',
+    calendar: 'Afspraak',
+    receivedSubject: (r) => `Uw afspraakaanvraag ${r}`,
+    receivedText: 'Hartelijk dank voor uw afspraakaanvraag. Deze wordt beoordeeld; de bevestiging ontvangt u per e-mail.',
+    noMandate: 'Een afspraakaanvraag doet nog geen advocaat-cliëntrelatie ontstaan.',
+    confirmedSubject: (r) => `Afspraak bevestigd ${r}`,
+    confirmedText: 'Uw afspraak is bevestigd.',
+    cancelledSubject: (r) => `Afspraak geannuleerd ${r}`,
+    cancelledText: (w) => `uw afspraak op ${w} is geannuleerd.`,
+  },
+};
+const msg = (lang) => M[lang] || M.tr;
 
 function ics(a) {
   const stamp = (iso) => iso.replace(/[-:]/g, '').replace(/\.\d+/, '');
@@ -61,7 +144,7 @@ function ics(a) {
     `DTSTAMP:${stamp(new Date().toISOString())}`,
     `DTSTART:${stamp(a.start_utc)}`,
     `DTEND:${stamp(a.end_utc)}`,
-    `SUMMARY:${a.site_lang === 'de' ? 'Termin' : 'Randevu'} – ${config.lawyer.name}`,
+    `SUMMARY:${msg(a.site_lang).calendar} – ${config.lawyer.name}`,
     a.type === 'office-de' ? `LOCATION:${config.contact.addressDe.street}\\, ${config.contact.addressDe.city}` : '',
     'END:VEVENT',
     'END:VCALENDAR',
@@ -71,15 +154,14 @@ function ics(a) {
 }
 
 export function bookingReceived(a) {
-  const de = a.site_lang === 'de';
-  const when = formatWhen(a.start_utc, a.site_lang);
-  const cancelUrl = `${base()}${paths.cancel[a.site_lang]}/${a.token}`;
+  const lang = a.site_lang;
+  const T = msg(lang);
+  const when = formatWhen(a.start_utc, lang);
+  const cancelUrl = `${base()}${paths.cancel[lang]}/${a.token}`;
   send({
     to: a.email,
-    subject: de ? `Ihre Terminanfrage ${a.ref}` : `Randevu talebiniz ${a.ref}`,
-    text: de
-      ? `Guten Tag ${a.name},\n\nvielen Dank für Ihre Terminanfrage. Sie wird geprüft; die Bestätigung erhalten Sie per E-Mail.\n\nReferenz: ${a.ref}\nTermin: ${when} (deutsche Zeit)\nArt: ${typeLabel(a.type, 'de')}\nThema: ${topicLabel(a.topic, 'de')}\n\nStornierung: ${cancelUrl}\n\nDie Terminanfrage begründet noch kein Mandatsverhältnis.${signature('de')}`
-      : `Sayın ${a.name},\n\nRandevu talebiniz alınmıştır. Talebiniz incelendikten sonra onay e-postası gönderilecektir.\n\nReferans: ${a.ref}\nTarih: ${when} (Almanya saati)\nGörüşme türü: ${typeLabel(a.type, 'tr')}\nKonu: ${topicLabel(a.topic, 'tr')}\n\nİptal bağlantısı: ${cancelUrl}\n\nRandevu talebi avukat–müvekkil ilişkisi kurmaz.${signature('tr')}`,
+    subject: T.receivedSubject(a.ref),
+    text: `${T.hello(a.name)}\n\n${T.receivedText}\n\n${T.ref}: ${a.ref}\n${T.when}: ${when} (${T.germanTime})\n${T.type}: ${typeLabel(a.type, lang)}\n${T.topic}: ${topicLabel(a.topic, lang)}\n\n${T.cancelLink}: ${cancelUrl}\n\n${T.noMandate}${signature(lang)}`,
   });
   send({
     to: process.env.NOTIFY_EMAIL,
@@ -89,24 +171,21 @@ export function bookingReceived(a) {
 }
 
 export function bookingStatusChanged(a, status) {
-  const de = a.site_lang === 'de';
-  const when = formatWhen(a.start_utc, a.site_lang);
+  const lang = a.site_lang;
+  const T = msg(lang);
+  const when = formatWhen(a.start_utc, lang);
   if (status === 'confirmed') {
     send({
       to: a.email,
-      subject: de ? `Terminbestätigung ${a.ref}` : `Randevunuz onaylandı ${a.ref}`,
-      text: de
-        ? `Guten Tag ${a.name},\n\nIhr Termin ist bestätigt.\n\nTermin: ${when} (deutsche Zeit)\nArt: ${typeLabel(a.type, 'de')}\n${a.admin_note ? `\nHinweis: ${a.admin_note}\n` : ''}\nStornierung: ${base()}${paths.cancel.de}/${a.token}${signature('de')}`
-        : `Sayın ${a.name},\n\nRandevunuz onaylanmıştır.\n\nTarih: ${when} (Almanya saati)\nGörüşme türü: ${typeLabel(a.type, 'tr')}\n${a.admin_note ? `\nNot: ${a.admin_note}\n` : ''}\nİptal bağlantısı: ${base()}${paths.cancel.tr}/${a.token}${signature('tr')}`,
+      subject: T.confirmedSubject(a.ref),
+      text: `${T.hello(a.name)}\n\n${T.confirmedText}\n\n${T.when}: ${when} (${T.germanTime})\n${T.type}: ${typeLabel(a.type, lang)}\n${a.admin_note ? `\n${T.note}: ${a.admin_note}\n` : ''}\n${T.cancelLink}: ${base()}${paths.cancel[lang]}/${a.token}${signature(lang)}`,
       attachments: [{ filename: 'randevu.ics', content: ics(a), contentType: 'text/calendar' }],
     });
   } else if (status === 'cancelled') {
     send({
       to: a.email,
-      subject: de ? `Termin storniert ${a.ref}` : `Randevu iptal edildi ${a.ref}`,
-      text: de
-        ? `Guten Tag ${a.name},\n\nder Termin am ${when} wurde storniert.${a.admin_note ? `\n\nHinweis: ${a.admin_note}` : ''}\n\nNeuen Termin buchen: ${base()}${paths.booking.de}${signature('de')}`
-        : `Sayın ${a.name},\n\n${when} tarihli randevu iptal edilmiştir.${a.admin_note ? `\n\nNot: ${a.admin_note}` : ''}\n\nYeni randevu: ${base()}${paths.booking.tr}${signature('tr')}`,
+      subject: T.cancelledSubject(a.ref),
+      text: `${T.hello(a.name)}\n\n${T.cancelledText(when)}${a.admin_note ? `\n\n${T.note}: ${a.admin_note}` : ''}\n\n${T.newBooking}: ${base()}${paths.booking[lang]}${signature(lang)}`,
     });
   }
 }

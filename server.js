@@ -9,7 +9,7 @@ try {
 }
 
 const config = (await import('./site.config.js')).default;
-const { paths, LANGS } = await import('./src/i18n.js');
+const { paths, LANGS, langOf } = await import('./src/i18n.js');
 const pages = await import('./src/pages.js');
 const { areas, findArea } = await import('./src/content/areas.js');
 const { findPost, posts } = await import('./src/blog.js');
@@ -134,16 +134,13 @@ function serveStatic(req, res, pathname) {
 
 function sitemap() {
   const urls = [];
-  const add = (tr, de) => {
-    for (const [lang, p] of [['tr', tr], ['de', de]]) {
-      urls.push(`<url><loc>${absUrl(p)}</loc>
-<xhtml:link rel="alternate" hreflang="tr" href="${absUrl(tr)}"/>
-<xhtml:link rel="alternate" hreflang="de" href="${absUrl(de)}"/></url>`);
-      void lang;
-    }
+  // alt: { tr, de, en, nl } — aynı sayfanın her dildeki yolu
+  const add = (alt) => {
+    const links = LANGS.map((l) => `<xhtml:link rel="alternate" hreflang="${l}" href="${absUrl(alt[l])}"/>`).join('\n');
+    for (const l of LANGS) urls.push(`<url><loc>${absUrl(alt[l])}</loc>\n${links}</url>`);
   };
-  for (const k of ['home', 'about', 'areas', 'crossborder', 'blog', 'contact', 'booking', 'imprint', 'privacy', 'cookies']) add(paths[k].tr, paths[k].de);
-  for (const a of areas) add(`${paths.areas.tr}/${a.slug.tr}`, `${paths.areas.de}/${a.slug.de}`);
+  for (const k of ['home', 'about', 'areas', 'crossborder', 'blog', 'contact', 'booking', 'imprint', 'privacy', 'cookies']) add(paths[k]);
+  for (const a of areas) add(Object.fromEntries(LANGS.map((l) => [l, `${paths.areas[l]}/${a.slug[l]}`])));
   for (const lang of LANGS) {
     for (const p of posts(lang)) urls.push(`<url><loc>${absUrl(`${paths.blog[lang]}/${p.slug}`)}</loc><lastmod>${p.date}</lastmod></url>`);
   }
@@ -180,8 +177,6 @@ function dynamicPage(pathname) {
   return null;
 }
 
-const langOf = (pathname) => (pathname === '/de' || pathname.startsWith('/de/') ? 'de' : 'tr');
-
 /* -------------------------------- API -------------------------------- */
 
 async function apiAppointments(req, res) {
@@ -196,14 +191,14 @@ async function apiAppointments(req, res) {
   if (b.website) return json(res, 200, { ok: true, ref: 'R-000000' }); // bal küpü
 
   const input = {
-    lang: b.lang === 'de' ? 'de' : 'tr',
+    lang: LANGS.includes(b.lang) ? b.lang : 'tr',
     type: clean(b.type, 40),
     topic: clean(b.topic, 40),
     start: clean(b.start, 40),
     name: clean(b.name, 120),
     email: clean(b.email, 160).toLowerCase(),
     phone: clean(b.phone, 40),
-    language: b.language === 'de' ? 'de' : 'tr',
+    language: 'tr', // Görüşmeler yalnızca Türkçe yapılır.
     note: clean(b.note, 1500),
   };
   const errors = [];
@@ -235,7 +230,7 @@ async function apiContact(req, res) {
   }
   if (b.website) return json(res, 200, { ok: true });
   const m = {
-    lang: b.lang === 'de' ? 'de' : 'tr',
+    lang: LANGS.includes(b.lang) ? b.lang : 'tr',
     name: clean(b.name, 120),
     email: clean(b.email, 160).toLowerCase(),
     phone: clean(b.phone, 40),
@@ -346,8 +341,10 @@ async function handle(req, res) {
 
   if (/\.[a-z0-9]+$/i.test(pathname) && serveStatic(req, res, pathname)) return;
 
-  if (pathname === '/de') return redirect(res, '/de/');
-  if (pathname.length > 1 && pathname.endsWith('/') && pathname !== '/de/') pathname = pathname.slice(0, -1);
+  // Dil ana sayfaları sonda / ile sunulur: /de/, /en/, /nl/
+  const langHomes = LANGS.map((l) => paths.home[l]);
+  if (langHomes.includes(pathname + '/')) return redirect(res, pathname + '/');
+  if (pathname.length > 1 && pathname.endsWith('/') && !langHomes.includes(pathname)) pathname = pathname.slice(0, -1);
 
   const render = routes.get(pathname);
   const html = render ? render() : dynamicPage(pathname);
@@ -371,7 +368,7 @@ purge();
 setInterval(purge, 86400_000).unref();
 
 server.listen(PORT, () => {
-  console.log(`Site hazır: http://localhost:${PORT}  (Almanca: /de/, yönetim: /yonetim)`);
+  console.log(`Site hazır: http://localhost:${PORT}  (Almanca: /de/, İngilizce: /en/, Felemenkçe: /nl/, yönetim: /yonetim)`);
   const missing = [];
   if (!config.siteUrl) missing.push('siteUrl');
   if (!config.contact.email) missing.push('contact.email');

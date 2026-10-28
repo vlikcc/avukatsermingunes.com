@@ -1,6 +1,6 @@
 # Av. Sermin Güneş Keçeci — web sitesi ve randevu sistemi
 
-Türkçe (ana dil) ve Almanca mesleki web sitesi; online randevu sistemi, iletişim formu, hukuki yayınlar ve yönetim paneli.
+Türkçe (ana dil), Almanca, İngilizce ve Hollandaca (Felemenkçe) mesleki web sitesi; online randevu sistemi, iletişim formu, hukuki yayınlar ve yönetim paneli.
 
 - Node.js 22.13 veya üzeri (yerleşik SQLite kullanılır, ayrı veritabanı kurulumu gerekmez)
 - Harici takip, analiz, Google Fonts veya CDN yok; yazı tipleri sitenin kendi sunucusundan yüklenir (DSGVO).
@@ -21,7 +21,7 @@ cp .env.example .env
 npm start
 ```
 
-- Site: http://localhost:3000 — Almanca: http://localhost:3000/de/
+- Site: http://localhost:3000 — Almanca: /de/, İngilizce: /en/, Hollandaca: /nl/
 - Yönetim paneli: http://localhost:3000/yonetim
 
 ## Klasör yapısı
@@ -29,11 +29,12 @@ npm start
 | Yol | İçerik |
 | --- | --- |
 | `site.config.js` | Avukat, baro, iletişim, sigorta ve randevu ayarları — **tek yapılandırma dosyası** |
-| `src/content/areas.js` | Çalışma alanları (TR/DE) |
+| `src/i18n.js` | Dil listesi, sayfa yolları ve arayüz metinleri (TR/DE/EN/NL) |
+| `src/content/areas.js` | Çalışma alanları (TR/DE/EN/NL) |
 | `src/content/crossborder.js` | Türkiye–Almanya başlıkları ve mesleki değerler |
 | `src/pages.js` | Sayfa şablonları |
 | `src/legal.js` | Impressum, gizlilik/KVKK ve çerez metinleri |
-| `content/posts/tr`, `content/posts/de` | Hukuki yayınlar (Markdown) |
+| `content/posts/{tr,de,en,nl}` | Hukuki yayınlar (Markdown) |
 | `public/` | CSS, JavaScript, logo, yazı tipleri |
 | `data/site.db` | Randevular ve mesajlar (yedekleyin; paylaşmayın) |
 
@@ -61,7 +62,7 @@ SMTP tanımlı değilse sistem çalışmaya devam eder; talepler yalnızca yöne
 
 ## Yeni hukuki yayın eklemek
 
-`content/posts/tr/` (veya `de/`) içine yeni bir `.md` dosyası ekleyin:
+`content/posts/tr/` (veya `de/`, `en/`, `nl/`) içine yeni bir `.md` dosyası ekleyin:
 
 ```
 ---
@@ -75,7 +76,7 @@ pair: ortak-anahtar
 Metin… ## ile ara başlık, - ile liste, **kalın**, [bağlantı](https://...)
 ```
 
-`pair` değeri Türkçe ve Almanca yazıda aynı olursa dil değiştirici iki yazıyı birbirine bağlar. `draft: true` eklenen yazı yayımlanmaz. Yeni yazılar 30 saniye içinde sitede görünür.
+`pair` değeri farklı dillerdeki yazılarda aynı olursa dil değiştirici bu yazıları birbirine bağlar. Bir dilde karşılığı olmayan yazıda dil değiştirici o dilin yayınlar sayfasına gider. `draft: true` eklenen yazı yayımlanmaz. Yeni yazılar 30 saniye içinde sitede görünür.
 
 ## Yayına almadan önce yapılacaklar
 
@@ -99,6 +100,8 @@ Tüm metinler taslaktır ve **yayından önce hukuki incelemeden geçmelidir**. 
 - [ ] Datenschutzerklärung ve KVKK aydınlatma metni; Türkiye dışında barındırma hâlinde KVKK m. 9 yurt dışı aktarım değerlendirmesi
 - [ ] TBB Reklam Yasağı Yönetmeliği’ne uygunluk (tüm sayfa metinleri)
 - [ ] Örnek yayınlar (`content/posts/`): tanıma–tenfiz ve vekâletname yazılarındaki madde atıfları ve uygulama bilgileri
+- [ ] İngilizce ve Hollandaca çeviriler (`src/i18n.js`, `src/pages.js`, `src/legal.js`, `src/content/`, `src/mail.js`): özellikle Hollandaca metinlerde unvan kullanımı (Hollanda’da “advocaat” korumalı unvandır; metinlerde “Avukat (Türkei)” ve “in Turkije toegelaten advocaat” ifadeleri kullanıldı)
+- [ ] İngilizce ve Hollandaca yasal metinlerde “bağlayıcı olan Almanca metindir” notu bulunur; bu yaklaşımın uygunluğu
 - [ ] Randevu sayfasındaki “görüşmenin kapsamı ve ücretine ilişkin bilgi onayla birlikte iletilir” ifadesi — uygulamanızla örtüşmüyorsa değiştirin (`src/pages.js`)
 
 ### 3. Diğer

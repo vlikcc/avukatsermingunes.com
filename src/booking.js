@@ -1,6 +1,7 @@
 import crypto from 'node:crypto';
 import config from '../site.config.js';
 import { db } from './db.js';
+import { intlLocale } from './i18n.js';
 
 const B = config.booking;
 const DAY_KEYS = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
@@ -120,7 +121,7 @@ export function createAppointment(input) {
 }
 
 export const formatWhen = (iso, lang, tz = B.timezone) =>
-  new Date(iso).toLocaleString(lang === 'de' ? 'de-DE' : 'tr-TR', {
+  new Date(iso).toLocaleString(intlLocale[lang] || intlLocale.tr, {
     timeZone: tz,
     weekday: 'long',
     day: 'numeric',

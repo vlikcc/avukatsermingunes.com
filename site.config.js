@@ -84,10 +84,10 @@ export default {
     minNoticeHours: 24,
     maxDaysAhead: 45,
     types: [
-      { id: 'video', enabled: true, tr: 'Online görüntülü görüşme', de: 'Online-Videogespräch' },
-      { id: 'phone', enabled: true, tr: 'Telefon görüşmesi', de: 'Telefongespräch' },
-      { id: 'office-de', enabled: true, tr: 'Yüz yüze görüşme — Düsseldorf', de: 'Persönliches Gespräch — Düsseldorf' },
-      { id: 'office-tr', enabled: false, tr: 'Yüz yüze görüşme — İzmir', de: 'Persönliches Gespräch — İzmir' },
+      { id: 'video', enabled: true, tr: 'Online görüntülü görüşme', de: 'Online-Videogespräch', en: 'Online video call', nl: 'Online videogesprek' },
+      { id: 'phone', enabled: true, tr: 'Telefon görüşmesi', de: 'Telefongespräch', en: 'Telephone call', nl: 'Telefoongesprek' },
+      { id: 'office-de', enabled: true, tr: 'Yüz yüze görüşme — Düsseldorf', de: 'Persönliches Gespräch — Düsseldorf', en: 'In-person meeting — Düsseldorf', nl: 'Persoonlijk gesprek — Düsseldorf' },
+      { id: 'office-tr', enabled: false, tr: 'Yüz yüze görüşme — İzmir', de: 'Persönliches Gespräch — İzmir', en: 'In-person meeting — İzmir', nl: 'Persoonlijk gesprek — İzmir' },
     ],
   },
 };

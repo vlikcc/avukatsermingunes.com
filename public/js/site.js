@@ -4,7 +4,7 @@
   const nav = document.getElementById('site-nav');
   if (!toggle || !nav) return;
   const label = toggle.querySelector('.nav-toggle-label');
-  const texts = document.documentElement.lang === 'de' ? ['Menü', 'Schließen'] : ['Menü', 'Kapat'];
+  const texts = { tr: ['Menü', 'Kapat'], de: ['Menü', 'Schließen'], en: ['Menu', 'Close'], nl: ['Menu', 'Sluiten'] }[document.documentElement.lang] || ['Menü', 'Kapat'];
   const set = (open) => {
     nav.classList.toggle('open', open);
     toggle.setAttribute('aria-expanded', String(open));
@@ -17,5 +17,21 @@
       toggle.focus();
     }
   });
-  matchMedia('(min-width: 1081px)').addEventListener('change', (e) => e.matches && set(false));
+  matchMedia('(min-width: 1241px)').addEventListener('change', (e) => e.matches && set(false));
+})();
+
+// Dil menüsü: dışarı tıklanınca veya Escape ile kapanır.
+(() => {
+  const menu = document.querySelector('.lang-menu');
+  if (!menu) return;
+  document.addEventListener('click', (e) => {
+    if (menu.open && !menu.contains(e.target)) menu.open = false;
+  });
+  menu.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && menu.open) {
+      e.stopPropagation();
+      menu.open = false;
+      menu.querySelector('summary').focus();
+    }
+  });
 })();

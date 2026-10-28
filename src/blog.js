@@ -1,4 +1,4 @@
-// Hukuki yayınlar: content/posts/{tr,de}/*.md dosyalarından okunur.
+// Hukuki yayınlar: content/posts/{tr,de,en,nl}/*.md dosyalarından okunur.
 // Dosya başında basit bir ön bilgi bloğu bulunur:
 //
 // ---
@@ -13,6 +13,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { h } from './layout.js';
+import { LANGS } from './i18n.js';
 
 const ROOT = path.resolve(import.meta.dirname, '../content/posts');
 
@@ -35,7 +36,7 @@ export function posts(lang) {
   // Yeni yazılar sunucu yeniden başlatılmadan görünsün diye kısa süreli önbellek.
   if (!cache || Date.now() - cacheAt > 30_000) {
     cache = {};
-    for (const l of ['tr', 'de']) {
+    for (const l of LANGS) {
       const dir = path.join(ROOT, l);
       cache[l] = fs.existsSync(dir)
         ? fs

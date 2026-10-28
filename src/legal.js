@@ -1,4 +1,4 @@
-// Yasal metinler: Yasal bilgiler / Impressum, Gizlilik / Datenschutz, Çerez politikası.
+// Yasal metinler: Yasal bilgiler / Impressum / Legal notice / Colofon, gizlilik ve çerez politikası.
 // ÖNEMLİ: Bu metinler taslaktır ve yayından önce hukuki incelemeden geçirilmelidir.
 
 import config from '../site.config.js';
@@ -13,10 +13,17 @@ const val = (v, lang) => (v ? h(v) : missing(lang));
 const addrDe = `${h(C.addressDe.street)}<br>${h(C.addressDe.city)}<br>${h(C.addressDe.country)}`;
 
 function contactLines(lang) {
-  const de = lang === 'de';
-  return `${de ? 'E-Mail' : 'E-posta'}: ${C.email ? `<a href="mailto:${h(C.email)}">${h(C.email)}</a>` : missing(lang)}<br>
-    ${de ? 'Telefon' : 'Telefon'}: ${val(C.phoneDe, lang)}`;
+  const [email, phone] = { tr: ['E-posta', 'Telefon'], de: ['E-Mail', 'Telefon'], en: ['Email', 'Telephone'], nl: ['E-mail', 'Telefoon'] }[lang];
+  return `${email}: ${C.email ? `<a href="mailto:${h(C.email)}">${h(C.email)}</a>` : missing(lang)}<br>
+    ${phone}: ${val(C.phoneDe, lang)}`;
 }
+
+// İngilizce ve Felemenkçe yasal metinler çeviridir; bağlayıcı olan Almanca metindir.
+const translationNote = (lang, kind) =>
+  ({
+    en: `<p class="muted small">This is an English translation provided for convenience. The <a href="${paths[kind].de}" hreflang="de" lang="de">German version</a> is legally binding.</p>`,
+    nl: `<p class="muted small">Dit is een Nederlandse vertaling, uitsluitend ter informatie. De <a href="${paths[kind].de}" hreflang="de" lang="de">Duitse versie</a> is juridisch bindend.</p>`,
+  })[lang] || '';
 
 function imprint(lang) {
   if (lang === 'de') {
@@ -44,6 +51,60 @@ ${config.vatId ? `<h2>Umsatzsteuer-Identifikationsnummer</h2><p>${h(config.vatId
 <p>${h(L.name)}, Anschrift wie oben.</p>
 <h2>Haftung für Inhalte</h2>
 <p>Die Inhalte dieser Website dienen der allgemeinen Information und stellen keine Rechtsberatung dar. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte wird trotz sorgfältiger Prüfung keine Gewähr übernommen. Für Inhalte externer Links sind ausschließlich deren Betreiber verantwortlich.</p>`,
+    };
+  }
+  if (lang === 'en') {
+    return {
+      title: 'Legal Notice',
+      body: `${translationNote(lang, 'imprint')}
+<h2>Information pursuant to § 5 DDG (German Digital Services Act)</h2>
+<p>${h(L.name)}<br>Avukat (Türkei)<br>${addrDe}</p>
+<h2>Contact</h2>
+<p>${contactLines(lang)}</p>
+<h2>Professional title and regulatory information</h2>
+<p>Professional title: <strong>Avukat (Türkei)</strong>. The professional title was conferred in the Republic of Türkiye.</p>
+<p>Ms ${h(L.name)} is a member of the İzmir Bar Association (İzmir Barosu), Türkiye${L.barTr.registryNo ? `, registration no. ${h(L.barTr.registryNo)}` : ''}, and, under § 206 BRAO, a member of the</p>
+<p>Rechtsanwaltskammer Düsseldorf (Düsseldorf Bar)<br>${val(L.barDe.address, lang)}<br><a href="${h(L.barDe.url)}" rel="noopener" target="_blank">${h(L.barDe.url.replace('https://', ''))}</a><br>Membership no.: ${h(L.barDe.memberNo)}</p>
+<p>Under § 206 BRAO she is authorised to provide legal services in Germany in the law of her home country (Turkish law) and in public international law. She is not admitted as a Rechtsanwältin in Germany and does not advise on German law.</p>
+<h3>Professional rules</h3>
+<p>In Germany: Federal Lawyers’ Act (BRAO), Professional Code for Lawyers (BORA), Lawyers’ Remuneration Act (RVG). These rules are available on the website of the German Federal Bar at <a href="https://www.brak.de" rel="noopener" target="_blank">brak.de</a>.</p>
+<p>In Türkiye: Avukatlık Kanunu (Attorneys’ Act No. 1136) and the professional rules of the Union of Turkish Bar Associations (Türkiye Barolar Birliği), available at <a href="https://www.barobirlik.org.tr" rel="noopener" target="_blank">barobirlik.org.tr</a>.</p>
+<h2>Professional liability insurance</h2>
+<p>Insurer: ${val(config.insurance.insurer, lang)}<br>Address: ${val(config.insurance.address, lang)}<br>Territorial scope: ${val(config.insurance.scope, lang)}</p>
+${config.vatId ? `<h2>VAT identification number</h2><p>${h(config.vatId)}</p>` : ''}
+<h2>Consumer dispute resolution</h2>
+<p>For disputes over financial matters arising from the lawyer–client relationship, out-of-court dispute resolution is available through the Arbitration Board of the German Bar (Schlichtungsstelle der Rechtsanwaltschaft, <a href="https://www.s-d-r.org" rel="noopener" target="_blank">s-d-r.org</a>).</p>
+<h2>Responsible for content under § 18(2) MStV</h2>
+<p>${h(L.name)}, address as above.</p>
+<h2>Liability for content</h2>
+<p>The content of this website is for general information only and does not constitute legal advice. Despite careful review, no guarantee is given that the content is accurate, complete or up to date. The operators of linked external websites are solely responsible for their content.</p>`,
+    };
+  }
+  if (lang === 'nl') {
+    return {
+      title: 'Colofon',
+      body: `${translationNote(lang, 'imprint')}
+<h2>Gegevens volgens § 5 DDG (Duitse wet digitale diensten)</h2>
+<p>${h(L.name)}<br>Avukat (Türkei)<br>${addrDe}</p>
+<h2>Contact</h2>
+<p>${contactLines(lang)}</p>
+<h2>Beroepstitel en beroepsrechtelijke gegevens</h2>
+<p>Beroepstitel: <strong>Avukat (Türkei)</strong>. De beroepstitel is verleend in de Republiek Turkije.</p>
+<p>Mevrouw ${h(L.name)} is lid van de Orde van Advocaten in İzmir (İzmir Barosu), Turkije${L.barTr.registryNo ? `, registratienummer ${h(L.barTr.registryNo)}` : ''}, en op grond van § 206 BRAO lid van de</p>
+<p>Rechtsanwaltskammer Düsseldorf (Orde van Advocaten Düsseldorf)<br>${val(L.barDe.address, lang)}<br><a href="${h(L.barDe.url)}" rel="noopener" target="_blank">${h(L.barDe.url.replace('https://', ''))}</a><br>Lidmaatschapsnummer: ${h(L.barDe.memberNo)}</p>
+<p>Op grond van § 206 BRAO is zij in Duitsland bevoegd juridische diensten te verlenen op het gebied van het recht van haar land van herkomst (Turks recht) en het internationaal publiekrecht. Zij is niet toegelaten als Rechtsanwältin in Duitsland of als advocaat in Nederland en adviseert niet over Duits of Nederlands recht.</p>
+<h3>Beroepsregels</h3>
+<p>In Duitsland: Bundesrechtsanwaltsordnung (BRAO), Berufsordnung für Rechtsanwälte (BORA), Rechtsanwaltsvergütungsgesetz (RVG). Deze regels zijn te raadplegen op de website van de Duitse Orde van Advocaten, <a href="https://www.brak.de" rel="noopener" target="_blank">brak.de</a>.</p>
+<p>In Turkije: Avukatlık Kanunu (advocatenwet nr. 1136) en de beroepsregels van de Unie van Turkse Ordes van Advocaten (Türkiye Barolar Birliği), te raadplegen op <a href="https://www.barobirlik.org.tr" rel="noopener" target="_blank">barobirlik.org.tr</a>.</p>
+<h2>Beroepsaansprakelijkheidsverzekering</h2>
+<p>Verzekeraar: ${val(config.insurance.insurer, lang)}<br>Adres: ${val(config.insurance.address, lang)}<br>Territoriale dekking: ${val(config.insurance.scope, lang)}</p>
+${config.vatId ? `<h2>Btw-identificatienummer</h2><p>${h(config.vatId)}</p>` : ''}
+<h2>Geschillenbeslechting voor consumenten</h2>
+<p>Bij vermogensrechtelijke geschillen uit de opdrachtrelatie is buitengerechtelijke geschillenbeslechting mogelijk via de geschillencommissie van de Duitse advocatuur (Schlichtungsstelle der Rechtsanwaltschaft, <a href="https://www.s-d-r.org" rel="noopener" target="_blank">s-d-r.org</a>).</p>
+<h2>Verantwoordelijk voor de inhoud volgens § 18 lid 2 MStV</h2>
+<p>${h(L.name)}, adres zoals hierboven.</p>
+<h2>Aansprakelijkheid voor de inhoud</h2>
+<p>De inhoud van deze website is uitsluitend bedoeld als algemene informatie en vormt geen juridisch advies. Ondanks zorgvuldige controle wordt niet ingestaan voor de juistheid, volledigheid en actualiteit van de inhoud. Voor de inhoud van externe links zijn uitsluitend de beheerders daarvan verantwoordelijk.</p>`,
     };
   }
   return {
@@ -95,6 +156,56 @@ function privacy(lang) {
 <p class="muted small">Stand: ${new Date().toISOString().slice(0, 7)}</p>`,
     };
   }
+  if (lang === 'en') {
+    return {
+      title: 'Privacy Policy',
+      body: `${translationNote(lang, 'privacy')}
+<h2>1. Controller</h2>
+<p>${h(L.name)}, Avukat (Türkei)<br>${addrDe}<br>${contactLines(lang)}</p>
+<h2>2. Principles</h2>
+<p>This website does not use analytics or tracking services, social media plugins or embedded third-party content. Fonts are loaded from our own server; no connection is made to Google Fonts or other third-party providers.</p>
+<h2>3. Hosting and server log files</h2>
+<p>The website is hosted by: ${val(P.hostingProvider, lang)} (server location: ${val(P.hostingLocation, lang)}). When you visit the website, the server processes technically necessary data (IP address, date and time, page requested, browser type) in order to deliver the website and ensure its security. The legal basis is Art. 6(1)(f) GDPR. The application itself does not store access logs; IP addresses are held only briefly in memory to prevent misuse.</p>
+<h2>4. Contact form and appointment booking</h2>
+<p>If you use the contact form or appointment booking, we process the data you provide (name, email address, telephone number, practice area, requested appointment, type of consultation, your message or brief description). The purpose is to handle your enquiry and arrange a consultation.</p>
+<p>The legal basis is Art. 6(1)(b) GDPR (pre-contractual measures taken at your request). Where you voluntarily include special categories of personal data in your description, they are processed on the basis of your explicit consent under Art. 9(2)(a) GDPR. Please do not send confidential details through the website.</p>
+<p>The data is stored in a database on the website’s server and automatically deleted ${days} days after the appointment or after receipt of the message, unless a lawyer–client relationship is established. If a relationship is established, the statutory professional retention obligations apply.</p>
+<p>Email notifications are sent via the following service: ${val(P.mailProvider, lang)}.</p>
+<h2>5. Cookies</h2>
+<p>This website does not set any cookies for visitors. A technically necessary session cookie is used only in the password-protected administration area (§ 25(2) no. 2 TDDDG). See the <a href="${paths.cookies.en}">cookie policy</a>.</p>
+<h2>6. Your rights</h2>
+<p>You have the right of access (Art. 15 GDPR), rectification (Art. 16), erasure (Art. 17), restriction of processing (Art. 18), data portability (Art. 20) and objection (Art. 21). You may withdraw any consent you have given at any time with effect for the future.</p>
+<p>You also have the right to lodge a complaint with a data protection supervisory authority, in particular in the EU member state of your habitual residence. The authority responsible for us is the Data Protection and Freedom of Information Commissioner of North Rhine-Westphalia (Landesbeauftragte für Datenschutz und Informationsfreiheit Nordrhein-Westfalen, <a href="https://www.ldi.nrw.de" rel="noopener" target="_blank">ldi.nrw.de</a>).</p>
+<h2>7. Confidentiality</h2>
+<p>All information is subject to the lawyer’s duty of professional confidentiality.</p>
+<p class="muted small">Last updated: ${new Date().toISOString().slice(0, 7)}</p>`,
+    };
+  }
+  if (lang === 'nl') {
+    return {
+      title: 'Privacyverklaring',
+      body: `${translationNote(lang, 'privacy')}
+<h2>1. Verwerkingsverantwoordelijke</h2>
+<p>${h(L.name)}, Avukat (Türkei)<br>${addrDe}<br>${contactLines(lang)}</p>
+<h2>2. Uitgangspunten</h2>
+<p>Deze website gebruikt geen analyse- of trackingdiensten, geen social-media-plug-ins en geen ingesloten inhoud van derden. Lettertypen worden vanaf onze eigen server geladen; er wordt geen verbinding gemaakt met Google Fonts of andere externe aanbieders.</p>
+<h2>3. Hosting en serverlogbestanden</h2>
+<p>De website wordt gehost door: ${val(P.hostingProvider, lang)} (serverlocatie: ${val(P.hostingLocation, lang)}). Bij een bezoek aan de website verwerkt de server technisch noodzakelijke gegevens (IP-adres, datum en tijd, opgevraagde pagina, browsertype) om de website te leveren en de beveiliging ervan te waarborgen. De rechtsgrondslag is art. 6 lid 1 sub f AVG. De applicatie zelf slaat geen toegangslogs op; IP-adressen worden ter voorkoming van misbruik alleen kortstondig in het werkgeheugen bewaard.</p>
+<h2>4. Contactformulier en afspraken</h2>
+<p>Als u het contactformulier of de afsprakenmodule gebruikt, verwerken wij de gegevens die u opgeeft (naam, e-mailadres, telefoonnummer, rechtsgebied, gewenste afspraak, soort gesprek, uw bericht of korte omschrijving). Het doel is de behandeling van uw vraag en het plannen van een gesprek.</p>
+<p>De rechtsgrondslag is art. 6 lid 1 sub b AVG (precontractuele maatregelen op uw verzoek). Voor zover u in de omschrijving vrijwillig bijzondere categorieën van persoonsgegevens vermeldt, gebeurt de verwerking op basis van uw uitdrukkelijke toestemming volgens art. 9 lid 2 sub a AVG. Stuur via de website geen vertrouwelijke details.</p>
+<p>De gegevens worden opgeslagen in een database op de server van de website en automatisch ${days} dagen na de afspraak of na ontvangst van het bericht verwijderd, tenzij er een opdrachtrelatie tot stand komt. In dat geval gelden de beroepsrechtelijke bewaarplichten.</p>
+<p>E-mailmeldingen worden verstuurd via de volgende dienst: ${val(P.mailProvider, lang)}.</p>
+<h2>5. Cookies</h2>
+<p>Deze website plaatst geen cookies bij bezoekers. Alleen in het met een wachtwoord beveiligde beheergedeelte wordt een technisch noodzakelijke sessiecookie gebruikt (§ 25 lid 2 nr. 2 TDDDG). Zie het <a href="${paths.cookies.nl}">cookiebeleid</a>.</p>
+<h2>6. Uw rechten</h2>
+<p>U hebt recht op inzage (art. 15 AVG), rectificatie (art. 16), wissing (art. 17), beperking van de verwerking (art. 18), overdraagbaarheid van gegevens (art. 20) en bezwaar (art. 21). Een gegeven toestemming kunt u op elk moment met werking voor de toekomst intrekken.</p>
+<p>U hebt bovendien het recht een klacht in te dienen bij een toezichthoudende autoriteit, met name in de EU-lidstaat waar u woont; in Nederland is dat de Autoriteit Persoonsgegevens (<a href="https://www.autoriteitpersoonsgegevens.nl" rel="noopener" target="_blank">autoriteitpersoonsgegevens.nl</a>). Voor ons bevoegd is de toezichthouder van Noordrijn-Westfalen (Landesbeauftragte für Datenschutz und Informationsfreiheit Nordrhein-Westfalen, <a href="https://www.ldi.nrw.de" rel="noopener" target="_blank">ldi.nrw.de</a>).</p>
+<h2>7. Geheimhouding</h2>
+<p>Alle gegevens vallen onder de beroepsgeheimhoudingsplicht van de advocaat.</p>
+<p class="muted small">Bijgewerkt: ${new Date().toISOString().slice(0, 7)}</p>`,
+    };
+  }
   return {
     title: 'Gizlilik ve KVKK Aydınlatma Metni',
     body: `
@@ -134,6 +245,28 @@ function cookies(lang) {
 <p>Da keine einwilligungspflichtigen Cookies verwendet werden, wird kein Cookie-Banner angezeigt. Sollte sich dies ändern, wird diese Richtlinie angepasst und vorab Ihre Einwilligung eingeholt.</p>`,
     };
   }
+  if (lang === 'en') {
+    return {
+      title: 'Cookie Policy',
+      body: `${translationNote(lang, 'cookies')}
+<p class="lead">This website does not set any cookies for visitors and does not use comparable storage technologies for analytics or advertising.</p>
+<h2>Technically necessary cookie</h2>
+<p>Only in the password-protected administration area is the session cookie <code>sid</code> set after login. It is used solely for authentication, carries the HttpOnly and SameSite=Strict attributes and expires after 8 hours at the latest. The legal basis is § 25(2) no. 2 TDDDG; consent is not required.</p>
+<h2>No cookie banner</h2>
+<p>As no cookies requiring consent are used, no cookie banner is shown. Should this change, this policy will be updated and your consent obtained in advance.</p>`,
+    };
+  }
+  if (lang === 'nl') {
+    return {
+      title: 'Cookiebeleid',
+      body: `${translationNote(lang, 'cookies')}
+<p class="lead">Deze website plaatst geen cookies bij bezoekers en gebruikt geen vergelijkbare opslagtechnieken voor analyse- of advertentiedoeleinden.</p>
+<h2>Technisch noodzakelijke cookie</h2>
+<p>Alleen in het met een wachtwoord beveiligde beheergedeelte wordt na het inloggen de sessiecookie <code>sid</code> geplaatst. Deze dient uitsluitend voor het inloggen, heeft de kenmerken HttpOnly en SameSite=Strict en verloopt uiterlijk na 8 uur. De rechtsgrondslag is § 25 lid 2 nr. 2 TDDDG; toestemming is niet vereist.</p>
+<h2>Geen cookiemelding</h2>
+<p>Omdat er geen cookies worden gebruikt waarvoor toestemming nodig is, wordt geen cookiemelding getoond. Mocht dit veranderen, dan wordt dit beleid aangepast en vooraf uw toestemming gevraagd.</p>`,
+    };
+  }
   return {
     title: 'Çerez Politikası',
     body: `
@@ -149,13 +282,12 @@ const builders = { imprint, privacy, cookies };
 
 export function legalPage(kind, lang) {
   const { title, body } = builders[kind](lang);
-  const other = lang === 'tr' ? 'de' : 'tr';
   return layout({
     lang,
     title,
     description: title,
     path: paths[kind][lang],
-    altPath: paths[kind][other],
+    alt: paths[kind],
     active: kind,
     body: `<header class="page-head"><div class="wrap"><h1>${h(title)}</h1></div></header>
       <section class="section section-tight"><div class="wrap wrap-narrow prose prose-legal">${body}</div></section>`,
