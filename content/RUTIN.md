@@ -11,8 +11,8 @@ Rutin her gün **Türkiye saatiyle 18:00** civarında çalışır, **20:00** civ
 Hedef gün `D` = Europe/Istanbul saat dilimine göre yarının tarihi (`TZ=Europe/Istanbul date -d tomorrow +%F`).
 
 - **Mevzuat yazısı: her gün beş tane.** `content/posts/tr/` altında `D` tarihli kaç mevzuat yazısı olduğunu say; beşten azsa eksik kalanı sıradaki maddelerle tamamla. Beş yazıyı doğrulamaya zaman ya da kaynak yetmiyorsa daha azını yaz; sayıyı doldurmak için doğruluktan ödün verme.
-- **Makale (blog): iki günde bir.** `content/posts/tr/` altındaki `category` alanı olmayan veya `category: blog` olan ve `source: trend` taşımayan en yeni dosyanın `date` değerine bak. `D` bu tarihten en az 2 gün sonraysa (ya da hiç makale yoksa) bir makale yaz; değilse yazma.
-- **Gündem makalesi: her gün kontrol edilir.** Google Trends’te Türkiye’de o gün en çok arananlar arasında hukuki ya da hukukçuları ilgilendiren bir konu varsa, iki günlük düzenden bağımsız olarak o konuda **ek** bir makale yaz (günde en fazla bir tane: `D` tarihli ve `source: trend` taşıyan bir yazı zaten varsa yazma; ön bilgiye `source: trend` ekle). Ayrıntılar 2. bölümde.
+- **Makale (blog): her gün iki tane.** `content/posts/tr/` altında `D` tarihli, `category` alanı olmayan veya `category: blog` olan ve `source: trend` taşımayan dosyaları say; ikiden azsa eksik kalanı yaz. Aynı gün yazılan iki makale farklı konularda olmalı; mümkünse biri 2. bölümdeki 1. veya 2. öncelikten (güncel gelişme ya da yurt dışında yaşayanların sorunu), diğeri 3. öncelikten (çok aranan konu) seçilir. Konuyu doğrulayamıyorsan bir makaleyle yetin.
+- **Gündem makalesi: her gün kontrol edilir.** Google Trends’te Türkiye’de o gün en çok arananlar arasında hukuki ya da hukukçuları ilgilendiren bir konu varsa, günlük iki makaleden bağımsız olarak o konuda **ek** bir makale yaz (günde en fazla bir tane: `D` tarihli ve `source: trend` taşıyan bir yazı zaten varsa yazma; ön bilgiye `source: trend` ekle). Ayrıntılar 2. bölümde.
 
 Her yazı **dört dilde** üretilir: Türkçe (`tr`), Almanca (`de`), İngilizce (`en`), Hollandaca (`nl`). Dört dosya aynı `pair` değerini taşır.
 
@@ -42,7 +42,7 @@ Her çalıştırmada Türkiye’nin günlük arama gündemini kontrol et. Kaynak
 4. Konunun hukuki olup olmadığına karar vermek için güvenilir haber kaynakları ve resmî kaynaklarla (Resmî Gazete, ilgili kurumun sitesi) neyin arandığını öğren. Yazıyı yine **3. bölümdeki doğruluk kurallarına** göre, yalnızca resmî kaynaklara dayanarak yaz. Haber sitesi kaynak olarak değil, yalnızca gündemi anlamak için kullanılır.
 5. **Süren yargılamalar ve kişiler.** Devam eden bir soruşturma ya da dava gündemdeyse kişiler veya somut olay hakkında yorum yapma, suçluluk ima etme, isim verme (masumiyet karinesi, kişilik hakları, soruşturmanın gizliliği ve yayın yasakları). Yalnızca konunun genel hukuki çerçevesini anlat (ör. suçun tanımı, yargılama aşamaları, şüphelinin hakları) ve bunu kanun maddeleriyle yap. Yayın yasağı bulunan bir olayı hiç yazma.
 6. Uygun konu birden fazlaysa Avrupa’da yaşayan Türkleri de ilgilendireni ya da arama hacmi (`ht:approx_traffic`) yüksek olanı seç. Uygun konu yoksa gündem makalesi yazma; bu bir hata değildir.
-7. Gündem makalesi de dört dilde ve aynı kurallarla yazılır; ön bilgiye `source: trend` eklenir. Plan dosyasındaki kayıtta bölüm olarak `gündem` yaz ve trend başlığını “hedef aramalar” alanına ekle. İki günlük makale aynı gün yazılacaksa ikisi farklı konularda olmalı.
+7. Gündem makalesi de dört dilde ve aynı kurallarla yazılır; ön bilgiye `source: trend` eklenir. Plan dosyasındaki kayıtta bölüm olarak `gündem` yaz ve trend başlığını “hedef aramalar” alanına ekle. Gündem makalesi, aynı gün yazılan iki makaleden farklı bir konuda olmalı.
 
 ### Mevzuat (category: mevzuat)
 

@@ -80,7 +80,7 @@ Yazılar yönetim panelindeki **Yazılar** sayfasından yazılır, düzenlenir v
 
 ### Yayın rutini
 
-Her gün Türkiye saatiyle 18:00’de (ve eksikleri tamamlamak için 20:00’de) bulutta bir Claude rutini çalışır, ertesi gün için dört dilde (TR/DE/EN/NL) her gün beş mevzuat yazısı (sırayla MÖHUK, TMK, TCK), iki günde bir makale ve uygun bir Google Trends konusu varsa gündem makalesi hazırlar ve bunları `content/posts/` altına **taslak** olarak, 08:00 yayın saatiyle ekleyip `master` dalına gönderir. Site yeniden kurulur, taslaklar panele düşer ve e-posta gelir. Yazıları okuyup doğruladıktan sonra “Tüm dilleriyle yayınla” ile onaylayın; ertesi sabah 08:00’de görünürler.
+Her gün Türkiye saatiyle 18:00’de (ve eksikleri tamamlamak için 20:00’de) bulutta bir Claude rutini çalışır, ertesi gün için dört dilde (TR/DE/EN/NL) her gün beş mevzuat yazısı (sırayla MÖHUK, TMK, TCK), iki makale ve uygun bir Google Trends konusu varsa gündem makalesi hazırlar ve bunları `content/posts/` altına **taslak** olarak, 08:00 yayın saatiyle ekleyip `master` dalına gönderir. Site yeniden kurulur, taslaklar panele düşer ve e-posta gelir. Yazıları okuyup doğruladıktan sonra “Tüm dilleriyle yayınla” ile onaylayın; ertesi sabah 08:00’de görünürler.
 
 - Kurallar (konu seçimi, doğruluk, reklam yasağı, SEO, kapanış bölümü, dosya biçimi): `content/RUTIN.md`
 - Üslup: `.claude/skills/humanizer/SKILL.md` (yapay zekâ izlenimi veren kalıpları ayıklayan yazım becerisi)
