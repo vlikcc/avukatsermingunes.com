@@ -6,13 +6,13 @@ Site: Av. Sermin Güneş Keçeci — İzmir Barosu ve Rechtsanwaltskammer Düsse
 
 ## 1. Ne üretilir, ne zaman
 
-Rutin her gün **Türkiye saatiyle 18:00** civarında çalışır ve **ertesi günün** yazılarını hazırlar. Yazılar ertesi gün **08:00 (Türkiye saati)** yayın zamanıyla, **taslak** olarak eklenir. Avukat yazıları panelden okuyup onaylar; onaylanan yazı 08:00’de kendiliğinden yayına girer.
+Rutin her gün **Türkiye saatiyle 18:00** civarında çalışır, **20:00** civarında da tamamlama için bir kez daha çalışır ve **ertesi günün** yazılarını hazırlar. İkinci çalışma yalnızca ilk çalışmanın eksik bıraktığını yazar; her kural “`D` tarihli yazı zaten var mı?” sorusuna göre işler. Yazılar ertesi gün **08:00 (Türkiye saati)** yayın zamanıyla, **taslak** olarak eklenir. Avukat yazıları panelden okuyup onaylar; onaylanan yazı 08:00’de kendiliğinden yayına girer.
 
 Hedef gün `D` = Europe/Istanbul saat dilimine göre yarının tarihi (`TZ=Europe/Istanbul date -d tomorrow +%F`).
 
-- **Mevzuat yazısı: her gün bir tane.** `D` tarihli bir mevzuat yazısı zaten varsa yenisini yazma.
+- **Mevzuat yazısı: her gün beş tane.** `content/posts/tr/` altında `D` tarihli kaç mevzuat yazısı olduğunu say; beşten azsa eksik kalanı sıradaki maddelerle tamamla. Beş yazıyı doğrulamaya zaman ya da kaynak yetmiyorsa daha azını yaz; sayıyı doldurmak için doğruluktan ödün verme.
 - **Makale (blog): iki günde bir.** `content/posts/tr/` altındaki `category` alanı olmayan veya `category: blog` olan ve `source: trend` taşımayan en yeni dosyanın `date` değerine bak. `D` bu tarihten en az 2 gün sonraysa (ya da hiç makale yoksa) bir makale yaz; değilse yazma.
-- **Gündem makalesi: her gün kontrol edilir.** Google Trends’te Türkiye’de o gün en çok arananlar arasında hukuki ya da hukukçuları ilgilendiren bir konu varsa, iki günlük düzenden bağımsız olarak o konuda **ek** bir makale yaz (günde en fazla bir tane; ön bilgiye `source: trend` ekle). Ayrıntılar 2. bölümde.
+- **Gündem makalesi: her gün kontrol edilir.** Google Trends’te Türkiye’de o gün en çok arananlar arasında hukuki ya da hukukçuları ilgilendiren bir konu varsa, iki günlük düzenden bağımsız olarak o konuda **ek** bir makale yaz (günde en fazla bir tane: `D` tarihli ve `source: trend` taşıyan bir yazı zaten varsa yazma; ön bilgiye `source: trend` ekle). Ayrıntılar 2. bölümde.
 
 Her yazı **dört dilde** üretilir: Türkçe (`tr`), Almanca (`de`), İngilizce (`en`), Hollandaca (`nl`). Dört dosya aynı `pair` değerini taşır.
 
@@ -46,13 +46,22 @@ Her çalıştırmada Türkiye’nin günlük arama gündemini kontrol et. Kaynak
 
 ### Mevzuat (category: mevzuat)
 
-`content/yayin-plani.md` içindeki **Mevzuat sırası** listesinden, “Yayınlananlar” listesinde olmayan ilk maddeyi al. Her yazı **tek bir kanun maddesini** (ya da birbirine çok sıkı bağlı iki maddeyi) ele alır. Resmî Gazete taramasında hedef okuyucuyu ilgilendiren bir maddenin değiştiğini görürsen sırayı beklemeden o maddeyi yaz ve değişikliği anlat.
+Sıra: **önce MÖHUK, sonra TMK, sonra TCK**, her kanunda madde numarası sırasıyla, kanunun bütün maddeleri. Ayrıntılar ve kalınan yer `content/yayin-plani.md` içindeki **Mevzuat sırası** bölümündedir. “Yayınlananlar” listesinde olmayan sıradaki maddeleri al (aynı gün yazılan beş yazı ardışık maddeler olur).
+
+- Her yazı **tek bir kanun maddesini** ele alır. Çok kısa ve birbirine sıkı bağlı ardışık maddeler (ör. bir maddenin yalnızca önceki maddenin istisnasını düzenlemesi) tek yazıda birlikte anlatılabilir; bu durumda başlıkta iki madde numarası da geçer ve yazı günlük beş yazının biri sayılır.
+- **Mülga** (yürürlükten kaldırılmış) maddeler için yazı yazılmaz; plan dosyasında “Yayınlananlar” listesine `mülga – yazılmadı` notuyla bir satır eklenir ki sıra ilerlesin.
+- Madde basit ya da teknikse (ör. dernek genel kurulunun toplantı usulü) yazıyı kısa tut; uzunluk sınırını doldurmak için dolgu yazma. Yurt dışında yaşayanlar açısından gerçekten bir önemi yoksa “Yurt dışında yaşayanlar için uygulamada önemli noktalar” bölümünü bir iki cümleyle sınırla ya da çıkar; ilgisiz bağlantı kurma.
+- Resmî Gazete taramasında hedef okuyucuyu ilgilendiren bir maddenin değiştiğini görürsen sırayı beklemeden o maddeyi yaz ve değişikliği anlat (günlük beş yazıdan biri sayılır).
 
 TMK ve MÖHUK’un bütün maddeleri ayrıca sitede madde madde yayındadır (yalnızca Türkçe): `/yayinlar/mevzuat/tmk/madde-<no>` ve `/yayinlar/mevzuat/mohuk/madde-<no>`. Kaynak dosyalar `content/kanunlar/<kanun>/<no>.md`; her birinde güncel madde metni, resmî gerekçe (TBMM sıra sayısı belgesinden) ve açıklama bulunur. Bu kanunlardan bir madde hakkında yazı yazarken:
 
 - “Madde gerekçesi” bölümü için gerekçeyi bu dosyadan al (resmî metindir; özetlersen kaynağını göster).
 - Türkçe yazıda madde sayfasına bağlantı ver (ör. “Maddenin tam metni ve gerekçesi: [TMK m. 166](/yayinlar/mevzuat/tmk/madde-166)”).
 - Bir maddenin metni mevzuat.gov.tr’de değişmişse `content/kanunlar` altındaki dosyanın “Madde metni” bölümünü de güncelle ve değişikliği plan dosyasındaki “Notlar” bölümüne yaz.
+- Madde metnini bu dosyadan alabilirsin, ama güncel olduğunu mevzuat.gov.tr metniyle (gerekirse resmî PDF) karşılaştırarak doğrula.
+- **Madde sayfasını tekrar etme.** Türkçe mevzuat yazısı, madde sayfasındaki “Açıklama” bölümünün kopyası ya da yeniden ifade edilmiş hâli olmamalı; aynı metin iki adreste yayımlanırsa arama motorları iki sayfayı birbirine rakip görür. Yazı, maddenin uygulamada nasıl karşınıza çıktığını, diğer maddelerle ilişkisini ve yurt dışında yaşayanlar için anlamını anlatır; ayrıntılı gerekçe ve açıklama için madde sayfasına bağlantı verir.
+
+TCK (5237 sayılı Türk Ceza Kanunu) için madde sayfaları henüz yoktur. TCK maddelerinin metni mevzuat.gov.tr’deki güncel metinden (`https://www.mevzuat.gov.tr/MevzuatMetin/1.5.5237.pdf`) alınır; madde sayfasına bağlantı verilmez. Ceza hukuku yazılarında ayrıca: somut bir olay veya kişi hakkında yorum yapma; cezaların miktarını yalnızca kanun metninde yazdığı gibi ver; infaz hesabı, ertelenme, hükmün açıklanmasının geri bırakılması gibi konularda 5275 sayılı Kanun ve CMK’nın ilgili maddesini doğrulamadan sonuç söyleme.
 
 ## 3. Doğruluk kuralları (en önemli bölüm)
 
@@ -115,7 +124,7 @@ Avukatlık Kanunu m. 55 ve TBB Meslek Kuralları ile Reklam Yasağı Yönetmeli�
   7. `## Sık sorulan sorular` — 2–4 soru.
   8. `## Kaynaklar`.
   9. `## Sorularınız için` (aşağıda “Kapanış bölümü”).
-- 600–1200 kelime (madde metni hariç).
+- 600–1200 kelime (madde metni hariç); basit veya teknik maddelerde 300–600 kelime yeterlidir, dolgu yazma.
 
 ### Kapanış bölümü: soru sorma ve randevu
 
@@ -180,7 +189,7 @@ Metin…
 
 - `category`: `mevzuat` veya `blog`. Gündem makalelerinde ayrıca `source: trend` satırı bulunur.
 - `date`: `D`. `publish_at`: `<D>T08:00:00+03:00`. `draft: true` her zaman (avukat onayı olmadan yayımlanmaz).
-- `pair`: `<D>-<kısa-anahtar>`; dört dilde aynı.
+- `pair`: `<D>-<kısa-anahtar>`; dört dilde aynı. Mevzuat yazılarında `<D>-<kanun>-<no>` (ör. `2026-10-31-mohuk-1`, iki madde birlikteyse `2026-10-31-tmk-79-80`).
 - Ön bilgi değerleri tek satırdır; tırnak kullanma.
 - Metinde desteklenen biçimler yalnızca şunlardır: `##` ve `###` başlık, paragraf (aralarında boş satır), `- ` liste, `1. ` numaralı liste, `**kalın**`, `*italik*`, `[metin](adres)`, `> ` alıntı. **Tablo, görsel, HTML, `#` (H1) başlık kullanma.** Bir listenin her satırı aynı blokta olmalı; liste ile paragrafı aynı blokta karıştırma.
 

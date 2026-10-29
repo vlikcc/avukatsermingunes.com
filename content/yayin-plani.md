@@ -4,53 +4,18 @@ Yayın rutininin konu sırası ve kayıtları. Kurallar: `content/RUTIN.md`.
 
 ## Mevzuat sırası
 
-Rutin, “Yayınlananlar” listesinde olmayan ilk maddeyi yazar. Madde numaraları ve başlıkları her seferinde mevzuat.gov.tr’deki güncel metinden doğrulanır; listedeki bir numara yanlışsa rutin doğrusunu yazar ve bu listeyi düzeltir. Sırayı değiştirmek ya da madde eklemek için bu listeyi düzenleyin.
+Günde beş mevzuat yazısı. Kanunlar bu sırayla, her kanunda madde numarası sırasıyla ve bütün maddeleriyle işlenir. Rutin, aşağıdaki sırada “Yayınlananlar” listesinde olmayan ilk maddelerden başlar; yayınlanmış ya da `mülga – yazılmadı` diye kaydedilmiş maddeler atlanır. Madde numaraları ve başlıkları her seferinde güncel metinden doğrulanır. Sırayı değiştirmek için bu bölümü düzenleyin.
 
-### 5718 sayılı Milletlerarası Özel Hukuk ve Usul Hukuku Hakkında Kanun (MÖHUK)
-- MÖHUK m. 50 – Tenfiz kararı
-- MÖHUK m. 51 – Görev ve yetki
-- MÖHUK m. 52 – Tenfiz istemi
-- MÖHUK m. 53 – Dilekçeye eklenecek belgeler
-- MÖHUK m. 54 – Tenfiz şartları
-- MÖHUK m. 55 – Tebliğ ve itiraz
-- MÖHUK m. 56 – Karar
-- MÖHUK m. 57 – Yerine getirme ve temyiz yolu
-- MÖHUK m. 58 – Tanıma
-- MÖHUK m. 59 – Kesin hüküm ve kesin delil etkisi
-- MÖHUK m. 13 – Evlenmenin hükümleri
-- MÖHUK m. 14 – Boşanma ve ayrılık
-- MÖHUK m. 20 – Miras
-
-### 4721 sayılı Türk Medeni Kanunu (TMK) — boşanma
-- TMK m. 161 – Zina
-- TMK m. 162 – Hayata kast, pek kötü veya onur kırıcı davranış
-- TMK m. 163 – Suç işleme ve haysiyetsiz hayat sürme
-- TMK m. 164 – Terk
-- TMK m. 165 – Akıl hastalığı
-- TMK m. 166 – Evlilik birliğinin sarsılması
-- TMK m. 174 – Maddi ve manevi tazminat
-- TMK m. 175 – Yoksulluk nafakası
-- TMK m. 182 – Çocuğun durumu
-
-### 4721 sayılı Türk Medeni Kanunu (TMK) — miras
-- TMK m. 495 – Altsoy
-- TMK m. 496 – Ana ve baba
-- TMK m. 499 – Sağ kalan eş
-- TMK m. 505 – Tasarruf oranı
-- TMK m. 506 – Saklı paylı mirasçılar
-- TMK m. 598 – Mirasçılık belgesi
-- TMK m. 605 – Mirasın reddi
-- TMK m. 606 – Ret süresi
-
-### Diğer
-- 6100 sayılı HMK m. 74 – Özel yetki verilmesi gereken hâller
-- 2644 sayılı Tapu Kanunu m. 35 – Yabancı uyrukluların taşınmaz edinmesi
-- 5901 sayılı Türk Vatandaşlığı Kanunu m. 28 – Çıkma izni alanların hakları (Mavi Kart)
-- 7179 sayılı Askeralma Kanunu – dövizle askerlik hükmü (madde numarasını doğrula)
-- 1512 sayılı Noterlik Kanunu – yurt dışında düzenlenen işlemler (ilgili maddeyi doğrula)
-- 5490 sayılı Nüfus Hizmetleri Kanunu – yurt dışında gerçekleşen boşanmanın nüfusa tescili (ilgili maddeyi doğrula)
-
-Liste bittiğinde rutin, hedef okuyucuyu ilgilendiren yeni maddelerle (ör. TMK velayet ve mal rejimi, İİK, Tüketicinin Korunması Hakkında Kanun) listeyi uzatır.
+1. **5718 sayılı Milletlerarası Özel Hukuk ve Usul Hukuku Hakkında Kanun (MÖHUK)**: m. 1’den m. 66’ya kadar. Madde dosyaları: `content/kanunlar/mohuk/`. (m. 50 ve m. 51 yayınlandı.)
+2. **4721 sayılı Türk Medeni Kanunu (TMK)**: m. 1’den m. 1030’a kadar. Madde dosyaları: `content/kanunlar/tmk/`.
+3. **5237 sayılı Türk Ceza Kanunu (TCK)**: m. 1’den m. 345’e kadar. Madde dosyası yok; metin mevzuat.gov.tr’den alınır.
+4. Bunlar bittikten sonra, hedef okuyucuyu ilgilendiren tek tek maddeler:
+   - 6100 sayılı HMK m. 74 – Davaya vekâlette özel yetki verilmesini gerektiren hâller
+   - 2644 sayılı Tapu Kanunu m. 35 – Yabancı uyrukluların taşınmaz edinmesi
+   - 5901 sayılı Türk Vatandaşlığı Kanunu m. 28 – Çıkma izni alanların hakları (Mavi Kart)
+   - 7179 sayılı Askeralma Kanunu – dövizle askerlik hükmü (madde numarasını doğrula)
+   - 1512 sayılı Noterlik Kanunu – yurt dışında düzenlenen işlemler (ilgili maddeyi doğrula)
+   - 5490 sayılı Nüfus Hizmetleri Kanunu – yurt dışında gerçekleşen boşanmanın nüfusa tescili (ilgili maddeyi doğrula)
 
 ## Yayınlananlar
 
