@@ -732,7 +732,9 @@ export function blogPage(lang, category = 'blog', query) {
   </div>
 </header>
 <section class="section section-tight">
-  <div class="wrap">
+  <div class="wrap pub-layout">
+    ${finderBox(lang)}
+    <div>
     ${
       list.length
         ? `<ul class="post-list">${list
@@ -746,6 +748,7 @@ export function blogPage(lang, category = 'blog', query) {
             .join('')}</ul>${pager}`
         : empty
     }
+    </div>
   </div>
 </section>`;
   const title = S.name[lang];
@@ -757,6 +760,7 @@ export function blogPage(lang, category = 'blog', query) {
     alt: page > 1 ? null : sectionPath(category),
     active: 'blog',
     activeSub: category === 'mevzuat' ? 'mevzuat' : 'makaleler',
+    scripts: ['/js/finder.js'],
     jsonLd: [breadcrumbs(lang, [[t[lang].nav.blog, paths.blog[lang]], [S.name[lang], base]])],
     body,
   });
@@ -808,6 +812,45 @@ export function finderReply(lang, question) {
   return `<div class="msg msg-user"><p>${h(question)}</p></div><div class="msg msg-bot">${answer}</div>`;
 }
 
+/** Yazı bulucu kutusu (Hukuki Yayınlar, Makaleler ve Mevzuat sayfalarında). question: JavaScript kapalıyken gönderilen soru. */
+function finderBox(lang, question) {
+  const T = pick(lang);
+  return `
+    <aside class="finder" aria-labelledby="finder-title">
+      <div class="finder-intro">
+      <h2 id="finder-title">${T({ tr: 'Konunuzla ilgili yazıyı bulun', de: 'Den passenden Beitrag finden', en: 'Find the right post', nl: 'Vind de juiste tekst' })}</h2>
+      <p class="finder-note">${T({
+        tr: 'Yalnızca bu sitedeki yazılar aranır, hukuki değerlendirme yapılmaz. Yazdıklarınız kaydedilmez; ad, adres veya dosya numarası yazmayın.',
+        de: 'Durchsucht werden nur die Beiträge dieser Website; eine rechtliche Bewertung erfolgt nicht. Ihre Eingabe wird nicht gespeichert – bitte keine Namen, Adressen oder Aktenzeichen eingeben.',
+        en: 'Only the posts on this website are searched; no legal assessment is made. Your text is not stored – please do not enter names, addresses or case numbers.',
+        nl: 'Alleen de teksten op deze website worden doorzocht; er volgt geen juridische beoordeling. Uw tekst wordt niet opgeslagen – vul geen namen, adressen of zaaknummers in.',
+      })}</p>
+      </div>
+      <div class="finder-chat">
+      <div class="finder-log" role="log" aria-live="polite">
+        <div class="msg msg-bot"><p>${T({
+          tr: 'Sorununuzu bir iki cümleyle yazın, ilgili makale ve mevzuat yazılarını göstereyim.',
+          de: 'Beschreiben Sie Ihr Anliegen in ein, zwei Sätzen – ich zeige Ihnen passende Beiträge und Gesetzeserläuterungen.',
+          en: 'Describe your issue in a sentence or two and I will show you related articles and legislation.',
+          nl: 'Beschrijf uw vraag in een of twee zinnen, dan laat ik u passende artikelen en wetsuitleg zien.',
+        })}</p><p class="finder-example">${T({
+          tr: 'Örnek: “Babam Türkiye’de vefat etti, mirası reddetmek istiyorum.”',
+          de: 'Beispiel: „Mein Vater ist in der Türkei verstorben, ich möchte das Erbe ausschlagen.“',
+          en: 'Example: “My father died in Türkiye and I want to renounce the inheritance.”',
+          nl: 'Voorbeeld: „Mijn vader is in Turkije overleden, ik wil de erfenis verwerpen.”',
+        })}</p></div>
+        ${question ? finderReply(lang, question) : ''}
+      </div>
+      <form class="finder-form" method="post" action="/api/yazi-bul">
+        <input type="hidden" name="dil" value="${lang}">
+        <label class="sr-only" for="finder-q">${T({ tr: 'Sorununuz', de: 'Ihr Anliegen', en: 'Your issue', nl: 'Uw vraag' })}</label>
+        <textarea id="finder-q" name="soru" rows="2" maxlength="500" required placeholder="${T({ tr: 'Sorununuzu yazın…', de: 'Ihr Anliegen…', en: 'Your issue…', nl: 'Uw vraag…' })}"></textarea>
+        <button class="btn btn-small" type="submit">${T({ tr: 'Yazıları bul', de: 'Beiträge finden', en: 'Find posts', nl: 'Teksten zoeken' })}</button>
+      </form>
+      </div>
+    </aside>`;
+}
+
 /** Hukuki Yayınlar: üstte yazı bulucu, altında makaleler ve mevzuat bölümleri yan yana. */
 export function blogHub(lang, { question } = {}) {
   const T = pick(lang);
@@ -851,39 +894,7 @@ export function blogHub(lang, { question } = {}) {
 </header>
 <section class="section section-tight">
   <div class="wrap pub-layout">
-    <aside class="finder" aria-labelledby="finder-title">
-      <div class="finder-intro">
-      <h2 id="finder-title">${T({ tr: 'Konunuzla ilgili yazıyı bulun', de: 'Den passenden Beitrag finden', en: 'Find the right post', nl: 'Vind de juiste tekst' })}</h2>
-      <p class="finder-note">${T({
-        tr: 'Yalnızca bu sitedeki yazılar aranır, hukuki değerlendirme yapılmaz. Yazdıklarınız kaydedilmez; ad, adres veya dosya numarası yazmayın.',
-        de: 'Durchsucht werden nur die Beiträge dieser Website; eine rechtliche Bewertung erfolgt nicht. Ihre Eingabe wird nicht gespeichert – bitte keine Namen, Adressen oder Aktenzeichen eingeben.',
-        en: 'Only the posts on this website are searched; no legal assessment is made. Your text is not stored – please do not enter names, addresses or case numbers.',
-        nl: 'Alleen de teksten op deze website worden doorzocht; er volgt geen juridische beoordeling. Uw tekst wordt niet opgeslagen – vul geen namen, adressen of zaaknummers in.',
-      })}</p>
-      </div>
-      <div class="finder-chat">
-      <div class="finder-log" role="log" aria-live="polite">
-        <div class="msg msg-bot"><p>${T({
-          tr: 'Sorununuzu bir iki cümleyle yazın, ilgili makale ve mevzuat yazılarını göstereyim.',
-          de: 'Beschreiben Sie Ihr Anliegen in ein, zwei Sätzen – ich zeige Ihnen passende Beiträge und Gesetzeserläuterungen.',
-          en: 'Describe your issue in a sentence or two and I will show you related articles and legislation.',
-          nl: 'Beschrijf uw vraag in een of twee zinnen, dan laat ik u passende artikelen en wetsuitleg zien.',
-        })}</p><p class="finder-example">${T({
-          tr: 'Örnek: “Babam Türkiye’de vefat etti, mirası reddetmek istiyorum.”',
-          de: 'Beispiel: „Mein Vater ist in der Türkei verstorben, ich möchte das Erbe ausschlagen.“',
-          en: 'Example: “My father died in Türkiye and I want to renounce the inheritance.”',
-          nl: 'Voorbeeld: „Mijn vader is in Turkije overleden, ik wil de erfenis verwerpen.”',
-        })}</p></div>
-        ${question ? finderReply(lang, question) : ''}
-      </div>
-      <form class="finder-form" method="post" action="/api/yazi-bul">
-        <input type="hidden" name="dil" value="${lang}">
-        <label class="sr-only" for="finder-q">${T({ tr: 'Sorununuz', de: 'Ihr Anliegen', en: 'Your issue', nl: 'Uw vraag' })}</label>
-        <textarea id="finder-q" name="soru" rows="2" maxlength="500" required placeholder="${T({ tr: 'Sorununuzu yazın…', de: 'Ihr Anliegen…', en: 'Your issue…', nl: 'Uw vraag…' })}"></textarea>
-        <button class="btn btn-small" type="submit">${T({ tr: 'Yazıları bul', de: 'Beiträge finden', en: 'Find posts', nl: 'Teksten zoeken' })}</button>
-      </form>
-      </div>
-    </aside>
+    ${finderBox(lang, question)}
     <div class="pub-sections">
       ${block('blog')}
       ${block('mevzuat')}
