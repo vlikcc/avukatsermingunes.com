@@ -51,9 +51,12 @@ const toUtc = (v) => {
 // düzenlenmemişse veritabanındaki taslak dosyadaki metinle güncellenir.
 // Yayındaki bir yazı yalnızca avukatın onayıyla, LIVE_REFRESH listesindeki çeviri
 // grupları için ve bir kez güncellenir.
+// force: panelde kaydedilmiş olsa da güncellenir (yalnızca metnin panelde değişmediği doğrulanmışsa).
 const LIVE_REFRESH = {
   // 29 Ekim yazıları, düzenlenmiş metin siteye ulaşmadan onaylandı; avukat yeni metni 29.10.2026’da onayladı.
-  'refresh_2026_10_29': ['2026-10-29-mohuk-50', '2026-10-29-mirasin-reddi'],
+  'refresh_2026_10_29': { pairs: ['2026-10-29-mohuk-50', '2026-10-29-mirasin-reddi'] },
+  // Türkçe MÖHUK m. 50 panelde metni değiştirilmeden kaydedilmişti; yayındaki metin ilk taslakla birebir aynıydı.
+  'refresh_2026_10_29_tr50': { pairs: ['2026-10-29-mohuk-50'], langs: ['tr'], force: true },
 };
 
 function importFiles() {
@@ -68,7 +71,7 @@ function importFiles() {
   );
   const touch = db.prepare(`UPDATE posts SET updated_at = strftime('%Y-%m-%dT%H:%M:%fZ','now') WHERE id = ?`);
   const pending = Object.keys(LIVE_REFRESH).filter((k) => !getSetting(k));
-  const livePairs = pending.flatMap((k) => LIVE_REFRESH[k]);
+  const liveRule = (p) => pending.map((k) => LIVE_REFRESH[k]).find((r) => r.pairs.includes(p.pair) && (!r.langs || r.langs.includes(p.lang)) && (r.force || !panelEdited(p)));
   const mark = db.prepare('INSERT OR IGNORE INTO imported_files (path, imported_at) VALUES (?, ?)');
   // Önceki sürüm dosyaları ilk açılışta topluca aktarıyordu; o dosyalar yalnızca işaretlenir.
   const legacy = Boolean(getSetting('posts_imported')) && !getSetting('import_tracking');
@@ -97,8 +100,9 @@ function importFiles() {
 
   function refreshDraft(lang, p) {
     const cur = p?.slug && p.title && bySlug.get(lang, p.slug);
-    const live = cur?.status === 'published' && livePairs.includes(cur.pair);
-    if (!cur || (cur.status !== 'draft' && !live) || Date.parse(cur.updated_at) - Date.parse(cur.created_at) > 60_000) return;
+    if (!cur) return;
+    const live = cur.status === 'published' && Boolean(liveRule(cur));
+    if (!live && (cur.status !== 'draft' || panelEdited(cur))) return;
     const next = [p.title, p.description || '', p.body.trim(), p.date || cur.date, p.pair || null, CATEGORIES.includes(p.category) ? p.category : 'blog', toUtc(p.publish_at)];
     const prev = [cur.title, cur.description, cur.body, cur.date, cur.pair, cur.category, cur.publish_at];
     if (next.some((v, i) => v !== prev[i])) {
@@ -109,6 +113,8 @@ function importFiles() {
     }
   }
 }
+
+const panelEdited = (p) => Date.parse(p.updated_at) - Date.parse(p.created_at) > 60_000;
 
 const today = () => new Date().toLocaleDateString('en-CA', { timeZone: 'Europe/Berlin' });
 
