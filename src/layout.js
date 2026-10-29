@@ -107,6 +107,8 @@ function attorneyLd(lang) {
 const ldScript = (d) => `<script type="application/ld+json">${JSON.stringify(d).replace(/</g, '\\u003c')}</script>`;
 
 const navItems = ['about', 'areas', 'crossborder', 'blog', 'contact'];
+// Alt menüsü olan öğeler: üst bağlantı kendi sayfasına gider, yanındaki düğme alt menüyü açar.
+const subNav = { blog: ['makaleler', 'mevzuat'] };
 const homeLabel = { tr: 'Ana sayfa', de: 'Startseite', en: 'Home', nl: 'Startpagina' };
 
 /**
@@ -121,6 +123,7 @@ const homeLabel = { tr: 'Ana sayfa', de: 'Startseite', en: 'Home', nl: 'Startpag
  *                                olmayan bir yazıda dil seçici liste sayfasına gider, ama o dil bildirilmez.
  * @param {boolean} [o.attorney] Avukatın tam yapılandırılmış veri kaydını ekle
  * @param {string} [o.active]    Aktif menü anahtarı
+ * @param {string} [o.activeSub] Aktif alt menü anahtarı (ör. 'mevzuat')
  * @param {string} o.body
  * @param {boolean} [o.noindex]
  * @param {string[]} [o.scripts]
@@ -140,10 +143,14 @@ export function layout(o) {
   const hreflangs = alt ? (o.hreflang || LANGS) : [];
 
   const nav = navItems
-    .map(
-      (k) =>
-        `<li><a href="${paths[k][lang]}"${o.active === k ? ' aria-current="page"' : ''}>${h(s.nav[k])}</a></li>`,
-    )
+    .map((k) => {
+      const link = `<a href="${paths[k][lang]}"${o.active === k ? ' aria-current="page"' : ''}>${h(s.nav[k])}</a>`;
+      if (!subNav[k]) return `<li>${link}</li>`;
+      return `<li class="has-sub">${link}<button class="sub-toggle" type="button" aria-expanded="false" aria-controls="sub-${k}"><span class="sr-only">${h(s.nav[k])} ${h(s.nav.submenu)}</span></button>
+          <ul class="sub-menu" id="sub-${k}">${subNav[k]
+            .map((c) => `<li><a href="${paths[c][lang]}"${o.activeSub === c ? ' aria-current="page"' : ''}>${h(s.nav[c])}</a></li>`)
+            .join('')}</ul></li>`;
+    })
     .join('');
 
   const addrTr = config.contact.addressTr;

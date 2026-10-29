@@ -36,6 +36,33 @@
   });
 })();
 
+// Alt menüler (ör. Hukuki Yayınlar → Makaleler, Mevzuat): ok düğmesiyle açılır kapanır,
+// dışarı tıklanınca veya Escape ile kapanır. Geniş ekranda fareyle üzerine gelince de açılır (CSS).
+(() => {
+  const items = [...document.querySelectorAll('.has-sub')];
+  const set = (li, open) => {
+    li.classList.toggle('open', open);
+    li.querySelector('.sub-toggle').setAttribute('aria-expanded', String(open));
+  };
+  for (const li of items) {
+    li.querySelector('.sub-toggle').addEventListener('click', () => {
+      const open = !li.classList.contains('open');
+      for (const other of items) if (other !== li) set(other, false);
+      set(li, open);
+    });
+    li.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && li.classList.contains('open')) {
+        e.stopPropagation();
+        set(li, false);
+        li.querySelector('.sub-toggle').focus();
+      }
+    });
+  }
+  document.addEventListener('click', (e) => {
+    for (const li of items) if (li.classList.contains('open') && !li.contains(e.target)) set(li, false);
+  });
+})();
+
 // İçerik koruması: yazı metinleri kopyalanamaz, görseller sağ tıklama veya sürükleme ile kaydedilemez.
 (() => {
   const el = (n) => (n instanceof Element ? n : n?.parentElement);

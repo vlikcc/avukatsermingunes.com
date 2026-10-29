@@ -756,6 +756,7 @@ export function blogPage(lang, category = 'blog', query) {
     path: pageUrl(page),
     alt: page > 1 ? null : sectionPath(category),
     active: 'blog',
+    activeSub: category === 'mevzuat' ? 'mevzuat' : 'makaleler',
     jsonLd: [breadcrumbs(lang, [[t[lang].nav.blog, paths.blog[lang]], [S.name[lang], base]])],
     body,
   });
@@ -807,7 +808,7 @@ export function finderReply(lang, question) {
   return `<div class="msg msg-user"><p>${h(question)}</p></div><div class="msg msg-bot">${answer}</div>`;
 }
 
-/** Hukuki Yayınlar: yazı bulucu ile makaleler ve mevzuat bölümleri alt alta. */
+/** Hukuki Yayınlar: üstte yazı bulucu, altında makaleler ve mevzuat bölümleri yan yana. */
 export function blogHub(lang, { question } = {}) {
   const T = pick(lang);
   const block = (category) => {
@@ -851,7 +852,16 @@ export function blogHub(lang, { question } = {}) {
 <section class="section section-tight">
   <div class="wrap pub-layout">
     <aside class="finder" aria-labelledby="finder-title">
+      <div class="finder-intro">
       <h2 id="finder-title">${T({ tr: 'Konunuzla ilgili yazıyı bulun', de: 'Den passenden Beitrag finden', en: 'Find the right post', nl: 'Vind de juiste tekst' })}</h2>
+      <p class="finder-note">${T({
+        tr: 'Yalnızca bu sitedeki yazılar aranır, hukuki değerlendirme yapılmaz. Yazdıklarınız kaydedilmez; ad, adres veya dosya numarası yazmayın.',
+        de: 'Durchsucht werden nur die Beiträge dieser Website; eine rechtliche Bewertung erfolgt nicht. Ihre Eingabe wird nicht gespeichert – bitte keine Namen, Adressen oder Aktenzeichen eingeben.',
+        en: 'Only the posts on this website are searched; no legal assessment is made. Your text is not stored – please do not enter names, addresses or case numbers.',
+        nl: 'Alleen de teksten op deze website worden doorzocht; er volgt geen juridische beoordeling. Uw tekst wordt niet opgeslagen – vul geen namen, adressen of zaaknummers in.',
+      })}</p>
+      </div>
+      <div class="finder-chat">
       <div class="finder-log" role="log" aria-live="polite">
         <div class="msg msg-bot"><p>${T({
           tr: 'Sorununuzu bir iki cümleyle yazın, ilgili makale ve mevzuat yazılarını göstereyim.',
@@ -872,12 +882,7 @@ export function blogHub(lang, { question } = {}) {
         <textarea id="finder-q" name="soru" rows="2" maxlength="500" required placeholder="${T({ tr: 'Sorununuzu yazın…', de: 'Ihr Anliegen…', en: 'Your issue…', nl: 'Uw vraag…' })}"></textarea>
         <button class="btn btn-small" type="submit">${T({ tr: 'Yazıları bul', de: 'Beiträge finden', en: 'Find posts', nl: 'Teksten zoeken' })}</button>
       </form>
-      <p class="finder-note">${T({
-        tr: 'Yalnızca bu sitedeki yazılar aranır, hukuki değerlendirme yapılmaz. Yazdıklarınız kaydedilmez; ad, adres veya dosya numarası yazmayın.',
-        de: 'Durchsucht werden nur die Beiträge dieser Website; eine rechtliche Bewertung erfolgt nicht. Ihre Eingabe wird nicht gespeichert – bitte keine Namen, Adressen oder Aktenzeichen eingeben.',
-        en: 'Only the posts on this website are searched; no legal assessment is made. Your text is not stored – please do not enter names, addresses or case numbers.',
-        nl: 'Alleen de teksten op deze website worden doorzocht; er volgt geen juridische beoordeling. Uw tekst wordt niet opgeslagen – vul geen namen, adressen of zaaknummers in.',
-      })}</p>
+      </div>
     </aside>
     <div class="pub-sections">
       ${block('blog')}
