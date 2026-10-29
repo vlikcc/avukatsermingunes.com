@@ -80,7 +80,7 @@ Yanlış bilgi vermek, hiç yazı yayımlamamaktan daha kötüdür. Bu kurallar 
 Avukatlık Kanunu m. 55 ve TBB Meslek Kuralları ile Reklam Yasağı Yönetmeliği gereği yazılar **yalnızca bilgilendirme** amaçlıdır:
 
 - “En iyi”, “uzman”, “garantili”, “kesin sonuç”, “%100” gibi üstünlük ve sonuç vaadi içeren ifadeler kullanma.
-- Müvekkil hikâyesi, başarı oranı, ücret bilgisi, indirim veya “hemen arayın” gibi iş isteme çağrıları yazma. (Sitenin kendi randevu bandı her yazının altında zaten görünür; metne ayrıca eklemeye gerek yok.)
+- Müvekkil hikâyesi, başarı oranı, ücret bilgisi, indirim veya “hemen arayın” gibi iş isteme çağrıları yazma. Her yazının sonundaki “Sorularınız için” bölümü bu yasağın içinde kalacak şekilde, yalnızca bilgi veren bir dille yazılır (5. bölüm).
 - Başka avukatlar veya bürolarla karşılaştırma yapma.
 - Almanca, İngilizce ve Hollandaca metinlerde unvan olarak yalnızca “Avukat (Türkei)” kullan; “Rechtsanwalt/Rechtsanwältin”, “lawyer admitted in Germany”, “advocaat” gibi ifadeler kullanma. Hollandaca’da gerekiyorsa “in Turkije toegelaten advocaat” denebilir.
 
@@ -93,7 +93,8 @@ Avukatlık Kanunu m. 55 ve TBB Meslek Kuralları ile Reklam Yasağı Yönetmeli�
 - 4–7 adet `##` ara başlık; gerekiyorsa `###` alt başlık.
 - Kanun maddelerine numarasıyla atıf (ör. “TMK m. 166”, “MÖHUK m. 54”).
 - Sonda `## Sık sorulan sorular` bölümü: arama sorgusu biçiminde 3–5 soru, her biri `###` başlık ve kısa cevap.
-- En sonda `## Kaynaklar` bölümü: kullanılan resmî kaynakların bağlantıları (madde işaretli liste).
+- Ardından `## Kaynaklar` bölümü: kullanılan resmî kaynakların bağlantıları (madde işaretli liste).
+- En sonda `## Sorularınız için` bölümü (aşağıda “Kapanış bölümü”).
 
 ### Mevzuat (barandogan.av.tr/blog/mevzuat yapısına benzer, ama özgün metinle)
 
@@ -107,7 +108,30 @@ Avukatlık Kanunu m. 55 ve TBB Meslek Kuralları ile Reklam Yasağı Yönetmeli�
   6. `## Yargıtay kararları` — yalnızca doğrulanmış kararlar; her biri için kalın satırda “Yargıtay X. Hukuk Dairesi, E. 2021/…, K. 2022/…, T. …” ve 2–4 cümlelik özet. Doğrulanmış karar yoksa bölümü çıkar.
   7. `## Sık sorulan sorular` — 2–4 soru.
   8. `## Kaynaklar`.
+  9. `## Sorularınız için` (aşağıda “Kapanış bölümü”).
 - 600–1200 kelime (madde metni hariç).
+
+### Kapanış bölümü: soru sorma ve randevu
+
+Her yazının (makale, gündem makalesi ve mevzuat) en son bölümü, okurun bu konudaki sorusunu nasıl iletebileceğini ya da nasıl randevu alabileceğini anlatır. Bölüm her yazı için **o yazının konusuna göre** yeniden yazılır; hazır bir kalıbı her yazıya kopyalama.
+
+- Başlık: TR `## Sorularınız için`, DE `## Fragen zu Ihrem Fall`, EN `## Questions about your case`, NL `## Vragen over uw situatie`.
+- 2–4 cümle ya da kısa bir paragraf ve gerekiyorsa 2–4 maddelik bir liste. İçerik:
+  1. Bu konuda okurun hangi durumda kendi durumunu değerlendirtmek isteyebileceği, yazının konusuna bağlı olarak (ör. “Almanya’da verilmiş boşanma kararınızın Türkiye’de tanınması veya tenfizi için hangi yolun uygun olduğunu…”).
+  2. Görüşmeye ya da soruya hazırlık için o konuya özgü, elde bulundurulması yararlı belgeler veya bilgiler (ör. kararın kesinleşme şerhli örneği, apostil, nüfus kayıt örneği, ölüm tarihi ve mirasbırakanın son yerleşim yeri). Yalnızca yazıda zaten doğrulanmış bilgilere dayan.
+  3. İki yol, aynı dildeki sayfaya bağlantıyla: görüşme randevusu (TR [/randevu](/randevu), DE [/de/termin](/de/termin), EN [/en/appointment](/en/appointment), NL [/nl/afspraak](/nl/afspraak)) ve yazılı soru için iletişim formu (TR [/iletisim](/iletisim), DE [/de/kontakt](/de/kontakt), EN [/en/contact](/en/contact), NL [/nl/contact](/nl/contact)). Bağlantı metni doğal bir ifade olsun (ör. “[randevu sayfasından](/randevu)”), çıplak adres değil.
+  4. Görüşmelerin online görüntülü, telefonla veya Düsseldorf’ta yüz yüze yapılabildiği bilgisi. DE/EN/NL metinlerde görüşmelerin Türkçe yapıldığı ve konunun **Türk hukuku boyutuyla** sınırlı olduğu (§ 206 BRAO); Alman veya Hollanda hukukuna ilişkin kısım için o ülkede yetkili bir avukata başvurulması gerektiği, yazının konusu bunu gerektiriyorsa.
+- Yasaklar (4. bölüm): “hemen”, “vakit kaybetmeden”, “en kısa sürede arayın”, “uzman ekibimiz”, “ücretsiz ön görüşme”, sonuç vaadi, korku ya da aciliyet yaratan ifadeler. Bir süre gerçekten önemliyse (ör. mirasın reddinde üç ay) bunu yalnızca bilgi olarak, kanun maddesiyle birlikte ve baskı kurmadan an.
+- Ücret, indirim, başarı oranı, “avukatlık ücreti hakkında bilgi” gibi ifadeler yok. Okura “biz” diye değil, yazarın sayfasını tanıtan sade bir dille seslen (ör. “randevu sayfasından görüşme tarihi seçebilir ya da sorunuzu iletişim formundan yazılı olarak iletebilirsiniz”).
+- İletişim formuyla soru göndermenin tek başına avukat-müvekkil ilişkisi kurmadığını bir yan cümleyle belirtebilirsin; sitenin alt bilgisinde bu not zaten var, uzatma.
+
+Örnek (Türkçe, mirasın reddi yazısı için; kopyalama, her yazıda konuya göre yeniden yaz):
+
+> Mirasın reddi için sürenin ne zaman başladığını ya da yurt dışından hangi yolla beyanda bulunacağınızı kendi durumunuz için değerlendirmek isterseniz [randevu sayfasından](/randevu) online, telefonla veya Düsseldorf’ta yüz yüze bir görüşme tarihi seçebilirsiniz. Sorunuzu yazılı olarak iletmek isterseniz [iletişim formunu](/iletisim) kullanabilirsiniz. Görüşmeden önce mirasbırakanın ölüm tarihini, Türkiye’deki son yerleşim yerini ve elinizdeki veraset ya da nüfus belgelerini hazırlamanız yararlı olur.
+
+### Üslup: humanizer becerisi
+
+Bütün yazılar `.claude/skills/humanizer/SKILL.md` dosyasındaki **humanizer** becerisiyle yazılır. Yazmaya başlamadan önce bu dosyayı oku (Skill aracı kullanılabiliyorsa `humanizer` becerisini çağır). Taslağı yazdıktan sonra dört dilin her birinde becerideki adımları uygula: kalıpları tara, düzelt, “hangi cümle yapay zekâ ile yazıldığını belli ediyor?” sorusunu sor ve o cümleleri yeniden yaz. Humanizer yalnızca üslubu değiştirir; madde metni alıntıları, madde numaraları, süreler, kaynaklar ve tartışmalı görüş uyarıları aynen korunur. Doğallık için uydurma örnek, anekdot ya da müvekkil hikâyesi eklenmez.
 
 ### Diller
 
@@ -162,6 +186,8 @@ Metin…
    - Tartışmalı noktalar “görüş” olarak işaretlendi mi?
    - Dört dil içerik olarak aynı bilgiyi veriyor mu (biri diğerinde olmayan bir iddia içermiyor mu)?
    - Reklam yasağına aykırı bir ifade var mı?
+   - Humanizer adımları dört dilde uygulandı mı; metinde becerideki kalıplardan (önem şişirme, kalıp giriş/kapanış, geçiş zinciri, sohbet robotu kalıntısı vb.) kalan var mı?
+   - Yazı, konuya özgü bir `Sorularınız için` bölümüyle bitiyor mu; bağlantılar aynı dildeki randevu ve iletişim sayfasına gidiyor mu; bölümde iş isteme ya da aciliyet ifadesi var mı?
    - Ön bilgi alanları ve slug kurallara uygun mu?
 2. `content/yayin-plani.md` dosyasında “Yayınlananlar” listesine her yazı için en üste bir satır ekle: `- D | mevzuat/blog/gündem | TR başlık | pair | hedef aramalar | kullanılan ana kaynaklar`. Yazamadığın bir konu varsa “Notlar” bölümüne kısa not düş.
 3. Yalnızca `content/posts/` ve `content/yayin-plani.md` dosyalarını değiştir. Kod, ayar veya başka dosyalara dokunma.

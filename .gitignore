@@ -4,5 +4,6 @@ data/
 .DS_Store
 .env.production
 deploy.zip
-.claude/
+.claude/*
+!.claude/skills/
 .env.github

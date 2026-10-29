@@ -47,12 +47,18 @@ const toUtc = (v) => {
 
 // Markdown dosyalarındaki yeni yazıları veritabanına aktarır ve aktarılan yazıları döndürür.
 // Her dosya yalnızca bir kez aktarılır; panelden silinen bir yazı yeniden gelmez.
+// Daha önce aktarılmış bir dosya değiştiyse, yazı hâlâ onay bekliyor ve panelden
+// düzenlenmemişse veritabanındaki taslak dosyadaki metinle güncellenir.
 function importFiles() {
   const ins = db.prepare(
     `INSERT OR IGNORE INTO posts (lang, slug, title, description, body, date, pair, status, category, publish_at)
      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
   );
   const seen = db.prepare('SELECT 1 FROM imported_files WHERE path = ?');
+  const bySlug = db.prepare('SELECT * FROM posts WHERE lang = ? AND slug = ?');
+  const refresh = db.prepare(
+    `UPDATE posts SET title = ?, description = ?, body = ?, date = ?, pair = ?, category = ?, publish_at = ? WHERE id = ?`,
+  );
   const mark = db.prepare('INSERT OR IGNORE INTO imported_files (path, imported_at) VALUES (?, ?)');
   // Önceki sürüm dosyaları ilk açılışta topluca aktarıyordu; o dosyalar yalnızca işaretlenir.
   const legacy = Boolean(getSetting('posts_imported')) && !getSetting('import_tracking');
@@ -62,7 +68,10 @@ function importFiles() {
     if (!fs.existsSync(dir)) continue;
     for (const f of fs.readdirSync(dir).filter((x) => x.endsWith('.md')).sort()) {
       const rel = `${lang}/${f}`;
-      if (seen.get(rel)) continue;
+      if (seen.get(rel)) {
+        if (!legacy) refreshDraft(lang, parse(path.join(dir, f)));
+        continue;
+      }
       const p = legacy ? null : parse(path.join(dir, f));
       if (p?.slug && p.title) {
         const category = CATEGORIES.includes(p.category) ? p.category : 'blog';
@@ -74,6 +83,17 @@ function importFiles() {
   }
   setSetting('import_tracking', '1');
   return added;
+
+  function refreshDraft(lang, p) {
+    const cur = p?.slug && p.title && bySlug.get(lang, p.slug);
+    if (!cur || cur.status !== 'draft' || Date.parse(cur.updated_at) - Date.parse(cur.created_at) > 60_000) return;
+    const next = [p.title, p.description || '', p.body.trim(), p.date || cur.date, p.pair || null, CATEGORIES.includes(p.category) ? p.category : 'blog', toUtc(p.publish_at)];
+    const prev = [cur.title, cur.description, cur.body, cur.date, cur.pair, cur.category, cur.publish_at];
+    if (next.some((v, i) => v !== prev[i])) {
+      refresh.run(...next, cur.id);
+      console.log(`[yazılar] Taslak dosyadan güncellendi: ${lang}/${p.slug}`);
+    }
+  }
 }
 
 const today = () => new Date().toLocaleDateString('en-CA', { timeZone: 'Europe/Berlin' });

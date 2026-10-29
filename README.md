@@ -81,7 +81,9 @@ Yazılar yönetim panelindeki **Yazılar** sayfasından yazılır, düzenlenir v
 
 Her gün Türkiye saatiyle 18:00’de bulutta bir Claude rutini çalışır, ertesi gün için dört dilde (TR/DE/EN/NL) her gün bir mevzuat yazısı, iki günde bir de makale hazırlar ve bunları `content/posts/` altına **taslak** olarak, 08:00 yayın saatiyle ekleyip `master` dalına gönderir. Site yeniden kurulur, taslaklar panele düşer ve e-posta gelir. Yazıları okuyup doğruladıktan sonra “Tüm dilleriyle yayınla” ile onaylayın; ertesi sabah 08:00’de görünürler.
 
-- Kurallar (konu seçimi, doğruluk, reklam yasağı, SEO, dosya biçimi): `content/RUTIN.md`
+- Kurallar (konu seçimi, doğruluk, reklam yasağı, SEO, kapanış bölümü, dosya biçimi): `content/RUTIN.md`
+- Üslup: `.claude/skills/humanizer/SKILL.md` (yapay zekâ izlenimi veren kalıpları ayıklayan yazım becerisi)
+- Onay bekleyen bir taslağın dosyası değişirse (ör. rutin ya da depo üzerinden düzeltme), site yeniden kurulduğunda paneldeki taslak da güncellenir. Panelden düzenlenmiş ya da yayımlanmış yazılara dokunulmaz.
 - Mevzuat sırası ve yayın kayıtları: `content/yayin-plani.md`
 - Rutinin kendisi: https://claude.ai/code/routines
 

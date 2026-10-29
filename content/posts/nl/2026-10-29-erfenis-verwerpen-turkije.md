@@ -9,88 +9,86 @@ publish_at: 2026-10-29T08:00:00+03:00
 draft: true
 ---
 
-Een erfenis in Turkije verwerpen (mirasın reddi) gebeurt door een mondelinge of schriftelijke verklaring bij het vredegerecht (sulh mahkemesi) binnen drie maanden (artikelen 606 en 609 van het Turkse Burgerlijk Wetboek nr. 4721 – Türk Medeni Kanunu, TBW). Deze termijn geldt ook voor erfgenamen die in Nederland of Duitsland wonen; wordt hij gemist, dan is de erfenis in beginsel zuiver aanvaard en kan aansprakelijkheid voor de schulden van de erflater ontstaan.
-
-In dit artikel leggen we aan de hand van de wetsartikelen uit wat de voorwaarden en de termijn zijn, waar en hoe u verwerpt en waar erfgenamen in het buitenland op moeten letten.
+Een erfenis in Turkije verwerpen (mirasın reddi) doet u met een mondelinge of schriftelijke verklaring bij het vredegerecht (sulh mahkemesi), binnen drie maanden (artikelen 606 en 609 van het Turkse Burgerlijk Wetboek nr. 4721 – Türk Medeni Kanunu, TBW). Die termijn geldt ook als u in Nederland of Duitsland woont. Laat u hem verstrijken, dan hebt u de erfenis in beginsel zuiver aanvaard en kunt u aansprakelijk worden voor de schulden van de erflater.
 
 ## Wat is verwerping en wie kan verwerpen?
 
-Volgens artikel 605 lid 1 TBW kunnen wettelijke en benoemde erfgenamen de erfenis verwerpen. Wie verwerpt, krijgt geen rechten op de nalatenschap en is in beginsel ook niet aansprakelijk voor de schulden van de erflater.
+Zowel wettelijke als benoemde erfgenamen kunnen de erfenis verwerpen (artikel 605 lid 1 TBW). Wie verwerpt, krijgt geen rechten op de nalatenschap en is in beginsel ook niet aansprakelijk voor de schulden van de erflater.
 
-Artikel 605 lid 2 TBW bevat daarnaast een vermoeden: was de insolventie van de erflater op het moment van overlijden duidelijk of officieel vastgesteld, dan wordt de erfenis geacht te zijn verworpen. Hoe dit in een concreet geval wordt ingeroepen en bewezen, hangt af van de omstandigheden; men moet er niet van uitgaan dat dit gevolg bij elke schuldenlast automatisch intreedt. Bij twijfel is een uitdrukkelijke verwerping binnen de termijn de veiligere weg (beoordeling van de auteur).
+Artikel 605 lid 2 TBW bevat een vermoeden: was de insolventie van de erflater op het moment van overlijden duidelijk of officieel vastgesteld, dan wordt de erfenis geacht te zijn verworpen. Hoe u dit in een concreet geval inroept en bewijst, hangt af van de omstandigheden. Ga er niet van uit dat dit gevolg bij elke schuldenlast vanzelf intreedt. Bij twijfel is een uitdrukkelijke verwerping binnen de termijn de veiligere weg (beoordeling van de auteur).
 
 ## Termijn voor verwerping: drie maanden
 
-Volgens artikel 606 lid 1 TBW kan de erfenis binnen **drie maanden** worden verworpen. De termijn begint:
+U kunt de erfenis binnen **drie maanden** verwerpen (artikel 606 lid 1 TBW). Wanneer die termijn begint, hangt af van uw positie:
 
-- **voor wettelijke erfgenamen** op het moment dat zij van het overlijden horen; bewijzen zij dat zij pas later wisten dat zij erfgenaam zijn, dan geldt dat latere moment (artikel 606 lid 2 TBW);
-- **voor bij testament benoemde erfgenamen** op het moment dat de uiterste wilsbeschikking hun officieel is meegedeeld (artikel 606 lid 2 TBW);
-- **bij boedelbeschrijving als beschermende maatregel** op het moment dat de vrederechter meedeelt dat de beschrijving is afgerond (artikel 607 TBW).
+- voor wettelijke erfgenamen op het moment dat zij van het overlijden horen; bewijzen zij dat zij pas later wisten dat zij erfgenaam zijn, dan geldt dat latere moment (artikel 606 lid 2 TBW);
+- voor bij testament benoemde erfgenamen op het moment dat de uiterste wilsbeschikking hun officieel is meegedeeld (artikel 606 lid 2 TBW);
+- bij boedelbeschrijving als beschermende maatregel op het moment dat de vrederechter meedeelt dat de beschrijving is afgerond (artikel 607 TBW).
 
-Overlijdt een erfgenaam zonder te hebben verworpen, dan gaat het recht tot verwerping over op diens erfgenamen (artikel 608 lid 1 TBW). Gaat de erfenis door verwerping over op personen die eerder geen erfgenaam waren, dan begint hun termijn wanneer zij van de verwerping horen (artikel 608 lid 3 TBW).
+Overlijdt een erfgenaam zonder te hebben verworpen, dan gaat het recht tot verwerping over op diens erfgenamen (artikel 608 lid 1 TBW). Komt de erfenis door een verwerping toe aan personen die eerder geen erfgenaam waren, dan begint hun termijn wanneer zij van die verwerping horen (artikel 608 lid 3 TBW).
 
-**Verlenging.** Bij gewichtige redenen kan de vrederechter de termijn verlengen of een nieuwe termijn geven (artikel 615 TBW). De wet omschrijft "gewichtige redenen" niet; of wonen in het buitenland op zichzelf voldoende is, is niet wettelijk geregeld en ter beoordeling van de rechter. Reken daarom niet op verlenging, maar handel binnen de drie maanden.
+**Verlenging.** Bij gewichtige redenen kan de vrederechter de termijn verlengen of een nieuwe termijn geven (artikel 615 TBW). Wat "gewichtige redenen" zijn, zegt de wet niet. Of het feit dat u in het buitenland woont op zichzelf genoeg is, is evenmin wettelijk geregeld; dat beoordeelt de rechter. Reken daarom niet op verlenging en verwerp binnen de drie maanden.
 
 ## Hoe verwerpt u en welke rechtbank is bevoegd?
 
-Volgens artikel 609 TBW:
+Artikel 609 TBW regelt hoe de verwerping verloopt:
 
-- De erfgenaam verwerpt door een mondelinge of schriftelijke verklaring bij het **vredegerecht** (sulh mahkemesi).
-- De verwerping moet **onvoorwaardelijk** zijn; een verklaring als "ik verwerp als de schulden een bepaald bedrag overschrijden" is geen geldige verwerping.
+- U legt een mondelinge of schriftelijke verklaring af bij het vredegerecht (sulh mahkemesi).
+- De verwerping moet **onvoorwaardelijk** zijn. Een verklaring als "ik verwerp als de schulden een bepaald bedrag overschrijden" is geen geldige verwerping.
 - De vrederechter legt de verklaring vast in een proces-verbaal.
-- Een tijdige verwerping wordt door het **vredegerecht van de plaats waar de nalatenschap is opengevallen** in een bijzonder register ingeschreven; op verzoek krijgt de erfgenaam een bewijs daarvan.
+- Het vredegerecht van de plaats waar de nalatenschap is opengevallen, schrijft een tijdige verwerping in een bijzonder register in. Op verzoek krijgt u daarvan een bewijs.
 
-Volgens artikel 576 TBW valt de nalatenschap open in de woonplaats van de erflater. Lag de laatste woonplaats in Turkije, dan is de plaats duidelijk.
+De nalatenschap valt open in de woonplaats van de erflater (artikel 576 TBW). Woonde de erflater het laatst in Turkije, dan is duidelijk om welke plaats het gaat.
 
-**Als de erflater in het buitenland woonde.** Deze kwestie is omstreden. Wat volgt is een opvatting; de wet bevat hierover geen uitdrukkelijke bepaling en voor dit artikel is geen bindende rechterlijke uitspraak geverifieerd. Het is niet zeker welke opvatting een rechter in een concreet geval zal volgen. Artikel 43 van Wet nr. 5718 (MÖHUK) wijst erfrechtelijke *rechtszaken* toe aan de rechter van de laatste woonplaats van de overledene in Turkije en, als die niet in Turkije lag, aan de rechter van de plaats waar de nalatenschapsgoederen zich bevinden. Een verwerping is geen rechtszaak; toch kan worden betoogd dat deze regel richting geeft en dat het vredegerecht van de plaats van de Turkse nalatenschap (bijvoorbeeld een onroerend goed) kan worden benaderd.
+**Als de erflater in het buitenland woonde.** Deze kwestie is omstreden. De wet bevat er geen uitdrukkelijke bepaling over en voor dit artikel is geen bindende rechterlijke uitspraak geverifieerd. Wat volgt is daarom een opvatting, en het is niet zeker welke opvatting een rechter in een concreet geval zal volgen. Artikel 43 van Wet nr. 5718 (MÖHUK) wijst erfrechtelijke *rechtszaken* toe aan de rechter van de laatste woonplaats van de overledene in Turkije en, als die niet in Turkije lag, aan de rechter van de plaats waar de nalatenschapsgoederen zich bevinden. Een verwerping is geen rechtszaak. Toch kan worden betoogd dat deze regel richting geeft en dat u zich kunt wenden tot het vredegerecht van de plaats waar de Turkse nalatenschap zich bevindt, bijvoorbeeld een onroerend goed.
 
-**Toepasselijk recht.** Volgens artikel 20 lid 1 MÖHUK is op de erfopvolging het nationale recht van de overledene van toepassing, maar voor onroerend goed in Turkije geldt Turks recht. Ook bij een erflater die de Nederlandse of Duitse nationaliteit had aangenomen, zijn voor onroerend goed in Turkije dus het Turkse recht en de verwerpingsregels van het TBW van belang.
+**Toepasselijk recht.** Volgens artikel 20 lid 1 MÖHUK is op de erfopvolging het nationale recht van de overledene van toepassing, maar voor onroerend goed in Turkije geldt Turks recht. Had de erflater de Nederlandse of Duitse nationaliteit aangenomen, dan blijven voor onroerend goed in Turkije dus het Turkse recht en de verwerpingsregels van het TBW van belang.
 
 ## Gedrag waardoor het recht tot verwerping vervalt
 
-Volgens artikel 610 lid 1 TBW verkrijgt een erfgenaam die niet binnen de wettelijke termijn verwerpt de erfenis zuiver. Volgens artikel 610 lid 2 TBW kan een erfgenaam bovendien niet meer verwerpen, ook al is de termijn nog niet verstreken, als hij of zij:
+Wie niet binnen de wettelijke termijn verwerpt, verkrijgt de erfenis zuiver (artikel 610 lid 1 TBW). U kunt het recht tot verwerping ook verliezen terwijl de termijn nog loopt. Volgens artikel 610 lid 2 TBW kan een erfgenaam niet meer verwerpen als hij of zij:
 
 - zich als erfgenaam met de nalatenschap bemoeit,
 - handelingen verricht die verder gaan dan gewoon beheer van de nalatenschap of wat nodig is om de zaken van de erflater voort te zetten,
 - goederen van de nalatenschap verbergt of zich toe-eigent.
 
-Zo kunnen bijvoorbeeld het verkopen van de auto van de erflater in Turkije of het opnemen en gebruiken van geld van diens bankrekening onder deze bepaling vallen. Wat "gewoon beheer" is, hangt af van het concrete geval. Het instellen van een rechtszaak of executie om een verjarings- of vervaltermijn te stuiten, doet het recht tot verwerping daarentegen niet vervallen (artikel 610 lid 3 TBW).
+Verkoopt u bijvoorbeeld de auto van de erflater in Turkije, of neemt u geld op van diens bankrekening en gebruikt u dat, dan kan dat onder deze bepaling vallen. Wat nog "gewoon beheer" is, hangt af van het concrete geval. U verliest het recht tot verwerping niet door een rechtszaak of executie te beginnen om een verjarings- of vervaltermijn te stuiten (artikel 610 lid 3 TBW).
 
 ## Gevolgen van verwerping
 
-- **Overgang van het aandeel:** Verwerpt een wettelijke erfgenaam, dan gaat diens aandeel over op de rechthebbenden alsof hij of zij de erflater niet had overleefd (artikel 611 lid 1 TBW). De verwerping door een kind kan dus diens afstammelingen (de kleinkinderen) erfgenaam maken. Bij een nalatenschap met schulden moet dit voor de hele familie worden bekeken.
+- **Overgang van het aandeel:** Verwerpt een wettelijke erfgenaam, dan gaat diens aandeel over op de rechthebbenden alsof hij of zij de erflater niet had overleefd (artikel 611 lid 1 TBW). Verwerpt een kind, dan kunnen dus diens afstammelingen (de kleinkinderen) erfgenaam worden. Gaat het om een nalatenschap met schulden, bekijk dit dan voor de hele familie.
 - **Verwerping door alle afstammelingen:** Hun aandeel gaat over op de langstlevende echtgenoot (artikel 613 TBW).
-- **Verwerping door alle naaste erfgenamen:** De nalatenschap wordt door het vredegerecht volgens de faillissementsregels vereffend; een overschot gaat naar de rechthebbenden (artikel 612 TBW). Erfgenamen kunnen bij de verwerping vragen dat de volgende erfgenamen wordt gevraagd of zij aanvaarden (artikel 614 TBW).
+- **Verwerping door alle naaste erfgenamen:** Het vredegerecht vereffent de nalatenschap volgens de faillissementsregels; een overschot gaat naar de rechthebbenden (artikel 612 TBW). Erfgenamen kunnen bij hun verwerping verzoeken dat aan de volgende erfgenamen wordt gevraagd of zij de erfenis aanvaarden (artikel 614 TBW).
 - **Giften vóór het overlijden:** Wie de nalatenschap van een insolvente erflater verwerpt, is tegenover de schuldeisers aansprakelijk tot de waarde van wat hij of zij in de vijf jaar vóór het overlijden van de erflater heeft ontvangen en bij de verdeling had moeten inbrengen (artikel 618 TBW).
 - **Schuldeisers van de erfgenaam:** Verwerpt een insolvente erfgenaam om zijn schuldeisers te benadelen, dan kunnen zij binnen zes maanden na de verwerping vernietiging daarvan vorderen (artikel 617 TBW).
 
-Is onduidelijk of de nalatenschap meer schulden dan bezittingen heeft, dan kan elke erfgenaam die mag verwerpen binnen een maand de vrederechter om een officiële boedelbeschrijving vragen (artikel 619 TBW).
+Weet u niet of de nalatenschap meer schulden dan bezittingen heeft, dan kunt u als erfgenaam die mag verwerpen binnen een maand de vrederechter om een officiële boedelbeschrijving vragen (artikel 619 TBW).
 
 ## Verwerpen vanuit Nederland of Duitsland
 
-**Via een gemachtigde.** Het is te overwegen de verwerping via een gemachtigde te laten verklaren, zonder naar Turkije te reizen. Artikel 609 TBW en artikel 74 van het Turkse Wetboek van Burgerlijke Rechtsvordering nr. 6100 (HMK) noemen geen bijzondere volmacht voor verwerping; omdat verwerping de positie als erfgenaam rechtstreeks raakt, is het toch raadzaam de bevoegdheid tot verwerping van de erfenis uitdrukkelijk in de volmacht op te nemen (beoordeling van de auteur).
+**Via een gemachtigde.** U kunt overwegen de verwerping door een gemachtigde te laten verklaren, zodat u niet naar Turkije hoeft te reizen. Artikel 609 TBW en artikel 74 van het Turkse Wetboek van Burgerlijke Rechtsvordering nr. 6100 (HMK) noemen geen bijzondere volmacht voor verwerping. Omdat verwerping uw positie als erfgenaam rechtstreeks raakt, is het toch raadzaam de bevoegdheid om de erfenis te verwerpen uitdrukkelijk in de volmacht op te nemen (beoordeling van de auteur).
 
-**In uw woonland kan een aparte verwerping nodig zijn.** Een verwerping in Turkije vervangt geen procedures in Nederland of Duitsland. Volgens § 1944 van het Duitse Burgerlijk Wetboek (BGB) bedraagt de verwerpingstermijn (Erbausschlagung) bijvoorbeeld in beginsel zes weken, en zes maanden als de laatste woonplaats van de erflater alleen in het buitenland lag of de erfgenaam bij het begin van de termijn in het buitenland verblijft; volgens § 1945 BGB wordt de verklaring afgelegd bij het Nachlassgericht. Ook het Nederlandse recht kent eigen regels. Deze informatie is alleen een algemeen kader; voor concrete vragen over Nederlands of Duits recht kunt u zich het beste wenden tot een in dat land bevoegde advocaat, notaris of rechtbank.
+**In uw woonland kan een aparte verwerping nodig zijn.** Een verwerping in Turkije vervangt geen procedure in Nederland of Duitsland. Naar Duits recht bedraagt de termijn voor verwerping (Erbausschlagung) bijvoorbeeld in beginsel zes weken, en zes maanden als de laatste woonplaats van de erflater alleen in het buitenland lag of de erfgenaam bij het begin van de termijn in het buitenland verblijft (§ 1944 van het Duitse Burgerlijk Wetboek, BGB). De verklaring wordt daar afgelegd bij het Nachlassgericht (§ 1945 BGB). Ook het Nederlandse recht heeft eigen regels. Dit is alleen een algemeen kader: met concrete vragen over Nederlands of Duits recht kunt u het best terecht bij een advocaat, notaris of rechtbank die in dat land bevoegd is.
 
-Algemene informatie over Turks erfrecht vindt u op onze pagina's [Erfrecht](/nl/rechtsgebieden/erfrecht) en [Turkije–Duitsland](/nl/turkije-duitsland).
+Meer algemene informatie over Turks erfrecht staat op de pagina's [Erfrecht](/nl/rechtsgebieden/erfrecht) en [Turkije–Duitsland](/nl/turkije-duitsland).
 
 ## Veelgestelde vragen
 
 ### Wat is de termijn om een erfenis in Turkije te verwerpen?
 
-Drie maanden (artikel 606 lid 1 TBW). Voor wettelijke erfgenamen begint de termijn in beginsel bij kennis van het overlijden, voor benoemde erfgenamen bij de officiële mededeling van de uiterste wilsbeschikking.
+Drie maanden (artikel 606 lid 1 TBW). Voor wettelijke erfgenamen begint de termijn in beginsel wanneer zij van het overlijden horen, voor benoemde erfgenamen bij de officiële mededeling van de uiterste wilsbeschikking.
 
 ### Bij welke rechtbank verwerp ik een erfenis in Turkije?
 
-De verklaring wordt afgelegd bij het vredegerecht en ingeschreven door het vredegerecht van de plaats waar de nalatenschap is opengevallen (artikel 609 TBW). De nalatenschap valt open in de woonplaats van de erflater (artikel 576 TBW). Voor een erflater die in het buitenland woonde, bevat de wet geen uitdrukkelijke regel.
+U legt de verklaring af bij het vredegerecht. Het vredegerecht van de plaats waar de nalatenschap is opengevallen, schrijft de verwerping in (artikel 609 TBW). De nalatenschap valt open in de woonplaats van de erflater (artikel 576 TBW). Voor een erflater die in het buitenland woonde, bevat de wet geen uitdrukkelijke regel.
 
 ### Kan ik na drie maanden nog verwerpen?
 
-Wie niet tijdig verwerpt, verkrijgt de erfenis (artikel 610 lid 1 TBW). Bij gewichtige redenen kan de vrederechter de termijn verlengen of een nieuwe geven (artikel 615 TBW), maar dat is ter beoordeling van de rechter.
+Wie niet tijdig verwerpt, verkrijgt de erfenis (artikel 610 lid 1 TBW). Bij gewichtige redenen kan de vrederechter de termijn verlengen of een nieuwe geven (artikel 615 TBW), maar of dat gebeurt, beoordeelt de rechter.
 
 ### Geldt een verwerping in Nederland of Duitsland ook voor de nalatenschap in Turkije?
 
-Die vraag vraagt om een gezamenlijke beoordeling van het Turkse en het buitenlandse recht en is niet uitdrukkelijk in de wet geregeld. Omdat op onroerend goed in Turkije Turks recht van toepassing is (artikel 20 lid 1 MÖHUK), is het de veiligere weg ook de Turkse verwerpingsregels na te leven (beoordeling van de auteur).
+Het antwoord hangt af van het Turkse en het buitenlandse recht samen, en de wet regelt dit niet uitdrukkelijk. Omdat op onroerend goed in Turkije Turks recht van toepassing is (artikel 20 lid 1 MÖHUK), is het de veiligere weg om ook de Turkse verwerpingsregels na te leven (beoordeling van de auteur).
 
 ## Bronnen
 
@@ -99,3 +97,14 @@ Die vraag vraagt om een gezamenlijke beoordeling van het Turkse en het buitenlan
 - [Wetboek van Burgerlijke Rechtsvordering nr. 6100 (HMK) – mevzuat.gov.tr](https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=6100&MevzuatTur=1&MevzuatTertip=5)
 - [§ 1944 BGB – gesetze-im-internet.de](https://www.gesetze-im-internet.de/bgb/__1944.html)
 - [§ 1945 BGB – gesetze-im-internet.de](https://www.gesetze-im-internet.de/bgb/__1945.html)
+
+## Vragen over uw situatie
+
+Wilt u voor uw eigen situatie laten bekijken wanneer de termijn van drie maanden voor u is gaan lopen (artikel 606 TBW), bij welk vredegerecht u kunt verwerpen of hoe u dat vanuit Nederland via een gemachtigde regelt, dan kunt u op de [afsprakenpagina](/nl/afspraak) een datum kiezen voor een gesprek online via video, telefonisch of persoonlijk in Düsseldorf. Stelt u uw vraag liever schriftelijk, dan kan dat via het [contactformulier](/nl/contact). De gesprekken worden in het Turks gevoerd en gaan alleen over de Turks-rechtelijke kant van de nalatenschap. Of u daarnaast in Nederland of Duitsland moet verwerpen, valt onder het recht van dat land; daarvoor kunt u terecht bij een advocaat, notaris of rechtbank die daar bevoegd is.
+
+Voor het gesprek is het handig als u het volgende bij de hand hebt:
+
+- de datum van overlijden en de datum waarop u daarvan hoorde, of bij een testament de datum waarop het u officieel is meegedeeld;
+- de laatste woonplaats van de erflater en, als die in het buitenland lag, waar de goederen in Turkije zich bevinden, bijvoorbeeld een onroerend goed;
+- wat u weet over de schulden en bezittingen van de nalatenschap, en of u al iets met goederen van de nalatenschap hebt gedaan;
+- een eventueel testament en, als u die al hebt opgesteld, de volmacht voor een gemachtigde in Turkije.
