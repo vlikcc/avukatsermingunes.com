@@ -46,6 +46,9 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 img { max-width: 100%; height: auto; display: block; }
+/* İçerik koruması (bkz. public/js/site.js): görseller sürüklenemez, yazı metinleri seçilemez. */
+img { -webkit-user-drag: none; -webkit-touch-callout: none; -webkit-user-select: none; user-select: none; }
+.post { -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; }
 a { color: var(--green); text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
 a:hover { color: var(--green-soft); text-decoration-color: var(--gold); }
 :focus-visible { outline: 2px solid var(--green); outline-offset: 3px; border-radius: 2px; }

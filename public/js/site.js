@@ -35,3 +35,24 @@
     }
   });
 })();
+
+// İçerik koruması: yazı metinleri kopyalanamaz, görseller sağ tıklama veya sürükleme ile kaydedilemez.
+(() => {
+  const el = (n) => (n instanceof Element ? n : n?.parentElement);
+  const guarded = (n) => Boolean(el(n)?.closest('img, .post'));
+  for (const type of ['contextmenu', 'dragstart', 'selectstart']) {
+    document.addEventListener(type, (e) => guarded(e.target) && e.preventDefault());
+  }
+  const posts = document.querySelectorAll('.post');
+  const touchesPost = () => {
+    const sel = getSelection();
+    for (let i = 0; i < sel.rangeCount; i++) {
+      const r = sel.getRangeAt(i);
+      if ([...posts].some((p) => r.intersectsNode(p))) return true;
+    }
+    return false;
+  };
+  for (const type of ['copy', 'cut']) {
+    document.addEventListener(type, (e) => (guarded(e.target) || touchesPost()) && e.preventDefault());
+  }
+})();
