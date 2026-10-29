@@ -49,6 +49,13 @@ const toUtc = (v) => {
 // Her dosya yalnızca bir kez aktarılır; panelden silinen bir yazı yeniden gelmez.
 // Daha önce aktarılmış bir dosya değiştiyse, yazı hâlâ onay bekliyor ve panelden
 // düzenlenmemişse veritabanındaki taslak dosyadaki metinle güncellenir.
+// Yayındaki bir yazı yalnızca avukatın onayıyla, LIVE_REFRESH listesindeki çeviri
+// grupları için ve bir kez güncellenir.
+const LIVE_REFRESH = {
+  // 29 Ekim yazıları, düzenlenmiş metin siteye ulaşmadan onaylandı; avukat yeni metni 29.10.2026’da onayladı.
+  'refresh_2026_10_29': ['2026-10-29-mohuk-50', '2026-10-29-mirasin-reddi'],
+};
+
 function importFiles() {
   const ins = db.prepare(
     `INSERT OR IGNORE INTO posts (lang, slug, title, description, body, date, pair, status, category, publish_at)
@@ -59,6 +66,9 @@ function importFiles() {
   const refresh = db.prepare(
     `UPDATE posts SET title = ?, description = ?, body = ?, date = ?, pair = ?, category = ?, publish_at = ? WHERE id = ?`,
   );
+  const touch = db.prepare(`UPDATE posts SET updated_at = strftime('%Y-%m-%dT%H:%M:%fZ','now') WHERE id = ?`);
+  const pending = Object.keys(LIVE_REFRESH).filter((k) => !getSetting(k));
+  const livePairs = pending.flatMap((k) => LIVE_REFRESH[k]);
   const mark = db.prepare('INSERT OR IGNORE INTO imported_files (path, imported_at) VALUES (?, ?)');
   // Önceki sürüm dosyaları ilk açılışta topluca aktarıyordu; o dosyalar yalnızca işaretlenir.
   const legacy = Boolean(getSetting('posts_imported')) && !getSetting('import_tracking');
@@ -82,16 +92,20 @@ function importFiles() {
     }
   }
   setSetting('import_tracking', '1');
+  for (const k of pending) setSetting(k, new Date().toISOString());
   return added;
 
   function refreshDraft(lang, p) {
     const cur = p?.slug && p.title && bySlug.get(lang, p.slug);
-    if (!cur || cur.status !== 'draft' || Date.parse(cur.updated_at) - Date.parse(cur.created_at) > 60_000) return;
+    const live = cur?.status === 'published' && livePairs.includes(cur.pair);
+    if (!cur || (cur.status !== 'draft' && !live) || Date.parse(cur.updated_at) - Date.parse(cur.created_at) > 60_000) return;
     const next = [p.title, p.description || '', p.body.trim(), p.date || cur.date, p.pair || null, CATEGORIES.includes(p.category) ? p.category : 'blog', toUtc(p.publish_at)];
     const prev = [cur.title, cur.description, cur.body, cur.date, cur.pair, cur.category, cur.publish_at];
     if (next.some((v, i) => v !== prev[i])) {
       refresh.run(...next, cur.id);
-      console.log(`[yazılar] Taslak dosyadan güncellendi: ${lang}/${p.slug}`);
+      // Yayındaki metin değiştiği için son düzenleme tarihi (dateModified) güncellenir.
+      if (live) touch.run(cur.id);
+      console.log(`[yazılar] ${live ? 'Yayındaki yazı' : 'Taslak'} dosyadan güncellendi: ${lang}/${p.slug}`);
     }
   }
 }
