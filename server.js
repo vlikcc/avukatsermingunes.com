@@ -13,6 +13,7 @@ const { paths, LANGS, langOf } = await import('./src/i18n.js');
 const pages = await import('./src/pages.js');
 const { areas, findArea } = await import('./src/content/areas.js');
 const { findPost, posts, pairOf, postUrl, postDates, getPost, savePost, deletePost, publishGroup, imported } = await import('./src/blog.js');
+const { KANUNLAR, maddeList, maddeUrl, kanunUrl, maddeFromPath, findMadde } = await import('./src/kanunlar.js');
 const { db, purgeOld } = await import('./src/db.js');
 const booking = await import('./src/booking.js');
 const mail = await import('./src/mail.js');
@@ -152,6 +153,12 @@ function sitemap() {
   add(paths.makaleler, (l) => newest(l, 'blog') || lastmod.home);
   add(paths.mevzuat, (l) => newest(l, 'mevzuat') || lastmod.home);
   for (const a of areas) add(Object.fromEntries(LANGS.map((l) => [l, `${paths.areas[l]}/${a.slug[l]}`])), lastmod.areas);
+  // Kanun maddeleri yalnızca Türkçe
+  for (const K of Object.values(KANUNLAR)) {
+    if (!maddeList(K.key).length) continue;
+    urls.push(`<url><loc>${absUrl(kanunUrl(K.key))}</loc><lastmod>${K.guncel}</lastmod></url>`);
+    for (const m of maddeList(K.key)) urls.push(`<url><loc>${absUrl(maddeUrl(m))}</loc><lastmod>${K.guncel}</lastmod></url>`);
+  }
   for (const lang of LANGS) {
     for (const p of posts(lang)) {
       // Çevirileri olan yazılar için dil karşılıkları da bildirilir.
@@ -190,6 +197,10 @@ ${link('Türkiye–Almanya hukuki işlemler', paths.crossborder.tr)}
 ${link('Hukuki yayınlar', paths.blog.tr)}
 ${link('Makaleler', paths.makaleler.tr)}
 ${link('Mevzuat açıklamaları', paths.mevzuat.tr)}
+${Object.values(KANUNLAR)
+  .filter((K) => maddeList(K.key).length)
+  .map((K) => link(`${K.ad} (${K.kisa}) madde madde: güncel metin, gerekçe ve açıklama`, kanunUrl(K.key)))
+  .join('\n')}
 ${link('Randevu', paths.booking.tr)}
 ${link('İletişim', paths.contact.tr)}
 ${link('Yasal bilgiler', paths.imprint.tr)}
@@ -222,6 +233,8 @@ for (const lang of LANGS) {
 }
 
 function dynamicPage(pathname) {
+  const madde = maddeFromPath(pathname);
+  if (madde) return pages.maddePage(madde);
   for (const lang of LANGS) {
     const area = pathname.startsWith(paths.areas[lang] + '/') && findArea(lang, pathname.slice(paths.areas[lang].length + 1));
     if (area) return pages.areaPage(lang, area);
@@ -459,6 +472,17 @@ async function handle(req, res) {
   const langHomes = LANGS.map((l) => paths.home[l]);
   if (langHomes.includes(pathname + '/')) return redirect(res, pathname + '/');
   if (pathname.length > 1 && pathname.endsWith('/') && !langHomes.includes(pathname)) pathname = pathname.slice(0, -1);
+
+  // Kanun dizinleri: /yayinlar/mevzuat/tmk ve "Maddeye git" formu (?madde=166)
+  for (const K of Object.values(KANUNLAR)) {
+    if (pathname !== kanunUrl(K.key) || !maddeList(K.key).length) continue;
+    const no = (url.searchParams.get('madde') || '').trim();
+    if (no) {
+      const m = findMadde(K.key, no.replace(/^0+/, ''));
+      return redirect(res, m ? maddeUrl(m) : kanunUrl(K.key));
+    }
+    return send(res, 200, pages.kanunPage(K.key), undefined, { 'Cache-Control': 'no-cache', 'Content-Language': 'tr' });
+  }
 
   const render = routes.get(pathname);
   const html = render ? render(url.searchParams) : dynamicPage(pathname);

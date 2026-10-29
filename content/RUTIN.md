@@ -48,6 +48,12 @@ Her çalıştırmada Türkiye’nin günlük arama gündemini kontrol et. Kaynak
 
 `content/yayin-plani.md` içindeki **Mevzuat sırası** listesinden, “Yayınlananlar” listesinde olmayan ilk maddeyi al. Her yazı **tek bir kanun maddesini** (ya da birbirine çok sıkı bağlı iki maddeyi) ele alır. Resmî Gazete taramasında hedef okuyucuyu ilgilendiren bir maddenin değiştiğini görürsen sırayı beklemeden o maddeyi yaz ve değişikliği anlat.
 
+TMK ve MÖHUK’un bütün maddeleri ayrıca sitede madde madde yayındadır (yalnızca Türkçe): `/yayinlar/mevzuat/tmk/madde-<no>` ve `/yayinlar/mevzuat/mohuk/madde-<no>`. Kaynak dosyalar `content/kanunlar/<kanun>/<no>.md`; her birinde güncel madde metni, resmî gerekçe (TBMM sıra sayısı belgesinden) ve açıklama bulunur. Bu kanunlardan bir madde hakkında yazı yazarken:
+
+- “Madde gerekçesi” bölümü için gerekçeyi bu dosyadan al (resmî metindir; özetlersen kaynağını göster).
+- Türkçe yazıda madde sayfasına bağlantı ver (ör. “Maddenin tam metni ve gerekçesi: [TMK m. 166](/yayinlar/mevzuat/tmk/madde-166)”).
+- Bir maddenin metni mevzuat.gov.tr’de değişmişse `content/kanunlar` altındaki dosyanın “Madde metni” bölümünü de güncelle ve değişikliği plan dosyasındaki “Notlar” bölümüne yaz.
+
 ## 3. Doğruluk kuralları (en önemli bölüm)
 
 Yanlış bilgi vermek, hiç yazı yayımlamamaktan daha kötüdür. Bu kurallar SEO dahil her şeyin önündedir.

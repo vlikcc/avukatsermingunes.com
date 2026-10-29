@@ -6,6 +6,7 @@ import { layout, h, strandsSvg, formatDate, missing, absUrl, asset, attorneyId }
 import { posts, pairOf, markdown, readingMinutes, postUrl, headings, postDates } from './blog.js';
 import { legalPage } from './legal.js';
 import { findPosts } from './finder.js';
+import { KANUNLAR, maddeList, maddeUrl, maddeTitle, maddeLabel, kanunUrl, neighbours } from './kanunlar.js';
 import { areaIcon } from './icons.js';
 
 const L = config.lawyer;
@@ -734,7 +735,9 @@ export function blogPage(lang, category = 'blog', query) {
 <section class="section section-tight">
   <div class="wrap pub-layout">
     ${finderBox(lang)}
+    ${category === 'mevzuat' && lang === 'tr' && page === 1 ? kanunCards() : ''}
     <div>
+    ${category === 'mevzuat' && lang === 'tr' ? '<h2 class="pub-list-title">Mevzuat yazıları</h2>' : ''}
     ${
       list.length
         ? `<ul class="post-list">${list
@@ -766,7 +769,7 @@ export function blogPage(lang, category = 'blog', query) {
   });
 }
 
-const KIND = { blog: { tr: 'Makale', de: 'Beitrag', en: 'Article', nl: 'Artikel' }, mevzuat: { tr: 'Mevzuat', de: 'Gesetz', en: 'Legislation', nl: 'Wetgeving' } };
+const KIND = { blog: { tr: 'Makale', de: 'Beitrag', en: 'Article', nl: 'Artikel' }, mevzuat: { tr: 'Mevzuat', de: 'Gesetz', en: 'Legislation', nl: 'Wetgeving' }, kanun: { tr: 'Kanun maddesi', de: 'Gesetzesartikel', en: 'Statutory provision', nl: 'Wetsartikel' } };
 
 /**
  * Yazı bulucunun cevabı: ziyaretçinin sorusu ve önerilen yazılar (sohbet balonları).
@@ -799,7 +802,7 @@ export function finderReply(lang, question) {
       en: 'These posts may be relevant to your question:',
       nl: 'Deze teksten kunnen bij uw vraag passen:',
     })}</p><ul class="finder-results">${results
-      .map((p) => `<li><a href="${postUrl(p)}"><span class="finder-kind">${h(KIND[p.category === 'mevzuat' ? 'mevzuat' : 'blog'][lang])}</span>${h(p.title)}</a></li>`)
+      .map((r) => `<li><a href="${r.url}"><span class="finder-kind">${h(KIND[r.kind][lang])}</span>${h(r.title)}</a></li>`)
       .join('')}</ul>${areaLine}${contact}`;
   } else {
     answer = `<p>${T({
@@ -1012,6 +1015,217 @@ ${bookingBand(lang)}`;
       breadcrumbs(lang, crumbItems),
     ],
     body: preview ? `<p class="preview-bar">Önizleme${p.status === 'draft' ? ' — bu yazı taslak, sitede görünmüyor' : ''}. <a href="/yonetim/yazilar/${p.id}">Düzenlemeye dön</a></p>${body}` : body,
+  });
+}
+
+/* ------------------------------------------------------------------ */
+/* Kanun maddeleri (TMK, MÖHUK) — yalnızca Türkçe                       */
+/* ------------------------------------------------------------------ */
+
+// Madde metnindeki [^n] dipnot işaretleri
+const footRefs = (html, key) => html.replace(/\[\^(\d+)\]/g, (_, n) => `<sup><a href="#dn-${key}-${n}" id="dr-${key}-${n}">${n}</a></sup>`);
+
+// "Birinci Kitap – Kişiler Hukuku" gibi bölüm adlarının aralığı: (m. 1–117)
+const rangeLabel = (list) => {
+  const nums = list.filter((m) => !m.no.startsWith('gecici-')).map((m) => Number(m.no));
+  if (!nums.length) return '';
+  const a = Math.min(...nums), b = Math.max(...nums);
+  return a === b ? `m. ${a}` : `m. ${a}–${b}`;
+};
+
+/** Mevzuat sayfasındaki kanun kartları (Türkçe). */
+export function kanunCards() {
+  return `<section class="kanun-cards" aria-labelledby="kanunlar-title">
+    <h2 id="kanunlar-title">Kanunlar madde madde</h2>
+    <p class="pub-lead">Her maddenin güncel metni, resmî gerekçesi ve açıklaması ayrı bir sayfada.</p>
+    <ul>${Object.values(KANUNLAR)
+      .filter((k) => maddeList(k.key).length)
+      .map(
+        (k) => `<li><a href="${kanunUrl(k.key)}"><span class="kanun-kisa">${h(k.kisa)}</span><span class="kanun-ad">${h(k.no)} sayılı ${h(k.ad)}</span><span class="kanun-ozet">${h(k.ozet)}</span><span class="kanun-sayi">${maddeList(k.key).length} madde</span></a></li>`,
+      )
+      .join('')}</ul>
+  </section>`;
+}
+
+/** Kanun dizini: bölümlere göre gruplanmış madde listesi. */
+export function kanunPage(key) {
+  const K = KANUNLAR[key];
+  const list = maddeList(key);
+  // En üst bölüme göre grupla (TMK'da kitap, MÖHUK'ta kısım); içeride alt bölüm başlıkları.
+  const groups = [];
+  for (const m of list) {
+    const top = m.bolum[0] || '';
+    let g = groups.at(-1);
+    if (!g || g.top !== top) groups.push((g = { top, items: [] }));
+    g.items.push(m);
+  }
+  const groupHtml = (g, i) => {
+    let prev = [];
+    let html = '';
+    let open = false;
+    for (const m of g.items) {
+      const sub = m.bolum.slice(1);
+      const changed = sub.findIndex((x, j) => x !== prev[j]);
+      if (changed !== -1 || sub.length !== prev.length) {
+        if (open) html += '</ol>';
+        const from = changed === -1 ? sub.length : changed;
+        for (let j = from; j < sub.length; j++) html += `<p class="kanun-alt kanun-alt-${Math.min(j + 1, 3)}">${h(sub[j])}</p>`;
+        html += '<ol class="kanun-maddeler">';
+        open = true;
+        prev = sub;
+      } else if (!open) {
+        html += '<ol class="kanun-maddeler">';
+        open = true;
+      }
+      html += `<li><a href="${maddeUrl(m)}"><span class="madde-no">${h(maddeLabel(m))}</span> ${h(m.baslik)}</a></li>`;
+    }
+    if (open) html += '</ol>';
+    return `<details class="kanun-grup"${i === 0 ? ' open' : ''}><summary><span>${h(g.top || K.ad)}</span><small>${rangeLabel(g.items)}</small></summary>${html}</details>`;
+  };
+  const crumbItems = [[t.tr.nav.blog, paths.blog.tr], [SECTIONS.mevzuat.name.tr, paths.mevzuat.tr], [K.kisa, kanunUrl(key)]];
+  const body = `
+<header class="page-head">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Sayfa yolu"><a href="${paths.blog.tr}">${h(t.tr.nav.blog)}</a> <span aria-hidden="true">/</span> <a href="${paths.mevzuat.tr}">${h(SECTIONS.mevzuat.name.tr)}</a></nav>
+    <h1>${h(K.ad)} (${h(K.kisa)})</h1>
+    <p class="page-lead">${h(K.ozet)}</p>
+    <p class="kanun-kunye">Kanun numarası: ${h(K.no)} · ${h(K.rg)} · ${list.length} madde</p>
+  </div>
+</header>
+<section class="section section-tight">
+  <div class="wrap wrap-narrow">
+    <form class="madde-git" method="get" action="${kanunUrl(key)}">
+      <label for="madde-no">Maddeye git</label>
+      <input id="madde-no" name="madde" inputmode="numeric" pattern="[0-9]+" maxlength="4" placeholder="ör. ${key === 'tmk' ? '166' : '50'}" required>
+      <button class="btn btn-small" type="submit">Git</button>
+    </form>
+    ${groups.map(groupHtml).join('')}
+    <p class="kanun-kaynak">Madde metinleri: <a href="${K.kaynak}" rel="noopener">mevzuat.gov.tr</a> (son karşılaştırma ${h(fmtFull(K.guncel, 'tr'))}). Gerekçeler: ${h(K.gerekceKaynak)}.</p>
+  </div>
+</section>`;
+  return layout({
+    lang: 'tr',
+    title: `${K.ad} (${K.kisa}) madde madde`,
+    description: `${K.no} sayılı ${K.ad}: ${list.length} maddenin güncel metni, resmî madde gerekçesi ve açıklaması.`.slice(0, 160),
+    path: kanunUrl(key),
+    alt: null,
+    active: 'blog',
+    activeSub: 'mevzuat',
+    jsonLd: [breadcrumbs('tr', crumbItems)],
+    body,
+  });
+}
+
+// Bu maddeye atıf yapan Türkçe yazılar (ör. başlıkta "MÖHUK Madde 50" ya da metinde "TMK m. 605").
+function relatedPosts(m) {
+  if (m.no.startsWith('gecici-')) return [];
+  const re = new RegExp(`${KANUNLAR[m.kanun].kisa}\\s*(?:m\\.|madde)\\s*${m.no}(?![0-9])`, 'i');
+  return posts('tr')
+    .filter((p) => re.test(p.title) || re.test(p.body))
+    .sort((a, b) => Number(re.test(b.title)) - Number(re.test(a.title)))
+    .slice(0, 4);
+}
+
+/** Tek madde: güncel metin, dipnotlar, gerekçe, açıklama. */
+export function maddePage(m) {
+  const K = KANUNLAR[m.kanun];
+  const title = maddeTitle(m);
+  const label = `${K.kisa} ${maddeLabel(m)}`;
+  const key = `${m.kanun}${m.no}`;
+  const { prev, next } = neighbours(m);
+  const related = relatedPosts(m);
+  // Madde metni Markdown olarak işlenmez ("1." ile başlayan bentler numaralı listeye dönmesin).
+  const metin = footRefs(
+    m.metin
+      .split(/\n{2,}/)
+      .map((x) => `<p>${h(x.trim()).replace(/^(\((?:Değişik|Ek|Mülga|İptal)[^)]*\))/, '<span class="degisiklik">$1</span>')}</p>`)
+      .join(''),
+    key,
+  );
+  const dipnotlar = m.dipnotlar
+    ? `<ol class="dipnotlar">${m.dipnotlar
+        .split('\n')
+        .map((l) => l.match(/^\[\^(\d+)\]:\s*(.*)$/))
+        .filter(Boolean)
+        .map(([, n, text]) => `<li id="dn-${key}-${n}" value="${n}">${h(text)}${m.metin.includes(`[^${n}]`) ? ` <a href="#dr-${key}-${n}" aria-label="Metne dön">↩</a>` : ''}</li>`)
+        .join('')}</ol>`
+    : '';
+  const toc = [
+    ['metin', `${label} metni`],
+    ...(m.gerekce ? [['gerekce', `${label} gerekçesi`]] : []),
+    ...(m.aciklama ? [['aciklama', 'Açıklama']] : []),
+    ...(related.length ? [['yazilar', 'İlgili yazılar']] : []),
+  ];
+  const description = (m.aciklama.replace(/[*_[\]()#>-]/g, '').split(/\n\n/)[0] || `${title}: güncel madde metni, gerekçesi ve açıklaması.`).replace(/\s+/g, ' ');
+  const body = `
+<article class="post madde">
+  <header class="page-head">
+    <div class="wrap wrap-narrow">
+      <nav class="crumbs" aria-label="Sayfa yolu"><a href="${paths.blog.tr}">${h(t.tr.nav.blog)}</a> <span aria-hidden="true">/</span> <a href="${paths.mevzuat.tr}">${h(SECTIONS.mevzuat.name.tr)}</a> <span aria-hidden="true">/</span> <a href="${kanunUrl(m.kanun)}">${h(K.kisa)}</a></nav>
+      <h1>${h(title)}</h1>
+      <p class="post-meta">${h(K.no)} sayılı ${h(K.ad)}${m.bolum.length ? ` <span aria-hidden="true">/</span> ${h(m.bolum.at(-1))}` : ''}</p>
+    </div>
+  </header>
+  <div class="wrap wrap-narrow section-tight">
+    <nav class="toc" aria-labelledby="toc-title"><p class="toc-title" id="toc-title">İçindekiler</p><ol>${toc.map(([id, text]) => `<li><a href="#${id}">${h(text)}</a></li>`).join('')}</ol></nav>
+    <div class="prose prose-article">
+      <h2 id="metin">${h(label)} metni</h2>
+      <blockquote class="madde-metni">${m.kenar.length ? `<p class="madde-kenar">${h(m.kenar.join(' / '))}</p>` : ''}<p class="madde-no-line"><strong>${h(maddeLabel(m))}</strong></p>${metin}</blockquote>
+      ${dipnotlar ? `<p class="dipnot-baslik">Değişiklik notları</p>${dipnotlar}` : ''}
+      <p class="madde-kaynak">Güncel metin: <a href="${K.kaynak}" rel="noopener">mevzuat.gov.tr</a>, son karşılaştırma ${h(fmtFull(K.guncel, 'tr'))}.</p>
+      ${
+        m.gerekce
+          ? `<h2 id="gerekce">${h(label)} gerekçesi</h2>
+      ${markdown(m.gerekce)}
+      <p class="madde-kaynak">Kaynak: <a href="${K.gerekceUrl}" rel="noopener">${h(K.gerekceKaynak)}</a>${m.tasari_no && m.tasari_no !== m.no ? `, tasarının ${h(m.tasari_no)}. maddesi` : ''}. Gerekçe, tasarının Meclis’e sunulan metnine aittir; madde sonradan değiştirilmişse güncel metinle farklılık gösterebilir. ${h(K.gerekceSozluk)}</p>`
+          : m.gerekce_not
+            ? `<p class="madde-kaynak">${h(m.gerekce_not)}</p>`
+            : ''
+      }
+      ${m.aciklama ? `<h2 id="aciklama">Açıklama</h2>\n${markdown(m.aciklama)}` : ''}
+      ${
+        related.length
+          ? `<h2 id="yazilar">İlgili yazılar</h2><ul>${related.map((p) => `<li><a href="${postUrl(p)}">${h(p.title)}</a></li>`).join('')}</ul>`
+          : ''
+      }
+    </div>
+    <nav class="madde-nav" aria-label="Maddeler arasında gezinme">
+      ${prev ? `<a rel="prev" href="${maddeUrl(prev)}"><small>Önceki</small>${h(maddeTitle(prev).replace(/^\S+ /, ''))}</a>` : '<span></span>'}
+      <a class="madde-nav-index" href="${kanunUrl(m.kanun)}">${h(K.kisa)} madde listesi</a>
+      ${next ? `<a rel="next" href="${maddeUrl(next)}"><small>Sonraki</small>${h(maddeTitle(next).replace(/^\S+ /, ''))}</a>` : '<span></span>'}
+    </nav>
+    <aside class="post-disclaimer">
+      <p>Madde metni mevzuat.gov.tr’deki güncel metinden alınmıştır; bağlayıcı olan Resmî Gazete’de yayımlanan metindir. Açıklama genel bilgilendirme amacı taşır ve somut durumlar için hukuki danışmanlık yerine geçmez.</p>
+    </aside>
+  </div>
+</article>
+${bookingBand('tr')}`;
+  return layout({
+    lang: 'tr',
+    title,
+    description: description.length > 155 ? description.slice(0, 150).replace(/\s+\S*$/, '') + '…' : description,
+    path: maddeUrl(m),
+    alt: null,
+    active: 'blog',
+    activeSub: 'mevzuat',
+    jsonLd: [
+      {
+        '@context': 'https://schema.org',
+        '@type': 'Article',
+        headline: title,
+        inLanguage: 'tr',
+        author: { '@type': 'Person', name: `Avukat ${L.name}`, url: absUrl(paths.about.tr) },
+        mainEntityOfPage: absUrl(maddeUrl(m)),
+        about: {
+          '@type': 'Legislation',
+          name: K.ad,
+          legislationIdentifier: `${K.no} sayılı Kanun, ${maddeLabel(m)}`,
+          legislationJurisdiction: 'TR',
+        },
+      },
+      breadcrumbs('tr', [...[[t.tr.nav.blog, paths.blog.tr], [SECTIONS.mevzuat.name.tr, paths.mevzuat.tr], [K.kisa, kanunUrl(m.kanun)]], [label, maddeUrl(m)]]),
+    ],
+    body,
   });
 }
 

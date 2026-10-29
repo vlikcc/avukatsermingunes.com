@@ -1,7 +1,8 @@
 // Yazı bulucu: ziyaretçinin kendi cümleleriyle yazdığı sorunu sitedeki makale ve mevzuat
 // yazılarıyla eşleştirir. Harici bir hizmet kullanılmaz, yazılanlar kaydedilmez.
 // Hukuki değerlendirme yapmaz; yalnızca ilgili yazıları ve çalışma alanını önerir.
-import { posts, headings } from './blog.js';
+import { posts, headings, postUrl } from './blog.js';
+import { KANUNLAR, maddeList, maddeTitle, maddeUrl } from './kanunlar.js';
 import { areas } from './content/areas.js';
 
 // Küçük harf, aksansız: "Boşanma" -> "bosanma", "Erbschaft" -> "erbschaft", "İzmir" -> "izmir".
@@ -58,7 +59,7 @@ const GROUPS = [
   {
     area: 'inheritance',
     words: [
-      'miras mirasçı mirasçılık veraset veraset ilamı tereke vasiyet vasiyetname vefat ölüm ölen reddi mirasın',
+      'miras mirasçı mirasçılık veraset veraset ilamı tereke vasiyet vasiyetname vefat ölüm ölen ret reddi reddetmek mirasın',
       'erbe erben erbschaft erbrecht erbschein nachlass testament verstorben gestorben tod ausschlagung ausschlagen',
       'inheritance inherit inherited heir heirs estate testament deceased died death renunciation renounce disclaim probate',
       'erfenis erven erfgenaam erfgenamen nalatenschap testament overleden overlijden verwerpen verwerping erfrecht',
@@ -145,38 +146,98 @@ const GROUPS = [
 ];
 const groups = GROUPS.map((g) => ({ area: g.area, words: [...new Set(tokens(g.words.join(' ')))] }));
 
-// Yazı dizini: dil başına bir dakika önbellekte tutulur (zamanlı yayınlar da bu sürede görünür).
+// Arama dizini. Her belge için kelime -> en güçlü alan ağırlığı tutulur; sözlük üzerinden
+// benzer kelimeler bulunur. Yazılar dil başına bir dakika önbellekte tutulur (zamanlı yayınlar
+// da bu sürede görünür); kanun maddeleri değişmediği için bir kez hazırlanır.
 const FIELDS = { title: 6, description: 4, headings: 3, body: 1 };
-const cache = new Map();
-function index(lang) {
-  const hit = cache.get(lang);
-  if (hit && Date.now() - hit.at < 60_000) return hit.docs;
-  const docs = posts(lang).map((p) => ({
-    post: p,
-    fields: {
-      title: new Set(tokens(p.title)),
-      description: new Set(tokens(p.description || '')),
-      headings: new Set(tokens(headings(p.body).map((x) => x.text).join(' '))),
-      body: new Set(tokens(p.body)),
-    },
-  }));
-  cache.set(lang, { at: Date.now(), docs });
-  return docs;
+
+function build(items) {
+  const vocab = new Map(); // kelime -> Map(belge sırası -> ağırlık)
+  items.forEach((item, i) => {
+    for (const [f, w] of Object.entries(FIELDS)) {
+      for (const t of new Set(tokens(item.fields[f]))) {
+        if (/^\d/.test(t) && f === 'body') continue; // madde numaraları gövdede sayılmaz
+        let post = vocab.get(t);
+        if (!post) vocab.set(t, (post = new Map()));
+        if ((post.get(i) || 0) < w) post.set(i, w);
+      }
+    }
+  });
+  return { docs: items.map((x) => x.doc), vocab };
 }
 
-// Bir kelimenin yazıdaki en güçlü alanı (başlıkta geçmesi gövdede geçmesinden değerlidir).
-function fieldWeight(doc, word) {
-  for (const [f, w] of Object.entries(FIELDS)) {
-    if (/^\d/.test(word) && f === 'body') continue; // madde numaraları yalnızca başlıkta sayılır
-    for (const t of doc.fields[f]) if (similar(word, t)) return w;
+const postDoc = (p) => ({
+  doc: { title: p.title, url: postUrl(p), kind: p.category === 'mevzuat' ? 'mevzuat' : 'blog' },
+  fields: { title: p.title, description: p.description || '', headings: headings(p.body).map((x) => x.text).join(' '), body: p.body },
+});
+const maddeDoc = (m) => ({
+  doc: { title: maddeTitle(m), url: maddeUrl(m), kind: 'kanun' },
+  fields: { title: `${maddeTitle(m)} ${KANUNLAR[m.kanun].ad}`, description: m.kenar.join(' '), headings: m.bolum.join(' '), body: `${m.metin} ${m.aciklama}` },
+});
+
+const cache = new Map();
+function postIndex(lang) {
+  const hit = cache.get(lang);
+  if (hit && Date.now() - hit.at < 60_000) return hit.index;
+  const index = build(posts(lang).map(postDoc));
+  cache.set(lang, { at: Date.now(), index });
+  return index;
+}
+let lawIndex;
+const kanunIndex = () => (lawIndex ??= build(Object.keys(KANUNLAR).flatMap((k) => maddeList(k).map(maddeDoc))));
+
+// Bir kelimenin geçtiği belgeler ve en güçlü alan ağırlığı (benzer kelimeler dahil).
+function matches(index, word) {
+  const out = new Map();
+  for (const [t, post] of index.vocab) {
+    if (!similar(word, t)) continue;
+    for (const [i, w] of post) if ((out.get(i) || 0) < w) out.set(i, w);
   }
-  return 0;
+  return out;
+}
+
+// Bir dizinde puanlama: sorudaki kavramların çoğunu ve başlıkta geçenleri öne çıkarır.
+function rank(index, concepts) {
+  const n = index.docs.length;
+  const cacheW = new Map();
+  const lookup = (w) => {
+    if (!cacheW.has(w)) {
+      const m = matches(index, w);
+      cacheW.set(w, { m, idf: Math.log(1 + (n + 1) / (m.size + 1)) });
+    }
+    return cacheW.get(w);
+  };
+  const scores = new Map();
+  concepts.forEach((c, ci) => {
+    const best = new Map();
+    for (const [w, f] of [[c.word, 1], ...c.synonyms.map((s) => [s, 0.7])]) {
+      const { m, idf } = lookup(w);
+      for (const [i, fw] of m) {
+        const v = f * fw * idf;
+        const b = best.get(i);
+        if (!b || v > b.v) best.set(i, { v, strong: (b?.strong || false) || fw >= FIELDS.headings });
+        else if (fw >= FIELDS.headings) b.strong = true;
+      }
+    }
+    for (const [i, { v, strong }] of best) {
+      const s = scores.get(i) || { score: 0, matched: 0, strong: false };
+      s.score += v;
+      s.matched += 1;
+      s.strong ||= strong;
+      scores.set(i, s);
+    }
+  });
+  const scored = [...scores]
+    .map(([i, s]) => ({ doc: index.docs[i], score: s.strong ? s.score * (0.5 + s.matched / concepts.length) : 0 }))
+    .filter((x) => x.score >= 3)
+    .sort((a, b) => b.score - a.score);
+  return scored.length ? scored.filter((x) => x.score >= scored[0].score * 0.4) : [];
 }
 
 /**
  * @returns {{ results: object[], area: object|null, understood: boolean }}
- *   results: en uygun yazılar (en fazla 5), area: önerilecek çalışma alanı,
- *   understood: sorudan anlamlı bir kelime çıkarılabildi mi
+ *   results: en uygun yazılar ve (Türkçede) kanun maddeleri: { title, url, kind }
+ *   area: önerilecek çalışma alanı, understood: sorudan anlamlı bir kelime çıkarılabildi mi
  */
 export function findPosts(lang, question) {
   const words = [...new Set(tokens(String(question).slice(0, 500)))].filter((w) => !COMMON.some((c) => similar(w, c))).slice(0, 25);
@@ -185,36 +246,9 @@ export function findPosts(lang, question) {
     const g = groups.filter((x) => x.words.some((y) => similar(w, y)));
     return { word: w, synonyms: [...new Set(g.flatMap((x) => x.words))].filter((y) => y !== w), areas: g.map((x) => x.area).filter(Boolean) };
   });
-  const docs = index(lang);
-  // Nadir kelimeler daha belirleyicidir.
-  const idf = (w) => {
-    const df = docs.filter((d) => fieldWeight(d, w)).length;
-    return Math.log(1 + (docs.length + 1) / (df + 1));
-  };
-  const weights = new Map();
-  const wIdf = (w) => (weights.has(w) ? weights.get(w) : weights.set(w, idf(w)).get(w));
-
-  const scored = docs
-    .map((d) => {
-      let score = 0;
-      let matched = 0;
-      let strong = false; // kavramlardan biri başlıkta, özette veya ara başlıkta geçiyor mu
-      for (const c of concepts) {
-        let best = 0;
-        for (const [w, f] of [[c.word, 1], ...c.synonyms.map((s) => [s, 0.7])]) {
-          const fw = fieldWeight(d, w);
-          if (fw >= FIELDS.headings) strong = true;
-          best = Math.max(best, f * fw * wIdf(w));
-        }
-        if (best > 0) matched++;
-        score += best;
-      }
-      // Sorudaki kavramların çoğunu karşılayan yazı öne çıkar.
-      return { d, score: strong ? score * (0.5 + matched / concepts.length) : 0 };
-    })
-    .filter((x) => x.score >= 3)
-    .sort((a, b) => b.score - a.score);
-  const top = scored.length ? scored.filter((x) => x.score >= scored[0].score * 0.4).slice(0, 5) : [];
+  const top = concepts.length
+    ? [...rank(postIndex(lang), concepts).slice(0, 3), ...(lang === 'tr' ? rank(kanunIndex(), concepts).slice(0, 3) : [])]
+    : [];
 
   // Çalışma alanı: soruda en çok anılan alan.
   const votes = {};
@@ -222,7 +256,7 @@ export function findPosts(lang, question) {
   const areaKey = Object.entries(votes).sort((a, b) => b[1] - a[1])[0]?.[0];
 
   return {
-    results: top.map((x) => x.d.post),
+    results: top.map((x) => x.doc),
     area: areas.find((a) => a.key === areaKey) || null,
     understood: words.length > 0,
   };

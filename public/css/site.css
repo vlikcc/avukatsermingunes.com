@@ -218,6 +218,8 @@ code { font-size: 0.9em; background: var(--beige); padding: 0.1em 0.35em; border
    -------------------------------------------------------------------------- */
 .section { padding: var(--section) 0; }
 .section-tight { padding: clamp(2.5rem, 6vw, 4.5rem) 0; }
+/* .wrap ile aynı öğede kullanıldığında yan boşluklar korunur (telefonda metin kenara yapışmasın). */
+.wrap.section-tight { padding-left: var(--gutter); padding-right: var(--gutter); }
 .section-alt { background: var(--beige); }
 .section-green { background: var(--green); color: var(--paper); }
 .section-green h2, .section-green h3 { color: var(--paper); }
@@ -474,6 +476,56 @@ code { font-size: 0.9em; background: var(--beige); padding: 0.1em 0.35em; border
 .section-tabs a:hover { color: var(--ink); }
 .section-tabs a[aria-current='page'] { color: var(--green); font-weight: 600; border-bottom-color: var(--gold); }
 .pager { display: flex; justify-content: space-between; align-items: center; gap: 1rem; max-width: 820px; margin-top: 2rem; font-size: 0.9375rem; color: var(--muted); }
+/* Kanunlar madde madde */
+.kanun-cards h2, .pub-list-title { font-size: clamp(1.8rem, 3vw, 2.3rem); margin: 0; }
+.kanun-cards ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.2rem; }
+.kanun-cards a { display: grid; gap: 0.35rem; height: 100%; padding: 1.3rem 1.4rem; border: 1px solid var(--line); border-left: 3px solid var(--gold); border-radius: var(--radius); background: #fff; color: var(--ink); text-decoration: none; }
+.kanun-cards a:hover { border-color: var(--green); border-left-color: var(--gold); }
+.kanun-kisa { font-family: var(--serif); font-size: 2rem; font-weight: 600; color: var(--green); line-height: 1; }
+.kanun-ad { font-weight: 600; font-size: 0.9375rem; }
+.kanun-ozet { color: var(--muted); font-size: 0.9375rem; }
+.kanun-sayi { font-size: 0.8125rem; font-weight: 600; color: var(--green-soft); margin-top: 0.3rem; }
+.pub-list-title { margin-bottom: 0.8rem; }
+@media (max-width: 700px) { .kanun-cards ul { grid-template-columns: 1fr; } }
+
+.kanun-kunye { font-size: 0.875rem; color: var(--muted); margin: 0.8rem 0 0; }
+.madde-git { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem; margin-bottom: 2rem; }
+.madde-git label { font-weight: 600; font-size: 0.9375rem; }
+.madde-git input { width: 7rem; min-height: 40px; padding: 0.4rem 0.7rem; font: 400 1rem var(--sans); border: 1px solid #c9c1b3; border-radius: var(--radius); background: #fff; }
+.madde-git input:focus { outline: none; border-color: var(--green); box-shadow: 0 0 0 3px rgba(22, 61, 50, 0.15); }
+.kanun-grup { border-top: 1px solid var(--line); }
+.kanun-grup:last-of-type { border-bottom: 1px solid var(--line); }
+.kanun-grup summary { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; padding: 1rem 0; cursor: pointer; list-style: none; font-family: var(--serif); font-size: 1.45rem; font-weight: 600; color: var(--green); }
+.kanun-grup summary::-webkit-details-marker { display: none; }
+.kanun-grup summary small { font-family: var(--sans); font-size: 0.8125rem; font-weight: 500; color: var(--muted); white-space: nowrap; }
+.kanun-grup summary::after { content: ''; flex: none; align-self: center; width: 7px; height: 7px; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: rotate(45deg); transition: transform 0.2s; }
+.kanun-grup[open] summary::after { transform: rotate(-135deg); }
+.kanun-alt { margin: 1.4rem 0 0.4rem; font-weight: 600; color: var(--ink); }
+.kanun-alt-1 { font-size: 1rem; }
+.kanun-alt-2 { font-size: 0.9375rem; color: var(--green-soft); }
+.kanun-alt-3 { font-size: 0.875rem; color: var(--muted); }
+.kanun-maddeler { list-style: none; margin: 0 0 1rem; padding: 0; }
+.kanun-maddeler a { display: block; padding: 0.35rem 0; text-decoration: none; color: var(--ink); font-size: 0.9375rem; }
+.kanun-maddeler a:hover { color: var(--green); text-decoration: underline; text-decoration-color: var(--gold); }
+.madde-no { display: inline-block; min-width: 6.5rem; font-weight: 600; color: var(--green); }
+.kanun-kaynak { font-size: 0.875rem; color: var(--muted); margin-top: 2rem; }
+
+.madde-metni .madde-kenar { font-size: 0.875rem; color: var(--muted); }
+.madde-metni .madde-no-line { margin-bottom: 0.4rem; }
+.madde-metni .degisiklik { font-weight: 600; }
+.madde-metni sup a, .dipnotlar a { text-decoration: none; }
+.dipnot-baslik { font-weight: 600; font-size: 0.9375rem; margin: 1.2rem 0 0.3rem; }
+.prose .dipnotlar { font-size: 0.875rem; color: var(--muted); }
+.madde-kaynak { font-size: 0.875rem; color: var(--muted); }
+.madde-nav { display: grid; grid-template-columns: 1fr auto 1fr; gap: 1rem; align-items: center; margin-top: 3rem; padding-top: 1.4rem; border-top: 1px solid var(--line); font-size: 0.9375rem; }
+.madde-nav a { text-decoration: none; }
+.madde-nav small { display: block; font-size: 0.75rem; color: var(--muted); }
+.madde-nav [rel='next'] { text-align: right; }
+.madde-nav-index { font-weight: 600; white-space: nowrap; }
+@media (max-width: 640px) {
+  .madde-nav { grid-template-columns: 1fr 1fr; }
+  .madde-nav-index { grid-column: 1 / -1; grid-row: 2; text-align: center; }
+}
 .toc { margin: 0 0 2.5rem; padding: 1.2rem 1.4rem; background: var(--beige); border-left: 2px solid var(--gold); }
 .toc-title { font-weight: 600; font-size: 0.875rem; color: var(--green); margin: 0 0 0.5rem; }
 .toc ol { margin: 0; padding-left: 1.2rem; font-size: 0.9375rem; }
