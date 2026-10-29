@@ -12,6 +12,11 @@ export const intlLocale = { tr: 'tr-TR', de: 'de-DE', en: 'en-GB', nl: 'nl-NL' }
 // "Avukat (Türkei)" unvanı ve § 206 BRAO kapsam açıklaması gösterilir.
 export const isForeign = (lang) => lang !== 'tr';
 
+// Başlık, menü ve açıklamalarda gösterilen unvan. Almanya'daki resmî biçim "Avukat (Türkei)"
+// yasal metinlerde (Impressum, § 206 BRAO açıklaması) olduğu gibi kalır; İngilizce ve
+// Hollandaca sayfalarda ülke adı o dilde yazılır.
+export const proTitle = { tr: 'Avukat', de: 'Avukat (Türkei)', en: 'Avukat (Turkey)', nl: 'Avukat (Turkije)' };
+
 export const paths = {
   home: { tr: '/', de: '/de/', en: '/en/', nl: '/nl/' },
   about: { tr: '/hakkimda', de: '/de/ueber-mich', en: '/en/about', nl: '/nl/over-mij' },
@@ -113,7 +118,7 @@ export const t = {
     langLabel: 'Choose language',
     menu: 'Menu',
     close: 'Close',
-    titleLine: 'Avukat (Türkei)',
+    titleLine: 'Avukat (Turkey)',
     bars: 'İzmir Barosu | Rechtsanwaltskammer Düsseldorf',
     footer: {
       disclaimer:
@@ -146,7 +151,7 @@ export const t = {
     langLabel: 'Taal kiezen',
     menu: 'Menu',
     close: 'Sluiten',
-    titleLine: 'Avukat (Türkei)',
+    titleLine: 'Avukat (Turkije)',
     bars: 'İzmir Barosu | Rechtsanwaltskammer Düsseldorf',
     footer: {
       disclaimer:

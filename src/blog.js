@@ -97,6 +97,17 @@ export const findPost = (lang, slug, category = 'blog') =>
 export const pairOf = (post, lang) =>
   post?.pair ? db.prepare(`SELECT * FROM posts WHERE lang = ? AND pair = ? AND ${LIVE}`).get(lang, post.pair, now()) : undefined;
 
+/**
+ * Yazının yayım ve son düzenleme zamanı (ISO). updated_at yalnızca metin panelden
+ * düzenlendiğinde değişir; aktarılıp hiç düzenlenmeyen yazıda yayım zamanı kullanılır.
+ */
+export function postDates(p) {
+  const published = p.publish_at || `${p.date}T08:00:00+03:00`;
+  const edited = p.updated_at && Date.parse(p.updated_at) - Date.parse(p.created_at) > 60_000;
+  const modified = edited && Date.parse(p.updated_at) > Date.parse(published) ? p.updated_at : published;
+  return { published, modified };
+}
+
 /** Yayında işaretli ama yayın zamanı henüz gelmemiş mi? */
 export const isScheduled = (p) => p.status === 'published' && Boolean(p.publish_at) && p.publish_at > now();
 
@@ -113,8 +124,8 @@ export function publishGroup(id) {
   const p = getPost(id);
   if (!p) return 0;
   const r = p.pair
-    ? db.prepare(`UPDATE posts SET status = 'published', updated_at = strftime('%Y-%m-%dT%H:%M:%fZ','now') WHERE pair = ?`).run(p.pair)
-    : db.prepare(`UPDATE posts SET status = 'published', updated_at = strftime('%Y-%m-%dT%H:%M:%fZ','now') WHERE id = ?`).run(id);
+    ? db.prepare(`UPDATE posts SET status = 'published' WHERE pair = ?`).run(p.pair)
+    : db.prepare(`UPDATE posts SET status = 'published' WHERE id = ?`).run(id);
   return Number(r.changes);
 }
 

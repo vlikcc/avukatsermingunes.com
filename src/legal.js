@@ -280,12 +280,34 @@ function cookies(lang) {
 
 const builders = { imprint, privacy, cookies };
 
+// Yasal sayfaların arama sonuçlarında görünen kısa açıklamaları.
+const descriptions = {
+  imprint: {
+    tr: 'Av. Sermin Güneş Keçeci künye bilgileri: mesleki unvan, baro kayıtları, Düsseldorf adresi, mesleki düzenlemeler ve § 206 BRAO kapsamı.',
+    de: 'Impressum von Avukat (Türkei) Sermin Güneş Keçeci: Berufsbezeichnung, Kammerzugehörigkeit, Anschrift in Düsseldorf und berufsrechtliche Regelungen.',
+    en: 'Legal notice of Sermin Güneş Keçeci: professional title, bar memberships, address in Düsseldorf and applicable professional rules.',
+    nl: 'Colofon van Sermin Güneş Keçeci: beroepstitel, lidmaatschap van de orde, adres in Düsseldorf en toepasselijke beroepsregels.',
+  },
+  privacy: {
+    tr: 'Randevu ve iletişim formlarıyla gönderilen kişisel verilerin nasıl işlendiği, ne kadar saklandığı ve KVKK ile DSGVO kapsamındaki haklarınız.',
+    de: 'Wie personenbezogene Daten aus Terminanfragen und dem Kontaktformular verarbeitet und gespeichert werden und welche Rechte Sie nach der DSGVO haben.',
+    en: 'How personal data from appointment requests and the contact form is processed and stored, and your rights under the GDPR.',
+    nl: 'Hoe persoonsgegevens uit afspraakaanvragen en het contactformulier worden verwerkt en bewaard, en welke rechten u hebt op grond van de AVG.',
+  },
+  cookies: {
+    tr: 'Bu sitede ziyaretçi takibi yapılmaz ve çerez kullanılmaz; yalnızca yönetim paneli girişinde zorunlu bir oturum çerezi bulunur.',
+    de: 'Diese Website setzt keine Tracking- oder Marketing-Cookies ein; nur die Anmeldung zum Verwaltungsbereich nutzt ein technisch notwendiges Sitzungscookie.',
+    en: 'This website uses no tracking or marketing cookies; only the login to the administration area uses a strictly necessary session cookie.',
+    nl: 'Deze website gebruikt geen tracking- of marketingcookies; alleen het inloggen op het beheergedeelte gebruikt een strikt noodzakelijk sessiecookie.',
+  },
+};
+
 export function legalPage(kind, lang) {
   const { title, body } = builders[kind](lang);
   return layout({
     lang,
     title,
-    description: title,
+    description: descriptions[kind][lang],
     path: paths[kind][lang],
     alt: paths[kind],
     active: kind,

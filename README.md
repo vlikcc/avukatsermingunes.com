@@ -125,6 +125,13 @@ Tüm metinler taslaktır ve **yayından önce hukuki incelemeden geçmelidir**. 
 - [ ] Haftalık çalışma saatlerini (`booking.weekly`) kendi takviminize göre ayarlayın
 - [ ] Profesyonel portre fotoğrafı eklenecekse `public/img/` içine koyun; şu an logodaki illüstrasyon kullanılıyor
 
+## SEO notları
+
+- `www.` adresine gelen istekler `PUBLIC_URL` adresine 301 ile yönlendirilir.
+- Sitemap’teki sabit sayfa tarihleri `src/lastmod.json` dosyasından gelir. Sayfa metinlerini değiştirdiğinizde commit’ten önce `npm run lastmod` çalıştırın. Yazıların tarihleri veritabanından gelir.
+- `/llms.txt` yapay zekâ araçları için kısa bir site özeti sunar; `site.config.js` ve çalışma alanlarından üretilir.
+- Site çerez ve analiz kullanmaz. Cloudflare panelindeki **Web Analytics** kapalı tutulmalıdır; açık olursa Cloudflare sayfalara betik ekler, güvenlik politikası (CSP) bunu engeller ve gizlilik metinleriyle çelişir.
+
 ## Sunucuya kurulum
 
 Site, Node.js çalıştırabilen her sunucuda (ör. Almanya’da bir VPS) çalışır:

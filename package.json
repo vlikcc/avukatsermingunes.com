@@ -11,13 +11,14 @@
   "scripts": {
     "start": "node server.js",
     "dev": "node --watch server.js",
-    "deploy": "sh scripts/deploy.sh"
+    "deploy": "sh scripts/deploy.sh",
+    "lastmod": "node scripts/lastmod.js"
   },
   "dependencies": {
     "nodemailer": "^10.2.1"
   },
   "devDependencies": {
-    "@fontsource/cormorant-garamond": "^5.3.0",
-    "@fontsource/montserrat": "^5.3.0"
+    "@fontsource-variable/cormorant-garamond": "^5.3.0",
+    "@fontsource-variable/montserrat": "^5.3.0"
   }
 }

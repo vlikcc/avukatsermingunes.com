@@ -89,7 +89,7 @@ function shell(title, body, session) {
 <link rel="stylesheet" href="/css/site.css?v=${ASSET_VERSION}">
 </head><body class="admin">
 <header class="admin-head"><div class="wrap admin-head-inner">
-  <a class="brand" href="/yonetim"><img src="/img/logo-160.png" width="40" height="36" alt=""><span class="brand-name">Yönetim</span></a>
+  <a class="brand" href="/yonetim"><img src="/img/logo-104.png" width="40" height="36" alt=""><span class="brand-name">Yönetim</span></a>
   ${
     session
       ? `<nav class="admin-nav"><a href="/yonetim">Randevular</a><a href="/yonetim/takvim">Kapalı günler</a><a href="/yonetim/mesajlar">Mesajlar${unreadBadge()}</a><a href="/yonetim/yazilar">Yazılar</a><a href="/yonetim/sifre">Şifre</a><a href="/" target="_blank" rel="noopener">Siteyi aç</a>

@@ -12,12 +12,13 @@ const config = (await import('./site.config.js')).default;
 const { paths, LANGS, langOf } = await import('./src/i18n.js');
 const pages = await import('./src/pages.js');
 const { areas, findArea } = await import('./src/content/areas.js');
-const { findPost, posts, pairOf, postUrl, getPost, savePost, deletePost, publishGroup, imported } = await import('./src/blog.js');
+const { findPost, posts, pairOf, postUrl, postDates, getPost, savePost, deletePost, publishGroup, imported } = await import('./src/blog.js');
 const { db, purgeOld } = await import('./src/db.js');
 const booking = await import('./src/booking.js');
 const mail = await import('./src/mail.js');
 const admin = await import('./src/admin.js');
 const { absUrl } = await import('./src/layout.js');
+const lastmod = JSON.parse(fs.readFileSync(path.resolve(import.meta.dirname, 'src/lastmod.json'), 'utf8'));
 
 const PORT = Number(process.env.PORT || 3000);
 const PUBLIC = path.resolve(import.meta.dirname, 'public');
@@ -134,25 +135,69 @@ function serveStatic(req, res, pathname) {
 
 function sitemap() {
   const urls = [];
-  // alt: { tr, de, en, nl } — aynı sayfanın her dildeki yolu
-  const add = (alt) => {
+  const modified = (p) => postDates(p).modified.slice(0, 10);
+  // Liste sayfaları, o dildeki en yeni yazının tarihini alır.
+  const newest = (lang, category) => posts(lang, category).map(modified).sort().at(-1);
+  // alt: { tr, de, en, nl } — aynı sayfanın her dildeki yolu; date: dil -> son düzenleme tarihi
+  const add = (alt, date) => {
     const links = LANGS.map((l) => `<xhtml:link rel="alternate" hreflang="${l}" href="${absUrl(alt[l])}"/>`).join('\n');
-    for (const l of LANGS) urls.push(`<url><loc>${absUrl(alt[l])}</loc>\n${links}</url>`);
+    for (const l of LANGS) {
+      const d = typeof date === 'function' ? date(l) : date;
+      urls.push(`<url><loc>${absUrl(alt[l])}</loc>${d ? `<lastmod>${d}</lastmod>` : ''}\n${links}</url>`);
+    }
   };
-  for (const k of ['home', 'about', 'areas', 'crossborder', 'blog', 'mevzuat', 'contact', 'booking', 'imprint', 'privacy', 'cookies']) add(paths[k]);
-  for (const a of areas) add(Object.fromEntries(LANGS.map((l) => [l, `${paths.areas[l]}/${a.slug[l]}`])));
+  for (const k of ['home', 'about', 'areas', 'crossborder', 'contact', 'booking']) add(paths[k], lastmod[k]);
+  for (const k of ['imprint', 'privacy', 'cookies']) add(paths[k], lastmod.legal);
+  add(paths.blog, (l) => newest(l, 'blog') || lastmod.home);
+  add(paths.mevzuat, (l) => newest(l, 'mevzuat') || lastmod.home);
+  for (const a of areas) add(Object.fromEntries(LANGS.map((l) => [l, `${paths.areas[l]}/${a.slug[l]}`])), lastmod.areas);
   for (const lang of LANGS) {
     for (const p of posts(lang)) {
       // Çevirileri olan yazılar için dil karşılıkları da bildirilir.
       const twins = LANGS.map((l) => [l, l === lang ? p : pairOf(p, l)]).filter(([, x]) => x);
       const links = twins.length > 1 ? twins.map(([l, x]) => `\n<xhtml:link rel="alternate" hreflang="${l}" href="${absUrl(postUrl(x))}"/>`).join('') : '';
-      urls.push(`<url><loc>${absUrl(postUrl(p))}</loc><lastmod>${(p.updated_at || p.date).slice(0, 10)}</lastmod>${links}</url>`);
+      urls.push(`<url><loc>${absUrl(postUrl(p))}</loc><lastmod>${modified(p)}</lastmod>${links}</url>`);
     }
   }
   return `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 ${urls.join('\n')}
 </urlset>`;
+}
+
+// Yapay zekâ araçları için kısa site özeti (https://llmstxt.org).
+function llmsTxt() {
+  const L = config.lawyer;
+  const c = config.contact;
+  const link = (title, p) => `- [${title}](${absUrl(p)})`;
+  return `# Avukat ${L.name}
+
+> Türk hukuku avukatı (İzmir Barosu, ${L.barTr.licenseDate.slice(0, 4)}'den beri). § 206 BRAO kapsamında Rechtsanwaltskammer Düsseldorf üyesi; Almanya'da "${L.titleDe}" unvanını kullanır. Almanya'da yalnızca Türk hukuku ve uluslararası hukuk alanında danışmanlık verir; Alman hukukunda danışmanlık ve temsil yapmaz. Görüşmeler Türkçe yapılır.
+
+- Büro: ${L.office}, İzmir (kuruluş ${L.officeFounded})
+- Düsseldorf adresi: ${c.addressDe.street}, ${c.addressDe.city}, ${c.addressDe.country}${c.addressTr ? `\n- İzmir adresi: ${c.addressTr.street}, ${c.addressTr.city}` : ''}${c.email ? `\n- E-posta: ${c.email}` : ''}${c.phoneDe ? `\n- Telefon (DE): ${c.phoneDe}` : ''}${c.phoneTr ? `\n- Telefon (TR): ${c.phoneTr}` : ''}
+- Site dilleri: Türkçe (ana dil), Almanca, İngilizce, Hollandaca
+
+## Çalışma alanları
+
+${areas.map((a) => link(a.title.tr, `${paths.areas.tr}/${a.slug.tr}`) + `: ${a.summary.tr}`).join('\n')}
+
+## Sayfalar
+
+${link('Hakkımda', paths.about.tr)}
+${link('Türkiye–Almanya hukuki işlemler', paths.crossborder.tr)}
+${link('Hukuki yayınlar', paths.blog.tr)}
+${link('Mevzuat açıklamaları', paths.mevzuat.tr)}
+${link('Randevu', paths.booking.tr)}
+${link('İletişim', paths.contact.tr)}
+${link('Yasal bilgiler', paths.imprint.tr)}
+
+## Diğer diller
+
+${link('Deutsch', paths.home.de)}
+${link('English', paths.home.en)}
+${link('Nederlands', paths.home.nl)}
+`;
 }
 
 /* ------------------------------ sayfalar ------------------------------ */
@@ -344,6 +389,13 @@ async function handle(req, res) {
   const url = new URL(req.url, 'http://localhost');
   let pathname = url.pathname;
 
+  // www.alanadi.com -> alanadi.com (yol ve sorgu korunur), tek adreste toplanması için kalıcı yönlendirme.
+  const host = String(req.headers.host || '').toLowerCase();
+  if (config.siteUrl && host.startsWith('www.') && host.slice(4) === new URL(config.siteUrl).host) {
+    res.writeHead(301, { Location: config.siteUrl + req.url, 'Cache-Control': 'public, max-age=86400', ...SECURITY_HEADERS });
+    return res.end();
+  }
+
   if (pathname === '/yonetim' || pathname.startsWith('/yonetim/')) return handleAdmin(req, res, url);
 
   if (pathname === '/api/availability' && req.method === 'GET') {
@@ -375,6 +427,7 @@ async function handle(req, res) {
     return send(res, 200, `User-agent: *\nDisallow: /yonetim\nDisallow: /api/\n${config.siteUrl ? `Sitemap: ${config.siteUrl}/sitemap.xml\n` : ''}`, MIME['.txt']);
   }
   if (pathname === '/sitemap.xml') return send(res, 200, sitemap(), MIME['.xml']);
+  if (pathname === '/llms.txt') return send(res, 200, llmsTxt(), MIME['.txt'], { 'Cache-Control': 'public, max-age=3600' });
   if (pathname === '/favicon.ico') return redirect(res, '/img/favicon-64.png');
 
   if (/\.[a-z0-9]+$/i.test(pathname) && serveStatic(req, res, pathname)) return;

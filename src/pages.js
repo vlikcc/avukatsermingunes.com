@@ -1,9 +1,9 @@
 import config from '../site.config.js';
 import { areas } from './content/areas.js';
 import { crossBorderTopics, values } from './content/crossborder.js';
-import { paths, t, scopeNotice, LANGS, langNames, intlLocale, isForeign } from './i18n.js';
-import { layout, h, strandsSvg, formatDate, missing, absUrl } from './layout.js';
-import { posts, pairOf, markdown, readingMinutes, postUrl, headings } from './blog.js';
+import { paths, t, scopeNotice, LANGS, langNames, intlLocale, isForeign, proTitle } from './i18n.js';
+import { layout, h, strandsSvg, formatDate, missing, absUrl, asset, attorneyId } from './layout.js';
+import { posts, pairOf, markdown, readingMinutes, postUrl, headings, postDates } from './blog.js';
 import { legalPage } from './legal.js';
 import { areaIcon } from './icons.js';
 
@@ -70,8 +70,8 @@ function scopeBox(lang, cls = '') {
 </aside>`;
 }
 
-// Fotoğrafların alternatif metni: Almanya'ya yönelik dillerde Almanya'daki unvan kullanılır.
-const portraitAlt = (lang) => (isForeign(lang) ? `Avukat (Türkei) ${L.name}` : `Av. ${L.name}`);
+// Fotoğrafların alternatif metni: yabancı dillerde unvan o dilin biçimiyle yazılır.
+const portraitAlt = (lang) => (isForeign(lang) ? `${proTitle[lang]} ${L.name}` : `Av. ${L.name}`);
 
 const topicOptions = (lang) => {
   const T = pick(lang);
@@ -116,7 +116,12 @@ export function home(lang) {
 <section class="hero">
   <div class="wrap hero-grid">
     <div class="hero-text">
-      <h1><span class="h1-pre">${isForeign(lang) ? 'Avukat (Türkei)' : 'Avukat'}</span>${h(L.name)}</h1>
+      <h1><span class="h1-pre">${h(proTitle[lang])}</span>${h(L.name)} <span class="h1-note">${T({
+        tr: 'Almanya’da yaşayanlar için Türk hukuku',
+        de: 'Türkisches Recht in Düsseldorf',
+        en: 'Turkish law in Düsseldorf',
+        nl: 'Turks recht in Düsseldorf',
+      })}</span></h1>
       <p class="hero-bars">İzmir Barosu <span aria-hidden="true">|</span> Rechtsanwaltskammer Düsseldorf</p>
       <p class="hero-lead">${T({
         tr: 'Türkiye ve Almanya bağlantılı hukuki süreçlerde avukatlık ve danışmanlık hizmetleri',
@@ -130,8 +135,8 @@ export function home(lang) {
       </div>
     </div>
     <figure class="hero-figure portrait portrait-arch">
-      <img src="/img/portre-ana.jpg" width="689" height="900" alt="${h(portraitAlt(lang))}" fetchpriority="high">
-      <img class="hero-badge" src="/img/logo-160.png" width="160" height="144" alt="">
+      <img src="${asset('/img/portre-ana.webp')}" width="689" height="900" alt="${h(portraitAlt(lang))}" fetchpriority="high">
+      <img class="hero-badge" src="${asset('/img/logo-176.webp')}" width="176" height="159" alt="">
     </figure>
   </div>
   <div class="wrap">${timelineBlock(lang, 'timeline-hero')}</div>
@@ -221,12 +226,18 @@ ${bookingBand(lang)}
 
   return layout({
     lang,
-    title: null,
+    fullTitle: T({
+      tr: 'Av. Sermin Güneş Keçeci | Türkiye–Almanya Hukuki İşlemler',
+      de: 'Türkisches Recht in Düsseldorf | Avukat Sermin Güneş Keçeci',
+      en: 'Turkish Lawyer in Düsseldorf | Sermin Güneş Keçeci',
+      nl: 'Turks recht in Düsseldorf | Avukat Sermin Güneş Keçeci',
+    }),
+    attorney: true,
     description: T({
       tr: 'Av. Sermin Güneş Keçeci – İzmir Barosu ve Rechtsanwaltskammer Düsseldorf. Türkiye ve Almanya bağlantılı boşanma, miras, gayrimenkul ve tanıma-tenfiz süreçleri.',
       de: 'Avukat (Türkei) Sermin Güneş Keçeci, Düsseldorf: Beratung im türkischen Recht – Scheidung, Erbschaft, Immobilien und Anerkennung deutscher Urteile in der Türkei.',
-      en: 'Avukat (Türkei) Sermin Güneş Keçeci, Düsseldorf: advice under Turkish law – divorce, inheritance, real estate and recognition of foreign judgments in Türkiye.',
-      nl: 'Avukat (Türkei) Sermin Güneş Keçeci, Düsseldorf: advies naar Turks recht – echtscheiding, erfrecht, vastgoed en erkenning van buitenlandse vonnissen in Turkije.',
+      en: 'Avukat (Turkey) Sermin Güneş Keçeci, Düsseldorf: advice under Turkish law – divorce, inheritance, real estate and recognition of foreign judgments in Türkiye.',
+      nl: 'Avukat (Turkije) Sermin Güneş Keçeci, Düsseldorf: advies naar Turks recht – echtscheiding, erfrecht, vastgoed en erkenning van buitenlandse vonnissen in Turkije.',
     }),
     path: paths.home[lang],
     alt: paths.home,
@@ -334,15 +345,15 @@ export function about(lang) {
     <p class="page-lead">${T({
       tr: 'Av. Sermin Güneş Keçeci — eğitim, mesleki geçmiş ve baro kayıtları.',
       de: 'Avukat (Türkei) Sermin Güneş Keçeci — Werdegang, Zulassungen und Arbeitsweise.',
-      en: 'Avukat (Türkei) Sermin Güneş Keçeci — career, bar admissions and approach.',
-      nl: 'Avukat (Türkei) Sermin Güneş Keçeci — loopbaan, toelatingen en werkwijze.',
+      en: 'Avukat (Turkey) Sermin Güneş Keçeci — career, bar admissions and approach.',
+      nl: 'Avukat (Turkije) Sermin Güneş Keçeci — loopbaan, toelatingen en werkwijze.',
     })}</p>
   </div>
 </header>
 
 <section class="section section-tight">
   <div class="wrap split">
-    <figure class="about-figure portrait"><img src="/img/portre-hakkimda.jpg" width="591" height="514" alt="${h(portraitAlt(lang))}" loading="lazy"></figure>
+    <figure class="about-figure portrait"><img src="${asset('/img/portre-hakkimda.webp')}" width="591" height="514" alt="${h(portraitAlt(lang))}" loading="lazy"></figure>
     <div class="prose">
       ${T({
         tr: `<p class="lead">2016 yılında Dokuz Eylül Üniversitesi Hukuk Fakültesinden mezun oldum.</p>
@@ -402,11 +413,12 @@ ${bookingBand(lang)}`;
     description: T({
       tr: 'Av. Sermin Güneş Keçeci: Dokuz Eylül Üniversitesi Hukuk Fakültesi, 2018’den beri İzmir Barosu, Güneş Hukuk Bürosu ve § 206 BRAO kapsamında Düsseldorf Barosu kaydı.',
       de: 'Werdegang von Avukat (Türkei) Sermin Güneş Keçeci: Studium in İzmir, Zulassung 2018, Güneş Hukuk Bürosu und Mitgliedschaft in der Rechtsanwaltskammer Düsseldorf nach § 206 BRAO.',
-      en: 'Career of Avukat (Türkei) Sermin Güneş Keçeci: law degree in İzmir, admitted in 2018, Güneş Hukuk Bürosu and membership of the Rechtsanwaltskammer Düsseldorf under § 206 BRAO.',
-      nl: 'Loopbaan van Avukat (Türkei) Sermin Güneş Keçeci: rechtenstudie in İzmir, toegelaten in 2018, Güneş Hukuk Bürosu en lidmaatschap van de Rechtsanwaltskammer Düsseldorf op grond van § 206 BRAO.',
+      en: 'Career of Avukat (Turkey) Sermin Güneş Keçeci: law degree in İzmir, admitted in 2018, Güneş Hukuk Bürosu and membership of the Rechtsanwaltskammer Düsseldorf under § 206 BRAO.',
+      nl: 'Loopbaan van Avukat (Turkije) Sermin Güneş Keçeci: rechtenstudie in İzmir, toegelaten in 2018, Güneş Hukuk Bürosu en lidmaatschap van de Rechtsanwaltskammer Düsseldorf op grond van § 206 BRAO.',
     }),
     path: paths.about[lang],
     alt: paths.about,
+    attorney: true,
     active: 'about',
     body,
   });
@@ -499,19 +511,36 @@ export function areaPage(lang, a) {
   </div>
 </section>`;
   const title = a.title[lang];
-  const items = a.items[lang].slice(0, 4).join(', ');
+  const items = a.items[lang].slice(0, 3).join(', ');
   return layout({
     lang,
     title: T({ tr: title, de: `${title} (türkisches Recht)`, en: `${title} (Turkish law)`, nl: `${title} (Turks recht)` }),
     description: T({
       tr: `${title}: ${items}. Av. Sermin Güneş Keçeci, İzmir ve Düsseldorf.`,
-      de: `${title} nach türkischem Recht: ${items}. Avukat (Türkei) Sermin Güneş Keçeci, Düsseldorf.`,
-      en: `${title} under Turkish law: ${items}. Avukat (Türkei) Sermin Güneş Keçeci, Düsseldorf.`,
-      nl: `${title} naar Turks recht: ${items}. Avukat (Türkei) Sermin Güneş Keçeci, Düsseldorf.`,
+      de: `${title} nach türkischem Recht: ${items}. Düsseldorf und İzmir.`,
+      en: `${title} under Turkish law: ${items}. Düsseldorf and İzmir.`,
+      nl: `${title} naar Turks recht: ${items}. Düsseldorf en İzmir.`,
     }),
     path: areaPath(lang, a),
     alt: allLangs((l) => areaPath(l, a)),
     active: 'areas',
+    jsonLd: [
+      {
+        '@context': 'https://schema.org',
+        '@type': 'Service',
+        name: title,
+        serviceType: title,
+        description: a.summary[lang],
+        url: absUrl(areaPath(lang, a)),
+        inLanguage: lang,
+        provider: { '@type': 'Attorney', '@id': attorneyId(), name: `${proTitle[lang]} ${L.name}` },
+        areaServed: [
+          { '@type': 'Country', name: 'Türkiye' },
+          { '@type': 'Country', name: 'Germany' },
+        ],
+      },
+      breadcrumbs(lang, [[t[lang].nav.areas, paths.areas[lang]], [title, areaPath(lang, a)]]),
+    ],
     body,
   });
 }
@@ -603,8 +632,8 @@ ${bookingBand(lang)}`;
     description: T({
       tr: 'Almanya’da yaşayanlar için Türkiye’de boşanma, Almanya boşanma kararının Türkiye’de tanınması, miras ve taşınmaz işlemleri, yurt dışından vekâletname ve dava takibi.',
       de: 'Türkischer Avukat in Düsseldorf: Scheidung in der Türkei, Anerkennung deutscher Scheidungsurteile, Erbschaft und Immobilien in der Türkei, Vollmacht aus Deutschland.',
-      en: 'Avukat (Türkei) in Düsseldorf: divorce in Türkiye, recognition of foreign divorce judgments, inheritance and real estate in Türkiye, power of attorney from abroad.',
-      nl: 'Avukat (Türkei) in Düsseldorf: echtscheiding in Turkije, erkenning van buitenlandse echtscheidingsvonnissen, erfenis en vastgoed in Turkije, volmacht vanuit het buitenland.',
+      en: 'Avukat (Turkey) in Düsseldorf: divorce in Türkiye, recognition of foreign divorce judgments, inheritance and real estate in Türkiye, power of attorney from abroad.',
+      nl: 'Avukat (Turkije) in Düsseldorf: echtscheiding in Turkije, erkenning van buitenlandse echtscheidingsvonnissen, erfenis en vastgoed in Turkije, volmacht vanuit het buitenland.',
     }),
     path: paths.crossborder[lang],
     alt: paths.crossborder,
@@ -632,8 +661,8 @@ const SECTIONS = {
     description: {
       tr: 'Av. Sermin Güneş Keçeci’nin Türk hukukundaki güncel gelişmeler ve Avrupa’da yaşayan Türklerin hukuki sorunları üzerine bilgilendirme yazıları.',
       de: 'Beiträge von Avukat (Türkei) Sermin Güneş Keçeci zu aktuellen Entwicklungen im türkischen Recht und Rechtsfragen in der Türkei.',
-      en: 'Articles by Avukat (Türkei) Sermin Güneş Keçeci on current developments in Turkish law and legal matters in Türkiye.',
-      nl: 'Artikelen van Avukat (Türkei) Sermin Güneş Keçeci over actuele ontwikkelingen in het Turkse recht en juridische zaken in Turkije.',
+      en: 'Articles by Avukat (Turkey) Sermin Güneş Keçeci on current developments in Turkish law and legal matters in Türkiye.',
+      nl: 'Artikelen van Avukat (Turkije) Sermin Güneş Keçeci over actuele ontwikkelingen in het Turkse recht en juridische zaken in Turkije.',
     },
   },
   mevzuat: {
@@ -647,8 +676,8 @@ const SECTIONS = {
     description: {
       tr: 'Türk mevzuatından kanun maddeleri: güncel madde metni, madde gerekçesi, açıklama ve uygulama bilgileri.',
       de: 'Türkische Gesetzesartikel erklärt: Wortlaut, Begründung und Anwendung in der Praxis – Avukat (Türkei) Sermin Güneş Keçeci.',
-      en: 'Turkish statutory provisions explained: wording, legislative reasoning and application in practice – Avukat (Türkei) Sermin Güneş Keçeci.',
-      nl: 'Turkse wetsartikelen uitgelegd: tekst, toelichting en toepassing in de praktijk – Avukat (Türkei) Sermin Güneş Keçeci.',
+      en: 'Turkish statutory provisions explained: wording, legislative reasoning and application in practice – Avukat (Turkey) Sermin Güneş Keçeci.',
+      nl: 'Turkse wetsartikelen uitgelegd: tekst, toelichting en toepassing in de praktijk – Avukat (Turkije) Sermin Güneş Keçeci.',
     },
   },
 };
@@ -746,12 +775,13 @@ export function postPage(lang, p, { preview = false } = {}) {
   const T = pick(lang);
   const mevzuat = p.category === 'mevzuat';
   const toc = headings(p.body);
-  const published = p.publish_at || `${p.date}T08:00:00+03:00`;
+  const { published, modified } = postDates(p);
+  const twins = allLangs((l) => (l === lang ? p : pairOf(p, l)));
   const author = {
     '@type': 'Person',
-    name: `${isForeign(lang) ? L.titleDe : L.titleTr} ${L.name}`,
+    name: `${proTitle[lang]} ${L.name}`,
     url: absUrl(paths.about[lang]),
-    jobTitle: isForeign(lang) ? L.titleDe : L.titleTr,
+    jobTitle: proTitle[lang],
   };
   const crumbItems = [[t[lang].nav.blog, paths.blog[lang]], ...(mevzuat ? [[SECTIONS.mevzuat.name[lang], paths.mevzuat[lang]]] : []), [p.title, postUrl(p)]];
   const body = `
@@ -762,7 +792,7 @@ export function postPage(lang, p, { preview = false } = {}) {
         mevzuat ? ` <span aria-hidden="true">/</span> <a href="${paths.mevzuat[lang]}">${h(SECTIONS.mevzuat.name[lang])}</a>` : ''
       }</nav>
       <h1>${h(p.title)}</h1>
-      <p class="post-meta"><time datetime="${h(p.date)}">${h(fmtFull(p.date, lang))}</time> <span aria-hidden="true">/</span> ${readingMinutes(p.body)} ${T({ tr: 'dk okuma', de: 'Min. Lesezeit', en: 'min read', nl: 'min. leestijd' })} <span aria-hidden="true">/</span> ${h(isForeign(lang) ? L.titleDe : 'Av.')} ${h(L.name)}</p>
+      <p class="post-meta"><time datetime="${h(p.date)}">${h(fmtFull(p.date, lang))}</time> <span aria-hidden="true">/</span> ${readingMinutes(p.body)} ${T({ tr: 'dk okuma', de: 'Min. Lesezeit', en: 'min read', nl: 'min. leestijd' })} <span aria-hidden="true">/</span> ${h(isForeign(lang) ? proTitle[lang] : 'Av.')} ${h(L.name)}</p>
     </div>
   </header>
   <div class="wrap wrap-narrow section-tight">
@@ -798,13 +828,12 @@ ${bookingBand(lang)}`;
     title: p.title,
     description: p.description || p.title,
     path: postUrl(p),
-    alt: allLangs((l) => {
-      const twin = pairOf(p, l);
-      return twin ? postUrl(twin) : sectionPath(p.category)[l];
-    }),
+    // Çevirisi olmayan dilde dil seçici liste sayfasına gider; hreflang yalnızca gerçek çevirileri bildirir.
+    alt: allLangs((l) => (twins[l] ? postUrl(twins[l]) : sectionPath(p.category)[l])),
+    hreflang: LANGS.filter((l) => twins[l]),
     active: 'blog',
     noindex: preview,
-    article: { published, modified: p.updated_at, section: (mevzuat ? SECTIONS.mevzuat : SECTIONS.blog).name[lang] },
+    article: { published, modified, section: (mevzuat ? SECTIONS.mevzuat : SECTIONS.blog).name[lang] },
     jsonLd: [
       {
         '@context': 'https://schema.org',
@@ -813,7 +842,7 @@ ${bookingBand(lang)}`;
         description: p.description || undefined,
         inLanguage: lang,
         datePublished: published,
-        dateModified: p.updated_at || published,
+        dateModified: modified,
         author,
         publisher: author,
         image: absUrl('/img/portre-ana.jpg'),
@@ -852,12 +881,12 @@ export function contactPage(lang) {
         nl: 'Stuur een bericht of maak direct een afspraak voor een gesprek.',
       })}</p>
     </div>
-    <figure class="portrait page-head-photo"><img src="/img/portre-iletisim.jpg" width="562" height="800" alt="${h(
+    <figure class="portrait page-head-photo"><img src="${asset('/img/portre-iletisim.webp')}" width="562" height="800" alt="${h(
       T({
         tr: `Av. ${L.name} çalışma masasında`,
         de: `Avukat (Türkei) ${L.name} an ihrem Schreibtisch`,
-        en: `Avukat (Türkei) ${L.name} at her desk`,
-        nl: `Avukat (Türkei) ${L.name} aan haar bureau`,
+        en: `Avukat (Turkey) ${L.name} at her desk`,
+        nl: `Avukat (Turkije) ${L.name} aan haar bureau`,
       }),
     )}"></figure>
   </div>
@@ -917,15 +946,16 @@ export function contactPage(lang) {
 </section>`;
   return layout({
     lang,
-    title: t[lang].nav.contact,
+    title: T({ tr: 'İletişim', de: 'Kontakt', en: 'Contact', nl: 'Contact opnemen' }),
     description: T({
       tr: 'Av. Sermin Güneş Keçeci iletişim bilgileri ve iletişim formu. Kaiserswerther Str. 239, 40474 Düsseldorf.',
       de: 'Kontakt zu Avukat (Türkei) Sermin Güneş Keçeci, Kaiserswerther Str. 239, 40474 Düsseldorf.',
-      en: 'Contact details for Avukat (Türkei) Sermin Güneş Keçeci, Kaiserswerther Str. 239, 40474 Düsseldorf.',
-      nl: 'Contactgegevens van Avukat (Türkei) Sermin Güneş Keçeci, Kaiserswerther Str. 239, 40474 Düsseldorf.',
+      en: 'Contact details for Avukat (Turkey) Sermin Güneş Keçeci, Kaiserswerther Str. 239, 40474 Düsseldorf.',
+      nl: 'Contactgegevens van Avukat (Turkije) Sermin Güneş Keçeci, Kaiserswerther Str. 239, 40474 Düsseldorf.',
     }),
     path: paths.contact[lang],
     alt: paths.contact,
+    attorney: true,
     active: 'contact',
     body,
     scripts: ['/js/forms.js'],
@@ -953,7 +983,7 @@ export function bookingPage(lang) {
         nl: `Een gesprek duurt ongeveer ${B.durationMinutes} minuten en wordt in het Turks gevoerd. Uw aanvraag wordt beoordeeld en per e-mail bevestigd.`,
       })}</p>
     </div>
-    <figure class="portrait page-head-photo page-head-photo-sm"><img src="/img/portre-randevu.jpg" width="268" height="503" alt="${h(portraitAlt(lang))}"></figure>
+    <figure class="portrait page-head-photo page-head-photo-sm"><img src="${asset('/img/portre-randevu.webp')}" width="268" height="503" alt="${h(portraitAlt(lang))}"></figure>
   </div>
 </header>
 <section class="section section-tight">
@@ -1053,8 +1083,8 @@ export function bookingPage(lang) {
     description: T({
       tr: 'Av. Sermin Güneş Keçeci ile online görüntülü, telefonla veya Düsseldorf’ta yüz yüze görüşme için randevu alın.',
       de: 'Online einen Gesprächstermin mit Avukat (Türkei) Sermin Güneş Keçeci buchen – per Video, Telefon oder persönlich in Düsseldorf.',
-      en: 'Book a consultation online with Avukat (Türkei) Sermin Güneş Keçeci – by video, by telephone or in person in Düsseldorf.',
-      nl: 'Maak online een afspraak met Avukat (Türkei) Sermin Güneş Keçeci – via video, telefonisch of persoonlijk in Düsseldorf.',
+      en: 'Book a consultation online with Avukat (Turkey) Sermin Güneş Keçeci – by video, by telephone or in person in Düsseldorf.',
+      nl: 'Maak online een afspraak met Avukat (Turkije) Sermin Güneş Keçeci – via video, telefonisch of persoonlijk in Düsseldorf.',
     }),
     path: paths.booking[lang],
     alt: paths.booking,
