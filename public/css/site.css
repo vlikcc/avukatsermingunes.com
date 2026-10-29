@@ -395,6 +395,50 @@ code { font-size: 0.9em; background: var(--beige); padding: 0.1em 0.35em; border
 .post-list h2 a:hover { text-decoration: underline; text-decoration-color: var(--gold); }
 .post-list p { color: var(--muted); margin: 0; }
 .post-meta { font-size: 0.8125rem; color: var(--muted); margin-bottom: 0.5rem; }
+
+/* Yayınlar ana sayfası: makaleler ve mevzuat alt alta, yanda yazı bulucu */
+.pub-layout { display: grid; grid-template-columns: minmax(0, 1fr) 360px; grid-template-areas: 'sections finder'; gap: clamp(2rem, 5vw, 4.5rem); align-items: start; }
+.pub-sections { grid-area: sections; }
+.pub-section + .pub-section { margin-top: clamp(3rem, 6vw, 4.5rem); }
+.pub-section-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 0.4rem 1.5rem; }
+.pub-section-head h2 { margin: 0; font-size: clamp(2rem, 3.4vw, 2.6rem); }
+.pub-section-head h2 a { color: inherit; text-decoration: none; }
+.pub-section-head h2 a:hover { text-decoration: underline; text-decoration-color: var(--gold); }
+.pub-all { font-size: 0.9375rem; font-weight: 600; color: var(--green); }
+.pub-lead { color: var(--muted); max-width: 60ch; margin: 0.4rem 0 1.2rem; }
+.post-list-compact li { padding: 1.4rem 0; }
+.post-list h3 { font-size: clamp(1.35rem, 2vw, 1.6rem); margin-bottom: 0.4rem; }
+.post-list h3 a { text-decoration: none; }
+.post-list h3 a:hover { text-decoration: underline; text-decoration-color: var(--gold); }
+.pub-sections .empty { padding: 1rem 0 0; }
+
+.finder { grid-area: finder; position: sticky; top: 100px; background: var(--beige); border-top: 3px solid var(--gold); border-radius: var(--radius); padding: 1.4rem 1.3rem 1.2rem; }
+.finder h2 { font-size: 1.6rem; margin: 0 0 0.9rem; }
+.finder-log { display: flex; flex-direction: column; gap: 0.7rem; max-height: min(460px, 55vh); overflow-y: auto; overscroll-behavior: contain; padding-right: 2px; }
+.msg { max-width: 94%; padding: 0.7rem 0.9rem; font-size: 0.9375rem; line-height: 1.55; border-radius: var(--radius); }
+.msg p { margin: 0; }
+.msg p + p, .msg ul + p { margin-top: 0.55rem; }
+.msg-bot { align-self: flex-start; background: var(--paper); border-left: 2px solid var(--gold); }
+.msg-user { align-self: flex-end; background: var(--green); color: var(--paper); white-space: pre-line; overflow-wrap: anywhere; }
+.finder-example { color: var(--muted); font-size: 0.875rem; }
+.finder-results { list-style: none; margin: 0.55rem 0 0; padding: 0; display: grid; gap: 0.45rem; }
+.finder-results a { display: block; text-decoration: none; color: var(--ink); padding: 0.45rem 0.6rem; border: 1px solid var(--line); border-radius: var(--radius); background: #fff; }
+.finder-results a:hover { border-color: var(--green); }
+.finder-kind { display: block; font-size: 0.75rem; font-weight: 600; color: var(--green-soft); margin-bottom: 0.1rem; }
+.msg-wait p { display: flex; gap: 5px; padding: 0.35rem 0; }
+.msg-wait span { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); opacity: 0.4; animation: wait 1s infinite ease-in-out; }
+.msg-wait span:nth-child(2) { animation-delay: 0.15s; }
+.msg-wait span:nth-child(3) { animation-delay: 0.3s; }
+@keyframes wait { 50% { opacity: 1; } }
+.finder-form { display: grid; gap: 0.6rem; margin-top: 1rem; }
+.finder-form textarea { width: 100%; min-height: 3.4rem; padding: 0.6rem 0.75rem; font: 400 0.9375rem/1.5 var(--sans); color: var(--ink); background: #fff; border: 1px solid #c9c1b3; border-radius: var(--radius); resize: vertical; }
+.finder-form textarea:focus { outline: none; border-color: var(--green); box-shadow: 0 0 0 3px rgba(22, 61, 50, 0.15); }
+.finder-form .btn { justify-self: end; }
+.finder-note { font-size: 0.8125rem; color: var(--muted); margin: 0.8rem 0 0; }
+@media (max-width: 960px) {
+  .pub-layout { grid-template-columns: 1fr; grid-template-areas: 'finder' 'sections'; }
+  .finder { position: static; }
+}
 .post .page-head h1 { max-width: none; font-size: clamp(2.2rem, 4.6vw, 3.6rem); }
 .post-disclaimer { margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid var(--line); font-size: 0.875rem; color: var(--muted); }
 .empty { color: var(--muted); padding: 2rem 0; }

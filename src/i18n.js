@@ -23,6 +23,7 @@ export const paths = {
   areas: { tr: '/calisma-alanlari', de: '/de/rechtsgebiete', en: '/en/practice-areas', nl: '/nl/rechtsgebieden' },
   crossborder: { tr: '/turkiye-almanya', de: '/de/tuerkei-deutschland', en: '/en/turkiye-germany', nl: '/nl/turkije-duitsland' },
   blog: { tr: '/yayinlar', de: '/de/publikationen', en: '/en/publications', nl: '/nl/publicaties' },
+  makaleler: { tr: '/yayinlar/makaleler', de: '/de/publikationen/beitraege', en: '/en/publications/articles', nl: '/nl/publicaties/artikelen' },
   mevzuat: { tr: '/yayinlar/mevzuat', de: '/de/publikationen/gesetze', en: '/en/publications/legislation', nl: '/nl/publicaties/wetgeving' },
   contact: { tr: '/iletisim', de: '/de/kontakt', en: '/en/contact', nl: '/nl/contact' },
   booking: { tr: '/randevu', de: '/de/termin', en: '/en/appointment', nl: '/nl/afspraak' },

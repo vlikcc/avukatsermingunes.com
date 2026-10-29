@@ -71,7 +71,8 @@ Yazılar yönetim panelindeki **Yazılar** sayfasından yazılır, düzenlenir v
 - **Adres:** Boş bırakılırsa başlıktan üretilir. Yayındaki bir yazının adresini değiştirmek eski bağlantıları bozar.
 - **Metin biçimi:** `##` ara başlık, `-` liste, `**kalın**`, `*italik*`, `[bağlantı](https://...)`. Editördeki “Biçimlendirme yardımı” bölümünde özet vardır.
 
-- **Bölüm:** “Makale” yazıları `/yayinlar`, “Mevzuat” yazıları (kanun maddesi açıklamaları) `/yayinlar/mevzuat` altında listelenir.
+- **Bölüm:** “Makale” yazıları `/yayinlar/makaleler`, “Mevzuat” yazıları (kanun maddesi açıklamaları) `/yayinlar/mevzuat` altında listelenir. `/yayinlar` sayfası iki bölümün son yazılarını alt alta gösterir.
+- **Yazı bulucu:** `/yayinlar` sayfasındaki sohbet kutusuna ziyaretçi sorununu yazar; sitedeki makale ve mevzuat yazılarından uygun olanlar, ilgili çalışma alanı ve randevu bağlantısı önerilir. Arama sitenin kendi sunucusunda yapılır (harici yapay zekâ hizmeti yok), yazılanlar kaydedilmez. Eş anlamlı kelimeler (ör. miras, veraset, tereke; Erbe, Nachlass) `src/finder.js` içindeki `GROUPS` listesindedir; yeni konularda yazı yayımlandıkça bu liste genişletilebilir.
 - **Yayın saati (Türkiye saati):** Doluysa yazı “Yayında” olsa bile o tarih ve saatten önce sitede görünmez.
 - **Tüm dilleriyle yayınla:** Taslak listesindeki bu düğme, yazıyı ve bağlı çevirilerini birlikte yayına alır.
 

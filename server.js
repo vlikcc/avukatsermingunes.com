@@ -148,7 +148,8 @@ function sitemap() {
   };
   for (const k of ['home', 'about', 'areas', 'crossborder', 'contact', 'booking']) add(paths[k], lastmod[k]);
   for (const k of ['imprint', 'privacy', 'cookies']) add(paths[k], lastmod.legal);
-  add(paths.blog, (l) => newest(l, 'blog') || lastmod.home);
+  add(paths.blog, (l) => [newest(l, 'blog'), newest(l, 'mevzuat')].filter(Boolean).sort().at(-1) || lastmod.home);
+  add(paths.makaleler, (l) => newest(l, 'blog') || lastmod.home);
   add(paths.mevzuat, (l) => newest(l, 'mevzuat') || lastmod.home);
   for (const a of areas) add(Object.fromEntries(LANGS.map((l) => [l, `${paths.areas[l]}/${a.slug[l]}`])), lastmod.areas);
   for (const lang of LANGS) {
@@ -187,6 +188,7 @@ ${areas.map((a) => link(a.title.tr, `${paths.areas.tr}/${a.slug.tr}`) + `: ${a.s
 ${link('Hakkımda', paths.about.tr)}
 ${link('Türkiye–Almanya hukuki işlemler', paths.crossborder.tr)}
 ${link('Hukuki yayınlar', paths.blog.tr)}
+${link('Makaleler', paths.makaleler.tr)}
 ${link('Mevzuat açıklamaları', paths.mevzuat.tr)}
 ${link('Randevu', paths.booking.tr)}
 ${link('İletişim', paths.contact.tr)}
@@ -209,7 +211,8 @@ for (const lang of LANGS) {
   routes.set(paths.about[lang], () => pages.about(lang));
   routes.set(paths.areas[lang], () => pages.areasPage(lang));
   routes.set(paths.crossborder[lang], () => pages.crossborderPage(lang));
-  routes.set(paths.blog[lang], (q) => pages.blogPage(lang, 'blog', q));
+  routes.set(paths.blog[lang], () => pages.blogHub(lang));
+  routes.set(paths.makaleler[lang], (q) => pages.blogPage(lang, 'blog', q));
   routes.set(paths.mevzuat[lang], (q) => pages.blogPage(lang, 'mevzuat', q));
   routes.set(paths.contact[lang], () => pages.contactPage(lang));
   routes.set(paths.booking[lang], () => pages.bookingPage(lang));
@@ -231,6 +234,25 @@ function dynamicPage(pathname) {
 }
 
 /* -------------------------------- API -------------------------------- */
+
+// Yazı bulucu. Soru gövdede gelir (adres satırına ve erişim kayıtlarına düşmesin) ve saklanmaz.
+// JavaScript ile çağrılınca cevap balonu JSON içinde döner; JavaScript kapalıysa yayınlar sayfası cevapla birlikte gösterilir.
+async function apiFinder(req, res) {
+  if (!sameOrigin(req)) return json(res, 403, { error: 'origin' });
+  const wantsJson = String(req.headers.accept || '').includes('application/json');
+  if (rateLimited(req, 'finder', 60, 600_000)) return wantsJson ? json(res, 429, { error: 'rate' }) : send(res, 429, 'Too Many Requests', 'text/plain; charset=utf-8');
+  let f;
+  try {
+    f = new URLSearchParams(await readBody(req, 4_000));
+  } catch {
+    return json(res, 400, { error: 'invalid' });
+  }
+  const lang = LANGS.includes(f.get('dil')) ? f.get('dil') : 'tr';
+  const question = clean(f.get('soru'), 500);
+  if (!question) return wantsJson ? json(res, 400, { error: 'empty' }) : redirect(res, paths.blog[lang]);
+  if (wantsJson) return json(res, 200, { html: pages.finderReply(lang, question) });
+  return send(res, 200, pages.blogHub(lang, { question }), undefined, { 'Cache-Control': 'no-store' });
+}
 
 async function apiAppointments(req, res) {
   if (!sameOrigin(req)) return json(res, 403, { error: 'origin' });
@@ -404,6 +426,7 @@ async function handle(req, res) {
   }
   if (pathname === '/api/appointments' && req.method === 'POST') return apiAppointments(req, res);
   if (pathname === '/api/contact' && req.method === 'POST') return apiContact(req, res);
+  if (pathname === '/api/yazi-bul' && req.method === 'POST') return apiFinder(req, res);
 
   // Müvekkilin randevu iptali
   for (const lang of LANGS) {

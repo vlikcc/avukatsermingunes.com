@@ -5,6 +5,7 @@ import { paths, t, scopeNotice, LANGS, langNames, intlLocale, isForeign, proTitl
 import { layout, h, strandsSvg, formatDate, missing, absUrl, asset, attorneyId } from './layout.js';
 import { posts, pairOf, markdown, readingMinutes, postUrl, headings, postDates } from './blog.js';
 import { legalPage } from './legal.js';
+import { findPosts } from './finder.js';
 import { areaIcon } from './icons.js';
 
 const L = config.lawyer;
@@ -681,7 +682,7 @@ const SECTIONS = {
     },
   },
 };
-const sectionPath = (category) => (category === 'mevzuat' ? paths.mevzuat : paths.blog);
+const sectionPath = (category) => (category === 'mevzuat' ? paths.mevzuat : paths.makaleler);
 
 /**
  * Yayın listesi: genel yazılar (category = blog) veya mevzuat bölümü.
@@ -724,8 +725,8 @@ export function blogPage(lang, category = 'blog', query) {
   const body = `
 <header class="page-head">
   <div class="wrap">
-    ${category === 'mevzuat' ? `<nav class="crumbs" aria-label="${T({ tr: 'Sayfa yolu', de: 'Brotkrumen', en: 'Breadcrumb', nl: 'Kruimelpad' })}"><a href="${paths.blog[lang]}">${h(t[lang].nav.blog)}</a></nav>` : ''}
-    <h1>${h(category === 'mevzuat' ? S.name[lang] : t[lang].nav.blog)}</h1>
+    <nav class="crumbs" aria-label="${T({ tr: 'Sayfa yolu', de: 'Brotkrumen', en: 'Breadcrumb', nl: 'Kruimelpad' })}"><a href="${paths.blog[lang]}">${h(t[lang].nav.blog)}</a></nav>
+    <h1>${h(S.name[lang])}</h1>
     <p class="page-lead">${h(S.lead[lang])}</p>
     <nav class="section-tabs" aria-label="${T({ tr: 'Bölümler', de: 'Rubriken', en: 'Sections', nl: 'Rubrieken' })}">${tabs}</nav>
   </div>
@@ -747,7 +748,7 @@ export function blogPage(lang, category = 'blog', query) {
     }
   </div>
 </section>`;
-  const title = category === 'mevzuat' ? S.name[lang] : t[lang].nav.blog;
+  const title = S.name[lang];
   return layout({
     lang,
     title: page > 1 ? `${title} (${page})` : title,
@@ -755,7 +756,150 @@ export function blogPage(lang, category = 'blog', query) {
     path: pageUrl(page),
     alt: page > 1 ? null : sectionPath(category),
     active: 'blog',
-    jsonLd: [breadcrumbs(lang, category === 'mevzuat' ? [[t[lang].nav.blog, paths.blog[lang]], [S.name[lang], base]] : [[t[lang].nav.blog, base]])],
+    jsonLd: [breadcrumbs(lang, [[t[lang].nav.blog, paths.blog[lang]], [S.name[lang], base]])],
+    body,
+  });
+}
+
+const KIND = { blog: { tr: 'Makale', de: 'Beitrag', en: 'Article', nl: 'Artikel' }, mevzuat: { tr: 'Mevzuat', de: 'Gesetz', en: 'Legislation', nl: 'Wetgeving' } };
+
+/**
+ * Yazı bulucunun cevabı: ziyaretçinin sorusu ve önerilen yazılar (sohbet balonları).
+ * Hem /api/yazi-bul (JavaScript ile) hem de JavaScript kapalıyken yayınlar sayfasında kullanılır.
+ */
+export function finderReply(lang, question) {
+  const T = pick(lang);
+  const { results, area, understood } = findPosts(lang, question);
+  const areaLine = area
+    ? `<p>${T({ tr: 'İlgili çalışma alanı:', de: 'Passendes Rechtsgebiet:', en: 'Related practice area:', nl: 'Bijbehorend rechtsgebied:' })} <a href="${areaPath(lang, area)}">${h(area.title[lang])}</a></p>`
+    : '';
+  const contact = `<p>${T({
+    tr: `Durumunuzu ayrıntılı konuşmak isterseniz <a href="${paths.booking.tr}">randevu alabilir</a> ya da <a href="${paths.contact.tr}">yazabilirsiniz</a>.`,
+    de: `Wenn Sie Ihren Fall besprechen möchten, können Sie <a href="${paths.booking.de}">einen Termin vereinbaren</a> oder <a href="${paths.contact.de}">schreiben</a>.`,
+    en: `If you would like to discuss your situation, you can <a href="${paths.booking.en}">book an appointment</a> or <a href="${paths.contact.en}">get in touch</a>.`,
+    nl: `Wilt u uw situatie bespreken, dan kunt u <a href="${paths.booking.nl}">een afspraak maken</a> of <a href="${paths.contact.nl}">contact opnemen</a>.`,
+  })}</p>`;
+  let answer;
+  if (!understood) {
+    answer = `<p>${T({
+      tr: 'Sorununuzu biraz daha açık yazar mısınız? Konuyu (ör. miras, boşanma, tapu, vekâletname) ve işlemin Türkiye’de mi Almanya’da mı olduğunu belirtmeniz yeterli.',
+      de: 'Können Sie Ihr Anliegen etwas genauer beschreiben? Nennen Sie das Thema (z. B. Erbschaft, Scheidung, Immobilie, Vollmacht) und ob es um die Türkei oder Deutschland geht.',
+      en: 'Could you describe your issue in a little more detail? Mention the topic (e.g. inheritance, divorce, property, power of attorney) and whether it concerns Türkiye or Germany.',
+      nl: 'Kunt u uw vraag iets nauwkeuriger omschrijven? Noem het onderwerp (bijv. erfenis, echtscheiding, vastgoed, volmacht) en of het om Turkije of Duitsland gaat.',
+    })}</p>`;
+  } else if (results.length) {
+    answer = `<p>${T({
+      tr: 'Şu yazılar sorunuzla ilgili olabilir:',
+      de: 'Diese Beiträge könnten zu Ihrem Anliegen passen:',
+      en: 'These posts may be relevant to your question:',
+      nl: 'Deze teksten kunnen bij uw vraag passen:',
+    })}</p><ul class="finder-results">${results
+      .map((p) => `<li><a href="${postUrl(p)}"><span class="finder-kind">${h(KIND[p.category === 'mevzuat' ? 'mevzuat' : 'blog'][lang])}</span>${h(p.title)}</a></li>`)
+      .join('')}</ul>${areaLine}${contact}`;
+  } else {
+    answer = `<p>${T({
+      tr: 'Bu konuda henüz bir yazı bulamadım. Sorununuzu başka kelimelerle yazmayı deneyebilirsiniz.',
+      de: 'Zu diesem Thema habe ich noch keinen Beitrag gefunden. Versuchen Sie es gern mit anderen Worten.',
+      en: 'I could not find a post on this topic yet. You can try describing it in other words.',
+      nl: 'Over dit onderwerp heb ik nog geen tekst gevonden. Probeer het eventueel met andere woorden.',
+    })}</p>${areaLine}${contact}`;
+  }
+  return `<div class="msg msg-user"><p>${h(question)}</p></div><div class="msg msg-bot">${answer}</div>`;
+}
+
+/** Hukuki Yayınlar: yazı bulucu ile makaleler ve mevzuat bölümleri alt alta. */
+export function blogHub(lang, { question } = {}) {
+  const T = pick(lang);
+  const block = (category) => {
+    const S = SECTIONS[category];
+    const all = posts(lang, category);
+    const id = `pub-${category}`;
+    return `<section class="pub-section" aria-labelledby="${id}">
+      <div class="pub-section-head">
+        <h2 id="${id}"><a href="${sectionPath(category)[lang]}">${h(S.name[lang])}</a></h2>
+        ${all.length ? `<a class="pub-all" href="${sectionPath(category)[lang]}">${T({ tr: 'Tümü', de: 'Alle', en: 'View all', nl: 'Alle' })} (${all.length})</a>` : ''}
+      </div>
+      <p class="pub-lead">${h(S.lead[lang])}</p>
+      ${
+        all.length
+          ? `<ul class="post-list post-list-compact">${all
+              .slice(0, 4)
+              .map(
+                (p) => `<li><article>
+                <p class="post-meta"><time datetime="${h(p.date)}">${h(fmtFull(p.date, lang))}</time></p>
+                <h3><a href="${postUrl(p)}">${h(p.title)}</a></h3>
+                <p>${h(p.description || '')}</p>
+              </article></li>`,
+              )
+              .join('')}</ul>`
+          : `<p class="empty">${T({ tr: 'Bu bölümde henüz yayımlanmış bir yazı bulunmuyor.', de: 'In dieser Rubrik ist noch nichts veröffentlicht.', en: 'Nothing has been published in this section yet.', nl: 'In deze rubriek is nog niets gepubliceerd.' })}</p>`
+      }
+    </section>`;
+  };
+  const body = `
+<header class="page-head">
+  <div class="wrap">
+    <h1>${h(t[lang].nav.blog)}</h1>
+    <p class="page-lead">${T({
+      tr: 'Makaleler güncel gelişmeleri ve Avrupa’da yaşayanların Türkiye’deki hukuki işlerini, Mevzuat bölümü ise kanun maddelerini tek tek ele alır.',
+      de: 'Beiträge zu aktuellen Entwicklungen und Rechtsfragen in der Türkei sowie einzeln erläuterte türkische Gesetzesartikel.',
+      en: 'Articles on current developments and legal matters in Türkiye, and Turkish statutory provisions explained one by one.',
+      nl: 'Artikelen over actuele ontwikkelingen en juridische zaken in Turkije, en Turkse wetsartikelen één voor één uitgelegd.',
+    })}</p>
+  </div>
+</header>
+<section class="section section-tight">
+  <div class="wrap pub-layout">
+    <aside class="finder" aria-labelledby="finder-title">
+      <h2 id="finder-title">${T({ tr: 'Konunuzla ilgili yazıyı bulun', de: 'Den passenden Beitrag finden', en: 'Find the right post', nl: 'Vind de juiste tekst' })}</h2>
+      <div class="finder-log" role="log" aria-live="polite">
+        <div class="msg msg-bot"><p>${T({
+          tr: 'Sorununuzu bir iki cümleyle yazın, ilgili makale ve mevzuat yazılarını göstereyim.',
+          de: 'Beschreiben Sie Ihr Anliegen in ein, zwei Sätzen – ich zeige Ihnen passende Beiträge und Gesetzeserläuterungen.',
+          en: 'Describe your issue in a sentence or two and I will show you related articles and legislation.',
+          nl: 'Beschrijf uw vraag in een of twee zinnen, dan laat ik u passende artikelen en wetsuitleg zien.',
+        })}</p><p class="finder-example">${T({
+          tr: 'Örnek: “Babam Türkiye’de vefat etti, mirası reddetmek istiyorum.”',
+          de: 'Beispiel: „Mein Vater ist in der Türkei verstorben, ich möchte das Erbe ausschlagen.“',
+          en: 'Example: “My father died in Türkiye and I want to renounce the inheritance.”',
+          nl: 'Voorbeeld: „Mijn vader is in Turkije overleden, ik wil de erfenis verwerpen.”',
+        })}</p></div>
+        ${question ? finderReply(lang, question) : ''}
+      </div>
+      <form class="finder-form" method="post" action="/api/yazi-bul">
+        <input type="hidden" name="dil" value="${lang}">
+        <label class="sr-only" for="finder-q">${T({ tr: 'Sorununuz', de: 'Ihr Anliegen', en: 'Your issue', nl: 'Uw vraag' })}</label>
+        <textarea id="finder-q" name="soru" rows="2" maxlength="500" required placeholder="${T({ tr: 'Sorununuzu yazın…', de: 'Ihr Anliegen…', en: 'Your issue…', nl: 'Uw vraag…' })}"></textarea>
+        <button class="btn btn-small" type="submit">${T({ tr: 'Yazıları bul', de: 'Beiträge finden', en: 'Find posts', nl: 'Teksten zoeken' })}</button>
+      </form>
+      <p class="finder-note">${T({
+        tr: 'Yalnızca bu sitedeki yazılar aranır, hukuki değerlendirme yapılmaz. Yazdıklarınız kaydedilmez; ad, adres veya dosya numarası yazmayın.',
+        de: 'Durchsucht werden nur die Beiträge dieser Website; eine rechtliche Bewertung erfolgt nicht. Ihre Eingabe wird nicht gespeichert – bitte keine Namen, Adressen oder Aktenzeichen eingeben.',
+        en: 'Only the posts on this website are searched; no legal assessment is made. Your text is not stored – please do not enter names, addresses or case numbers.',
+        nl: 'Alleen de teksten op deze website worden doorzocht; er volgt geen juridische beoordeling. Uw tekst wordt niet opgeslagen – vul geen namen, adressen of zaaknummers in.',
+      })}</p>
+    </aside>
+    <div class="pub-sections">
+      ${block('blog')}
+      ${block('mevzuat')}
+    </div>
+  </div>
+</section>`;
+  return layout({
+    lang,
+    title: t[lang].nav.blog,
+    description: T({
+      tr: 'Av. Sermin Güneş Keçeci’nin Türk hukuku üzerine makaleleri ve kanun maddesi açıklamaları; konunuzu yazın, ilgili yazıları bulun.',
+      de: 'Beiträge und Erläuterungen türkischer Gesetzesartikel von Avukat (Türkei) Sermin Güneş Keçeci – mit Suche nach Ihrem Anliegen.',
+      en: 'Articles and explanations of Turkish statutory provisions by Avukat (Turkey) Sermin Güneş Keçeci – describe your issue to find related posts.',
+      nl: 'Artikelen en uitleg van Turkse wetsartikelen door Avukat (Turkije) Sermin Güneş Keçeci – beschrijf uw vraag en vind passende teksten.',
+    }),
+    path: paths.blog[lang],
+    alt: paths.blog,
+    active: 'blog',
+    noindex: Boolean(question),
+    scripts: ['/js/finder.js'],
+    jsonLd: [breadcrumbs(lang, [[t[lang].nav.blog, paths.blog[lang]]])],
     body,
   });
 }
@@ -783,14 +927,13 @@ export function postPage(lang, p, { preview = false } = {}) {
     url: absUrl(paths.about[lang]),
     jobTitle: proTitle[lang],
   };
-  const crumbItems = [[t[lang].nav.blog, paths.blog[lang]], ...(mevzuat ? [[SECTIONS.mevzuat.name[lang], paths.mevzuat[lang]]] : []), [p.title, postUrl(p)]];
+  const section = mevzuat ? SECTIONS.mevzuat : SECTIONS.blog;
+  const crumbItems = [[t[lang].nav.blog, paths.blog[lang]], [section.name[lang], sectionPath(p.category)[lang]], [p.title, postUrl(p)]];
   const body = `
 <article class="post">
   <header class="page-head">
     <div class="wrap wrap-narrow">
-      <nav class="crumbs" aria-label="${T({ tr: 'Sayfa yolu', de: 'Brotkrumen', en: 'Breadcrumb', nl: 'Kruimelpad' })}"><a href="${paths.blog[lang]}">${h(t[lang].nav.blog)}</a>${
-        mevzuat ? ` <span aria-hidden="true">/</span> <a href="${paths.mevzuat[lang]}">${h(SECTIONS.mevzuat.name[lang])}</a>` : ''
-      }</nav>
+      <nav class="crumbs" aria-label="${T({ tr: 'Sayfa yolu', de: 'Brotkrumen', en: 'Breadcrumb', nl: 'Kruimelpad' })}"><a href="${paths.blog[lang]}">${h(t[lang].nav.blog)}</a> <span aria-hidden="true">/</span> <a href="${sectionPath(p.category)[lang]}">${h(section.name[lang])}</a></nav>
       <h1>${h(p.title)}</h1>
       <p class="post-meta"><time datetime="${h(p.date)}">${h(fmtFull(p.date, lang))}</time> <span aria-hidden="true">/</span> ${readingMinutes(p.body)} ${T({ tr: 'dk okuma', de: 'Min. Lesezeit', en: 'min read', nl: 'min. leestijd' })} <span aria-hidden="true">/</span> ${h(isForeign(lang) ? proTitle[lang] : 'Av.')} ${h(L.name)}</p>
     </div>
@@ -833,7 +976,7 @@ ${bookingBand(lang)}`;
     hreflang: LANGS.filter((l) => twins[l]),
     active: 'blog',
     noindex: preview,
-    article: { published, modified, section: (mevzuat ? SECTIONS.mevzuat : SECTIONS.blog).name[lang] },
+    article: { published, modified, section: section.name[lang] },
     jsonLd: [
       {
         '@context': 'https://schema.org',
@@ -847,7 +990,7 @@ ${bookingBand(lang)}`;
         publisher: author,
         image: absUrl('/img/portre-ana.jpg'),
         mainEntityOfPage: absUrl(postUrl(p)),
-        articleSection: (mevzuat ? SECTIONS.mevzuat : SECTIONS.blog).name[lang],
+        articleSection: section.name[lang],
         wordCount: p.body.split(/\s+/).length,
       },
       breadcrumbs(lang, crumbItems),
