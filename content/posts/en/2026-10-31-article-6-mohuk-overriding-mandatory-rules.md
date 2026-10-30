@@ -1,6 +1,6 @@
 ---
 title: Article 6 MÖHUK – Overriding Mandatory Rules of Turkish Law
-description: Article 6 MÖHUK in full: when Turkish overriding mandatory rules apply despite a foreign governing law or choice of law, and how this differs from public policy.
+description: Article 6 MÖHUK in full: when Turkish overriding mandatory rules apply despite a foreign governing law or choice of law, and how they differ from public policy.
 date: 2026-10-31
 slug: article-6-mohuk-overriding-mandatory-rules
 pair: 2026-10-31-mohuk-6

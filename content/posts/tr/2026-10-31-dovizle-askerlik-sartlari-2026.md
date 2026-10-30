@@ -1,6 +1,6 @@
 ---
 title: Dövizle askerlik 2026: şartlar, bedel ve başvuru
-description: Dövizle askerlik şartları: yurt dışında üç yıl, uzaktan eğitim, peşin ödeme. Temmuz–Aralık 2026 bedeli 472.653,60 TL’nin avro karşılığı.
+description: Dövizle askerlik şartları: yurt dışında üç yıl, uzaktan eğitim ve peşin ödeme. Temmuz–Aralık 2026 bedeli 472.653,60 TL’nin avro karşılığıdır.
 date: 2026-10-31
 slug: dovizle-askerlik-sartlari-2026
 pair: 2026-10-31-dovizle-askerlik

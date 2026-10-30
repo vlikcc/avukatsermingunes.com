@@ -1,6 +1,6 @@
 ---
 title: Artikel 9 MÖHUK – Rechts- en handelingsbekwaamheid
-description: Artikel 9 MÖHUK volledig: welk recht geldt voor handelingsbekwaamheid? Meerderjarigheid bij dubbele nationaliteit, bescherming van transacties en vennootschappen.
+description: Artikel 9 MÖHUK volledig: welk recht geldt voor handelingsbekwaamheid? Meerderjarigheid bij dubbele nationaliteit, transactiebescherming en vennootschappen.
 date: 2026-10-31
 slug: artikel-9-mohuk-handelingsbekwaamheid
 pair: 2026-10-31-mohuk-9
