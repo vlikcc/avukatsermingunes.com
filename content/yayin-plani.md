@@ -6,7 +6,7 @@ Yayın rutininin konu sırası ve kayıtları. Kurallar: `content/RUTIN.md`.
 
 Günde beş mevzuat yazısı. Kanunlar bu sırayla, her kanunda madde numarası sırasıyla ve bütün maddeleriyle işlenir. Rutin, aşağıdaki sırada “Yayınlananlar” listesinde olmayan ilk maddelerden başlar; yayınlanmış ya da `mülga – yazılmadı` diye kaydedilmiş maddeler atlanır. Madde numaraları ve başlıkları her seferinde güncel metinden doğrulanır. Sırayı değiştirmek için bu bölümü düzenleyin.
 
-1. **5718 sayılı Milletlerarası Özel Hukuk ve Usul Hukuku Hakkında Kanun (MÖHUK)**: m. 1’den m. 66’ya kadar. Madde dosyaları: `content/kanunlar/mohuk/`. (m. 1–4, m. 50 ve m. 51 yayınlandı.)
+1. **5718 sayılı Milletlerarası Özel Hukuk ve Usul Hukuku Hakkında Kanun (MÖHUK)**: m. 1’den m. 66’ya kadar. Madde dosyaları: `content/kanunlar/mohuk/`. (m. 1–5, m. 50 ve m. 51 yayınlandı.)
 2. **4721 sayılı Türk Medeni Kanunu (TMK)**: m. 1’den m. 1030’a kadar. Madde dosyaları: `content/kanunlar/tmk/`.
 3. **5237 sayılı Türk Ceza Kanunu (TCK)**: m. 1’den m. 345’e kadar. Madde dosyası yok; metin mevzuat.gov.tr’den alınır.
 4. Bunlar bittikten sonra, hedef okuyucuyu ilgilendiren tek tek maddeler:
@@ -21,6 +21,7 @@ Günde beş mevzuat yazısı. Kanunlar bu sırayla, her kanunda madde numarası 
 
 Biçim: `tarih | bölüm (mevzuat/blog/gündem) | Türkçe başlık | pair | hedef aramalar | ana kaynaklar` — en yeni en üstte.
 
+- 2026-10-31 | mevzuat | MÖHUK Madde 5 Kamu Düzenine Aykırılık | 2026-10-31-mohuk-5 | möhuk 5. madde, kamu düzenine aykırılık yabancı hukuk, kamu düzeni möhuk; ordre public türkei; public policy turkish private international law; openbare orde turkije | mevzuat.gov.tr (5718 sayılı MÖHUK resmî PDF metni, m. 2, 4, 5, 14, 20, 54, 58), content/kanunlar/mohuk/0005.md (TBMM gerekçesi)
 - 2026-10-30 | blog | Yurt dışından Türkiye’de anlaşmalı boşanma: şartlar | 2026-10-30-anlasmali-bosanma | anlaşmalı boşanma yurtdışı, türkiye’de anlaşmalı boşanma, anlaşmalı boşanma ve yurt dışında bulunma sorunu; scheidung in der türkei von deutschland aus; uncontested divorce in turkey; scheiden in turkije vanuit nederland | content/kanunlar (TMK m. 166, 168, 184; MÖHUK m. 4, 14, 41 – mevzuat.gov.tr metinleri), mevzuat.gov.tr (6100 sayılı HMK resmî PDF, m. 74, 149), gesetze-im-internet.de (FamFG § 107)
 - 2026-10-30 | blog | Turizm amaçlı kiralama izin belgesi: 2026 değişikliği | 2026-10-30-turizm-amacli-kiralama | turizm amaçlı kiralama izin belgesi, turizm amaçlı kiralama izin belgesi nasıl alınır, günlük kiralama izin belgesi; kurzzeitvermietung türkei, ferienwohnung in der türkei vermieten; short term rental turkey; vakantieverhuur turkije | resmigazete.gov.tr (27/10/2026 tarihli 33413 sayılı RG’deki değişiklik yönetmeliği; 28/12/2023 tarihli yönetmelik ve 30/5/2024, 26/7/2024, 10/10/2025, 25/11/2025 değişiklikleri), mevzuat.gov.tr (7464 sayılı Kanun m. 1–6, 33)
 - 2026-10-30 | mevzuat | MÖHUK Madde 4 Vatandaşlık Esasına Göre Yetkili Hukuk | 2026-10-30-mohuk-4 | möhuk 4. madde, çifte vatandaşlık hangi hukuk uygulanır, mavi kart miras; doppelte staatsangehörigkeit türkei erbrecht; dual nationality turkey inheritance law; dubbele nationaliteit turkije erfrecht | mevzuat.gov.tr (5718 sayılı MÖHUK resmî PDF metni, m. 4, 9, 13, 14, 20), content/kanunlar/mohuk/0004.md (TBMM gerekçesi)
