@@ -1,6 +1,6 @@
 ---
 title: Blue Card Turkey (Mavi Kart): rights and application
-description: Blue Card Turkey (Mavi Kart): what rights former Turkish citizens keep in Türkiye under Article 28 of Law 5901, the exceptions, how to apply, inheritance, property.
+description: Blue Card Turkey (Mavi Kart): rights former Turkish citizens keep in Türkiye under Article 28 of Law 5901, exceptions, how to apply, inheritance, property.
 date: 2026-11-01
 slug: blue-card-turkey-mavi-kart-rights
 pair: 2026-11-01-mavi-kart
@@ -11,7 +11,7 @@ draft: true
 
 The Turkish Blue Card (Mavi Kart) is issued to people who were Turkish citizens by birth and gave up Turkish citizenship with official permission, and to their descendants up to the third degree. It shows that they continue to enjoy the rights of Turkish citizens (Article 28 of the Turkish Citizenship Law No. 5901, Türk Vatandaşlığı Kanunu). The law lists the exceptions one by one: no right to vote or stand for election, no duty-free import of a vehicle or household goods, no military service obligation, and no permanent civil service post.
 
-Abroad, the card is issued by Turkish consulates; in Türkiye, by district civil registry offices (ilçe nüfus müdürlüğü). It has nothing to do with the EU Blue Card, the residence permit Germany and other EU states issue to skilled workers. Below I explain who qualifies, how far the rights go, how to apply, what applies to inheritance and property, and what Germany's 2024 acceptance of dual citizenship means for the Mavi Kart.
+Abroad, the card is issued by Turkish consulates; in Türkiye, by district civil registry offices (ilçe nüfus müdürlüğü). It has nothing to do with the EU Blue Card, the residence permit Germany and other EU states issue to skilled workers.
 
 ## Who can get the Mavi Kart
 
@@ -57,7 +57,7 @@ Mavi Kart holders must report births, marriages, divorces and other civil status
 
 There are two separate questions here.
 
-**Can a Mavi Kart holder inherit and buy property in Türkiye?** Under Article 28(1) the holder enjoys the rights of Turkish citizens in the same way; inheriting and acquiring property are not exceptions. Article 35 of Land Registry Law No. 2644 (Tapu Kanunu) ties property acquisition by foreign individuals to a list of countries, area limits and presidential decisions. It does not mention Mavi Kart holders; the very next provision, Article 36, expressly excludes persons covered by Article 28 of Law No. 5901 from its rule on companies with foreign shareholders. That the restrictions on foreigners in Article 35 do not apply to Mavi Kart holders is a reading of the plain wording of Article 28(1) and is the author's assessment. The reservation for national security and public order (for example military exclusion zones) applies separately. Before buying, ask the land registry office (tapu müdürlüğü) about its practice.
+**Can a Mavi Kart holder inherit and buy property in Türkiye?** Under Article 28(1) the holder enjoys the rights of Turkish citizens in the same way; inheriting and acquiring property are not exceptions. Article 35 of Land Registry Law No. 2644 (Tapu Kanunu) ties property acquisition by foreign individuals to a list of countries, area limits and presidential decisions. It does not mention Mavi Kart holders; the very next provision, Article 36, expressly excludes persons covered by Article 28 of Law No. 5901 from its rule on companies with foreign shareholders. That the restrictions on foreigners in Article 35 do not apply to Mavi Kart holders is a reading of the plain wording of Article 28(1) and is the author's assessment; the Land Registry Law has no express provision on this, and no binding court decision has been identified. The reservation for national security and public order in Article 28(1) must be considered separately. Before buying, ask the land registry office (tapu müdürlüğü) about its practice.
 
 **Which law governs a Mavi Kart holder's estate?** The Mavi Kart does not confer citizenship. The holder is no longer Turkish; their national law is the law of the state whose citizen they are. The rule in the Turkish private international law act (MÖHUK, Law No. 5718) that Turkish law applies to dual nationals who are also Turkish (Article 4(1)(b)) does not apply; if the holder has several foreign nationalities, the law of the state with the closer connection applies (Article 4(1)(c)). Succession is governed by the deceased's national law, while Turkish law applies to immovable property in Türkiye (Article 20(1) MÖHUK). When a Mavi Kart holder who is only a German citizen dies, Turkish inheritance law applies to their flat in Türkiye; the Mavi Kart does not change this. More in [Article 4 MÖHUK](/en/publications/legislation/article-4-mohuk-dual-nationality-turkey).
 
