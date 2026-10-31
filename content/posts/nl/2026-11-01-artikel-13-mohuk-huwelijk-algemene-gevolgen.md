@@ -55,7 +55,7 @@ Volgens de memorie van toelichting komt het artikel gedeeltelijk overeen met art
 
 **Tijdstip.** Voor de voorwaarden telt het moment van het huwelijk (lid 1). Voor de algemene gevolgen noemt de wet geen bijzonder tijdstip; welk moment beslissend is voor nationaliteit en gewone verblijfplaats, wordt beoordeeld volgens artikel 3 MÖHUK (zie [Artikel 3 MÖHUK](/nl/publicaties/wetgeving/artikel-3-mohuk-wijziging-aanknopingspunt)).
 
-**Turks bevolkingsregister.** Of een huwelijk in Nederland naar de vorm geldig is en of het in het Turkse bevolkingsregister wordt ingeschreven, zijn twee verschillende vragen. De inschrijving is een administratieve stap bij de Turkse burgerlijke stand of het consulaat en valt niet onder dit artikel.
+**Turks bevolkingsregister.** Of een huwelijk in Nederland naar de vorm geldig is en of het in het Turkse bevolkingsregister wordt ingeschreven, zijn twee verschillende vragen. De inschrijving is een administratieve stap bij de Turkse burgerlijke stand of het consulaat en valt niet onder dit artikel. Voor termijn en procedure, zie [Nederlands huwelijk registreren in Turkije](/nl/publicaties/nederlands-huwelijk-registreren-in-turkije).
 
 ## Veelgestelde vragen
 

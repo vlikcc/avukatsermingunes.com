@@ -43,7 +43,7 @@ Tasarı gerekçesine göre madde eski 2675 sayılı Kanunun 12. maddesini kısme
 
 **Zaman.** Evlenme şartlarında evlenme anı esas alınır (m. 13/1). Genel hükümler için ise kanunda özel bir an belirtilmemiştir; vatandaşlık ve mutad meskenin hangi ana göre belirleneceği MÖHUK m. 3’e göre değerlendirilir (bkz. [MÖHUK Madde 3](/yayinlar/mevzuat/mohuk-madde-3-degisken-ihtilaflar)).
 
-**Nüfus kaydı.** Yurt dışında yapılan evliliğin şekil bakımından geçerli olması ile Türkiye’deki nüfus kayıtlarına işlenmesi ayrı konulardır. Tescil, nüfus idaresinin ya da dış temsilciliğin yaptığı idari bir işlemdir ve bu maddenin konusu değildir.
+**Nüfus kaydı.** Yurt dışında yapılan evliliğin şekil bakımından geçerli olması ile Türkiye’deki nüfus kayıtlarına işlenmesi ayrı konulardır. Tescil, nüfus idaresinin ya da dış temsilciliğin yaptığı idari bir işlemdir ve bu maddenin konusu değildir. Süre ve usul için bkz. [yurt dışında yapılan evlilik tescili](/yayinlar/yurt-disinda-yapilan-evlilik-tescili).
 
 ## Sık sorulan sorular
 

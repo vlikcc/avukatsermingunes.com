@@ -55,7 +55,7 @@ According to the bill’s reasoning, the article partly corresponds to Article 1
 
 **Timing.** For the requirements, the time of the marriage counts (para. 1). For the general effects the law names no particular moment; which moment decides nationality and habitual residence is assessed under Article 3 MÖHUK (see [Article 3 MÖHUK](/en/publications/legislation/article-3-mohuk-change-of-connecting-factor)).
 
-**Turkish civil registry.** Whether a marriage abroad is formally valid and whether it is entered in the Turkish civil registry are two different questions. Registration is an administrative step with the civil registry office or a Turkish consulate and is not what this article governs.
+**Turkish civil registry.** Whether a marriage abroad is formally valid and whether it is entered in the Turkish civil registry are two different questions. Registration is an administrative step with the civil registry office or a Turkish consulate and is not what this article governs. For the deadline and procedure, see [registering a marriage abroad in Turkey](/en/publications/register-marriage-abroad-in-turkey).
 
 ## Frequently asked questions
 

@@ -55,7 +55,7 @@ Nach der Begründung des Regierungsentwurfs entspricht die Vorschrift teilweise 
 
 **Zeitpunkt.** Für die Ehevoraussetzungen zählt der Zeitpunkt der Eheschließung (Abs. 1). Für die allgemeinen Wirkungen nennt das Gesetz keinen besonderen Zeitpunkt; welcher Zeitpunkt für Staatsangehörigkeit und gewöhnlichen Aufenthalt maßgeblich ist, richtet sich nach Art. 3 MÖHUK (siehe [Art. 3 MÖHUK](/de/publikationen/gesetze/art-3-mohuk-statutenwechsel)).
 
-**Eintragung im türkischen Register.** Dass eine in Deutschland geschlossene Ehe formgültig ist, und dass sie im türkischen Personenstandsregister eingetragen wird, sind zwei verschiedene Fragen. Die Eintragung ist ein Verwaltungsvorgang bei der Personenstandsbehörde oder der Auslandsvertretung und nicht Gegenstand dieser Vorschrift.
+**Eintragung im türkischen Register.** Dass eine in Deutschland geschlossene Ehe formgültig ist, und dass sie im türkischen Personenstandsregister eingetragen wird, sind zwei verschiedene Fragen. Die Eintragung ist ein Verwaltungsvorgang bei der Personenstandsbehörde oder der Auslandsvertretung und nicht Gegenstand dieser Vorschrift. Zu Frist und Verfahren siehe [Deutsche Ehe in der Türkei eintragen lassen](/de/publikationen/deutsche-ehe-tuerkei-anerkennen-lassen).
 
 ## Häufige Fragen
 
