@@ -67,6 +67,18 @@ TCK (5237 sayılı Türk Ceza Kanunu) için madde sayfaları henüz yoktur. TCK 
 
 Yanlış bilgi vermek, hiç yazı yayımlamamaktan daha kötüdür. Bu kurallar SEO dahil her şeyin önündedir.
 
+### Güncellik kontrolü (her yazıda zorunlu)
+
+Makale, gündem makalesi ve mevzuat yazısı fark etmeksizin **her yazıda**, yazmaya başlamadan önce ve bitirdikten sonra bilginin bugün itibarıyla güncel olduğunu kontrol et. Eğitim verindeki ya da önceki yazılardaki bilgiye güvenme; hukuk sık değişir. Asgari adımlar:
+
+1. **Konuyla ilgili bütün kanunları belirle:** yalnızca ana kanunu (ör. TMK) değil, uygulamayı belirleyen usul ve yan kanunları da (İİK, HMK, HUAK, Harçlar Kanunu, Tapu Kanunu, ilgili yönetmelikler).
+2. **Her birinin en güncel resmî metnini aç** (mevzuat.gov.tr PDF’i) ve metnin sonundaki **değişiklik tablosuna** bak: son iki yılda değişen maddeler yazdığın konuyla ilgiliyse o maddeleri oku. Yararlandığın PDF’in hangi kanuna kadar işlendiğini (tablodaki en son kanun numarası ve tarihi) plan dosyasındaki kayda yaz.
+3. **PDF’ten sonraki değişiklikleri ara:** mevzuat.gov.tr metnine henüz işlenmemiş olabilir. Son değişiklik tarihinden bugüne kadarki Resmî Gazete fihristlerinde konuyla ilgili kanun, yönetmelik ve tebliğleri tara. Web aramasında “<konu> değişiklik <yıl>”, “<konu> yargı paketi”, “<konu> yeni düzenleme” gibi aramalar yap; bulduğun her iddiayı mutlaka Resmî Gazete’deki metinden doğrula (blog ve haber siteleri yalnızca ipucudur).
+4. **Yürürlük tarihini kontrol et:** değişiklik kabul edilmiş ama henüz yürürlüğe girmemiş olabilir; ya da yayımdan aylar sonra yürürlüğe girebilir. Hangi tarihten itibaren uygulandığını ve geçiş hükmünü yaz.
+5. **Rakamları yeniden doğrula:** harç, para cezası, parasal sınır, asgari ücret, bedelli/dövizle askerlik bedeli gibi tutarlar her yıl değişir. Güncel tutarı resmî kaynaktan bulamazsan rakam verme.
+6. **Sitenin kendi kaynaklarını da sorgula:** `content/kanunlar/` dosyaları, önceki yazılar ve plan dosyası eskimiş olabilir. Bunlarda güncel olmayan bir bilgi görürsen yazında doğrusunu kullan, ilgili dosyayı düzelt (madde dosyası için 2. bölümdeki kural) ve eskimiş yazıyı plan dosyasındaki “Notlar” bölümüne yaz.
+7. **Yazıda tarih ver:** güncel durumu anlatan cümlelerde “Kasım 2026 itibarıyla” gibi bir tarih kullan; son değişikliği kanun numarası ve yürürlük tarihiyle an.
+
 1. **Her hukuki iddia resmî bir kaynağa dayanmalı.** Kullanılacak kaynaklar:
    - Kanun metni: `https://www.mevzuat.gov.tr` (güncel, değişiklikleri işlenmiş metin) ve Resmî Gazete.
    - Madde gerekçesi: TBMM kanun tasarısı/teklifi gerekçesi (`https://www.tbmm.gov.tr`) veya Resmî Gazete.
@@ -198,6 +210,7 @@ Metin…
 
 1. Yazdıktan sonra her dosyayı baştan sona yeniden oku ve şu soruları cevapla; biri bile “hayır” ise düzelt ya da yazıyı çıkar:
    - Her madde numarası, tarih, rakam ve karar künyesi bir kaynakta doğrulandı mı?
+   - Güncellik kontrolü (3. bölüm) bu yazı için yapıldı mı: ilgili bütün kanunların değişiklik tablosuna ve PDF’ten sonraki Resmî Gazete sayılarına bakıldı mı, rakamlar bu yıl için doğrulandı mı? Yazıdaki bilgi bugün yürürlükte olan hukukla uyumlu mu?
    - Madde metni mevzuat.gov.tr’deki güncel metinle birebir aynı mı?
    - Tartışmalı noktalar “görüş” olarak işaretlendi mi?
    - Dört dil içerik olarak aynı bilgiyi veriyor mu (biri diğerinde olmayan bir iddia içermiyor mu)?
