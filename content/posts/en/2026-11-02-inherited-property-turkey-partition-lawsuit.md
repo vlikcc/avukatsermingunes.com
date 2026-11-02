@@ -9,7 +9,7 @@ publish_at: 2026-11-02T08:00:00+03:00
 draft: true
 ---
 
-If you have inherited property in Turkey together with other heirs and you cannot agree on what to do with it, the legal route is a partition lawsuit (ortaklığın giderilmesi davası) before the civil court of peace (sulh hukuk mahkemesi) where the property is located. Since 1 September 2023 you must go through mediation first; only if mediation fails can the lawsuit be filed.
+If you have inherited property in Turkey together with other heirs and you cannot agree on what to do with it, the legal route is a partition lawsuit (ortaklığın giderilmesi davası) before the civil court of peace (sulh hukuk mahkemesi) where the property is located. Since 1 September 2023 you must go through mediation first; only if mediation fails can the lawsuit be filed. If the property belongs only to heirs, since 31 July 2026 the first auction is held among the heirs alone.
 
 This often concerns families where the parents left a house, flat or plot of land in Turkey and some of the heirs live in Germany, the Netherlands or elsewhere in Europe. The process can be run from abroad; you do not have to travel to Turkey.
 
@@ -28,7 +28,7 @@ Any co-owner or heir can file the lawsuit; the consent of the others is not requ
 
 ## Mandatory mediation before the lawsuit
 
-This is the main recent change. Under Art. 18/B(1)(b) of the Turkish Mediation Act No. 6325 (HUAK), added by Act No. 7445, applying to a mediator before filing is a **procedural precondition** (dava şartı) in disputes on the division of movable and immovable property and the ending of joint ownership. The rule has applied since 1 September 2023; it does not apply to cases that were already pending on that date (provisional Art. 3 HUAK).
+This is the first of two recent changes; the second concerns the auction and is explained below. Under Art. 18/B(1)(b) of the Turkish Mediation Act No. 6325 (HUAK), added by Act No. 7445, applying to a mediator before filing is a **procedural precondition** (dava şartı) in disputes on the division of movable and immovable property and the ending of joint ownership. The rule has applied since 1 September 2023; it does not apply to cases that were already pending on that date (provisional Art. 3 HUAK).
 
 The procedure under Art. 18/A HUAK:
 
@@ -55,15 +55,23 @@ Mediation fees are governed by Art. 18/A(12)–(13) HUAK and an annual tariff, s
 
 ## Division in kind or sale?
 
-The law sets an order. Partition is done either by dividing the property in kind or by selling it by private sale or auction and dividing the proceeds (Art. 699(1) TMK). If the owners cannot agree, the judge first orders division in kind, with cash payments to balance unequal parts (Art. 699(2) TMK). If division is not suitable, in particular because the property would lose considerable value, the judge orders a **public auction** (Art. 699(3) TMK).
+The law sets an order. Partition is done either by dividing the property in kind or by selling it by private sale or auction and dividing the proceeds (Art. 699(1) TMK). If the owners cannot agree, the judge first orders division in kind, with cash payments to balance unequal parts (Art. 699(2) TMK). If division is not suitable, in particular because the property would lose considerable value, the judge orders a **sale by auction** (Art. 699(3) TMK). If all owners are heirs, the first auction is held among them only; details below.
 
 In an inheritance, at the request of one heir the judge looks at the estate as a whole and, where possible, allots each property in its entirety to one heir, with cash payments to balance the values (Art. 642(2) TMK). If immediate division would considerably reduce the value, the judge may postpone it (Art. 642(3) TMK).
 
 For a sale, the judge appoints an officer, and the sale follows the Turkish Enforcement and Bankruptcy Act (Art. 322(2) HMK).
 
-### Can the auction be limited to the co-owners?
+### First auction among the heirs: the change of 31 July 2026
 
-Yes, but only if **all co-owners consent** (last sentence of Art. 699(3) TMK). If even one objects, the auction is public. The official TMK text of September 2026 shows no amendment note for this sentence. Proposals at draft stage do not apply unless they are enacted.
+This is the newest rule on the sale. Act No. 7589 added sentences to Art. 114 of the Turkish Enforcement and Bankruptcy Act (İcra ve İflas Kanunu, İİK). Under them, if **all owners acquired the property by inheritance** and nobody other than the heirs owns any part of it, then when the court orders a partition by sale, the **first auction is held only among the heirs who own the property**. This procedure is used only once (Art. 114(2) İİK; for real property through Art. 126(1) İİK). The change has applied since 31 July 2026.
+
+The sale then works like this:
+
+1. Only the co-heirs take part in the first auction. A bid must exceed **100 per cent of the estimated value** (muhammen kıymet) plus the costs of the sale and distribution (Art. 114 İİK).
+2. If there is no sale, the second auction is public and third parties can bid too. Here a bid must exceed 50 per cent of the estimated value (or, if higher, the total of prior-ranking claims secured by a mortgage on the property) plus the costs (Art. 114 İİK).
+3. A winning bidder who does not pay the price on time loses the deposit. After the costs are deducted, it is paid to the co-owners in proportion to their shares. If the defaulting bidder is a co-owner, the whole deposit goes to the other co-owners. The bidder is also fined 5 per cent of the bid (Art. 114 İİK).
+
+If someone who is not an heir owns a share, for example because one heir sold their share to an outsider, this rule does not apply. The last sentence of Art. 699(3) TMK then applies: an auction limited to the co-owners requires the **consent of all co-owners**, and if even one objects, the auction is public.
 
 ### Selling your share and the right of pre-emption
 
@@ -100,7 +108,7 @@ The civil court of peace where the property is located (Art. 4(1)(b) and Art. 12
 
 ### Can inherited property in Turkey be sold if the other heirs refuse?
 
-Yes. Each heir can demand partition (Art. 642(1) TMK). If the property cannot be divided in kind, the court orders a public auction (Art. 699(3) TMK).
+Yes. Each heir can demand partition (Art. 642(1) TMK). If the property cannot be divided in kind, the court orders a sale by auction (Art. 699(3) TMK). If all owners are heirs, the first auction is held among them only (Art. 114 İİK).
 
 ### Which law applies to inherited property in Turkey?
 
@@ -111,6 +119,7 @@ Turkish law, for real estate located in Turkey (Art. 20(1) MÖHUK).
 - [Turkish Civil Code No. 4721 – mevzuat.gov.tr](https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=4721&MevzuatTur=1&MevzuatTertip=5)
 - [Mediation in Civil Disputes Act No. 6325 – mevzuat.gov.tr](https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=6325&MevzuatTur=1&MevzuatTertip=5)
 - [Code of Civil Procedure No. 6100 – mevzuat.gov.tr](https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=6100&MevzuatTur=1&MevzuatTertip=5)
+- [Enforcement and Bankruptcy Act No. 2004 (İİK) – mevzuat.gov.tr](https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=2004&MevzuatTur=1&MevzuatTertip=3)
 - [Private International Law Act No. 5718 (MÖHUK) – mevzuat.gov.tr](https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=5718&MevzuatTur=1&MevzuatTertip=5)
 
 ## Questions about your case

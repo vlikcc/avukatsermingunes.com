@@ -9,7 +9,7 @@ publish_at: 2026-11-02T08:00:00+03:00
 draft: true
 ---
 
-Wie samen met andere erfgenamen een huis of grond in Turkije erft en het niet eens wordt over de verdeling, kan een verdelingszaak (ortaklığın giderilmesi davası) beginnen bij de Turkse vrederechter (sulh hukuk mahkemesi) van de plaats waar het onroerend goed ligt. Sinds 1 september 2023 moet u eerst naar een bemiddelaar (arabulucu); pas als dat niets oplevert, volgt de rechtszaak.
+Wie samen met andere erfgenamen een huis of grond in Turkije erft en het niet eens wordt over de verdeling, kan een verdelingszaak (ortaklığın giderilmesi davası) beginnen bij de Turkse vrederechter (sulh hukuk mahkemesi) van de plaats waar het onroerend goed ligt. Sinds 1 september 2023 moet u eerst naar een bemiddelaar (arabulucu); pas als dat niets oplevert, volgt de rechtszaak. Is het onroerend goed alleen van erfgenamen, dan vindt de eerste veiling sinds 31 juli 2026 alleen onder de erfgenamen plaats.
 
 Dit speelt vaak in families waarvan de ouders een huis, appartement of stuk grond in Turkije nalaten en een deel van de erfgenamen in Nederland woont. De procedure kan vanuit Nederland worden gevoerd; u hoeft er niet voor naar Turkije.
 
@@ -28,7 +28,7 @@ Iedere mede-eigenaar of erfgenaam kan de zaak beginnen, zonder toestemming van d
 
 ## Verplichte bemiddeling vóór de rechtszaak
 
-Dit is de belangrijkste wijziging van de laatste jaren. Volgens art. 18/B lid 1 onder b van de Turkse Bemiddelingswet nr. 6325 (HUAK), ingevoegd bij Wet nr. 7445, is het vooraf inschakelen van een bemiddelaar een **ontvankelijkheidsvoorwaarde** (dava şartı) bij geschillen over de verdeling van roerende en onroerende zaken en het opheffen van gezamenlijke eigendom. De regel geldt sinds 1 september 2023, maar niet voor zaken die op die datum al liepen (overgangsartikel 3 HUAK).
+Dit is de eerste van twee recente wijzigingen; de tweede gaat over de veiling en leest u verderop. Volgens art. 18/B lid 1 onder b van de Turkse Bemiddelingswet nr. 6325 (HUAK), ingevoegd bij Wet nr. 7445, is het vooraf inschakelen van een bemiddelaar een **ontvankelijkheidsvoorwaarde** (dava şartı) bij geschillen over de verdeling van roerende en onroerende zaken en het opheffen van gezamenlijke eigendom. De regel geldt sinds 1 september 2023, maar niet voor zaken die op die datum al liepen (overgangsartikel 3 HUAK).
 
 Het verloop volgens art. 18/A HUAK:
 
@@ -55,15 +55,23 @@ De kosten van de bemiddeling volgen uit art. 18/A leden 12–13 HUAK en een jaar
 
 ## Verdeling in natura of verkoop?
 
-De wet geeft een volgorde. Verdeling gebeurt door het goed in natura te verdelen of door het onderhands of op een veiling te verkopen en de opbrengst te verdelen (art. 699 lid 1 TMK). Worden de eigenaren het niet eens, dan beveelt de rechter eerst verdeling in natura, met een geldbedrag om ongelijke delen gelijk te trekken (art. 699 lid 2 TMK). Is verdeling niet passend, vooral omdat het goed daardoor sterk in waarde zou dalen, dan volgt een **openbare veiling** (art. 699 lid 3 TMK).
+De wet geeft een volgorde. Verdeling gebeurt door het goed in natura te verdelen of door het onderhands of op een veiling te verkopen en de opbrengst te verdelen (art. 699 lid 1 TMK). Worden de eigenaren het niet eens, dan beveelt de rechter eerst verdeling in natura, met een geldbedrag om ongelijke delen gelijk te trekken (art. 699 lid 2 TMK). Is verdeling niet passend, vooral omdat het goed daardoor sterk in waarde zou dalen, dan volgt een **veiling** (art. 699 lid 3 TMK). Zijn alle eigenaren erfgenamen, dan vindt de eerste veiling alleen onder hen plaats; zie hieronder.
 
 Bij een nalatenschap kijkt de rechter op verzoek van een erfgenaam naar de hele nalatenschap en wijst hij, waar mogelijk, elk onroerend goed in zijn geheel toe aan één erfgenaam, met een geldbedrag om verschillen te verrekenen (art. 642 lid 2 TMK). Zou directe verdeling de waarde sterk verminderen, dan kan de vrederechter haar uitstellen (art. 642 lid 3 TMK).
 
 Voor de verkoop wijst de rechter een functionaris aan; de verkoop verloopt volgens de Turkse Wet op executie en faillissement (art. 322 lid 2 HMK).
 
-### Kan de veiling alleen onder de mede-eigenaren plaatsvinden?
+### Eerste veiling onder de erfgenamen: wijziging van 31 juli 2026
 
-Ja, maar alleen als **alle mede-eigenaren instemmen** (art. 699 lid 3, laatste zin TMK). Is ook maar één ertegen, dan is de veiling openbaar. In de officiële TMK-tekst van september 2026 staat bij deze zin geen wijzigingsnotitie. Voorstellen in ontwerpfase gelden pas als ze wet worden.
+Dit is de nieuwste regel voor de verkoop. Wet nr. 7589 voegde zinnen toe aan art. 114 van de Turkse Wet op de executie en het faillissement (İcra ve İflas Kanunu, İİK). Volgens die zinnen geldt: hebben **alle eigenaren het onroerend goed door erfopvolging verkregen** en is niemand anders dan de erfgenamen eigenaar, dan vindt bij een door de rechter bevolen verkoop de **eerste veiling alleen plaats onder de erfgenamen die eigenaar zijn**. Deze procedure wordt maar één keer toegepast (art. 114 lid 2 İİK; voor onroerend goed via art. 126 lid 1 İİK). De wijziging geldt sinds 31 juli 2026.
+
+De veiling verloopt dan zo:
+
+1. Aan de eerste veiling doen alleen de mede-erfgenamen mee. Een bod moet hoger zijn dan **100 procent van de geschatte waarde** (muhammen kıymet) plus de kosten van verkoop en verdeling (art. 114 İİK).
+2. Wordt het goed dan niet verkocht, dan is de tweede veiling openbaar en mogen ook derden bieden. Een bod moet dan hoger zijn dan 50 procent van de geschatte waarde (of, als dat hoger is, het totaal van voorrang hebbende vorderingen die met een hypotheek op het goed zijn gezekerd) plus de kosten (art. 114 İİK).
+3. Wie het hoogste bod doet maar de prijs niet op tijd betaalt, verliest zijn waarborgsom. Na aftrek van de kosten wordt die naar verhouding van hun aandeel aan de mede-eigenaren uitbetaald. Is de bieder zelf mede-eigenaar, dan krijgen de andere mede-eigenaren de hele waarborgsom. Daarnaast krijgt de bieder een boete van 5 procent van het bod (art. 114 İİK).
+
+Heeft iemand die geen erfgenaam is een aandeel, bijvoorbeeld omdat een erfgenaam zijn aandeel aan een derde heeft verkocht, dan geldt deze regel niet. Dan blijft art. 699 lid 3, laatste zin TMK van toepassing: een veiling alleen onder de mede-eigenaren vereist **instemming van alle mede-eigenaren**; is ook maar één ertegen, dan is de veiling openbaar.
 
 ### Uw aandeel verkopen en het voorkeursrecht
 
@@ -100,7 +108,7 @@ De vrederechter (sulh hukuk mahkemesi) van de plaats waar het huis ligt (art. 4 
 
 ### Kan een geërfd huis in Turkije worden verkocht als de andere erfgenamen niet willen?
 
-Ja. Elke erfgenaam kan verdeling vragen (art. 642 lid 1 TMK). Kan het huis niet in natura worden verdeeld, dan beveelt de rechter een openbare veiling (art. 699 lid 3 TMK).
+Ja. Elke erfgenaam kan verdeling vragen (art. 642 lid 1 TMK). Kan het huis niet in natura worden verdeeld, dan beveelt de rechter een verkoop op een veiling (art. 699 lid 3 TMK). Zijn alle eigenaren erfgenamen, dan vindt de eerste veiling alleen onder hen plaats (art. 114 İİK).
 
 ### Geldt Nederlands of Turks recht?
 
@@ -111,6 +119,7 @@ Voor onroerend goed in Turkije geldt Turks recht (art. 20 lid 1 MÖHUK).
 - [Turks Burgerlijk Wetboek nr. 4721 – mevzuat.gov.tr](https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=4721&MevzuatTur=1&MevzuatTertip=5)
 - [Bemiddelingswet nr. 6325 – mevzuat.gov.tr](https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=6325&MevzuatTur=1&MevzuatTertip=5)
 - [Wetboek van Burgerlijke Rechtsvordering nr. 6100 – mevzuat.gov.tr](https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=6100&MevzuatTur=1&MevzuatTertip=5)
+- [Wet op de executie en het faillissement nr. 2004 (İİK) – mevzuat.gov.tr](https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=2004&MevzuatTur=1&MevzuatTertip=3)
 - [IPR-wet nr. 5718 (MÖHUK) – mevzuat.gov.tr](https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=5718&MevzuatTur=1&MevzuatTertip=5)
 
 ## Vragen over uw situatie

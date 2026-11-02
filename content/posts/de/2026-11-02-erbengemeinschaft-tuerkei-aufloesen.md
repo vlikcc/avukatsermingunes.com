@@ -9,7 +9,7 @@ publish_at: 2026-11-02T08:00:00+03:00
 draft: true
 ---
 
-Wer eine Erbengemeinschaft in der Türkei auflösen will, braucht dafür entweder die Einigung aller Miterben oder eine Teilungsklage (ortaklığın giderilmesi davası) vor dem türkischen Friedensgericht (sulh hukuk mahkemesi). Seit dem 1. September 2023 muss vor der Klage ein Mediationsverfahren durchlaufen werden; scheitert es, wird die Klage am Ort der Immobilie erhoben.
+Wer eine Erbengemeinschaft in der Türkei auflösen will, braucht dafür entweder die Einigung aller Miterben oder eine Teilungsklage (ortaklığın giderilmesi davası) vor dem türkischen Friedensgericht (sulh hukuk mahkemesi). Seit dem 1. September 2023 muss vor der Klage ein Mediationsverfahren durchlaufen werden; scheitert es, wird die Klage am Ort der Immobilie erhoben. Gehört die Immobilie ausschließlich Erben, findet die erste Versteigerung seit dem 31. Juli 2026 nur unter den Erben statt.
 
 Typisch ist folgende Lage: Die Eltern hinterlassen ein Haus, eine Wohnung oder ein Grundstück in der Türkei, und ein Teil der Erben lebt in Deutschland. Das Verfahren lässt sich von hier aus führen; Sie müssen dafür nicht in die Türkei reisen.
 
@@ -28,7 +28,7 @@ Klagen kann jeder Miteigentümer oder Miterbe, ohne Zustimmung der anderen. Weil
 
 ## Pflichtmediation vor der Klage
 
-Das ist die wichtigste Neuerung der letzten Jahre. Nach Art. 18/B Abs. 1 Buchst. b des türkischen Mediationsgesetzes Nr. 6325 (HUAK), eingefügt durch Gesetz Nr. 7445, ist bei Streitigkeiten über die Teilung beweglicher und unbeweglicher Sachen und die Aufhebung der Gemeinschaft die vorherige Anrufung eines Mediators eine **Prozessvoraussetzung** (dava şartı). Die Regel gilt seit dem 1. September 2023, nicht aber für Verfahren, die an diesem Tag schon anhängig waren (vorläufiger Art. 3 HUAK).
+Das ist die erste von zwei Neuerungen der letzten Jahre; die zweite betrifft die Versteigerung und wird weiter unten erklärt. Nach Art. 18/B Abs. 1 Buchst. b des türkischen Mediationsgesetzes Nr. 6325 (HUAK), eingefügt durch Gesetz Nr. 7445, ist bei Streitigkeiten über die Teilung beweglicher und unbeweglicher Sachen und die Aufhebung der Gemeinschaft die vorherige Anrufung eines Mediators eine **Prozessvoraussetzung** (dava şartı). Die Regel gilt seit dem 1. September 2023, nicht aber für Verfahren, die an diesem Tag schon anhängig waren (vorläufiger Art. 3 HUAK).
 
 Der Ablauf nach Art. 18/A HUAK:
 
@@ -55,15 +55,23 @@ Die Mediationskosten richten sich nach Art. 18/A Abs. 12–13 HUAK und einem jä
 
 ## Realteilung oder Versteigerung?
 
-Das Gesetz gibt eine Reihenfolge vor. Geteilt wird entweder in Natur oder durch freihändigen Verkauf bzw. Versteigerung und Verteilung des Erlöses (Art. 699 Abs. 1 TMK). Einigen sich die Miteigentümer nicht, ordnet das Gericht zunächst die Realteilung an; sind die Teile ungleich viel wert, wird mit Geld ausgeglichen (Art. 699 Abs. 2 TMK). Ist eine Teilung nach den Umständen nicht angemessen, vor allem weil die Sache dadurch erheblich an Wert verlöre, wird die **öffentliche Versteigerung** angeordnet (Art. 699 Abs. 3 TMK).
+Das Gesetz gibt eine Reihenfolge vor. Geteilt wird entweder in Natur oder durch freihändigen Verkauf bzw. Versteigerung und Verteilung des Erlöses (Art. 699 Abs. 1 TMK). Einigen sich die Miteigentümer nicht, ordnet das Gericht zunächst die Realteilung an; sind die Teile ungleich viel wert, wird mit Geld ausgeglichen (Art. 699 Abs. 2 TMK). Ist eine Teilung nach den Umständen nicht angemessen, vor allem weil die Sache dadurch erheblich an Wert verlöre, wird die **Versteigerung** angeordnet (Art. 699 Abs. 3 TMK). Sind alle Eigentümer Erben, findet die erste Versteigerung nur unter ihnen statt; Einzelheiten unten.
 
 Bei der Erbengemeinschaft weist das Gericht auf Antrag eines Erben, wenn möglich, jede Immobilie als Ganzes einem Erben zu und gleicht Wertunterschiede durch Geldzahlungen aus (Art. 642 Abs. 2 TMK). Würde die sofortige Teilung den Wert erheblich mindern, kann der Friedensrichter sie aufschieben (Art. 642 Abs. 3 TMK).
 
 Für die Versteigerung bestellt das Gericht einen Beamten; sie erfolgt nach dem türkischen Vollstreckungs- und Konkursgesetz (Art. 322 Abs. 2 HMK).
 
-### Versteigerung nur unter den Miterben?
+### Versteigerung zuerst unter den Miterben: Änderung vom 31. Juli 2026
 
-Das ist möglich, aber nur mit **Zustimmung aller Miteigentümer** (Art. 699 Abs. 3 letzter Satz TMK). Widerspricht auch nur einer, wird öffentlich versteigert. In der amtlichen TMK-Fassung vom September 2026 gibt es zu diesem Satz keinen Änderungsvermerk. Vorschläge im Entwurfsstadium gelten erst, wenn sie Gesetz werden.
+Das ist die neueste Regel für die Versteigerung. Nach den Sätzen, die das Gesetz Nr. 7589 in Art. 114 des türkischen Vollstreckungs- und Konkursgesetzes (İcra ve İflas Kanunu, İİK) eingefügt hat, gilt: Haben **alle Eigentümer die Immobilie durch Erbfolge erworben** und hat außer den Erben niemand Eigentum daran, findet bei der gerichtlich angeordneten Versteigerung die **erste Versteigerung nur unter den Erben** statt, die Eigentümer sind. Dieses Verfahren wird nur einmal angewandt (Art. 114 Abs. 2 İİK; für Immobilien über Art. 126 Abs. 1 İİK). Die Änderung gilt seit dem 31. Juli 2026.
+
+Die Versteigerung läuft dann so ab:
+
+1. An der ersten Versteigerung nehmen nur die Miterben teil. Das Gebot muss **100 Prozent des Schätzwerts** (muhammen kıymet) sowie die Kosten der Verwertung und Verteilung übersteigen (Art. 114 İİK).
+2. Kommt dabei kein Verkauf zustande, ist die zweite Versteigerung öffentlich; auch Dritte können bieten. Hier genügt ein Gebot über 50 Prozent des Schätzwerts (oder, falls höher, über der Summe vorrangiger, durch Grundpfandrecht gesicherter Forderungen) zuzüglich der Kosten (Art. 114 İİK).
+3. Wer den Zuschlag erhält, den Preis aber nicht fristgerecht zahlt, verliert seine Sicherheitsleistung; sie wird nach Abzug der Kosten an die Miteigentümer nach ihren Anteilen ausgezahlt. Ist der säumige Bieter selbst Miteigentümer, erhalten die übrigen Miteigentümer die gesamte Sicherheit. Zusätzlich wird ein Bußgeld von 5 Prozent des gebotenen Betrags verhängt (Art. 114 İİK).
+
+Hat jemand, der kein Erbe ist, einen Anteil an der Immobilie, etwa weil ein Miterbe seinen Anteil an einen Dritten verkauft hat, gilt diese Regel nicht. Dann bleibt es bei Art. 699 Abs. 3 letzter Satz TMK: Eine Versteigerung nur unter den Miteigentümern setzt die **Zustimmung aller Miteigentümer** voraus; widerspricht auch nur einer, wird öffentlich versteigert.
 
 ### Anteil verkaufen und Vorkaufsrecht
 
@@ -100,7 +108,7 @@ Das Friedensgericht (sulh hukuk mahkemesi) am Ort der Immobilie (Art. 4 Abs. 1 B
 
 ### Kann das geerbte Haus gegen den Willen der anderen Erben verkauft werden?
 
-Ja. Jeder Erbe kann die Teilung verlangen (Art. 642 Abs. 1 TMK). Lässt sich das Haus nicht in Natur teilen, ordnet das Gericht die öffentliche Versteigerung an (Art. 699 Abs. 3 TMK).
+Ja. Jeder Erbe kann die Teilung verlangen (Art. 642 Abs. 1 TMK). Lässt sich das Haus nicht in Natur teilen, ordnet das Gericht die Versteigerung an (Art. 699 Abs. 3 TMK). Sind alle Eigentümer Erben, findet die erste Versteigerung nur unter ihnen statt (Art. 114 İİK).
 
 ### Gilt deutsches oder türkisches Recht?
 
@@ -111,6 +119,7 @@ Für Immobilien in der Türkei türkisches Recht (Art. 20 Abs. 1 MÖHUK).
 - [Türkisches Zivilgesetzbuch Nr. 4721 – mevzuat.gov.tr](https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=4721&MevzuatTur=1&MevzuatTertip=5)
 - [Mediationsgesetz Nr. 6325 – mevzuat.gov.tr](https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=6325&MevzuatTur=1&MevzuatTertip=5)
 - [Zivilprozessordnung Nr. 6100 – mevzuat.gov.tr](https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=6100&MevzuatTur=1&MevzuatTertip=5)
+- [Vollstreckungs- und Konkursgesetz Nr. 2004 (İİK) – mevzuat.gov.tr](https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=2004&MevzuatTur=1&MevzuatTertip=3)
 - [IPR-Gesetz Nr. 5718 (MÖHUK) – mevzuat.gov.tr](https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=5718&MevzuatTur=1&MevzuatTertip=5)
 
 ## Fragen zu Ihrem Fall

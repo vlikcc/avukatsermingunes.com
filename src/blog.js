@@ -52,11 +52,18 @@ const toUtc = (v) => {
 // Yayındaki bir yazı yalnızca avukatın onayıyla, LIVE_REFRESH listesindeki çeviri
 // grupları için ve bir kez güncellenir.
 // force: panelde kaydedilmiş olsa da güncellenir (yalnızca metnin panelde değişmediği doğrulanmışsa).
+// bodies: dile göre ilk metnin SHA-256 başlangıcı; veritabanındaki metin hâlâ bu ilk metinse
+// (panelde kaydedilmiş ama metni değiştirilmemişse) taslak veya yayındaki yazı güncellenir.
 const LIVE_REFRESH = {
   // 29 Ekim yazıları, düzenlenmiş metin siteye ulaşmadan onaylandı; avukat yeni metni 29.10.2026’da onayladı.
   'refresh_2026_10_29': { pairs: ['2026-10-29-mohuk-50', '2026-10-29-mirasin-reddi'] },
   // Türkçe MÖHUK m. 50 panelde metni değiştirilmeden kaydedilmişti; yayındaki metin ilk taslakla birebir aynıydı.
   'refresh_2026_10_29_tr50': { pairs: ['2026-10-29-mohuk-50'], langs: ['tr'], force: true },
+  // Ortaklığın giderilmesi yazısında İİK m. 114’teki 31.07.2026 değişikliği eksikti; avukatın isteğiyle 02.11.2026’da düzeltildi.
+  'refresh_2026_11_02_ortaklik': {
+    pairs: ['2026-11-02-ortakligin-giderilmesi'],
+    bodies: { tr: '50c9df53ebab1a8c', de: 'e0015d20500910c3', en: 'a2e254be277d1e57', nl: '822a1388288af2ff' },
+  },
 };
 
 function importFiles() {
@@ -71,7 +78,9 @@ function importFiles() {
   );
   const touch = db.prepare(`UPDATE posts SET updated_at = strftime('%Y-%m-%dT%H:%M:%fZ','now') WHERE id = ?`);
   const pending = Object.keys(LIVE_REFRESH).filter((k) => !getSetting(k));
-  const liveRule = (p) => pending.map((k) => LIVE_REFRESH[k]).find((r) => r.pairs.includes(p.pair) && (!r.langs || r.langs.includes(p.lang)) && (r.force || !panelEdited(p)));
+  const original = (r, p) => Boolean(r.bodies?.[p.lang]) && crypto.createHash('sha256').update(p.body).digest('hex').startsWith(r.bodies[p.lang]);
+  const liveRule = (p) =>
+    pending.map((k) => LIVE_REFRESH[k]).find((r) => r.pairs.includes(p.pair) && (!r.langs || r.langs.includes(p.lang)) && (r.force || !panelEdited(p) || original(r, p)));
   const mark = db.prepare('INSERT OR IGNORE INTO imported_files (path, imported_at) VALUES (?, ?)');
   // Önceki sürüm dosyaları ilk açılışta topluca aktarıyordu; o dosyalar yalnızca işaretlenir.
   const legacy = Boolean(getSetting('posts_imported')) && !getSetting('import_tracking');
@@ -101,8 +110,9 @@ function importFiles() {
   function refreshDraft(lang, p) {
     const cur = p?.slug && p.title && bySlug.get(lang, p.slug);
     if (!cur) return;
-    const live = cur.status === 'published' && Boolean(liveRule(cur));
-    if (!live && (cur.status !== 'draft' || panelEdited(cur))) return;
+    const rule = liveRule(cur);
+    const live = cur.status === 'published' && Boolean(rule);
+    if (!rule && (cur.status !== 'draft' || panelEdited(cur))) return;
     const next = [p.title, p.description || '', p.body.trim(), p.date || cur.date, p.pair || null, CATEGORIES.includes(p.category) ? p.category : 'blog', toUtc(p.publish_at)];
     const prev = [cur.title, cur.description, cur.body, cur.date, cur.pair, cur.category, cur.publish_at];
     if (next.some((v, i) => v !== prev[i])) {

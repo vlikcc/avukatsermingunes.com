@@ -9,7 +9,7 @@ publish_at: 2026-11-02T08:00:00+03:00
 draft: true
 ---
 
-Ortaklığın giderilmesi davası (eski adıyla izale-i şuyu), birlikte malik olunan bir taşınmazın ya da başka bir malın aynen bölünmesi veya satılıp bedelinin paylaşılması için açılır. Dava açmadan önce arabulucuya başvurmak 1 Eylül 2023’ten beri zorunludur; anlaşma çıkmazsa dava, taşınmazın bulunduğu yerdeki sulh hukuk mahkemesinde açılır.
+Ortaklığın giderilmesi davası (eski adıyla izale-i şuyu), birlikte malik olunan bir taşınmazın ya da başka bir malın aynen bölünmesi veya satılıp bedelinin paylaşılması için açılır. Dava açmadan önce arabulucuya başvurmak 1 Eylül 2023’ten beri zorunludur; anlaşma çıkmazsa dava, taşınmazın bulunduğu yerdeki sulh hukuk mahkemesinde açılır. Taşınmazın tamamı mirasçılara aitse, 31 Temmuz 2026’dan beri satışta ilk artırma yalnızca mirasçılar arasında yapılır.
 
 Türkiye’de anne babadan ev, arsa ya da tarla kalmışsa ve mirasçıların bir kısmı Almanya’da veya Hollanda’da yaşıyorsa, paylaşma çoğu zaman bu yolla yapılır. Yurt dışından da yürütülebilir; Türkiye’ye gelmeniz şart değildir.
 
@@ -28,7 +28,7 @@ Davayı paydaşlardan ya da mirasçılardan herhangi biri açabilir. Diğerlerin
 
 ## Dava açmadan önce zorunlu arabuluculuk
 
-“Ortaklığın giderilmesi davasında yeni düzenleme” aramasının cevabı büyük ölçüde budur. 7445 sayılı Kanunla 6325 sayılı Hukuk Uyuşmazlıklarında Arabuluculuk Kanununa eklenen m. 18/B’ye göre, taşınır ve taşınmazların paylaştırılmasına ve ortaklığın giderilmesine ilişkin uyuşmazlıklarda dava açılmadan önce arabulucuya başvurulmuş olması **dava şartıdır** (HUAK m. 18/B/1-b). Hüküm 1 Eylül 2023’te yürürlüğe girdi; o tarihte görülmekte olan davalara uygulanmaz (HUAK geçici m. 3).
+Ortaklığın giderilmesindeki iki yeni düzenlemeden ilki budur; ikincisi satış aşamasıyla ilgilidir ve aşağıda anlatılıyor. 7445 sayılı Kanunla 6325 sayılı Hukuk Uyuşmazlıklarında Arabuluculuk Kanununa eklenen m. 18/B’ye göre, taşınır ve taşınmazların paylaştırılmasına ve ortaklığın giderilmesine ilişkin uyuşmazlıklarda dava açılmadan önce arabulucuya başvurulmuş olması **dava şartıdır** (HUAK m. 18/B/1-b). Hüküm 1 Eylül 2023’te yürürlüğe girdi; o tarihte görülmekte olan davalara uygulanmaz (HUAK geçici m. 3).
 
 Süreç kısaca şöyle işler (HUAK m. 18/A):
 
@@ -55,15 +55,23 @@ Arabuluculuk ücretinin nasıl karşılanacağı HUAK m. 18/A/12–13’te düze
 
 ## Aynen bölme mi, satış mı?
 
-Kanunun sırası açıktır. Paylaşma, malın aynen bölüşülmesi ya da pazarlık veya artırmayla satılıp bedelinin bölüşülmesi biçiminde olur (TMK m. 699/1). Paydaşlar anlaşamazsa hâkim önce aynen bölmeye karar verir; parçaların değeri denk değilse eksik değerdeki parçaya para eklenerek denkleştirme yapılır (TMK m. 699/2). Bölme durum ve koşullara uygun değilse, özellikle mal önemli bir değer kaybına uğramadan bölünemiyorsa, **açık artırmayla satışa** hükmedilir (TMK m. 699/3).
+Kanunun sırası açıktır. Paylaşma, malın aynen bölüşülmesi ya da pazarlık veya artırmayla satılıp bedelinin bölüşülmesi biçiminde olur (TMK m. 699/1). Paydaşlar anlaşamazsa hâkim önce aynen bölmeye karar verir; parçaların değeri denk değilse eksik değerdeki parçaya para eklenerek denkleştirme yapılır (TMK m. 699/2). Bölme durum ve koşullara uygun değilse, özellikle mal önemli bir değer kaybına uğramadan bölünemiyorsa, **açık artırmayla satışa** hükmedilir (TMK m. 699/3). Bütün malikler mirasçıysa artırmanın ilk turu yalnızca mirasçılar arasında yapılır; ayrıntılar aşağıda.
 
 Miras ortaklığında hâkim, mirasçılardan birinin istemi üzerine terekenin tamamını göz önünde tutarak, olanak varsa her taşınmazın tamamını bir mirasçıya verir ve aradaki değer farkını para ödenmesiyle denkleştirir (TMK m. 642/2). Paylaşmanın hemen yapılması malın değerini önemli ölçüde düşürecekse sulh hâkimi paylaşmayı erteleyebilir (TMK m. 642/3).
 
 Satış gerekirse hâkim satış için bir memur görevlendirir; satış İcra ve İflas Kanunu hükümlerine göre yapılır (HMK m. 322/2).
 
-### Hissedarlar arasında satış mümkün mü?
+### Hissedarlar arasında satış: 31 Temmuz 2026 değişikliği
 
-Bu, sık aranan bir soru. Kanuna göre satışın yalnızca paydaşlar arasında artırmayla yapılmasına karar verilebilir, ama bunun için **bütün paydaşların rızası** gerekir (TMK m. 699/3, son cümle). Paydaşlardan biri bile karşı çıkarsa satış herkese açık artırmayla yapılır. Eylül 2026 tarihli resmî TMK metninde bu cümlede bir değişiklik notu yoktur. Tasarı veya teklif aşamasındaki öneriler, yasalaşmadıkça uygulanmaz.
+Satış aşamasındaki en yeni düzenleme budur. 7589 sayılı Kanunla İcra ve İflas Kanununun 114. maddesine eklenen hükme göre, **bütün maliklerin miras yoluyla edindiği** ve mirasçılar dışında kimsenin mülkiyet hakkının bulunmadığı bir taşınmazda ortaklığın satış yoluyla giderilmesine karar verilirse, **birinci artırma yalnızca malik olan mirasçılar arasında** yapılır. Bu usul bir defaya mahsus uygulanır (İİK m. 114/2; taşınmazlarda İİK m. 126/1 bu hükmü uygular). Değişiklik 31 Temmuz 2026’da yürürlüğe girdi.
+
+Satış şu sırayla ilerler:
+
+1. Birinci artırmaya yalnızca mirasçı paydaşlar katılır. Bu artırmada teklifin muhammen kıymetin **yüzde yüzünü** ve ayrıca paraya çevirme ve paylaştırma masraflarını geçmesi gerekir (İİK m. 114).
+2. Birinci artırmada satış gerçekleşmezse ikinci artırma herkese açık yapılır ve üçüncü kişiler de teklif verebilir. İkinci artırmada teklifin muhammen kıymetin yüzde ellisini (taşınmaz üzerinde rehinle güvence altına alınmış öncelikli alacakların toplamı daha yüksekse o tutarı) ve masrafları geçmesi yeterlidir (İİK m. 114).
+3. En yüksek teklifi verip ihale bedelini süresinde yatırmayanın teminatı geri verilmez; satış masrafları düşüldükten sonra paydaşlara payları oranında ödenir. Bedeli yatırmayan bir paydaşsa teminatın tamamı diğer paydaşlara payları oranında ödenir. Ayrıca teklif ettiği bedelin yüzde beşi oranında idari para cezası verilir (İİK m. 114).
+
+Taşınmazda mirasçı olmayan birinin payı varsa, örneğin mirasçılardan biri payını üçüncü bir kişiye satmışsa, bu kural uygulanmaz. O durumda TMK m. 699/3’ün son cümlesi geçerlidir: Satışın yalnızca paydaşlar arasında artırmayla yapılması **bütün paydaşların rızasına** bağlıdır; biri bile karşı çıkarsa artırma herkese açık yapılır.
 
 ### Payını satmak ve önalım hakkı
 
@@ -98,17 +106,18 @@ Taşınmazın bulunduğu yerdeki sulh hukuk mahkemesinde (HMK m. 4/1-b ve m. 12/
 
 ### Diğer mirasçılar istemezse miras kalan ev satılabilir mi?
 
-Evet. Her mirasçı paylaşma isteyebilir (TMK m. 642/1). Ev aynen bölünemiyorsa hâkim açık artırmayla satışa karar verir (TMK m. 699/3).
+Evet. Her mirasçı paylaşma isteyebilir (TMK m. 642/1). Ev aynen bölünemiyorsa hâkim açık artırmayla satışa karar verir (TMK m. 699/3). Evin bütün malikleri mirasçıysa ilk artırma yalnızca mirasçılar arasında yapılır (İİK m. 114).
 
 ### Satış yalnız hissedarlar arasında yapılabilir mi?
 
-Yalnızca bütün paydaşlar buna rıza gösterirse (TMK m. 699/3). Aksi hâlde satış herkese açık artırmayla yapılır.
+Taşınmazın bütün malikleri onu mirasla edinmişse ve mirasçı olmayan bir malik yoksa, 31 Temmuz 2026’dan beri birinci artırma zorunlu olarak yalnızca mirasçılar arasında yapılır; satış olmazsa ikinci artırma herkese açıktır (İİK m. 114). Diğer durumlarda satışın yalnızca paydaşlar arasında yapılması bütün paydaşların rızasına bağlıdır (TMK m. 699/3).
 
 ## Kaynaklar
 
 - [4721 sayılı Türk Medeni Kanunu – mevzuat.gov.tr](https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=4721&MevzuatTur=1&MevzuatTertip=5)
 - [6325 sayılı Hukuk Uyuşmazlıklarında Arabuluculuk Kanunu – mevzuat.gov.tr](https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=6325&MevzuatTur=1&MevzuatTertip=5)
 - [6100 sayılı Hukuk Muhakemeleri Kanunu – mevzuat.gov.tr](https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=6100&MevzuatTur=1&MevzuatTertip=5)
+- [2004 sayılı İcra ve İflas Kanunu – mevzuat.gov.tr](https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=2004&MevzuatTur=1&MevzuatTertip=3)
 - [5718 sayılı Milletlerarası Özel Hukuk ve Usul Hukuku Hakkında Kanun – mevzuat.gov.tr](https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=5718&MevzuatTur=1&MevzuatTertip=5)
 
 ## Sorularınız için
