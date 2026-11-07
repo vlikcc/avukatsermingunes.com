@@ -21,7 +21,7 @@ TMK boşanma sebeplerini ikiye ayırır. Özel sebeplerde kanun belirli bir olay
 
 Eşlerden biri zina ederse diğer eş boşanma davası açabilir (TMK m. 161). Eşin hayatına kastedilmesi, ona pek kötü davranılması ya da ağır derecede onur kırıcı bir davranışta bulunulması da ayrı bir boşanma sebebidir (TMK m. 162).
 
-Bu iki sebepte süreler kesindir. Dava hakkı, boşanma sebebinin öğrenilmesinden itibaren **altı ay** ve her hâlde olayın üzerinden **beş yıl** geçince düşer. Affeden eşin dava hakkı yoktur (TMK m. 161/2–3, 162/2–3). Süre geçmişse aynı olaylar yine de TMK m. 166/1’e dayanan bir davada evlilik birliğinin sarsıldığını gösteren olgular olarak ileri sürülebilir; bu, iki maddenin birlikte okunmasından çıkan bir değerlendirmedir.
+Bu iki sebepte süreler kesindir. Dava hakkı, boşanma sebebinin öğrenilmesinden itibaren **altı ay** ve her hâlde olayın üzerinden **beş yıl** geçince düşer. Affeden eşin dava hakkı yoktur (TMK m. 161/2–3, 162/2–3). Süre geçmişse aynı olayların TMK m. 166/1’e dayanan bir davada evlilik birliğinin sarsıldığını gösteren olgular olarak ileri sürülüp sürülemeyeceği kanunda açıkça düzenlenmemiştir. Bunun mümkün olduğu yazarın değerlendirmesidir; bu yazı için bu konuda doğrulanmış bir Yargıtay kararı aktarılmamıştır.
 
 ### Suç işleme, haysiyetsiz hayat ve akıl hastalığı
 
@@ -36,7 +36,7 @@ Terk sebebiyle boşanma, süreleri en sıkı belirlenmiş sebeptir (TMK m. 164):
 3. Terk edilen eş, ayrılığın dördüncü ayı bittikten sonra hâkimden veya noterden ihtar ister. İhtarda terk eden eşe iki ay içinde ortak konuta dönmesi gerektiği ve dönmezse doğacak sonuçlar bildirilir. İhtar gerektiğinde ilan yoluyla yapılır.
 4. Dava, ihtardan sonra iki ay geçmeden açılamaz.
 
-Terk eden eşin adresi yurt dışındaysa ihtarın tebliği de yurt dışına yapılır. İhtar sonuçsuz kalmazsa, yani eş süre içinde ortak konuta dönerse, terk sebebiyle dava açılamaz.
+Kanun, davayı ihtarın sonuçsuz kalmasına bağlar; eş süre içinde ortak konuta dönerse terk sebebiyle dava açılamaz.
 
 ## Evlilik birliğinin temelinden sarsılması (TMK m. 166)
 
