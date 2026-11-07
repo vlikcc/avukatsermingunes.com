@@ -1,6 +1,6 @@
 ---
 title: Strittige Scheidung in der Türkei: Gründe und Ablauf
-description: Scheidung in der Türkei ohne Einigung: Scheidungsgründe nach Art. 161–166 TMK, Fristen, Mahnung bei Verlassen, Ein-Jahres-Regel und Verfahren von Deutschland aus.
+description: Scheidung in der Türkei ohne Einigung: Scheidungsgründe nach Art. 161–166 TMK, Fristen, Mahnung bei Verlassen, Ein-Jahres-Regel, Ablauf von Deutschland aus.
 date: 2026-11-08
 slug: scheidung-tuerkei-scheidungsgruende-ablauf
 pair: 2026-11-08-cekismeli-bosanma
@@ -40,7 +40,7 @@ Das Gesetz verlangt, dass die Mahnung erfolglos geblieben ist; kehrt der Ehegatt
 
 ## Zerrüttung der Ehe (Art. 166 TMK)
 
-Dies ist der häufigste Scheidungsgrund. Ist die Ehe so tief zerrüttet, dass den Ehegatten die Fortsetzung der Lebensgemeinschaft nicht zuzumuten ist, kann jeder von ihnen klagen (Art. 166 Abs. 1 TMK). Welche Vorfälle dazu führen, zählt das Gesetz nicht auf; das Gericht würdigt die Beweise frei (Art. 184 Nr. 4 TMK).
+Dies ist der allgemeine Scheidungsgrund des Gesetzes. Ist die Ehe so tief zerrüttet, dass den Ehegatten die Fortsetzung der Lebensgemeinschaft nicht zuzumuten ist, kann jeder von ihnen klagen (Art. 166 Abs. 1 TMK). Welche Vorfälle dazu führen, zählt das Gesetz nicht auf; das Gericht würdigt die Beweise frei (Art. 184 Nr. 4 TMK).
 
 Trifft den Kläger das überwiegende Verschulden, kann der Beklagte der Scheidung widersprechen. Ist dieser Widerspruch rechtsmissbräuchlich und besteht für den Beklagten und die Kinder kein schutzwürdiges Interesse mehr an der Ehe, kann die Scheidung trotzdem ausgesprochen werden (Art. 166 Abs. 2 TMK).
 
@@ -50,7 +50,7 @@ Das Verschulden ist vor allem für die Scheidungsfolgen entscheidend. Materielle
 
 Wird eine Scheidungsklage aus irgendeinem Grund abgewiesen und ist seit Rechtskraft dieser Entscheidung **ein Jahr** vergangen, ohne dass die Lebensgemeinschaft wiederhergestellt wurde, gilt die Ehe als zerrüttet; auf Antrag eines Ehegatten wird die Scheidung ausgesprochen (Art. 166 Abs. 4 TMK).
 
-Der Absatz wurde durch Art. 13 des Gesetzes Nr. 7532 geändert und gilt seit dem 27.11.2024. Zuvor betrug die Frist drei Jahre; das Verfassungsgericht (Anayasa Mahkemesi) hatte diese Regel mit Entscheidung vom 22.2.2024, E. 2023/116, K. 2024/56 aufgehoben. Eine Vorlage gegen die neue Ein-Jahres-Frist wies es mit Entscheidung vom 12.2.2026, E. 2025/203, K. 2026/39 mehrheitlich zurück (Amtsblatt vom 17.4.2026, Nr. 33227). Stand November 2026 gilt die Ein-Jahres-Frist.
+Der Absatz wurde durch Art. 13 des Gesetzes Nr. 7532 geändert und gilt seit dem 27.11.2024. Zuvor betrug die Frist drei Jahre; das Verfassungsgericht (Anayasa Mahkemesi) hatte diese Regel mit Entscheidung vom 22.2.2024, E. 2023/116, K. 2024/56 aufgehoben. Eine Vorlage gegen die neue Ein-Jahres-Frist wies es mit Entscheidung vom 12.2.2026, E. 2025/203, K. 2026/39 mehrheitlich zurück (Amtsblatt (Resmî Gazete) vom 17.4.2026, Nr. 33227). Stand November 2026 gilt die Ein-Jahres-Frist.
 
 Der Kläger muss beweisen, dass die Lebensgemeinschaft nach Rechtskraft der Abweisung nicht wiederhergestellt wurde. Die 2. Zivilkammer des Kassationshofs hat festgehalten, dass eine Wiederherstellung voraussetzt, dass die Ehegatten zu diesem Zweck zusammengekommen sind und zusammengelebt haben, und dass dies bewiesen sein muss. Im entschiedenen Fall hob sie die Klageabweisung auf, weil Meldebescheinigungen, ein Mietvertrag und Zeugenaussagen zeigten, dass die Ehegatten in verschiedenen Orten lebten (E. 2024/506, K. 2025/3618, Urteil vom 14.04.2025). Die Entscheidung gibt wegen des Zeitpunkts des Falls noch den alten Wortlaut mit drei Jahren wieder.
 

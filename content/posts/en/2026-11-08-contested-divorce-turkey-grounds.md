@@ -40,7 +40,7 @@ The law requires the warning to have had no effect; if the spouse returns within
 
 ## Irretrievable breakdown of the marriage (Art. 166 TMK)
 
-This is the ground used most often. If the marriage has broken down so fundamentally that the spouses cannot be expected to continue their life together, either spouse may sue (Art. 166(1) TMK). The law does not list which events lead to this; the judge assesses the evidence freely (Art. 184(4) TMK).
+This is the general ground in the Code. If the marriage has broken down so fundamentally that the spouses cannot be expected to continue their life together, either spouse may sue (Art. 166(1) TMK). The law does not list which events lead to this; the judge assesses the evidence freely (Art. 184(4) TMK).
 
 If the claimant bears the greater share of fault, the respondent may object to the divorce. If the objection is an abuse of rights and the marriage no longer offers the respondent and the children any interest worth protecting, the court may still grant the divorce (Art. 166(2) TMK).
 

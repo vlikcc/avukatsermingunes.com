@@ -40,7 +40,7 @@ Kanun, davayı ihtarın sonuçsuz kalmasına bağlar; eş süre içinde ortak ko
 
 ## Evlilik birliğinin temelinden sarsılması (TMK m. 166)
 
-Uygulamada en sık başvurulan sebep budur. Evlilik birliği, ortak hayatı sürdürmeleri eşlerden beklenemeyecek derecede temelinden sarsılmışsa eşlerden her biri boşanma davası açabilir (TMK m. 166/1). Hangi olayların bu sonuca yol açtığını kanun saymaz; hâkim, kanıtları serbestçe takdir eder (TMK m. 184/4).
+Bu, kanundaki genel boşanma sebebidir. Evlilik birliği, ortak hayatı sürdürmeleri eşlerden beklenemeyecek derecede temelinden sarsılmışsa eşlerden her biri boşanma davası açabilir (TMK m. 166/1). Hangi olayların bu sonuca yol açtığını kanun saymaz; hâkim, kanıtları serbestçe takdir eder (TMK m. 184/4).
 
 Davacının kusuru daha ağırsa davalı, açılan davaya itiraz edebilir. Bu itiraz hakkın kötüye kullanılması niteliğindeyse ve evliliğin devamında davalı ile çocuklar için korunmaya değer bir yarar kalmamışsa hâkim yine de boşanmaya karar verebilir (TMK m. 166/2).
 
