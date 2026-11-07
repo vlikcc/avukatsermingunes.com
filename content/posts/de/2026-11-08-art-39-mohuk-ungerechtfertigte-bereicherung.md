@@ -1,5 +1,5 @@
 ---
-title: Art. 39 MÖHUK – Ungerechtfertigte Bereicherung, Fehlüberweisung
+title: Art. 39 MÖHUK – Ungerechtfertigte Bereicherung
 description: Art. 39 MÖHUK im Wortlaut: Welches Recht gilt bei Fehlüberweisung auf ein türkisches Konto oder Rückforderung bei unwirksamem Vertrag? Mit Verjährung.
 date: 2026-11-08
 slug: art-39-mohuk-ungerechtfertigte-bereicherung

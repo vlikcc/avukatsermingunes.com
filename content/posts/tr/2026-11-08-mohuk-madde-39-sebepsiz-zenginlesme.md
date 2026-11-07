@@ -1,6 +1,6 @@
 ---
 title: MÖHUK Madde 39 Sebepsiz Zenginleşme
-description: MÖHUK m. 39 metni: Yurt dışından yanlış hesaba gönderilen para veya geçersiz sözleşme için yapılan ödemenin iadesine hangi hukuk uygulanır, zamanaşımı ne kadar?
+description: MÖHUK m. 39 metni: Yanlış hesaba gönderilen paranın veya geçersiz sözleşmeye yapılan ödemenin iadesine hangi hukuk uygulanır, zamanaşımı nedir?
 date: 2026-11-08
 slug: mohuk-madde-39-sebepsiz-zenginlesme
 pair: 2026-11-08-mohuk-39

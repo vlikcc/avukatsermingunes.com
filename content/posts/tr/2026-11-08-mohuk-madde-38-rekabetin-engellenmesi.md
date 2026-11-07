@@ -1,6 +1,6 @@
 ---
 title: MÖHUK Madde 38 Rekabetin Engellenmesi
-description: MÖHUK m. 38 metni: Kartel ve rekabet ihlalinden doğan tazminat taleplerine hangi ülkenin hukuku uygulanır, yabancı hukukta tazminatın üst sınırı nedir?
+description: MÖHUK m. 38 metni: Kartel ve rekabet ihlalinden doğan tazminata hangi ülkenin hukuku uygulanır, yabancı hukukta tazminatın üst sınırı nedir?
 date: 2026-11-08
 slug: mohuk-madde-38-rekabetin-engellenmesi
 pair: 2026-11-08-mohuk-38

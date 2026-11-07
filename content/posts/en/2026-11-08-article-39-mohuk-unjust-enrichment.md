@@ -1,5 +1,5 @@
 ---
-title: Article 39 MÖHUK – Unjust enrichment and mistaken payments
+title: Article 39 MÖHUK – Unjust enrichment, wrong transfers
 description: Article 39 MÖHUK in full: which law applies to a mistaken transfer to a Turkish bank account or a refund under a void contract, and the limitation period.
 date: 2026-11-08
 slug: article-39-mohuk-unjust-enrichment

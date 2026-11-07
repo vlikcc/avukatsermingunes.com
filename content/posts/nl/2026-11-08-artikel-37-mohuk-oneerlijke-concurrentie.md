@@ -1,6 +1,6 @@
 ---
 title: Artikel 37 MÖHUK – Oneerlijke concurrentie met Turkije
-description: Artikel 37 MÖHUK volledig: welk recht geldt voor vorderingen uit oneerlijke concurrentie met een grensoverschrijdend element, het marktcriterium en de uitzondering.
+description: Artikel 37 MÖHUK volledig: welk recht geldt voor oneerlijke concurrentie met een grensoverschrijdend element, het marktcriterium en de uitzondering.
 date: 2026-11-08
 slug: artikel-37-mohuk-oneerlijke-concurrentie
 pair: 2026-11-08-mohuk-37

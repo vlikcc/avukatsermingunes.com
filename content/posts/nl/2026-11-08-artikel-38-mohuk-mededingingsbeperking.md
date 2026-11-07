@@ -1,6 +1,6 @@
 ---
 title: Artikel 38 MÖHUK – Mededingingsbeperking en kartelschade
-description: Artikel 38 MÖHUK volledig: welk recht geldt voor kartelschade met een Turkse link, en welk plafond geldt voor schadevergoeding als buitenlands recht wordt toegepast?
+description: Artikel 38 MÖHUK volledig: welk recht geldt voor kartelschade met een Turkse link, en welk plafond geldt als buitenlands recht wordt toegepast?
 date: 2026-11-08
 slug: artikel-38-mohuk-mededingingsbeperking
 pair: 2026-11-08-mohuk-38

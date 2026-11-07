@@ -1,5 +1,5 @@
 ---
-title: Art. 38 MÖHUK – Wettbewerbsbeschränkung und Kartellschaden
+title: Art. 38 MÖHUK – Wettbewerbsbeschränkung, Kartellschaden
 description: Art. 38 MÖHUK im Wortlaut: Welches Recht gilt für Kartellschäden mit Türkeibezug, und welche Obergrenze gilt für Schadensersatz nach ausländischem Recht?
 date: 2026-11-08
 slug: art-38-mohuk-wettbewerbsbeschraenkung-kartell
