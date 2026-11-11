@@ -12,9 +12,9 @@ Tanınmamış bir boşanma kararı; Türkiye’de yeniden evlenme, miras, nüfus
 
 ## İki yol: idari tanıma ve tanıma davası
 
-**İdari tanıma.** 5490 sayılı Nüfus Hizmetleri Kanununun 27/A maddesi, belirli şartlar altında yabancı boşanma kararlarının mahkemeye gidilmeden nüfus kayıtlarına işlenmesine imkân tanır. Bu yol yalnızca boşanmaya ilişkin kesinleşmiş kararlar için ve eşlerin birlikte başvurması hâlinde kullanılabilir. Başvuru Türkiye’deki nüfus müdürlüklerine veya yurt dışındaki dış temsilciliklere yapılır.
+**İdari tanıma.** 5490 sayılı Nüfus Hizmetleri Kanununun 27/A maddesi, belirli şartlar altında yabancı ülke makamlarınca verilen boşanma, evliliğin butlanı, iptali veya mevcut olup olmadığının tespiti kararlarının mahkemeye gidilmeden nüfus kütüğüne tescil edilmesine imkân tanır. Karar usulen kesinleşmiş olmalı, kararın verildiği devlet kanunlarına göre yetkili makamca verilmiş olmalı ve Türk kamu düzenine açıkça aykırı olmamalıdır. Başvuru kural olarak eşlerce birlikte yapılır; eşlerden biri ölmüş ya da yabancıysa Türk vatandaşı eş tek başına başvurabilir (5490 m. 27/A/1). Başvuru Türkiye’deki nüfus müdürlüklerine veya yurt dışındaki dış temsilciliklere yapılır.
 
-**Tanıma davası.** Eşlerin birlikte başvurması mümkün değilse veya idari tanımanın şartları oluşmuyorsa, Türkiye’de mahkemede tanıma davası açılır. Bu dava 5718 sayılı Milletlerarası Özel Hukuk ve Usul Hukuku Hakkında Kanun (MÖHUK) m. 50 ve devamında düzenlenmiştir. Boşanma kararlarının tanınmasında görevli mahkeme aile mahkemesidir.
+**Tanıma davası.** İdari yolun başvuru şartları sağlanamıyorsa (ör. eşler birlikte başvurmuyor ve tek başına başvuru istisnası da yoksa) veya tescil talebi reddedilmişse (5490 m. 27/A/3), Türkiye’de mahkemede tanıma davası açılır. Bu dava 5718 sayılı Milletlerarası Özel Hukuk ve Usul Hukuku Hakkında Kanun (MÖHUK) m. 50 ve devamında düzenlenmiştir. Boşanma kararlarının tanınmasında görevli mahkeme aile mahkemesidir.
 
 ## Yetkili mahkeme
 

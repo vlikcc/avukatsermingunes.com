@@ -12,9 +12,9 @@ Eine nicht anerkannte Scheidung kann in der Türkei zu Problemen führen, etwa b
 
 ## Zwei Wege: behördliche Anerkennung und Anerkennungsklage
 
-**Behördliche Anerkennung.** Art. 27/A des türkischen Personenstandsgesetzes Nr. 5490 ermöglicht es, ausländische Scheidungsentscheidungen unter bestimmten Voraussetzungen ohne Gerichtsverfahren in das Personenstandsregister einzutragen. Dieser Weg steht nur für rechtskräftige Scheidungsentscheidungen offen und setzt einen gemeinsamen Antrag beider Ehegatten voraus. Der Antrag wird bei einem Standesamt in der Türkei oder bei einer türkischen Auslandsvertretung gestellt.
+**Behördliche Anerkennung.** Art. 27/A des türkischen Personenstandsgesetzes Nr. 5490 ermöglicht es, ausländische Entscheidungen über Scheidung, Nichtigkeit oder Aufhebung einer Ehe oder über das Bestehen oder Nichtbestehen einer Ehe unter bestimmten Voraussetzungen ohne Gerichtsverfahren in das Personenstandsregister einzutragen. Die Entscheidung muss formell rechtskräftig sein, von der nach dem Recht des Entscheidungsstaates zuständigen Stelle stammen und darf der türkischen öffentlichen Ordnung nicht offensichtlich widersprechen. Grundsätzlich stellen beide Ehegatten den Antrag gemeinsam; ist ein Ehegatte verstorben oder Ausländer, kann der türkische Ehegatte den Antrag allein stellen (Art. 27/A Abs. 1 Gesetz Nr. 5490). Der Antrag wird bei einem Standesamt in der Türkei oder bei einer türkischen Auslandsvertretung gestellt.
 
-**Anerkennungsklage.** Ist ein gemeinsamer Antrag nicht möglich oder liegen die Voraussetzungen der behördlichen Anerkennung nicht vor, wird vor einem türkischen Gericht eine Anerkennungsklage erhoben. Maßgeblich sind Art. 50 ff. des Gesetzes Nr. 5718 über das internationale Privat- und Zivilverfahrensrecht (MÖHUK). Zuständig ist das Familiengericht.
+**Anerkennungsklage.** Liegen die Voraussetzungen der behördlichen Anerkennung nicht vor (etwa weil kein gemeinsamer Antrag gestellt wird und auch kein Fall des Alleinantrags gegeben ist) oder wurde die Eintragung abgelehnt (Art. 27/A Abs. 3 Gesetz Nr. 5490), wird vor einem türkischen Gericht eine Anerkennungsklage erhoben. Maßgeblich sind Art. 50 ff. des Gesetzes Nr. 5718 über das internationale Privat- und Zivilverfahrensrecht (MÖHUK). Zuständig ist das Familiengericht.
 
 ## Örtliche Zuständigkeit
 
