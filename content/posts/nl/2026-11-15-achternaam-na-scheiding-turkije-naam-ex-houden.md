@@ -1,6 +1,6 @@
 ---
 title: Achternaam na scheiding in Turkije: naam van ex houden?
-description: Achternaam na scheiding in het Turkse recht: wanneer krijgt u uw eigen naam terug, hoe houdt u de naam van uw ex-man, en hoe komt een Nederlandse scheiding in het Turkse register?
+description: Achternaam na scheiding in het Turkse recht: wanneer krijgt u uw eigen naam terug, hoe houdt u de naam van uw ex-man, wat geldt bij een scheiding in Nederland?
 date: 2026-11-15
 slug: achternaam-na-scheiding-turkije-naam-ex-houden
 pair: 2026-11-15-bosanma-soyadi
