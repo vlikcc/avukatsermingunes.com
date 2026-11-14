@@ -1,6 +1,6 @@
 ---
 title: Articles 9 and 10 TMK – Capacity to act and its conditions
-description: Articles 9 and 10 Turkish Civil Code: what capacity to act means and its conditions, discernment, majority, not being under interdiction, and powers of attorney from abroad.
+description: Articles 9 and 10 Turkish Civil Code: capacity to act and its conditions – discernment, majority, no interdiction – and powers of attorney from abroad.
 date: 2026-11-15
 slug: article-9-10-turkish-civil-code-capacity-to-act
 pair: 2026-11-15-tmk-9-10

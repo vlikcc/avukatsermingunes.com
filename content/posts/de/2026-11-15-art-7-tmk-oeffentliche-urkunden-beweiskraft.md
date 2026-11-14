@@ -1,6 +1,6 @@
 ---
 title: Art. 7 TMK – Beweiskraft öffentlicher Register und Urkunden
-description: Art. 7 türkisches Zivilgesetzbuch: Personenstandsregister, Grundbuch und notarielle Urkunden gelten als richtig, der Gegenbeweis ist möglich. Bezug zu Art. 204 HMK.
+description: Art. 7 türkisches Zivilgesetzbuch: Personenstandsregister, Grundbuch und notarielle Urkunden gelten als richtig, Gegenbeweis möglich. Bezug zu Art. 204 HMK.
 date: 2026-11-15
 slug: art-7-tmk-oeffentliche-urkunden-beweiskraft
 pair: 2026-11-15-tmk-7

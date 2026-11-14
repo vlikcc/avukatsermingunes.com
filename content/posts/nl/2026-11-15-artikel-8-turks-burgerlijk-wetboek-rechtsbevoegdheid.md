@@ -1,6 +1,6 @@
 ---
 title: Artikel 8 TMK – Rechtsbevoegdheid in het Turkse recht
-description: Artikel 8 Turks Burgerlijk Wetboek: ieder mens is rechtsbevoegd. Begin en einde, verschil met handelingsbekwaamheid, ongeboren kind als erfgenaam, kind geboren in Nederland.
+description: Artikel 8 Turks Burgerlijk Wetboek: ieder mens is rechtsbevoegd. Begin en einde, verschil met handelingsbekwaamheid en het ongeboren kind als erfgenaam.
 date: 2026-11-15
 slug: artikel-8-turks-burgerlijk-wetboek-rechtsbevoegdheid
 pair: 2026-11-15-tmk-8

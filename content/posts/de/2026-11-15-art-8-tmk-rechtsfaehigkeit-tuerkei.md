@@ -1,6 +1,6 @@
 ---
 title: Art. 8 TMK – Rechtsfähigkeit im türkischen Recht
-description: Art. 8 türkisches Zivilgesetzbuch: Jeder Mensch ist rechtsfähig. Beginn und Ende, Unterschied zur Geschäftsfähigkeit, Erbrecht des ungeborenen Kindes, Kinder im Ausland.
+description: Art. 8 türkisches Zivilgesetzbuch: Jeder Mensch ist rechtsfähig. Beginn und Ende, Abgrenzung zur Geschäftsfähigkeit, Erbrecht des ungeborenen Kindes.
 date: 2026-11-15
 slug: art-8-tmk-rechtsfaehigkeit-tuerkei
 pair: 2026-11-15-tmk-8

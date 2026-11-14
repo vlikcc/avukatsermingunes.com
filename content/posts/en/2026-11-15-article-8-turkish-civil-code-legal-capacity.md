@@ -1,6 +1,6 @@
 ---
 title: Article 8 TMK – Legal capacity under Turkish law
-description: Article 8 Turkish Civil Code: every human being has legal capacity. When it begins, how it differs from capacity to act, unborn children as heirs, children born abroad.
+description: Article 8 Turkish Civil Code: every human being has legal capacity. When it begins, how it differs from capacity to act, and unborn children as heirs.
 date: 2026-11-15
 slug: article-8-turkish-civil-code-legal-capacity
 pair: 2026-11-15-tmk-8

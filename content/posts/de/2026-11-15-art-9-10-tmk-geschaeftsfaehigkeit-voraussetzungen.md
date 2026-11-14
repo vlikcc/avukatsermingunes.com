@@ -1,6 +1,6 @@
 ---
 title: Art. 9 und 10 TMK – Geschäftsfähigkeit und Voraussetzungen
-description: Art. 9 und 10 türkisches Zivilgesetzbuch: Was ist Geschäftsfähigkeit, welche Voraussetzungen gelten? Urteilsfähigkeit, Volljährigkeit, Entmündigung, Vollmacht aus dem Ausland.
+description: Art. 9 und 10 türkisches Zivilgesetzbuch: Geschäftsfähigkeit und ihre Voraussetzungen – Urteilsfähigkeit, Volljährigkeit, keine Beschränkung, Vollmacht.
 date: 2026-11-15
 slug: art-9-10-tmk-geschaeftsfaehigkeit-voraussetzungen
 pair: 2026-11-15-tmk-9-10

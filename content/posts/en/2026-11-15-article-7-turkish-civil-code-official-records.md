@@ -1,6 +1,6 @@
 ---
 title: Article 7 TMK – Evidential value of official records
-description: Article 7 Turkish Civil Code: civil registry, land registry and notarial deeds are presumed correct but can be rebutted. Link to Article 204 HMK and correcting records.
+description: Article 7 Turkish Civil Code: civil and land registry entries and notarial deeds are presumed correct but can be rebutted. Link to Article 204 HMK.
 date: 2026-11-15
 slug: article-7-turkish-civil-code-official-records
 pair: 2026-11-15-tmk-7

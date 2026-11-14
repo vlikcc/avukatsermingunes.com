@@ -1,6 +1,6 @@
 ---
 title: Artikel 9 en 10 TMK – Handelingsbekwaamheid en voorwaarden
-description: Artikel 9 en 10 Turks Burgerlijk Wetboek: wat is handelingsbekwaamheid en welke voorwaarden gelden? Oordeelsvermogen, meerderjarigheid, curatele en volmacht vanuit het buitenland.
+description: Artikel 9 en 10 Turks Burgerlijk Wetboek: handelingsbekwaamheid en voorwaarden – oordeelsvermogen, meerderjarigheid, geen curatele – en volmachten.
 date: 2026-11-15
 slug: artikel-9-10-turks-burgerlijk-wetboek-handelingsbekwaamheid
 pair: 2026-11-15-tmk-9-10
