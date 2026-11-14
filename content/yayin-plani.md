@@ -6,7 +6,7 @@ Yayın rutininin konu sırası ve kayıtları. Kurallar: `content/RUTIN.md`.
 
 Günde beş mevzuat yazısı. Kanunlar bu sırayla, her kanunda madde numarası sırasıyla ve bütün maddeleriyle işlenir. Rutin, aşağıdaki sırada “Yayınlananlar” listesinde olmayan ilk maddelerden başlar; yayınlanmış ya da `mülga – yazılmadı` diye kaydedilmiş maddeler atlanır. Madde numaraları ve başlıkları her seferinde güncel metinden doğrulanır. Sırayı değiştirmek için bu bölümü düzenleyin.
 
-1. **5718 sayılı Milletlerarası Özel Hukuk ve Usul Hukuku Hakkında Kanun (MÖHUK)**: m. 1’den m. 66’ya kadar. Madde dosyaları: `content/kanunlar/mohuk/`. (m. 1–66 yayınlandı; TMK m. 1–6 yayınlandı, sıra TMK m. 7’de.)
+1. **5718 sayılı Milletlerarası Özel Hukuk ve Usul Hukuku Hakkında Kanun (MÖHUK)**: m. 1’den m. 66’ya kadar. Madde dosyaları: `content/kanunlar/mohuk/`. (m. 1–66 yayınlandı; TMK m. 1–12 yayınlandı, sıra TMK m. 13’te.)
 2. **4721 sayılı Türk Medeni Kanunu (TMK)**: m. 1’den m. 1030’a kadar. Madde dosyaları: `content/kanunlar/tmk/`.
 3. **5237 sayılı Türk Ceza Kanunu (TCK)**: m. 1’den m. 345’e kadar. Madde dosyası yok; metin mevzuat.gov.tr’den alınır.
 4. Bunlar bittikten sonra, hedef okuyucuyu ilgilendiren tek tek maddeler:
