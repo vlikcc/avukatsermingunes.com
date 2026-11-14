@@ -43,7 +43,7 @@ On sekiz yaşını beklemeden erginliğe ulaşmanın üçüncü yolu mahkeme kar
 
 Türk vatandaşının erginliği Türk hukukuna göre belirlenir, çünkü hak ve fiil ehliyeti kişinin millî hukukuna tabidir (MÖHUK m. 9/1). Kişinin millî hukukuna göre kazandığı erginlik, vatandaşlığının değişmesiyle sona ermez (MÖHUK m. 9/3). Türk vatandaşlığından sonradan çıkmış biri, Türk hukukuna göre kazandığı erginliği korur.
 
-Pratikte en sık karşılaşılan durum şudur: Türkiye’de mirasçı olan ya da adına tapu bulunan bir genç on sekiz yaşını doldurduğunda, artık vekâletname, tapu ve miras işlemlerini anne babası değil kendisi yapar veya kendisi vekâlet verir. Velinin küçük adına verdiği bir vekâletnamenin erginlikten sonra ne ölçüde kullanılabileceği konusunda kanunda açık bir hüküm yoktur; yazarın değerlendirmesine göre yeni işlemler için gencin kendisinin vekâlet vermesi en az risk taşıyan yoldur. Vekâletname için: [Yurt dışından vekâletname](/yayinlar/yurt-disindan-vekaletname).
+Pratikte en sık karşılaşılan durum şudur: Türkiye’de mirasçı olan ya da adına tapu bulunan bir genç on sekiz yaşını doldurduğunda, artık vekâletname, tapu ve miras işlemlerini anne babası değil kendisi yapar veya kendisi vekâlet verir. Velinin küçük adına verdiği bir vekâletnamenin erginlikten sonra ne ölçüde kullanılabileceği konusunda kanunda açık bir hüküm yoktur; yazarın değerlendirmesine göre yeni işlemler için gencin kendisinin vekâlet vermesi en az risk taşıyan yoldur. Vekâletname için: [Almanya’dan Türkiye’deki işlemler için vekâletname](/yayinlar/almanyadan-turkiye-icin-vekaletname).
 
 ## Sık sorulan sorular
 
