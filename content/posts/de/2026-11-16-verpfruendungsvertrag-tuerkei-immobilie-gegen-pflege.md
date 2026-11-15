@@ -1,6 +1,6 @@
 ---
 title: Verpfründungsvertrag Türkei: Immobilie gegen Pflege
-description: Immobilie in der Türkei gegen Pflege übertragen: Form des Verpfründungsvertrags, Zeitpunkt der Übertragung im Grundbuch, Kündigung, Pflichtteil und Scheingeschäft.
+description: Immobilie in der Türkei gegen Pflege übertragen: Form des Verpfründungsvertrags, Zeitpunkt der Übertragung, Kündigung, Pflichtteil und Scheingeschäft.
 date: 2026-11-16
 slug: verpfruendungsvertrag-tuerkei-immobilie-gegen-pflege
 pair: 2026-11-16-olunceye-kadar-bakma
