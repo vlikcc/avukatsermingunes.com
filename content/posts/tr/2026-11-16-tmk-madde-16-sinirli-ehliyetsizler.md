@@ -1,6 +1,6 @@
 ---
 title: TMK Madde 16 Ayırt Etme Gücüne Sahip Küçükler ve Kısıtlılar
-description: Medeni Kanun 16. madde: ayırt etme gücüne sahip küçük ve kısıtlı yasal temsilcinin rızasıyla borç altına girer; karşılıksız kazanma, kişiye bağlı haklar, haksız fiil.
+description: Medeni Kanun 16. madde: ayırt etme gücüne sahip küçük ve kısıtlı, yasal temsilcinin rızasıyla borç altına girer. İstisnalar ve haksız fiil sorumluluğu.
 date: 2026-11-16
 slug: tmk-madde-16-sinirli-ehliyetsizler
 pair: 2026-11-16-tmk-16

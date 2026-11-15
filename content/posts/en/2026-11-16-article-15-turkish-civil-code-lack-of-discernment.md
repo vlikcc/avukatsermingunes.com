@@ -1,6 +1,6 @@
 ---
 title: Article 15 TMK – Effect of lacking discernment
-description: Article 15 Turkish Civil Code: acts of a person without capacity of discernment have no legal effect. Scope, statutory exceptions and equitable liability under TBK 65.
+description: Article 15 Turkish Civil Code: acts of a person without capacity of discernment have no legal effect. Scope, exceptions and equitable liability (TBK 65).
 date: 2026-11-16
 slug: article-15-turkish-civil-code-lack-of-discernment
 pair: 2026-11-16-tmk-15

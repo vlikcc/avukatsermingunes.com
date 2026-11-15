@@ -1,6 +1,6 @@
 ---
 title: Artikel 17 TMK – Bloedverwantschap en graad
-description: Artikel 17 Turks Burgerlijk Wetboek: de graad van bloedverwantschap is het aantal geboorten tussen verwanten. Berekening, huwelijksverboden, onderhoud en verschoning.
+description: Artikel 17 Turks Burgerlijk Wetboek: de graad van bloedverwantschap is het aantal geboorten. Berekening, huwelijksverboden, onderhoud en verschoning.
 date: 2026-11-16
 slug: artikel-17-turks-burgerlijk-wetboek-bloedverwantschap-graad
 pair: 2026-11-16-tmk-17

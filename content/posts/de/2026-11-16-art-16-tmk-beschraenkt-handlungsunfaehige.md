@@ -1,6 +1,6 @@
 ---
 title: Art. 16 TMK – Urteilsfähige Minderjährige und Entmündigte
-description: Art. 16 türkisches Zivilgesetzbuch: urteilsfähige Minderjährige und Entmündigte verpflichten sich nur mit Zustimmung des Vertreters; Ausnahmen, Haftung für Delikte.
+description: Art. 16 türkisches Zivilgesetzbuch: Urteilsfähige Minderjährige und Entmündigte brauchen die Zustimmung des Vertreters. Ausnahmen und Haftung für Delikte.
 date: 2026-11-16
 slug: art-16-tmk-beschraenkt-handlungsunfaehige
 pair: 2026-11-16-tmk-16

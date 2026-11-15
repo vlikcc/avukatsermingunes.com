@@ -1,6 +1,6 @@
 ---
 title: Artikel 15 TMK – Gevolgen van ontbrekend oordeelsvermogen
-description: Artikel 15 Turks Burgerlijk Wetboek: handelingen zonder oordeelsvermogen hebben geen rechtsgevolg. Reikwijdte, wettelijke uitzonderingen en billijkheid (art. 65 TBK).
+description: Artikel 15 Turks Burgerlijk Wetboek: handelingen zonder oordeelsvermogen hebben geen rechtsgevolg. Reikwijdte, uitzonderingen en billijkheid (art. 65 TBK).
 date: 2026-11-16
 slug: artikel-15-turks-burgerlijk-wetboek-geen-oordeelsvermogen
 pair: 2026-11-16-tmk-15

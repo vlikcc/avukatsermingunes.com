@@ -1,6 +1,6 @@
 ---
 title: Art. 17 TMK – Blutsverwandtschaft und ihr Grad
-description: Art. 17 türkisches Zivilgesetzbuch: Der Grad der Blutsverwandtschaft richtet sich nach der Zahl der Geburten. Berechnung, Eheverbote, Unterhalt und Zeugnisverweigerung.
+description: Art. 17 türkisches Zivilgesetzbuch: Der Grad der Blutsverwandtschaft folgt der Zahl der Geburten. Berechnung, Eheverbote, Unterhalt, Zeugnisverweigerung.
 date: 2026-11-16
 slug: art-17-tmk-blutsverwandtschaft-grad
 pair: 2026-11-16-tmk-17

@@ -1,6 +1,6 @@
 ---
 title: Art. 14 TMK – Handlungsunfähigkeit im türkischen Recht
-description: Art. 14 türkisches Zivilgesetzbuch: Urteilsunfähige, Minderjährige und Entmündigte sind nicht handlungsfähig. Volle und beschränkte Handlungsunfähigkeit, Vertretung.
+description: Art. 14 türkisches Zivilgesetzbuch: Urteilsunfähige, Minderjährige und Entmündigte sind nicht handlungsfähig. Volle und beschränkte Unfähigkeit, Vertretung.
 date: 2026-11-16
 slug: art-14-tmk-handlungsunfaehigkeit
 pair: 2026-11-16-tmk-14

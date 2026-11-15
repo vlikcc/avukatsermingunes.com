@@ -1,6 +1,6 @@
 ---
 title: Article 14 TMK – Lack of capacity to act
-description: Article 14 Turkish Civil Code: persons without discernment, minors and persons under interdiction lack capacity to act. Full vs limited incapacity and representation.
+description: Article 14 Turkish Civil Code: persons without discernment, minors and persons under interdiction lack capacity to act. Full vs limited incapacity explained.
 date: 2026-11-16
 slug: article-14-turkish-civil-code-incapacity-to-act
 pair: 2026-11-16-tmk-14

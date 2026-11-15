@@ -1,6 +1,6 @@
 ---
 title: TMK Madde 17 Kan Hısımlığı
-description: Medeni Kanun 17. madde: kan hısımlığının derecesi doğum sayısıyla belirlenir; üstsoy-altsoy ve yansoy hısımlığı. Derece hesabı, evlenme yasağı, nafaka ve tanıklık.
+description: Medeni Kanun 17. madde: kan hısımlığının derecesi doğum sayısıyla belirlenir. Derece hesabı, evlenme yasağı, yardım nafakası ve tanıklıktan çekinme.
 date: 2026-11-16
 slug: tmk-madde-17-kan-hisimligi-derece-hesabi
 pair: 2026-11-16-tmk-17

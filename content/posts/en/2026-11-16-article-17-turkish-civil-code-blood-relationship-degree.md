@@ -1,6 +1,6 @@
 ---
 title: Article 17 TMK – Blood relationship and its degree
-description: Article 17 Turkish Civil Code: degree of blood relationship is the number of births linking relatives. How to count, marriage bans, family support and witness privilege.
+description: Article 17 Turkish Civil Code: the degree of blood relationship is the number of births between relatives. How to count it, marriage bans, support, witnesses.
 date: 2026-11-16
 slug: article-17-turkish-civil-code-blood-relationship-degree
 pair: 2026-11-16-tmk-17

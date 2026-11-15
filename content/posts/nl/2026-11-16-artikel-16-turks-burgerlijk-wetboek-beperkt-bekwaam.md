@@ -1,6 +1,6 @@
 ---
 title: Artikel 16 TMK – Beperkt handelingsonbekwamen
-description: Artikel 16 Turks Burgerlijk Wetboek: minderjarigen en curandi met oordeelsvermogen hebben toestemming nodig om zich te verbinden; uitzonderingen en aansprakelijkheid.
+description: Artikel 16 Turks Burgerlijk Wetboek: minderjarigen en curandi met oordeelsvermogen hebben toestemming nodig. Uitzonderingen en aansprakelijkheid.
 date: 2026-11-16
 slug: artikel-16-turks-burgerlijk-wetboek-beperkt-bekwaam
 pair: 2026-11-16-tmk-16

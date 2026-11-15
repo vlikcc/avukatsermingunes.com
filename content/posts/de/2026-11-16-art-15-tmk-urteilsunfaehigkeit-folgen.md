@@ -1,6 +1,6 @@
 ---
 title: Art. 15 TMK – Folgen der Urteilsunfähigkeit
-description: Art. 15 türkisches Zivilgesetzbuch: Handlungen Urteilsunfähiger haben keine rechtliche Wirkung. Reichweite, gesetzliche Ausnahmen und Billigkeitshaftung nach Art. 65 TBK.
+description: Art. 15 türkisches Zivilgesetzbuch: Handlungen Urteilsunfähiger sind ohne rechtliche Wirkung. Reichweite, Ausnahmen und Billigkeitshaftung nach Art. 65 TBK.
 date: 2026-11-16
 slug: art-15-tmk-urteilsunfaehigkeit-folgen
 pair: 2026-11-16-tmk-15

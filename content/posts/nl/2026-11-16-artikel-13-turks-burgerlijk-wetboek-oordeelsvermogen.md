@@ -1,6 +1,6 @@
 ---
 title: Artikel 13 TMK – Oordeelsvermogen in Turks recht
-description: Artikel 13 Turks Burgerlijk Wetboek omschrijft oordeelsvermogen: leeftijd, geestesziekte, dronkenschap. Gevolgen voor testament, overdracht van grond en huwelijk.
+description: Artikel 13 Turks Burgerlijk Wetboek omschrijft oordeelsvermogen: leeftijd, geestesziekte, dronkenschap. Gevolgen voor testament, overdracht en huwelijk.
 date: 2026-11-16
 slug: artikel-13-turks-burgerlijk-wetboek-oordeelsvermogen
 pair: 2026-11-16-tmk-13
