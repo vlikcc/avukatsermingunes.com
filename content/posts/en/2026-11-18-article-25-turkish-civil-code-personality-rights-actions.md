@@ -1,6 +1,6 @@
 ---
 title: Article 25 TMK – Actions for personality rights
-description: Article 25 Turkish Civil Code: injunction, removal, declaration, damages and non-pecuniary damages, transfer to heirs, and which Turkish court to sue in from abroad.
+description: Article 25 Turkish Civil Code: injunction, removal, declaration, damages and non-pecuniary damages, heirs, and which Turkish court to sue in from abroad.
 date: 2026-11-18
 slug: article-25-turkish-civil-code-personality-rights-actions
 pair: 2026-11-18-tmk-25
