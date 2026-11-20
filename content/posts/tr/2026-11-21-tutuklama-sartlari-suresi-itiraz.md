@@ -98,7 +98,7 @@ Adli kontrolde geçen süre kural olarak cezadan mahsup edilmez. Konutunu terk e
 
 CMK’da yurt dışında yaşamayı tek başına tutuklama nedeni sayan bir hüküm yoktur; kaçma şüphesi m. 100/2-a’ya göre “somut olgulara” dayanmalıdır. Yurt dışında yerleşik olmanın bu anlamda bir somut olgu sayılıp sayılmayacağı kanunda açıkça düzenlenmemiştir. Yazarın değerlendirmesine göre bu, her dosyada kişinin soruşturmadaki tutumu (ör. ifadeye ve duruşmaya kendisinin gelmesi) ile birlikte değerlendirilmesi gereken bir sorudur; yukarıdaki AYM kararı da bu yönde bir tutuma ağırlık vermiştir.
 
-Uygulamada sık karşılaşılan sonuç tutuklama değil, **yurt dışına çıkış yasağı** şeklindeki adli kontroldür (m. 109/3-a). Bu durumda Almanya’ya ya da Hollanda’ya dönüş, yasak kaldırılana kadar mümkün olmaz. Adli kontrole ilişkin kararlara da itiraz edilebilir (m. 111/2).
+Tutuklama yerine verilebilecek adli kontrol yükümlülüklerinden biri **yurt dışına çıkış yasağıdır** (m. 109/3-a). Bu durumda Almanya’ya ya da Hollanda’ya dönüş, yasak kaldırılana kadar mümkün olmaz. Adli kontrole ilişkin kararlara da itiraz edilebilir (m. 111/2).
 
 Serbest bırakılan şüpheli veya sanık adresini ve varsa telefon numarasını bildirmek, adres değişikliklerini de soruşturma ya da kovuşturma bitene kadar haber vermek zorundadır; bildirmezse eski adrese tebligat yapılır (m. 106). Yurt dışındaki adresiniz değiştiyse bunu dosyaya bildirmek önemlidir.
 

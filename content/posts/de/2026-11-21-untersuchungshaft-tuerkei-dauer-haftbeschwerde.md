@@ -106,7 +106,7 @@ Die Zeit unter gerichtlicher Kontrolle wird grundsätzlich nicht auf die Strafe 
 
 Die CMK enthält keine Vorschrift, nach der ein Wohnsitz im Ausland für sich allein ein Haftgrund ist; Fluchtgefahr muss sich nach Art. 100 Abs. 2 Buchst. a auf „konkrete Tatsachen“ stützen. Ob ein Wohnsitz im Ausland eine solche Tatsache ist, regelt das Gesetz nicht ausdrücklich. Nach Einschätzung der Autorin ist das in jedem Verfahren zusammen mit dem Verhalten der Person im Verfahren zu beurteilen (etwa ob sie selbst zur Vernehmung und zur Verhandlung erschienen ist); auch das oben genannte AYM-Urteil hat diesem Verhalten Gewicht beigemessen.
 
-In der Praxis ist häufiger als Haft ein **Ausreiseverbot** als gerichtliche Kontrolle (Art. 109 Abs. 3 Buchst. a). Dann ist die Rückkehr nach Deutschland erst nach Aufhebung des Verbots möglich. Gegen Entscheidungen über die gerichtliche Kontrolle ist die Beschwerde zulässig (Art. 111 Abs. 2).
+Eine der Auflagen, die statt Haft angeordnet werden können, ist das **Ausreiseverbot** (Art. 109 Abs. 3 Buchst. a). Dann ist die Rückkehr nach Deutschland erst nach Aufhebung des Verbots möglich. Gegen Entscheidungen über die gerichtliche Kontrolle ist die Beschwerde zulässig (Art. 111 Abs. 2).
 
 Wer freigelassen wird, muss seine Anschrift und gegebenenfalls Telefonnummer angeben und jede Änderung bis zum Abschluss des Verfahrens mitteilen; sonst wird an die alte Adresse zugestellt (Art. 106). Ändert sich Ihre Adresse in Deutschland, sollten Sie sie dem Gericht mitteilen.
 
@@ -128,7 +128,7 @@ Außerhalb der Großen Strafkammer ein Jahr plus sechs Monate, bei der Großen S
 
 ### Kann ein Wohnsitz in Deutschland zu Untersuchungshaft führen?
 
-Das Gesetz nennt den Auslandswohnsitz nicht als Haftgrund; Fluchtgefahr erfordert konkrete Tatsachen (Art. 100 Abs. 2 Buchst. a). Häufiger ist ein Ausreiseverbot (Art. 109 Abs. 3 Buchst. a).
+Das Gesetz nennt den Auslandswohnsitz nicht als Haftgrund; Fluchtgefahr erfordert konkrete Tatsachen (Art. 100 Abs. 2 Buchst. a). Statt Haft kann aber ein Ausreiseverbot angeordnet werden (Art. 109 Abs. 3 Buchst. a).
 
 ## Quellen
 

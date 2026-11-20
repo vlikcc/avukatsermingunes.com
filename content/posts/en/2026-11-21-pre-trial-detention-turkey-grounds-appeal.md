@@ -106,7 +106,7 @@ Time spent under judicial control is in principle not deducted from the sentence
 
 The CMK has no rule making residence abroad a ground for detention in itself; flight risk must rest on “concrete facts” under Article 100(2)(a). Whether residence abroad counts as such a fact is not expressly regulated. In the author’s assessment, this has to be weighed in each case together with how the person has acted in the proceedings, for example whether they came to their interview and hearing on their own; the Constitutional Court judgment above also gave weight to that conduct.
 
-In practice, a **travel ban** under judicial control (Article 109(3)(a)) is more common than detention. You then cannot return to Germany or the Netherlands until it is lifted. An objection lies against decisions on judicial control (Article 111(2)).
+One of the judicial control obligations that can be imposed instead of detention is a **travel ban** (Article 109(3)(a)). You then cannot return to Germany or the Netherlands until it is lifted. An objection lies against decisions on judicial control (Article 111(2)).
 
 A person who is released must give their address and any telephone number and report every change until the proceedings end; otherwise documents are served at the old address (Article 106). If your address abroad changes, tell the court.
 
@@ -128,7 +128,7 @@ Outside the high criminal court, one year plus six months; in high criminal cour
 
 ### Can living abroad lead to detention in Turkey?
 
-The law does not list residence abroad as a ground; flight risk requires concrete facts (Article 100(2)(a)). A travel ban is more common (Article 109(3)(a)).
+The law does not list residence abroad as a ground; flight risk requires concrete facts (Article 100(2)(a)). Instead of detention, a travel ban may be imposed (Article 109(3)(a)).
 
 ## Sources
 

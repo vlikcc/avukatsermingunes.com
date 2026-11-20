@@ -106,7 +106,7 @@ Tijd onder gerechtelijk toezicht gaat in beginsel niet van de straf af. Bij huis
 
 De CMK bevat geen regel die wonen in het buitenland op zichzelf tot grond voor hechtenis maakt; vluchtgevaar moet volgens art. 100 lid 2 onder a op “concrete feiten” berusten. Of een woonplaats in het buitenland zo’n feit is, regelt de wet niet uitdrukkelijk. Naar het oordeel van de auteur moet dat in elke zaak worden gewogen samen met de houding van de betrokkene in de procedure, bijvoorbeeld of hij zelf naar het verhoor en de zitting is gekomen; ook de hierboven besproken uitspraak van het Grondwettelijk Hof gaf aan die houding gewicht.
 
-In de praktijk komt een **uitreisverbod** als gerechtelijk toezicht (art. 109 lid 3 onder a) vaker voor dan hechtenis. U kunt dan pas naar Nederland terug als het verbod is opgeheven. Tegen beslissingen over gerechtelijk toezicht staat bezwaar open (art. 111 lid 2).
+Een van de verplichtingen die in plaats van hechtenis kunnen worden opgelegd, is een **uitreisverbod** (art. 109 lid 3 onder a). U kunt dan pas naar Nederland terug als het verbod is opgeheven. Tegen beslissingen over gerechtelijk toezicht staat bezwaar open (art. 111 lid 2).
 
 Wie wordt vrijgelaten, moet zijn adres en eventueel telefoonnummer opgeven en elke wijziging melden tot het einde van de procedure; anders wordt aan het oude adres betekend (art. 106). Verandert uw adres in Nederland, geef dat dan door aan de rechter.
 
@@ -128,7 +128,7 @@ Buiten de zware strafkamer een jaar plus zes maanden; bij de zware strafkamer tw
 
 ### Kan wonen in Nederland tot hechtenis in Turkije leiden?
 
-De wet noemt wonen in het buitenland niet als grond; vluchtgevaar vereist concrete feiten (art. 100 lid 2 onder a). Een uitreisverbod komt vaker voor (art. 109 lid 3 onder a).
+De wet noemt wonen in het buitenland niet als grond; vluchtgevaar vereist concrete feiten (art. 100 lid 2 onder a). In plaats van hechtenis kan wel een uitreisverbod worden opgelegd (art. 109 lid 3 onder a).
 
 ## Bronnen
 
