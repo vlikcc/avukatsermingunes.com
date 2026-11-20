@@ -1,6 +1,6 @@
 ---
-title: TMK Madde 39 Nüfus Kaydının Düzeltilmesi: Mahkeme Kararı
-description: TMK 39. madde: nüfus kaydı mahkeme kararı olmadan düzeltilemez. Maddî hata istisnası, nüfus kaydının düzeltilmesi davası, görevli ve yetkili mahkeme.
+title: TMK Madde 39 Nüfus Kaydının Düzeltilmesi ve Maddî Hata
+description: TMK 39. madde: nüfus kaydı mahkeme kararı olmadan düzeltilemez. Maddî hata istisnası, nüfus kaydının düzeltilmesi davası ve görevli mahkeme.
 date: 2026-11-21
 slug: tmk-madde-39-nufus-kaydinin-duzeltilmesi
 pair: 2026-11-21-tmk-39

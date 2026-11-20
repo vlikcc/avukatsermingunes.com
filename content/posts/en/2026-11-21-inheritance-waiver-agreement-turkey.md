@@ -1,6 +1,6 @@
 ---
 title: Inheritance waiver agreement in Turkey: form and effects
-description: Waiving inheritance rights under Turkish law: official form with two witnesses, effect on your children, cancellation, and signing a waiver from Germany or abroad.
+description: Waiving inheritance rights under Turkish law: official form with two witnesses, effect on your children, cancellation, and signing a waiver in Germany.
 date: 2026-11-21
 slug: inheritance-waiver-agreement-turkey
 pair: 2026-11-21-mirastan-feragat
@@ -64,7 +64,7 @@ How these rules apply to an inheritance waiver is disputed. What follows reflect
 
 - In the author's view, Articles 546 and 547 apply to all inheritance contracts and therefore to the waiver too. Agreeing the cancellation in official form as well avoids later disputes about proof and form.
 - It is accepted that the person waiving can also rely on defects in their own consent, such as fraud; opinions differ on the time limit and on whether this can be raised during the testator's lifetime or only after the death.
-- If the agreed consideration was never paid, withdrawal under Article 547 comes into question.
+- If the agreed consideration was never paid, the person who waived may be able to withdraw under Article 547.
 
 ## If you live in Germany or the Netherlands
 
@@ -72,7 +72,7 @@ Under Turkish private international law, succession is governed by the deceased'
 
 Abroad, notarial functions are carried out by consuls (Article 191 of the Notaries Law No. 1512), and Article 193 extends the provision on wills (Article 69) to consuls. In the author's view this means a waiver can be drawn up in official form at a Turkish consulate; no separate provision says so expressly. Ask the consulate responsible for you about appointments and documents.
 
-Whether an agreement signed before a German notary is recognised in Turkey is also disputed. In the author's view, an agreement that meets the form rules of the country where it was made should be formally valid under Articles 7 and 20(4) MÖHUK; however, no confirming decision of the Court of Cassation (Yargıtay) was checked for this article, and how a land registry or court in Turkey will treat the document is not certain. Under German law the waiver (Erbverzicht) is governed by § 2346 of the German Civil Code (BGB) and requires a notarial deed (§ 2348 BGB). German and Dutch courts decide under their own rules which law applies to the estate; for questions of German or Dutch law, consult a lawyer or notary admitted there.
+Whether an agreement signed before a German or Dutch notary is recognised in Turkey is also disputed. In the author's view, an agreement that meets the form rules of the country where it was made should be formally valid under Articles 7 and 20(4) MÖHUK; however, no confirming decision of the Court of Cassation (Yargıtay) was checked for this article, and how a land registry or court in Turkey will treat the document is not certain. Under German law the waiver (Erbverzicht) is governed by § 2346 of the German Civil Code (BGB) and requires a notarial deed (§ 2348 BGB). Dutch law is not covered in this article. German and Dutch courts decide under their own rules which law applies to the estate; for questions of German or Dutch law, consult a lawyer or notary admitted there.
 
 ## Frequently asked questions
 

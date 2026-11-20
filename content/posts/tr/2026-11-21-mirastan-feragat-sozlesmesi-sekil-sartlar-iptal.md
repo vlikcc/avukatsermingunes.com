@@ -1,6 +1,6 @@
 ---
 title: Mirastan feragat sözleşmesi: şartlar, şekil ve iptal
-description: Mirastan feragat sözleşmesi nasıl yapılır? Resmî şekil şartı, karşılıklı feragatin altsoya etkisi, iptal ve Almanya’dan yapılacak sözleşmeler için TMK m. 528 kuralları.
+description: Mirastan feragat sözleşmesi nasıl yapılır? TMK m. 528’e göre resmî şekil şartı, karşılıklı feragatin altsoya etkisi, iptal ve yurt dışında yapılan sözleşmeler.
 date: 2026-11-21
 slug: mirastan-feragat-sozlesmesi-sekil-sartlar-iptal
 pair: 2026-11-21-mirastan-feragat
@@ -72,7 +72,7 @@ Türk hukukuna göre miras, ölenin millî hukukuna tabidir; Türkiye’deki ta�
 
 Yurt dışında noterlik işlerini konsoloslar görür (Noterlik Kanunu m. 191) ve m. 193 vasiyetnamelerle ilgili m. 69’u konsoloslara da uygular. Yazarın değerlendirmesine göre bu hükümlerden, mirastan feragat sözleşmesinin Türk konsolosluğunda resmî şekilde yapılabileceği sonucu çıkar; kanunda bunu açıkça söyleyen ayrı bir hüküm yoktur. İşlemin hangi randevu ve belgelerle yapıldığını bağlı olduğunuz konsolosluğa sorun.
 
-Almanya’daki bir notere yaptırılan sözleşmenin Türkiye’de geçerli sayılıp sayılmayacağı da tartışmalıdır. Yazarın değerlendirmesine göre MÖHUK m. 7 ve 20/4 uyarınca yapıldığı ülkenin şekil kurallarına uygun bir sözleşme şekil bakımından geçerli olmalıdır; ancak bunu doğrulayan bir Yargıtay kararı bu yazı için incelenmemiştir ve tapu müdürlüğü ya da mahkeme önünde belgenin nasıl değerlendirileceği kesin değildir. Alman hukukunda mirastan feragat (Erbverzicht) BGB § 2346’da düzenlenir ve noterde resmî düzenleme gerektirir (BGB § 2348). Alman ya da Hollanda mahkemelerinin mirasa hangi hukuku uygulayacağını kendi kuralları belirler; Almanya veya Hollanda hukukuna ilişkin sorular için orada yetkili bir avukata ya da notere başvurun.
+Almanya’da ya da Hollanda’da bir notere yaptırılan sözleşmenin Türkiye’de geçerli sayılıp sayılmayacağı da tartışmalıdır. Yazarın değerlendirmesine göre MÖHUK m. 7 ve 20/4 uyarınca yapıldığı ülkenin şekil kurallarına uygun bir sözleşme şekil bakımından geçerli olmalıdır; ancak bunu doğrulayan bir Yargıtay kararı bu yazı için incelenmemiştir ve tapu müdürlüğü ya da mahkeme önünde belgenin nasıl değerlendirileceği kesin değildir. Alman hukukunda mirastan feragat (Erbverzicht) BGB § 2346’da düzenlenir ve noterde resmî düzenleme gerektirir (BGB § 2348). Hollanda hukukunun kuralları bu yazıda ele alınmamıştır. Alman ya da Hollanda mahkemelerinin mirasa hangi hukuku uygulayacağını kendi kuralları belirler; Almanya veya Hollanda hukukuna ilişkin sorular için orada yetkili bir avukata ya da notere başvurun.
 
 ## Sık sorulan sorular
 

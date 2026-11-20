@@ -1,6 +1,6 @@
 ---
 title: Artikel 39 TMK – Turkse inschrijving laten verbeteren
-description: Artikel 39 Turks Burgerlijk Wetboek: een inschrijving in het Turkse bevolkingsregister wordt alleen door de rechter verbeterd. Verschrijvingen, procedure, rechter.
+description: Artikel 39 Turks Burgerlijk Wetboek: een inschrijving in het Turkse bevolkingsregister wordt alleen door de rechter verbeterd. Verschrijvingen en procedure.
 date: 2026-11-21
 slug: artikel-39-turks-burgerlijk-wetboek-inschrijving-verbeteren
 pair: 2026-11-21-tmk-39
