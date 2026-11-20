@@ -1,6 +1,6 @@
 ---
 title: TMK Madde 40 Cinsiyet Değişikliği: Şartlar ve Dava
-description: TMK 40. madde: cinsiyet değişikliği için mahkeme izni, 18 yaş, evli olmama ve sağlık kurulu raporu şartı; AYM'nin 2017 ve 2026 kararları.
+description: TMK 40. madde: cinsiyet değişikliği için mahkeme izni, 18 yaş, evli olmama ve sağlık kurulu raporu şartı; AYM'nin 2017 ve 2026 kararları ve nüfus kaydı.
 date: 2026-11-21
 slug: tmk-madde-40-cinsiyet-degisikligi-davasi
 pair: 2026-11-21-tmk-40
