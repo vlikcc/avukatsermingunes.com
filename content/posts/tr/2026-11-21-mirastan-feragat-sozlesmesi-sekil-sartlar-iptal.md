@@ -1,6 +1,6 @@
 ---
 title: Mirastan feragat sözleşmesi: şartlar, şekil ve iptal
-description: Mirastan feragat sözleşmesi nasıl yapılır? TMK m. 528’e göre resmî şekil şartı, karşılıklı feragatin altsoya etkisi, iptal ve yurt dışında yapılan sözleşmeler.
+description: Mirastan feragat sözleşmesi nasıl yapılır? TMK m. 528’e göre resmî şekil şartı, karşılıklı feragatin altsoya etkisi, iptal ve yurt dışı.
 date: 2026-11-21
 slug: mirastan-feragat-sozlesmesi-sekil-sartlar-iptal
 pair: 2026-11-21-mirastan-feragat

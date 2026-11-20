@@ -9,7 +9,7 @@ publish_at: 2026-11-21T08:00:00+03:00
 draft: true
 ---
 
-On yıllık uzama süresi dolduktan sonra ev sahibi, kiracıyı herhangi bir sebep göstermeden çıkarabilir: Belirli süreli sözleşmede bunun için her uzama yılının bitiminden en az üç ay önce kiracıya yazılı bildirimde bulunması yeterlidir (6098 sayılı Türk Borçlar Kanunu, TBK m. 347/1, m. 348). On yıl, sözleşmenin başladığı günden değil, ilk kira süresinin bittiği günden sayılır; bir yıllık bir sözleşmede 10 yıllık kiracının tahliyesi bu yüzden en erken 12. yılın sonunda mümkündür.
+On yıllık uzama süresi dolduktan sonra ev sahibi, kira sözleşmesini herhangi bir sebep göstermeden sona erdirebilir: Belirli süreli sözleşmede bunun için her uzama yılının bitiminden en az üç ay önce kiracıya yazılı bildirimde bulunması yeterlidir (6098 sayılı Türk Borçlar Kanunu, TBK m. 347/1, m. 348). On yıl, sözleşmenin başladığı günden değil, ilk kira süresinin bittiği günden sayılır; kanunun lafzından çıkan ve aşağıda açıkladığım yoruma göre bir yıllık bir sözleşmede 10 yıllık kiracının tahliyesi bu yüzden en erken 12. yılın sonunda mümkündür.
 
 Bu yazı, Almanya’da ya da Hollanda’da yaşayıp Türkiye’deki dairesini yıllardır aynı kiracıya veren ev sahipleri için tarihin hesabını, bildirimi ve kiracı çıkmazsa izlenecek yolu anlatıyor. Evde kendiniz ya da bir yakınınız oturacaksa [ihtiyaç nedeniyle tahliye](/yayinlar/ihtiyac-nedeniyle-tahliye-davasi-sure-arabuluculuk) ayrı bir yoldur ve on yılın dolmasını beklemez.
 
@@ -23,7 +23,7 @@ Konut ve çatılı işyeri kiralarında kiracı, süre bitiminden en az on beş 
 >
 > Belirsiz süreli kira sözleşmelerinde, kiracı her zaman, kiraya veren ise kiranın başlangıcından on yıl geçtikten sonra, genel hükümlere göre fesih bildirimiyle sözleşmeyi sona erdirebilirler.
 
-Buradan çıkan iki sonuç var. Bu yolda ihtiyaç, yeni malik olmak ya da kiracının kusuru gibi bir sebep aranmaz. Sözleşme de bir davayla değil, kiraya verenin **fesih bildirimiyle** sona erer; dava ancak kiracı evi bu tarihte boşaltmazsa gündeme gelir.
+Bu yolda ihtiyaç ya da kiracının kusuru gibi bir sebep aranmaz. Sözleşme bir davayla değil, kiraya verenin **fesih bildirimiyle** sona erer; dava ancak kiracı evi bu tarihte boşaltmazsa gündeme gelir.
 
 ## 10 yıl mı 12 yıl mı? Belirli süreli sözleşmede hesap
 
@@ -37,7 +37,7 @@ Hesap üç adımdır:
 
 “10 yıl mı 12 yıl mı” sorusunun kaynağı budur. Yukarıdaki hesap, maddedeki “bu süreyi izleyen her uzama yılının bitiminden” ifadesinin yazar tarafından yapılan lafzi yorumudur. Bu yazı için bu hesabı doğrudan ele alan bir yargı kararı incelenmedi. Yazarın değerlendirmesine göre ev sahibi açısından en az riskli yol, daha geç olan bu tarihe göre plan yapmaktır: Daha erken bir tarih için gönderilen bildirimin o tarihte sonuç doğurmama riski vardır.
 
-Sözleşmeniz 1/7/2012’den, yani TBK yürürlüğe girmeden önce yapıldıysa da sona erme TBK hükümlerine tabidir (6101 sayılı Yürürlük Kanunu m. 1). Aynı Kanunun geçici m. 2’si bu kuralı, o tarihte on yıllık uzama süresi dolmuş sözleşmeler için iki yıl, dolmasına beş yıldan az kalmış sözleşmeler için beş yıl ertelemişti; bu süreler 1/7/2014 ve 1/7/2017’de doldu. Geçici madde, TBK yürürlüğe girdiğinde uzama süresi “dolmuş” sözleşmelerden söz ettiği için yazarın değerlendirmesine göre 2012’den önce geçen yıllar da on yılın hesabına girer.
+Sözleşmeniz TBK’nın yürürlüğe girdiği 1/7/2012’den önce yapıldıysa da sona erme TBK’ya tabidir (6101 sayılı Yürürlük Kanunu m. 1). Geçici m. 2’deki iki ve beş yıllık erteleme süreleri 1/7/2014 ve 1/7/2017’de doldu. Bu madde, o tarihte uzama süresi “dolmuş” sözleşmelerden söz ettiği için yazarın değerlendirmesine göre 2012’den önce geçen yıllar da on yılın hesabına girer.
 
 ## Belirsiz süreli sözleşmede on yıl
 
@@ -59,11 +59,11 @@ Kiracı sona erme tarihinde evi boşaltmazsa kiraya veren tahliye davası açar.
 
 **Dava ne zaman açılmalı?** TBK m. 350 ve 352’nin aksine m. 347, fesih bildiriminden sonra tahliye davasının hangi süre içinde açılacağını düzenlemez. Bu konu tartışmalıdır; kanunda açık bir hüküm yoktur ve bu yazı için bağlayıcı bir yargı kararı incelenmedi. Yazarın değerlendirmesine göre kiracının oturmaya devam etmesine uzun süre ses çıkarmamak ve kirayı çekincesiz almak, sözleşmenin sürdüğü yönünde tartışmaya yol açabilir; sona erme tarihinden sonra beklemeden arabulucuya başvurmak en az riskli yoldur.
 
-İcra ve İflas Kanunu da yazılı sözleşmeyle kiralanan taşınmazın süresi bittikten sonra bir ay içinde icra dairesinden tahliye istenmesine imkân verir (İİK m. 272); bu yol arabuluculuk şartının dışındadır (HUAK m. 18/B/1-a). On yıllık uzama sonrasındaki fesih bildirimine dayanarak bu yolun kullanılıp kullanılamayacağı kanunda ayrıca düzenlenmemiştir ve bu yazı için bu konuda bir karar incelenmedi. Kiracı yedi gün içinde itiraz ederse takip durur (İİK m. 274); itirazın icra mahkemesinde kaldırılması, sözleşmenin noterde düzenlenmiş, onaylanmış ya da kiracı tarafından ikrar edilmiş olmasına bağlıdır (m. 275). Yazarın değerlendirmesine göre bu belirsizlik karşısında arabuluculuk ve dava yolu daha öngörülebilirdir.
+Yazılı sözleşmeyle kiralanan taşınmazın süresi bittikten sonra bir ay içinde icra dairesinden tahliye de istenebilir (İİK m. 272); bu yol arabuluculuk şartının dışındadır (HUAK m. 18/B/1-a). Bu yolun m. 347’deki fesih bildirimine dayanarak kullanılıp kullanılamayacağı kanunda ayrıca düzenlenmemiştir ve bu yazı için bu konuda bir karar incelenmedi. Kiracı yedi gün içinde itiraz ederse takip durur (İİK m. 274). Yazarın değerlendirmesine göre bu belirsizlik karşısında arabuluculuk ve dava yolu daha öngörülebilirdir.
 
 ## On yıl dolmadan kiracı çıkarılabilir mi?
 
-Yalnızca kanundaki sebeplerden biri varsa. Bunlar arasında kiraya verenin ya da yakınlarının ihtiyacı (TBK m. 350), yeni malikin ihtiyacı (m. 351), kiracının yazılı tahliye taahhüdü, kira bedeli için iki haklı ihtar (m. 352) ve kiranın ödenmemesi nedeniyle fesih (m. 315) sayılabilir. Taahhüt yolu [tahliye taahhüdü](/yayinlar/tahliye-taahhudu-gecerlilik-sartlari-icra) yazısında anlatılıyor. Bu hükümler kiracı aleyhine değiştirilemez (m. 354); sözleşmeye “kiracı beş yıl sonra çıkar” diye yazmak on yılı kısaltmaz.
+Yalnızca kanundaki sebeplerden biri varsa. Bunlar arasında kiraya verenin ya da yakınlarının ihtiyacı (TBK m. 350), yeni malikin ihtiyacı (m. 351), kiracının yazılı tahliye taahhüdü, kira bedeli için iki haklı ihtar (m. 352) ve kiranın ödenmemesi nedeniyle fesih (m. 315) sayılabilir. Taahhüt yolu [tahliye taahhüdü](/yayinlar/tahliye-taahhudu-gecerlilik-sartlari-icra) yazısında anlatılıyor. Dava yoluyla sona erdirmeye ilişkin hükümler kiracı aleyhine değiştirilemez (m. 354).
 
 Asıl amacınız kirayı piyasaya yaklaştırmaksa tahliye tek yol değildir: Beş yıldan sonra yenilenen sözleşmelerde kira bedelini hâkim emsal kiraları da gözeterek belirler (m. 344/3). Ayrıntılar [kira artış oranı](/yayinlar/kira-artis-orani-yasal-sinir) yazısında.
 
@@ -83,7 +83,7 @@ Evet. On yıllık uzama süresinden sonra her uzama yılının bitiminden en az 
 
 ### Kiracı 10 yıl nasıl hesaplanır?
 
-Belirli süreli sözleşmede on yıl ilk kira süresinin bitiminden başlar ve fesih bunu izleyen uzama yılının sonu için yapılır; bir yıllık sözleşmede bu 12. yılın sonudur. Belirsiz süreli sözleşmede on yıl kiranın başlangıcından sayılır (m. 347/2).
+Belirli süreli sözleşmede on yıl ilk kira süresinin bitiminden başlar ve fesih bunu izleyen uzama yılının sonu için yapılır; kanunun lafzına göre bir yıllık sözleşmede bu 12. yılın sonudur. Belirsiz süreli sözleşmede on yıl kiranın başlangıcından sayılır (m. 347/2).
 
 ### 10 yıllık kiracının tahliyesi ne kadar sürer?
 

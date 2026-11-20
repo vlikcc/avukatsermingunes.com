@@ -1,6 +1,6 @@
 ---
 title: Art. 40 TMK – Geschlechtsänderung im türkischen Recht
-description: Art. 40 türkisches ZGB: Geschlechtsänderung nur mit gerichtlicher Erlaubnis, ab 18, unverheiratet, mit Gutachten. AYM-Urteile 2017 und 2026, Eintrag im Register.
+description: Art. 40 türkisches ZGB: Geschlechtsänderung nur mit gerichtlicher Erlaubnis, ab 18, unverheiratet, mit Gutachten. Urteile des AYM von 2017 und 2026.
 date: 2026-11-21
 slug: art-40-tmk-geschlechtsaenderung-tuerkei
 pair: 2026-11-21-tmk-40

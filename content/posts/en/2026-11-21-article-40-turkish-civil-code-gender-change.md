@@ -1,6 +1,6 @@
 ---
 title: Article 40 TMK – Legal gender change in Turkish law
-description: Article 40 Turkish Civil Code: gender change needs court permission, age 18, not married and a medical board report. Constitutional Court rulings of 2017 and 2026.
+description: Article 40 Turkish Civil Code: gender change needs court permission, age 18, not married and a medical board report. Court rulings of 2017 and 2026.
 date: 2026-11-21
 slug: article-40-turkish-civil-code-gender-change
 pair: 2026-11-21-tmk-40
