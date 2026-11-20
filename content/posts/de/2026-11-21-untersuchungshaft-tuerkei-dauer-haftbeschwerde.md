@@ -1,6 +1,6 @@
 ---
 title: Untersuchungshaft Türkei: Haftgründe, Dauer, Beschwerde
-description: Untersuchungshaft in der Türkei: Haftgründe, Höchstdauer, Beschwerde binnen zwei Wochen und Ausreiseverbot nach Art. 100–109 CMK und dem Urteil des AYM von 2026.
+description: Untersuchungshaft in der Türkei: Haftgründe, Höchstdauer, Beschwerde binnen zwei Wochen und Ausreiseverbot nach Art. 100–109 CMK und dem AYM-Urteil von 2026.
 date: 2026-11-21
 slug: untersuchungshaft-tuerkei-dauer-haftbeschwerde
 pair: 2026-11-21-tutuklama
