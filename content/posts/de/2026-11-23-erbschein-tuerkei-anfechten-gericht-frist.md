@@ -75,7 +75,7 @@ Für den notariellen Erbschein sieht das Notargesetz einen eigenen Weg vor (Art.
 
 Eine Frist für diesen Einspruch nennt das Gesetz nicht. Ob er die Ungültigkeitsklage gegen einen notariellen Erbschein ausschließt, ist ebenfalls nicht ausdrücklich geregelt; welcher Weg passt, hängt vom Einzelfall ab.
 
-Beim Erbschein des Friedensgerichts können die Beteiligten innerhalb von zwei Wochen ab Kenntnis Berufung (istinaf) einlegen (Art. 387 HMK). Ist diese Frist verstrichen, bleibt die Ungültigkeitsklage nach Art. 598 Abs. 3 TMK möglich.
+Beim Erbschein des Friedensgerichts können Beteiligte mit rechtlichem Interesse innerhalb von zwei Wochen ab Kenntnis Berufung (istinaf) einlegen (Art. 387 HMK). Ist diese Frist verstrichen, bleibt die Ungültigkeitsklage nach Art. 598 Abs. 3 TMK möglich.
 
 ## Frist: „jederzeit“ und die Erbschaftsklage
 

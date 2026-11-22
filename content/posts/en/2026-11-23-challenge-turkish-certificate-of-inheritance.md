@@ -75,7 +75,7 @@ The Notaries Law provides a separate route for notarial certificates (Article 71
 
 The law sets no deadline for this objection. Nor does it say expressly whether the objection rules out an annulment action against a notarial certificate; which route fits depends on the case.
 
-Against a certificate issued by the civil court of peace, the parties may file an appeal (istinaf) within two weeks of learning of the decision (HMK Article 387). If that deadline has passed, an annulment action under Article 598(3) TMK is still available.
+Against a certificate issued by the civil court of peace, anyone with a legal interest may file an appeal (istinaf) within two weeks of learning of the decision (HMK Article 387). If that deadline has passed, an annulment action under Article 598(3) TMK is still available.
 
 ## Time limits: "at any time" and the action for recovery of the estate
 

@@ -69,7 +69,7 @@ Noterlik Kanunu bu belge için ayrı bir yol açar:
 
 (Noterlik Kanunu m. 71/C; 6217 sayılı Kanunla eklendi, yürürlük 1/10/2011.) Bu itiraz için kanunda süre yazılı değildir. Maddenin noter belgesine karşı iptal davası yolunu kapatıp kapatmadığı da kanunda açıkça düzenlenmemiştir; hangi yolun seçileceği somut duruma göre değerlendirilmelidir.
 
-Sulh hukuk mahkemesinin verdiği belgede durum farklıdır. O belgeyi isteyen dosyanın tarafları kararın öğrenilmesinden itibaren iki hafta içinde istinafa başvurabilir (HMK m. 387). Bu süre kaçırılsa da TMK m. 598/3 uyarınca iptal davası açılabilir.
+Sulh hukuk mahkemesinin verdiği belgede durum farklıdır. Bu karara karşı hukuki yararı bulunan ilgililer, kararın öğrenilmesinden itibaren iki hafta içinde istinafa başvurabilir (HMK m. 387). Bu süre kaçırılsa da TMK m. 598/3 uyarınca iptal davası açılabilir.
 
 ## Süre: “her zaman” ve miras sebebiyle istihkak davası
 

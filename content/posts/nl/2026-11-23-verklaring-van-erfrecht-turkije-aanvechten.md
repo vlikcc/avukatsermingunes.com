@@ -75,7 +75,7 @@ Voor de notariële verklaring kent de Notariswet een eigen weg (artikel 71/C Wet
 
 De wet noemt voor dit bezwaar geen termijn. Ook regelt zij niet uitdrukkelijk of het bezwaar een vernietigingsvordering tegen een notariële verklaring uitsluit; welke weg past, hangt van de zaak af.
 
-Tegen een verklaring van de vrederechter kunnen de partijen binnen twee weken nadat zij van de beslissing kennisnamen hoger beroep (istinaf) instellen (artikel 387 HMK). Is die termijn verstreken, dan blijft de vernietigingsvordering op grond van artikel 598 lid 3 TMK mogelijk.
+Tegen een verklaring van de vrederechter kunnen belanghebbenden met een rechtens te beschermen belang binnen twee weken nadat zij van de beslissing kennisnamen hoger beroep (istinaf) instellen (artikel 387 HMK). Is die termijn verstreken, dan blijft de vernietigingsvordering op grond van artikel 598 lid 3 TMK mogelijk.
 
 ## Termijn: "te allen tijde" en de vordering tot opeising van de nalatenschap
 
