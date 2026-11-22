@@ -1,5 +1,5 @@
 ---
-title: Verklaring van erfrecht Turkije aanvechten: rechter en termijn
+title: Verklaring van erfrecht Turkije aanvechten: rechter, termijn
 description: Een Turkse verklaring van erfrecht (veraset ilamı) laten vernietigen: wie procedeert, welke rechter bevoegd is, termijnen, notariële verklaring en Erbschein.
 date: 2026-11-23
 slug: verklaring-van-erfrecht-turkije-aanvechten
