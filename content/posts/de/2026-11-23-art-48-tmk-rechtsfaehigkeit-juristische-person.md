@@ -1,6 +1,6 @@
 ---
 title: Art. 48 TMK – Rechtsfähigkeit juristischer Personen
-description: Art. 48 türkisches ZGB: Welche Rechte haben Verein und Stiftung? Grenze menschlicher Eigenschaften, Frage des Zwecks, Grundstückserwerb, ausländischer Verein.
+description: Art. 48 türkisches ZGB: Welche Rechte haben Verein und Stiftung? Grenze menschlicher Eigenschaften, Frage des Zwecks, Grundstückskauf, ausländischer Verein.
 date: 2026-11-23
 slug: art-48-tmk-rechtsfaehigkeit-juristische-person
 pair: 2026-11-23-tmk-48

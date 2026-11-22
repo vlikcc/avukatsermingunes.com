@@ -1,6 +1,6 @@
 ---
 title: Artikel 48 TMK – Rechtsbevoegdheid van rechtspersonen
-description: Artikel 48 Turks Burgerlijk Wetboek: welke rechten kan een vereniging of stichting hebben? Menselijke eigenschappen als grens, het doel, vastgoed, buitenlandse stichting.
+description: Artikel 48 Turks Burgerlijk Wetboek: welke rechten kan een vereniging of stichting hebben? Menselijke eigenschappen als grens, het doel, vastgoed.
 date: 2026-11-23
 slug: artikel-48-tmk-rechtsbevoegdheid-rechtspersoon
 pair: 2026-11-23-tmk-48

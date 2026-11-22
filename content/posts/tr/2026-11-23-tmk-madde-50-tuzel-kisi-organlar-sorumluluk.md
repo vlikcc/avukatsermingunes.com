@@ -1,6 +1,6 @@
 ---
 title: TMK Madde 50 Tüzel Kişi Organlarının Sorumluluğu
-description: TMK 50. madde: organların işlemleri tüzel kişiyi bağlar, kusurlu organ üyesi ayrıca kişisel sorumludur. Dernek yöneticisinin sorumluluğu, TBK ile ilişki, zamanaşımı.
+description: TMK 50. madde: organların işlemleri tüzel kişiyi bağlar, kusurlu organ üyesi ayrıca şahsen sorumludur. Dernek yöneticisi, TBK ilişkisi, zamanaşımı.
 date: 2026-11-23
 slug: tmk-madde-50-tuzel-kisi-organlar-sorumluluk
 pair: 2026-11-23-tmk-50

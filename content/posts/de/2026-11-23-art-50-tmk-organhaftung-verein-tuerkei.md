@@ -1,6 +1,6 @@
 ---
 title: Art. 50 TMK – Organhaftung bei Verein und Stiftung
-description: Art. 50 türkisches ZGB: Organhandeln verpflichtet die juristische Person, schuldhafte Organmitglieder haften zusätzlich persönlich. Vorstandshaftung, Verjährung.
+description: Art. 50 türkisches ZGB: Organhandeln verpflichtet die juristische Person, schuldhafte Organmitglieder haften zusätzlich persönlich. Vorstand, Verjährung.
 date: 2026-11-23
 slug: art-50-tmk-organhaftung-verein-tuerkei
 pair: 2026-11-23-tmk-50

@@ -1,5 +1,5 @@
 ---
-title: Mirasçılık belgesinin iptali davası: kim açar, nerede, süre
+title: Mirasçılık belgesinin iptali davası: mahkeme ve süre
 description: Mirasçılık belgesinin (veraset ilamı) iptali davası: kim açabilir, yetkili ve görevli mahkeme, süre, noter belgesine itiraz ve yurt dışındaki mirasçılar.
 date: 2026-11-23
 slug: mirascilik-belgesinin-iptali-davasi-yetkili-mahkeme

@@ -1,6 +1,6 @@
 ---
 title: Artikel 50 TMK – Aansprakelijkheid van organen
-description: Artikel 50 Turks Burgerlijk Wetboek: handelingen van organen binden de rechtspersoon, een verwijtbaar handelend bestuurslid is daarnaast persoonlijk aansprakelijk. Verjaring.
+description: Artikel 50 Turks Burgerlijk Wetboek: organen binden de rechtspersoon, een bestuurslid dat schuld heeft is daarnaast persoonlijk aansprakelijk. Verjaring.
 date: 2026-11-23
 slug: artikel-50-tmk-organen-aansprakelijkheid-rechtspersoon
 pair: 2026-11-23-tmk-50

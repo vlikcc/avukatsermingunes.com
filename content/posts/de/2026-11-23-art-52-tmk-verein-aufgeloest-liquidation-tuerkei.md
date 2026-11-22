@@ -1,5 +1,5 @@
 ---
-title: Art. 52 TMK – Verein aufgelöst: Liquidation in der Türkei
+title: Art. 52 TMK – Aufgelöster Verein in Liquidation
 description: Art. 52 türkisches ZGB: Die Persönlichkeit eines aufgelösten Vereins oder einer Stiftung besteht bis zum Ende der Liquidation fort. Grenzen, Vermögen, Löschung.
 date: 2026-11-23
 slug: art-52-tmk-verein-aufgeloest-liquidation-tuerkei

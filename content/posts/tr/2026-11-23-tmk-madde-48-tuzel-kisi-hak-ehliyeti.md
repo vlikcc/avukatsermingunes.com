@@ -1,6 +1,6 @@
 ---
 title: TMK Madde 48 Tüzel Kişilerin Hak Ehliyeti
-description: TMK 48. madde: dernek ve vakıf hangi haklara sahip olabilir? İnsana özgü haklar sınırı, amaç meselesi, taşınmaz edinme ve yabancı derneğin hak ehliyeti.
+description: TMK 48. madde: dernek ve vakıf hangi haklara sahip olabilir? İnsana özgü haklar sınırı, amaç meselesi, taşınmaz edinme ve yabancı derneğin ehliyeti.
 date: 2026-11-23
 slug: tmk-madde-48-tuzel-kisi-hak-ehliyeti
 pair: 2026-11-23-tmk-48

@@ -1,6 +1,6 @@
 ---
 title: Art. 49 TMK – Handlungsfähigkeit juristischer Personen
-description: Art. 49 türkisches ZGB: Die juristische Person wird mit ihren notwendigen Organen handlungsfähig. Organe von Verein und Stiftung, Beistand, Vorstand im Ausland.
+description: Art. 49 türkisches ZGB: Mit den notwendigen Organen wird die juristische Person handlungsfähig. Organe von Verein und Stiftung, Beistand, Vorstand im Ausland.
 date: 2026-11-23
 slug: art-49-tmk-handlungsfaehigkeit-juristische-person
 pair: 2026-11-23-tmk-49
@@ -39,13 +39,13 @@ Nach der Begründung entspricht die Vorschrift Art. 47 des früheren Zivilgesetz
 
 ### Welche Organe sind „notwendig“?
 
-Art. 49 zählt sie nicht selbst auf, sondern verweist auf Gesetz und Gründungsurkunde. Beim Verein (dernek) sind Mitgliederversammlung, Vorstand und Kontrollausschuss Pflichtorgane (Art. 72 TMK); Aufgaben, Befugnisse, Wahl und Mitgliederzahl von Vorstand und Kontrollausschuss müssen in der Satzung stehen (Art. 4 Abs. 1 Buchst. f Vereinsgesetz Nr. 5253, Dernekler Kanunu). Der Verein ist bereits juristische Person, muss aber binnen sechs Monaten nach der schriftlichen Mitteilung über Prüfung und Eintragung ins Vereinsregister (Art. 60 letzter Absatz TMK) die erste Mitgliederversammlung abhalten und seine Pflichtorgane bilden (Art. 62 TMK). Die Stiftung (vakıf) muss ein Verwaltungsorgan haben; weitere Organe kann der Stifter vorsehen (Art. 109 TMK), und die Stiftungsurkunde regelt Organisation und Verwaltung (Art. 106 TMK).
+Art. 49 zählt sie nicht selbst auf, sondern verweist auf Gesetz und Gründungsurkunde. Beim Verein (dernek) sind Mitgliederversammlung, Vorstand und Kontrollausschuss Pflichtorgane (Art. 72 TMK); Aufgaben, Befugnisse, Wahl und Mitgliederzahl von Vorstand und Kontrollausschuss müssen in der Satzung stehen (Art. 4 Abs. 1 Buchst. f Vereinsgesetz Nr. 5253, Dernekler Kanunu). Der Verein ist bereits juristische Person, muss aber binnen sechs Monaten nach der schriftlichen Mitteilung über Prüfung und Eintragung ins Vereinsregister (Art. 60 letzter Absatz TMK) die erste Mitgliederversammlung abhalten und seine Pflichtorgane bilden (Art. 62 TMK). Geschieht das nicht, endet der Verein von selbst (Art. 87 Abs. 1 Nr. 2 TMK). Die Stiftung (vakıf) muss ein Verwaltungsorgan haben; weitere Organe kann der Stifter vorsehen (Art. 109 TMK), und die Stiftungsurkunde regelt Organisation und Verwaltung (Art. 106 TMK).
 
 Bei natürlichen Personen hängt die Handlungsfähigkeit von Urteilsfähigkeit, Volljährigkeit und davon ab, dass die Person nicht unter Vormundschaft steht (kısıtlı olmama); siehe den [Beitrag zu Art. 9 und 10 TMK](/de/publikationen/gesetze/art-9-10-tmk-geschaeftsfaehigkeit-voraussetzungen). Bei der juristischen Person tritt das Organ an diese Stelle. Die Grenze der Rechtsfähigkeit behandelt der Beitrag zu [Art. 48 TMK](/de/publikationen/gesetze/art-48-tmk-rechtsfaehigkeit-juristische-person), die Folgen des Organhandelns der Beitrag zu [Art. 50 TMK](/de/publikationen/gesetze/art-50-tmk-organhaftung-verein-tuerkei).
 
 ### Wenn später ein Organ fehlt
 
-Fällt ein Organ weg, endet die Rechtspersönlichkeit nicht, aber es kann niemand mehr für die juristische Person handeln. Das Gesetz sieht dafür mehrere Wege vor:
+Fällt ein Organ weg, endet die Rechtspersönlichkeit nicht in jedem Fall, aber es kann niemand mehr für die juristische Person handeln. Ist es beim Verein unmöglich geworden, den Vorstand nach der Satzung zu bilden, endet der Verein von selbst, und jeder Beteiligte kann dies vom Friedensrichter (sulh hâkimi) feststellen lassen (Art. 87 TMK). Im Übrigen sieht das Gesetz mehrere Wege vor:
 
 - Fehlen einer juristischen Person die notwendigen Organe und ist die Verwaltung nicht anders gesichert, bestellt die Vormundschaftsbehörde einen Verwaltungsbeistand (yönetim kayyımı) (Art. 427 Nr. 4 TMK).
 - Scheiden bei einer neuen Stiftung Organmitglieder durch Tod, Rücktritt oder aus anderem Grund aus und regelt die Stiftungsurkunde nichts, wählt das Gericht auf Beschluss des zuständigen Organs und nach Stellungnahme der Generaldirektion für Stiftungen Ersatz (Art. 8 Stiftungsgesetz Nr. 5737, Vakıflar Kanunu).
@@ -65,7 +65,7 @@ Sobald die nach Gesetz und Gründungsurkunde notwendigen Organe gebildet sind (A
 
 ### Was passiert mit einem Verein ohne Vorstand?
 
-Ist die Verwaltung nicht anders gesichert, bestellt die Vormundschaftsbehörde einen Verwaltungsbeistand (Art. 427 Nr. 4 TMK).
+Ist es unmöglich geworden, den Vorstand nach der Satzung zu bilden, endet der Verein von selbst (Art. 87 Abs. 1 Nr. 4 TMK). Besteht der Verein fort, ist seine Verwaltung aber nicht anders gesichert, bestellt die Vormundschaftsbehörde einen Verwaltungsbeistand (Art. 427 Nr. 4 TMK).
 
 ### Dürfen alle Stiftungsverwalter im Ausland wohnen?
 

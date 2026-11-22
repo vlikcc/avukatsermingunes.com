@@ -1,6 +1,6 @@
 ---
 title: Article 50 TMK – Liability of organs of legal persons
-description: Article 50 Turkish Civil Code: acts of organs bind the legal person, and an organ member at fault is also personally liable. Board liability, the TBK, time limits.
+description: Article 50 Turkish Civil Code: acts of organs bind the legal person, and an organ member at fault is also personally liable. Board liability, time limits.
 date: 2026-11-23
 slug: article-50-tmk-organs-liability-legal-persons
 pair: 2026-11-23-tmk-50

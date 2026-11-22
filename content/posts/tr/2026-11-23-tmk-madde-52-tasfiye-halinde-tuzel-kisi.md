@@ -1,5 +1,5 @@
 ---
-title: TMK Madde 52 Sınırlı Devam Etme: Tasfiye Hâlinde Tüzel Kişi
+title: TMK Madde 52 Sınırlı Devam Etme ve Tasfiye
 description: TMK 52. madde: sona eren dernek ve vakfın kişiliği tasfiye bitene kadar sürer. Ehliyetin sınırı, tasfiye kuralları, kalan malların akıbeti ve kaydın silinmesi.
 date: 2026-11-23
 slug: tmk-madde-52-tasfiye-halinde-tuzel-kisi

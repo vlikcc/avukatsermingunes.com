@@ -1,6 +1,6 @@
 ---
 title: TMK Madde 49 Tüzel Kişilerde Fiil Ehliyeti
-description: TMK 49. madde: tüzel kişi fiil ehliyetini zorunlu organlarını oluşturunca kazanır. Dernek ve vakıf organları, organ eksikliğinde kayyım ve yurt dışındaki kurucular.
+description: TMK 49. madde: tüzel kişi, zorunlu organlarını oluşturunca fiil ehliyeti kazanır. Dernek ve vakıf organları, organ eksikliğinde kayyım, yurt dışı.
 date: 2026-11-23
 slug: tmk-madde-49-tuzel-kisi-fiil-ehliyeti
 pair: 2026-11-23-tmk-49
@@ -29,13 +29,13 @@ Gerekçeye göre madde 743 sayılı eski Kanunun 47. maddesini karşılar ve iç
 
 ### "Gerekli organlar" hangileri?
 
-Hangi organın gerekli olduğunu m. 49 kendisi saymaz; kanuna ve kuruluş belgesine bırakır. Dernekte zorunlu organlar genel kurul, yönetim kurulu ve denetim kuruludur (TMK m. 72) ve yönetim ile denetim kurullarının görev ve yetkileri, nasıl seçileceği ve üye sayısı tüzükte gösterilmek zorundadır (5253 sayılı Dernekler Kanunu m. 4/1-f). Dernek, tüzel kişiliği kazandıktan sonra, belgelerin incelendiğine ve derneğin kütüğe kaydedildiğine ilişkin yazılı bildirimi (TMK m. 60, son fıkra) izleyen altı ay içinde ilk genel kurulunu yapmak ve zorunlu organlarını oluşturmakla yükümlüdür (TMK m. 62). Vakıfta bir yönetim organı bulunması zorunludur; vakfeden vakıf senedinde başka organlar da öngörebilir (TMK m. 109) ve senette vakfın örgütlenme ve yönetim şekli gösterilir (TMK m. 106).
+Hangi organın gerekli olduğunu m. 49 kendisi saymaz; kanuna ve kuruluş belgesine bırakır. Dernekte zorunlu organlar genel kurul, yönetim kurulu ve denetim kuruludur (TMK m. 72) ve yönetim ile denetim kurullarının görev ve yetkileri, nasıl seçileceği ve üye sayısı tüzükte gösterilmek zorundadır (5253 sayılı Dernekler Kanunu m. 4/1-f). Dernek, tüzel kişiliği kazandıktan sonra, belgelerin incelendiğine ve derneğin kütüğe kaydedildiğine ilişkin yazılı bildirimi (TMK m. 60, son fıkra) izleyen altı ay içinde ilk genel kurulunu yapmak ve zorunlu organlarını oluşturmakla yükümlüdür (TMK m. 62). Bu yapılmazsa dernek kendiliğinden sona erer (TMK m. 87/1, bent 2). Vakıfta bir yönetim organı bulunması zorunludur; vakfeden vakıf senedinde başka organlar da öngörebilir (TMK m. 109) ve senette vakfın örgütlenme ve yönetim şekli gösterilir (TMK m. 106).
 
 Gerçek kişilerde fiil ehliyetinin koşulları (ayırt etme gücü, erginlik, kısıtlı olmama) için [TMK m. 9 ve 10 yazısına](/yayinlar/mevzuat/tmk-madde-9-10-fiil-ehliyeti-kosullari) bakabilirsiniz; tüzel kişide bunların yerini organ alır. Hak ehliyetinin sınırı [TMK m. 48](/yayinlar/mevzuat/tmk-madde-48-tuzel-kisi-hak-ehliyeti), organların işlemlerinin sonuçları [TMK m. 50](/yayinlar/mevzuat/tmk-madde-50-tuzel-kisi-organlar-sorumluluk) yazısındadır.
 
 ### Organ sonradan eksik kalırsa
 
-Fiil ehliyeti bir kez kazanılınca organın boşalmasıyla tüzel kişilik sona ermez, ama tüzel kişi adına işlem yapacak kimse kalmayabilir. Kanun bunun için birkaç yol öngörür:
+Organın boşalması tüzel kişiliği her zaman sona erdirmez, ama tüzel kişi adına işlem yapacak kimse kalmayabilir. Dernekte tüzük gereğince yönetim kurulunun oluşturulması olanaksız hâle gelmişse dernek kendiliğinden sona erer ve her ilgili bunun sulh hâkimince tespitini isteyebilir (TMK m. 87). Bunun dışında kanun birkaç yol öngörür:
 
 - Bir tüzel kişi gerekli organlardan yoksun kalmış ve yönetimi başka yoldan sağlanamamışsa vesayet makamı yönetim kayyımı atar (TMK m. 427/4).
 - Yeni vakıfların organlarında ölüm, istifa veya başka bir nedenle eksilme olursa, vakıf senedinde hüküm yoksa yetkili organın kararı ve Vakıflar Genel Müdürlüğünün görüşü alınarak yenisi mahkemece seçilir (5737 sayılı Vakıflar Kanunu m. 8).
@@ -55,7 +55,7 @@ Kanunun ve kuruluş belgesinin öngördüğü organlar oluşturulduğunda (TMK m
 
 ### Yönetim kurulu kalmayan dernek ne yapar?
 
-Yönetim başka yoldan sağlanamıyorsa vesayet makamı yönetim kayyımı atar (TMK m. 427/4).
+Tüzük gereğince yönetim kurulunun oluşturulması olanaksız hâle gelmişse dernek kendiliğinden sona erer (TMK m. 87/1, bent 4). Dernek devam ediyor ama yönetimi başka yoldan sağlanamıyorsa vesayet makamı yönetim kayyımı atar (TMK m. 427/4).
 
 ### Vakıf yöneticilerinin hepsi yurt dışında yaşayabilir mi?
 

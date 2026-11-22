@@ -39,13 +39,13 @@ According to the reasoning, the article corresponds to Article 47 of the former 
 
 ### Which organs are "required"?
 
-Article 49 does not list them; it refers to the law and the founding documents. For an association (dernek), the mandatory organs are the general assembly, the board of directors and the supervisory board (Article 72 TMK), and the statutes must state the duties, powers, method of election and number of members of the board and the supervisory board (Article 4(1)(f) of the Associations Act No. 5253, Dernekler Kanunu). The association is already a legal person, but must hold its first general assembly and form its mandatory organs within six months of the written notice that its documents have been reviewed and it has been entered in the register (Article 60, last paragraph, and Article 62 TMK). A foundation (vakıf) must have a management organ; the founder may provide for further organs (Article 109 TMK), and the foundation deed sets out its organisation and management (Article 106 TMK).
+Article 49 does not list them; it refers to the law and the founding documents. For an association (dernek), the mandatory organs are the general assembly, the board of directors and the supervisory board (Article 72 TMK), and the statutes must state the duties, powers, method of election and number of members of the board and the supervisory board (Article 4(1)(f) of the Associations Act No. 5253, Dernekler Kanunu). The association is already a legal person, but must hold its first general assembly and form its mandatory organs within six months of the written notice that its documents have been reviewed and it has been entered in the register (Article 60, last paragraph, and Article 62 TMK). If it does not, the association comes to an end automatically (Article 87(1), point 2 TMK). A foundation (vakıf) must have a management organ; the founder may provide for further organs (Article 109 TMK), and the foundation deed sets out its organisation and management (Article 106 TMK).
 
 For natural persons, capacity to act depends on capacity of judgement, majority and not being under guardianship; see the [post on Articles 9 and 10 TMK](/en/publications/legislation/article-9-10-turkish-civil-code-capacity-to-act). For a legal person, the organ takes their place. The limit of legal capacity is covered in the post on [Article 48 TMK](/en/publications/legislation/article-48-tmk-legal-capacity-legal-persons), the effects of acts by organs in the post on [Article 50 TMK](/en/publications/legislation/article-50-tmk-organs-liability-legal-persons).
 
 ### When an organ is later missing
 
-Losing an organ does not end legal personality, but there may be no one left to act for the legal person. The law provides several routes:
+Losing an organ does not always end legal personality, but there may be no one left to act for the legal person. If it has become impossible to form an association's board under its statutes, the association ends automatically, and any interested party can ask the civil court of peace (sulh hâkimi) to record this (Article 87 TMK). Beyond that, the law provides several routes:
 
 - If a legal person lacks its required organs and its management cannot be secured otherwise, the guardianship authority appoints a management curator (yönetim kayyımı) (Article 427(4) TMK).
 - If members of the organs of a new foundation drop out through death, resignation or any other reason and the foundation deed says nothing, the court elects replacements on the decision of the competent organ and after obtaining the opinion of the General Directorate of Foundations (Article 8 of the Foundations Act No. 5737, Vakıflar Kanunu).
@@ -65,7 +65,7 @@ Once the organs required by law and its founding documents have been formed (Art
 
 ### What happens to an association with no board?
 
-If its management cannot be secured otherwise, the guardianship authority appoints a management curator (Article 427(4) TMK).
+If it has become impossible to form the board under the statutes, the association ends automatically (Article 87(1), point 4 TMK). If the association continues but its management cannot be secured otherwise, the guardianship authority appoints a management curator (Article 427(4) TMK).
 
 ### Can all managers of a foundation live abroad?
 

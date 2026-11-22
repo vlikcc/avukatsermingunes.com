@@ -1,6 +1,6 @@
 ---
 title: Artikel 49 TMK – Handelingsbekwaamheid van rechtspersonen
-description: Artikel 49 Turks Burgerlijk Wetboek: een rechtspersoon kan handelen zodra de vereiste organen bestaan. Organen van vereniging en stichting, bewindvoerder, bestuur in het buitenland.
+description: Artikel 49 Turks Burgerlijk Wetboek: een rechtspersoon handelt zodra de vereiste organen bestaan. Organen van vereniging en stichting, bestuur in buitenland.
 date: 2026-11-23
 slug: artikel-49-tmk-handelingsbekwaamheid-rechtspersoon
 pair: 2026-11-23-tmk-49
@@ -39,13 +39,13 @@ Volgens de toelichting komt het artikel overeen met artikel 47 van het vroegere 
 
 ### Welke organen zijn „vereist”?
 
-Artikel 49 somt ze niet zelf op, maar verwijst naar de wet en de oprichtingsstukken. Bij een vereniging (dernek) zijn de algemene vergadering, het bestuur en de controlecommissie verplichte organen (artikel 72 TMK), en de statuten moeten taken, bevoegdheden, wijze van verkiezing en aantal leden van bestuur en controlecommissie vermelden (artikel 4 lid 1 onder f Verenigingenwet nr. 5253, Dernekler Kanunu). De vereniging is al rechtspersoon, maar moet binnen zes maanden na de schriftelijke mededeling dat de stukken zijn onderzocht en zij in het register is ingeschreven (artikel 60, laatste lid, TMK) haar eerste algemene vergadering houden en haar verplichte organen vormen (artikel 62 TMK). Een stichting (vakıf) moet een bestuursorgaan hebben; de oprichter kan andere organen voorzien (artikel 109 TMK), en de stichtingsakte regelt organisatie en bestuur (artikel 106 TMK).
+Artikel 49 somt ze niet zelf op, maar verwijst naar de wet en de oprichtingsstukken. Bij een vereniging (dernek) zijn de algemene vergadering, het bestuur en de controlecommissie verplichte organen (artikel 72 TMK), en de statuten moeten taken, bevoegdheden, wijze van verkiezing en aantal leden van bestuur en controlecommissie vermelden (artikel 4 lid 1 onder f Verenigingenwet nr. 5253, Dernekler Kanunu). De vereniging is al rechtspersoon, maar moet binnen zes maanden na de schriftelijke mededeling dat de stukken zijn onderzocht en zij in het register is ingeschreven (artikel 60, laatste lid, TMK) haar eerste algemene vergadering houden en haar verplichte organen vormen (artikel 62 TMK). Gebeurt dat niet, dan eindigt de vereniging van rechtswege (artikel 87 lid 1 onder 2 TMK). Een stichting (vakıf) moet een bestuursorgaan hebben; de oprichter kan andere organen voorzien (artikel 109 TMK), en de stichtingsakte regelt organisatie en bestuur (artikel 106 TMK).
 
 Bij natuurlijke personen hangt handelingsbekwaamheid af van oordeelsvermogen, meerderjarigheid en het niet onder curatele staan; zie het [artikel over artikel 9 en 10 TMK](/nl/publicaties/wetgeving/artikel-9-10-turks-burgerlijk-wetboek-handelingsbekwaamheid). Bij een rechtspersoon neemt het orgaan die plaats in. De grens van de rechtsbevoegdheid staat in het artikel over [artikel 48 TMK](/nl/publicaties/wetgeving/artikel-48-tmk-rechtsbevoegdheid-rechtspersoon), de gevolgen van handelingen van organen in het artikel over [artikel 50 TMK](/nl/publicaties/wetgeving/artikel-50-tmk-organen-aansprakelijkheid-rechtspersoon).
 
 ### Als later een orgaan ontbreekt
 
-Valt een orgaan weg, dan eindigt de rechtspersoonlijkheid niet, maar misschien kan niemand meer namens de rechtspersoon optreden. De wet biedt daarvoor enkele wegen:
+Valt een orgaan weg, dan eindigt de rechtspersoonlijkheid niet in alle gevallen, maar misschien kan niemand meer namens de rechtspersoon optreden. Is het bij een vereniging onmogelijk geworden het bestuur volgens de statuten te vormen, dan eindigt de vereniging van rechtswege, en iedere belanghebbende kan dit door de kantonrechter (sulh hâkimi) laten vaststellen (artikel 87 TMK). Verder biedt de wet enkele wegen:
 
 - Ontbreken een rechtspersoon de vereiste organen en is het bestuur niet op een andere manier verzekerd, dan benoemt de voogdijautoriteit een bewindvoerder (yönetim kayyımı) (artikel 427 onder 4 TMK).
 - Vallen bij een nieuwe stichting leden van organen weg door overlijden, ontslag of een andere reden en zegt de stichtingsakte niets, dan kiest de rechter een opvolger op besluit van het bevoegde orgaan en na advies van het Directoraat-Generaal voor Stichtingen (artikel 8 Stichtingenwet nr. 5737, Vakıflar Kanunu).
@@ -65,7 +65,7 @@ Zodra de organen zijn gevormd die de wet en de oprichtingsstukken vereisen (arti
 
 ### Wat gebeurt er met een vereniging zonder bestuur?
 
-Is het bestuur niet op een andere manier verzekerd, dan benoemt de voogdijautoriteit een bewindvoerder (artikel 427 onder 4 TMK).
+Is het onmogelijk geworden het bestuur volgens de statuten te vormen, dan eindigt de vereniging van rechtswege (artikel 87 lid 1 onder 4 TMK). Bestaat de vereniging nog, maar is het bestuur niet op een andere manier verzekerd, dan benoemt de voogdijautoriteit een bewindvoerder (artikel 427 onder 4 TMK).
 
 ### Mogen alle bestuurders van een stichting in het buitenland wonen?
 
