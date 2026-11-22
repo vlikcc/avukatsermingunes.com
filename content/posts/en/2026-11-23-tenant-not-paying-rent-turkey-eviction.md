@@ -1,6 +1,6 @@
 ---
 title: Tenant not paying rent in Turkey: notice and eviction
-description: Tenant not paying rent in Turkey: 30-day notice under Art. 315 TBK, eviction through the enforcement office, two justified notices and the guarantor’s liability.
+description: Tenant not paying rent in Turkey: 30-day notice under Art. 315 TBK, eviction via the enforcement office, two justified notices and the guarantor’s liability.
 date: 2026-11-23
 slug: tenant-not-paying-rent-turkey-eviction
 pair: 2026-11-23-kira-odenmezse-tahliye
