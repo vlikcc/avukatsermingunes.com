@@ -1,6 +1,6 @@
 ---
 title: TMK Madde 53 Malvarlığının Tasfiyesi
-description: TMK 53. madde: sona eren dernek ve vakfın malvarlığı hangi kurala göre tasfiye edilir? Kanun, tüzük ve terekenin resmî tasfiyesi hükümlerinin sırası.
+description: TMK 53. madde: sona eren dernek ve vakfın malvarlığı hangi kurala göre tasfiye edilir? Kanun, tüzük ve terekenin resmî tasfiyesi hükümlerinin sırası
 date: 2026-11-24
 slug: tmk-madde-53-tuzel-kisi-malvarliginin-tasfiyesi
 pair: 2026-11-24-tmk-53

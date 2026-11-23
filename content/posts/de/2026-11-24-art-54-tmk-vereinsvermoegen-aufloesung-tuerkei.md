@@ -1,6 +1,6 @@
 ---
 title: Art. 54 TMK – Vermögen nach Auflösung eines Vereins
-description: Art. 54 türkisches ZGB: Wer erhält das Restvermögen eines aufgelösten Vereins oder einer Stiftung? Satzung, Organbeschluss, öffentliche Stelle, Zweckbindung.
+description: Art. 54 türkisches ZGB: Wer erhält das Restvermögen eines aufgelösten Vereins oder einer Stiftung? Satzung, Organbeschluss, öffentliche Hand, Zweckbindung.
 date: 2026-11-24
 slug: art-54-tmk-vereinsvermoegen-aufloesung-tuerkei
 pair: 2026-11-24-tmk-54

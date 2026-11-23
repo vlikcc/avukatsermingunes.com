@@ -1,6 +1,6 @@
 ---
 title: TMK Madde 55 Saklı Hükümler
-description: TMK 55. madde: kamu tüzel kişileri ve ticaret şirketleri için kendi kanunları saklıdır. TTK ile ilişki, şirket tasfiyesi ve dernek ile şirket ayrımı.
+description: TMK 55. madde: kamu tüzel kişileri ve ticaret şirketleri için kendi kanunları saklıdır. TTK ile ilişki, şirket tasfiyesi, dernek ile şirket ayrımı.
 date: 2026-11-24
 slug: tmk-madde-55-sakli-hukumler-ticaret-sirketleri
 pair: 2026-11-24-tmk-55

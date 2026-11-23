@@ -1,6 +1,6 @@
 ---
 title: Article 55 TMK – Public bodies and commercial companies
-description: Article 55 Turkish Civil Code: public-law legal persons and commercial companies follow their own laws. How it links to the TTK, company liquidation, association.
+description: Article 55 Turkish Civil Code: public-law legal persons and commercial companies follow their own laws. Link to the TTK, company liquidation, associations.
 date: 2026-11-24
 slug: article-55-turkish-civil-code-companies-public-bodies
 pair: 2026-11-24-tmk-55

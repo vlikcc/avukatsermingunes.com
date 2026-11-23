@@ -25,7 +25,7 @@ Biyolojik babayla soybağı kurulacaksa önce kocayla olan bağ kaldırılır, s
 
 Maddenin bugünkü metni:
 
-> Koca, ana veya çocuk soybağının reddi davasını açarak babalık karinesini çürütebilir. Bu dava, dava açma hakkına sahip diğer kişilere karşı açılır.
+> (Değişik:7/11/2024-7531/9 md.) Koca, ana veya çocuk soybağının reddi davasını açarak babalık karinesini çürütebilir. Bu dava, dava açma hakkına sahip diğer kişilere karşı açılır.
 
 **Anne açabilir mi?** Evet. Eski metinde dava hakkı yalnızca koca ile çocuğa tanınmıştı. Ankara 18. Aile Mahkemesi, annenin açtığı bir davada bu kuralı Anayasa Mahkemesine götürdü. Mahkeme, m. 286’nın birinci fıkrasını Anayasa’nın 20. ve 40. maddelerine aykırı bularak iptal etti (AYM, E. 2023/37, K. 2023/140, T. 26.07.2023; Resmî Gazete 20.10.2023, sayı 32345). Gerekçeye göre çocuğa atanacak kayyımın dava açabilmesi annenin özel hayatı yönünden güvence değildir, çünkü kayyım davayı çocuğun yararını gözeterek çocuk adına açar. Mahkeme iptalin, kararın Resmî Gazete’de yayımlanmasından dokuz ay sonra yürürlüğe girmesine karar verdi. Yeni düzenleme bu süre içinde gelmedi; anaya açıkça dava hakkı veren 7531 sayılı Kanun 14.11.2024’te yayımlandı ve aynı gün yürürlüğe girdi.
 
@@ -41,7 +41,7 @@ Kenar başlığı “Hak düşürücü süreler” olan TMK m. 289 şöyledir:
 
 > Koca, davayı, doğumu ve baba olmadığını veya ananın gebe kaldığı sırada başka bir erkek ile cinsel ilişkide bulunduğunu öğrendiği tarihten başlayarak bir yıl, (…) içinde açmak zorundadır.
 >
-> Ana doğumdan, çocuk ise ergin olduğu tarihten başlayarak en geç bir yıl içinde dava açmak zorundadır.
+> Ana doğumdan, çocuk ise ergin olduğu tarihten başlayarak en geç bir yıl içinde dava açmak zorundadır. (7531 sayılı Kanunun 10 uncu maddesiyle bu fıkrada yer alan “Çocuk,” ibaresi “Ana doğumdan, çocuk ise” şeklinde değiştirilmiştir.)
 >
 > Gecikme haklı bir sebebe dayanıyorsa, bir yıllık süre bu sebebin ortadan kalktığı tarihte işlemeye başlar.
 
@@ -55,7 +55,7 @@ Süreler tek tek:
 - **Kayyım (ergin olmayan çocuk için):** Atama kararının kendisine tebliğinden başlayarak bir yıl (TMK m. 291/2). Buradaki beş yıllık üst sınır da Anayasa Mahkemesinin 10.10.2013 tarihli, E. 2013/62, K. 2013/115 sayılı kararıyla iptal edildi.
 - **Koca ölmüşse diğer ilgililer:** Doğumu ve kocanın ölümünü, sürekli olarak ayırt etme gücünü kaybettiğini veya gaipliğini öğrenmelerinden başlayarak bir yıl (TMK m. 291/1).
 
-Sık aranan “soybağının reddi davası zamanaşımı” ifadesi bu yüzden yerinde değildir: Gerekçe bu sürelerin hak düşürücü olduğunu açıkça söyler ve süre geçince dava hakkı düşer. Gecikme haklı bir sebebe dayanıyorsa bir yıl, sebebin ortadan kalktığı tarihte yeniden işlemeye başlar. Neyin haklı sebep sayılacağını kanun saymamıştır; gerekçeye göre bunu hâkim takdir eder.
+Sık aranan “soybağının reddi davası zamanaşımı” ifadesi bu yüzden yerinde değildir: Gerekçe bu sürelerin hak düşürücü olduğunu açıkça söyler ve süre geçince dava hakkı düşer. Gecikme haklı bir sebebe dayanıyorsa bir yıl, sebebin ortadan kalktığı tarihte işlemeye başlar. Neyin haklı sebep sayılacağını kanun saymamıştır; gerekçeye göre bunu hâkim takdir eder.
 
 ### 14.11.2024’ten önce doğan çocuklar ve ananın süresi
 
@@ -79,7 +79,7 @@ Dava dilekçesinde HMK m. 119’da sayılan unsurlar bulunur: mahkemenin adı, t
 
 **Türk mahkemesinin yetkisi.** Türk mahkemelerinin milletlerarası yetkisini iç hukukun yer itibarıyla yetki kuralları belirler (MÖHUK m. 40); yani TMK m. 283. Taraflardan hiçbirinin Türkiye’de yerleşim yeri yoksa MÖHUK m. 41’e göre Türk vatandaşlarının kişi hâllerine ilişkin davaları, yabancı mahkemede açılmadığı veya açılamadığı takdirde sâkin olunan yer, Türkiye’deki son yerleşim yeri ya da Ankara, İstanbul veya İzmir mahkemelerinden birinde görülür. Soybağının reddini bu anlamda kişi hâli davası saymak benim değerlendirmemdir; kanunda açık bir sayım yoktur.
 
-**Almanya veya Hollanda’da verilen karar.** Orada verilmiş bir soybağının reddi kararı Türk nüfus kaydına kendiliğinden işlenmez. Yabancı boşanma kararları için öngörülen nüfus müdürlüğünde doğrudan tescil yolu (5490 sayılı Kanun m. 27/A) yalnızca boşanma, evliliğin butlanı, iptali veya mevcut olup olmadığının tespiti kararlarını kapsar. Soybağı kararı için Türkiye’de tanıma kararı gerekir (MÖHUK m. 58); bu davaya da aile mahkemesi bakar (4787 m. 4/1-2). Tanıma şartlarını [MÖHUK m. 58](/yayinlar/mevzuat/mohuk-madde-58-tanima) yazısında anlattım. Türk mahkemesinin verdiği karar ise kesinleşince mahkeme yazı işleri müdürlüğünce on gün içinde nüfus müdürlüğüne bildirilir (5490 m. 55/1).
+**Almanya veya Hollanda’da verilen karar.** Orada verilmiş bir soybağının reddi kararı Türk nüfus kaydına kendiliğinden işlenmez. Yabancı kararların konsolosluk veya nüfus müdürlüğü aracılığıyla doğrudan tescili yolu (5490 sayılı Kanun m. 27/A) yalnızca boşanma, evliliğin butlanı, iptali veya mevcut olup olmadığının tespiti kararlarını kapsar. Soybağı kararı için Türkiye’de tanıma kararı gerekir (MÖHUK m. 58); bu davaya da aile mahkemesi bakar (4787 m. 4/1-2). Tanıma şartlarını [MÖHUK m. 58](/yayinlar/mevzuat/mohuk-madde-58-tanima) yazısında anlattım. Türk mahkemesinin verdiği karar ise kesinleşince mahkeme yazı işleri müdürlüğünce on gün içinde nüfus müdürlüğüne bildirilir (5490 m. 55/1).
 
 Alman hukukunda babalığa itiraz (Vaterschaftsanfechtung) § 1600 vd. BGB’de, Hollanda hukukunda ontkenning van het vaderschap Burgerlijk Wetboek’un birinci kitabında düzenlenmiştir. Orada kimin, hangi süreyle ve hangi mahkemede dava açabileceği o ülkenin hukukuna ilişkin sorulardır; bunun için o ülkede yetkili bir avukata başvurmanız gerekir. Aile hukukundaki diğer konular için [aile hukuku](/calisma-alanlari/aile-hukuku) sayfasına bakabilirsiniz.
 

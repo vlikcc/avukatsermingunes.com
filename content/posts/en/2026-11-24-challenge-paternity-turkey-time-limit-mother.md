@@ -29,7 +29,7 @@ Unofficial translation of Article 286 TMK as it stands today:
 
 Turkish text:
 
-> Koca, ana veya çocuk soybağının reddi davasını açarak babalık karinesini çürütebilir. Bu dava, dava açma hakkına sahip diğer kişilere karşı açılır.
+> (Değişik:7/11/2024-7531/9 md.) Koca, ana veya çocuk soybağının reddi davasını açarak babalık karinesini çürütebilir. Bu dava, dava açma hakkına sahip diğer kişilere karşı açılır.
 
 **Can the mother sue?** Yes. The original text gave the right only to the husband and the child. The Ankara 18th Family Court referred the rule to the Constitutional Court in a case brought by a mother. The Court struck down Article 286(1) as contrary to Articles 20 and 40 of the Constitution (AYM, E. 2023/37, K. 2023/140, decision of 26 July 2023; Official Gazette of 20 October 2023, No. 32345). Its reasoning: a claim brought by a guardian ad litem (kayyım) for the child does not protect the mother's private life, because the guardian acts in the child's name and in the child's interest. The annulment was set to take effect nine months after publication. The new rule came only afterwards: Law No. 7531, which gives the mother an express right to sue, was published on 14 November 2024 and took effect the same day.
 
@@ -53,7 +53,7 @@ Turkish text:
 
 > Koca, davayı, doğumu ve baba olmadığını veya ananın gebe kaldığı sırada başka bir erkek ile cinsel ilişkide bulunduğunu öğrendiği tarihten başlayarak bir yıl, (…) içinde açmak zorundadır.
 >
-> Ana doğumdan, çocuk ise ergin olduğu tarihten başlayarak en geç bir yıl içinde dava açmak zorundadır.
+> Ana doğumdan, çocuk ise ergin olduğu tarihten başlayarak en geç bir yıl içinde dava açmak zorundadır. (7531 sayılı Kanunun 10 uncu maddesiyle bu fıkrada yer alan “Çocuk,” ibaresi “Ana doğumdan, çocuk ise” şeklinde değiştirilmiştir.)
 >
 > Gecikme haklı bir sebebe dayanıyorsa, bir yıllık süre bu sebebin ortadan kalktığı tarihte işlemeye başlar.
 

@@ -1,6 +1,6 @@
 ---
 title: TMK Madde 54 Malvarlığının Özgülenmesi
-description: TMK 54. madde: kapanan dernek ve vakfın tasfiyeden kalan malvarlığı kime geçer? Tüzük, organ kararı, kamu kurumu ve hukuka aykırı amaçta zorunlu geçiş.
+description: TMK 54. madde: kapanan dernek ve vakfın tasfiyeden kalan malvarlığı kime geçer? Tüzük, organ kararı, kamu kurumu ve hukuka aykırı amaçta zorunlu geçiş
 date: 2026-11-24
 slug: tmk-madde-54-malvarliginin-ozgulenmesi
 pair: 2026-11-24-tmk-54

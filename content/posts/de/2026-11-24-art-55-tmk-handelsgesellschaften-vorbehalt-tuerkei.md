@@ -1,6 +1,6 @@
 ---
 title: Art. 55 TMK – Vorbehalt für Handelsgesellschaften
-description: Art. 55 türkisches ZGB: Für öffentlich-rechtliche Körperschaften und Handelsgesellschaften gelten ihre eigenen Gesetze. Verhältnis zum TTK, Verein oder GmbH.
+description: Art. 55 türkisches ZGB: Für öffentlich-rechtliche Körperschaften und Handelsgesellschaften gelten eigene Gesetze. Verhältnis zum TTK, Verein oder GmbH.
 date: 2026-11-24
 slug: art-55-tmk-handelsgesellschaften-vorbehalt-tuerkei
 pair: 2026-11-24-tmk-55

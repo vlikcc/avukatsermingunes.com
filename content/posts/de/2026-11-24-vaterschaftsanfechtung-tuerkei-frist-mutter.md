@@ -29,7 +29,7 @@ Nichtamtliche Übersetzung des heutigen Art. 286 TMK:
 
 Türkischer Wortlaut:
 
-> Koca, ana veya çocuk soybağının reddi davasını açarak babalık karinesini çürütebilir. Bu dava, dava açma hakkına sahip diğer kişilere karşı açılır.
+> (Değişik:7/11/2024-7531/9 md.) Koca, ana veya çocuk soybağının reddi davasını açarak babalık karinesini çürütebilir. Bu dava, dava açma hakkına sahip diğer kişilere karşı açılır.
 
 **Kann die Mutter klagen?** Ja. Früher stand das Klagerecht nur dem Ehemann und dem Kind zu. Das Familiengericht Ankara (Ankara 18. Aile Mahkemesi) legte die Vorschrift in einem Verfahren, das eine Mutter angestrengt hatte, dem Verfassungsgericht vor. Dieses erklärte Art. 286 Abs. 1 TMK wegen Verstoßes gegen Art. 20 und 40 der Verfassung für nichtig (AYM, E. 2023/37, K. 2023/140, Entscheidung vom 26.07.2023; Amtsblatt Resmî Gazete vom 20.10.2023, Nr. 32345). Nach der Begründung schützt die Klage eines Beistands (kayyım) das Privatleben der Mutter nicht, weil der Beistand im Namen des Kindes und nach dessen Wohl handelt. Die Nichtigerklärung sollte neun Monate nach Veröffentlichung wirksam werden. Die Neuregelung kam erst danach: Das Gesetz Nr. 7531, das der Mutter ausdrücklich ein Klagerecht gibt, wurde am 14.11.2024 veröffentlicht und trat am selben Tag in Kraft.
 
@@ -53,7 +53,7 @@ Türkischer Wortlaut:
 
 > Koca, davayı, doğumu ve baba olmadığını veya ananın gebe kaldığı sırada başka bir erkek ile cinsel ilişkide bulunduğunu öğrendiği tarihten başlayarak bir yıl, (…) içinde açmak zorundadır.
 >
-> Ana doğumdan, çocuk ise ergin olduğu tarihten başlayarak en geç bir yıl içinde dava açmak zorundadır.
+> Ana doğumdan, çocuk ise ergin olduğu tarihten başlayarak en geç bir yıl içinde dava açmak zorundadır. (7531 sayılı Kanunun 10 uncu maddesiyle bu fıkrada yer alan “Çocuk,” ibaresi “Ana doğumdan, çocuk ise” şeklinde değiştirilmiştir.)
 >
 > Gecikme haklı bir sebebe dayanıyorsa, bir yıllık süre bu sebebin ortadan kalktığı tarihte işlemeye başlar.
 
