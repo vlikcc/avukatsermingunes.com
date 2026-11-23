@@ -1,6 +1,6 @@
 ---
 title: Article 57 TMK – Right to form an association
-description: Article 57 Turkish Civil Code: anyone may form an association without permission if founders have capacity. Rules for Turks abroad, foreigners and Blue Card holders.
+description: Article 57 Turkish Civil Code: anyone may form an association without permission if founders have capacity. Rules for Turks abroad, foreigners, Blue Card.
 date: 2026-11-24
 slug: article-57-turkish-civil-code-right-to-form-association
 pair: 2026-11-24-tmk-57
