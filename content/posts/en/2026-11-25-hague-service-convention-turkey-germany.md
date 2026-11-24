@@ -1,6 +1,6 @@
 ---
 title: Hague Service Convention: Turkey to Germany, Netherlands
-description: Serving a Turkish lawsuit or payment order on someone in Germany or the Netherlands: Hague Service Convention, consular service, translation and what if it fails.
+description: Serving a Turkish lawsuit or payment order on someone in Germany or the Netherlands: Hague Service Convention, consulate, translation and what if it fails.
 date: 2026-11-25
 slug: hague-service-convention-turkey-germany
 pair: 2026-11-25-yurt-disina-tebligat
