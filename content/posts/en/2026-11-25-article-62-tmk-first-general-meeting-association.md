@@ -57,7 +57,7 @@ The elected full and substitute members of the organs are reported to the associ
 
 ### If the deadline is missed
 
-If the first meeting is not held in time and the mandatory organs are not formed, the association ends automatically; anyone with an interest can ask the civil judge of the peace (sulh hâkimi) to record that it has ended (Article 87, item 2 and last paragraph, TMK). On the liquidation that follows, see the article on [Article 52 TMK](/en/publications/legislation/article-52-turkish-civil-code-dissolved-association-liquidation).
+If the first meeting is not held in time and the mandatory organs are not formed, the association ends automatically; anyone with an interest can ask the magistrate judge (sulh hâkimi) to record that it has ended (Article 87, item 2 and last paragraph, TMK). On the liquidation that follows, see the article on [Article 52 TMK](/en/publications/legislation/article-52-turkish-civil-code-dissolved-association-liquidation).
 
 ## What Turkish citizens living abroad should know
 
@@ -71,7 +71,7 @@ Within six months of the authority's written notice under Article 60(3) TMK (Art
 
 ### What happens if it is not held?
 
-The association ends automatically; anyone with an interest can have this recorded by the civil judge of the peace (Article 87 TMK).
+The association ends automatically; anyone with an interest can have this recorded by the magistrate judge (Article 87 TMK).
 
 ### Can members living abroad take part online?
 

@@ -1,6 +1,6 @@
 ---
 title: TMK Madde 59 Derneğin Tüzel Kişilik Kazanma Anı
-description: Dernek ne zaman tüzel kişilik kazanır? TMK 59. madde: kuruluş bildirimi, tüzük ve belgeler mülkî amire verildiği anda. Gerekli belgeler ve alındı belgesi.
+description: Dernek ne zaman tüzel kişilik kazanır? TMK 59. madde: bildirim, tüzük ve belgeler mülkî amire verildiği anda. Gerekli belgeler ve alındı belgesi.
 date: 2026-11-25
 slug: tmk-madde-59-dernek-tuzel-kisilik-kazanma
 pair: 2026-11-25-tmk-59
@@ -50,7 +50,7 @@ Mülkî idare amirliği kuruluş bildirimini gün ve saat belirterek sivil toplu
 
 ### Tüzel kişilikten sonra
 
-Dernek bu andan itibaren hak ehliyetine sahiptir (TMK m. 48). Fiil ehliyeti ise kanuna ve kuruluş belgesine göre gerekli organlara sahip olmaya bağlıdır (TMK m. 49); ilk genel kurula kadar tüzükte gösterilen geçici yönetim kurulu vardır (TMK m. 58/2); mülkî amir inceleme sonucunu da bu kurulun başkanlığına bildirir (Yönetmelik m. 6). Bu konu [TMK m. 49 yazısında](/yayinlar/mevzuat/tmk-madde-49-tuzel-kisi-fiil-ehliyeti) anlatılmıştır.
+Dernek bu andan itibaren hak ehliyetine sahiptir (TMK m. 48). Fiil ehliyeti ise kanuna ve kuruluş belgesine göre gerekli organlara sahip olmaya bağlıdır (TMK m. 49). İlk genel kurula kadar tüzükte gösterilen geçici yönetim kurulu vardır (TMK m. 58/2) ve mülkî amir inceleme sonucunu da bu kurulun başkanlığına bildirir (Yönetmelik m. 6). Bu konu [TMK m. 49 yazısında](/yayinlar/mevzuat/tmk-madde-49-tuzel-kisi-fiil-ehliyeti) anlatılmıştır.
 
 Tüzel kişilik kazanıldıktan sonra mülkî amir belgeleri ve tüzüğü altmış gün içinde inceler (TMK m. 60); bu adımlar [TMK m. 57 yazısında](/yayinlar/mevzuat/tmk-madde-57-dernek-kurma-hakki) anlatılmıştır. İncelemede giderilmeyen bir aykırılık bulunursa dernek kendiliğinden sona ermez; mülkî amir, fesih davası açılması için durumu Cumhuriyet savcılığına bildirir, savcı mahkemeden derneğin faaliyetinin durdurulmasını da isteyebilir (TMK m. 60/2).
 

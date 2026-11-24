@@ -1,6 +1,6 @@
 ---
 title: TMK Madde 58 Dernek Tüzüğü
-description: TMK 58. madde: her derneğin tüzüğü olur. Tüzükte bulunması zorunlu hususlar, Dernekler Kanunu m. 4 listesi, emredici hükümler ve tüzük değişikliği.
+description: TMK 58. madde: her derneğin tüzüğü olur. Tüzükte zorunlu hususlar, Dernekler Kanunu m. 4 listesi, emredici hükümler ve tüzük değişikliği usulü.
 date: 2026-11-25
 slug: tmk-madde-58-dernek-tuzugu
 pair: 2026-11-25-tmk-58
@@ -66,7 +66,7 @@ Süre konusunda kanun ile yönetmelik farklıdır. 5253 sayılı Kanun m. 23/1 g
 
 Dernekler kayıtlarında ve resmî kurumlarla yazışmalarında Türkçe kullanır (5253 sayılı Kanun m. 31); tüzük de Türkçe hazırlanır. Kuruluşta tüzüğün her sayfasını bütün kurucular imzalar (Yönetmelik m. 5/a); yurt dışında yaşayan bir kurucu da buna dahildir. Yönetmelik imzanın nerede ve hangi biçimde atılacağını ayrıca düzenlemez.
 
-Türkiye'deki dernek, tüzüğündeki amaçlar için yurt dışında şube veya temsilcilik açabilir ve yurt dışındaki kuruluşlarla iş birliği yapabilir (5253 sayılı Kanun m. 5/1). Almanya'daki ya da Hollanda'daki toplulukla ortak çalışma düşünülüyorsa bunu amaç ve çalışma konularına baştan yazmak, m. 30/a'daki sınır nedeniyle önemlidir. Almanya'da ya da Hollanda'da kurulan bir dernek ise o ülkenin hukukuna tabidir; bu konuda o ülkede yetkili bir avukata başvurmanız gerekir.
+Türkiye'deki dernek, tüzüğündeki amaçlar için yurt dışında şube veya temsilcilik açabilir ve yurt dışındaki kuruluşlarla iş birliği yapabilir (5253 sayılı Kanun m. 5/1). Almanya'daki ya da Hollanda'daki toplulukla ortak çalışma düşünüyorsanız bunu amaç ve çalışma konularına baştan yazın; tüzükte olmayan bir faaliyet m. 30/a'daki sınıra takılır. Almanya'da ya da Hollanda'da kurulan bir dernek ise o ülkenin hukukuna tabidir; bu konuda o ülkede yetkili bir avukata başvurmanız gerekir.
 
 ## Sık sorulan sorular
 
