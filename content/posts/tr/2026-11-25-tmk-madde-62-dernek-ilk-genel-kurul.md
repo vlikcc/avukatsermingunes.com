@@ -35,23 +35,23 @@ Mülkî amir hiç yazı göndermezse sürenin işleyip işlemeyeceği kanunda d�
 
 ### Hangi organlar oluşturulur?
 
-Zorunlu organlar genel kurul, yönetim kurulu ve denetim kuruludur (TMK m. 72). İlk genel kurulda yönetim ve denetim kurullarının asıl ve yedek üyeleri tüzükteki usule göre seçilir (5253 sayılı Kanun m. 4/f). Organlar oluşmadan dernek fiil ehliyeti kazanmaz (TMK m. 49; ayrıntı için [TMK m. 49 yazısı](/yayinlar/mevzuat/tmk-madde-49-tuzel-kisi-fiil-ehliyeti)).
+Zorunlu organlar genel kurul, yönetim kurulu ve denetim kuruludur (TMK m. 72). İlk genel kurulda yönetim ve denetim kurullarının asıl ve yedek üyeleri tüzükteki usule göre seçilir (5253 sayılı Kanun m. 4/f). Tüzel kişi, kanuna ve kuruluş belgelerine göre gerekli organlara sahip olmakla fiil ehliyeti kazanır (TMK m. 49; ayrıntı için [TMK m. 49 yazısı](/yayinlar/mevzuat/tmk-madde-49-tuzel-kisi-fiil-ehliyeti)).
 
 ### Toplantının usulü
 
-İlk genel kurul da sıradan genel kurul usulüne tabidir. Üyeler en az on beş gün önceden; toplantının günü, saati, yeri ve gündemi gazetede veya derneğin internet sayfasında ilân edilerek, yazıyla, e-postayla, mesajla ya da mahallî yayın araçlarıyla çağrılır. Çağrıda, çoğunluk sağlanamazsa yapılacak ikinci toplantının tarihi de yazılır; iki toplantı arasında en az yedi, en çok altmış gün olur (Yönetmelik m. 14). Her üyenin bir oyu vardır ve üye oyunu şahsen kullanır (Yönetmelik m. 15).
+İlk genel kurul da sıradan genel kurul usulüne tabidir. Üyeler en az on beş gün önceden; toplantının günü, saati, yeri ve gündemi gazetede veya derneğin internet sayfasında ilân edilerek, yazıyla, e-postayla, mesajla ya da mahallî yayın araçlarıyla çağrılır. Çağrıda, çoğunluk sağlanamazsa yapılacak ikinci toplantının tarihi de yazılır; iki toplantı arasında en az yedi, en çok altmış gün olur (Yönetmelik m. 14). Her üyenin bir oyu vardır ve üye oyunu şahsen kullanır (TMK m. 69; Yönetmelik m. 15).
 
 ### Toplantıdan sonra
 
-Genel kurulda seçilen asıl ve yedek üyeler dernekler birimine bildirilir (5253 sayılı Kanun m. 23; Yönetmelik m. 17). Kanun bu bildirim için genel kurulu izleyen otuz gün öngörür; Yönetmelik m. 17 ise 2021 değişikliğinden beri kırk beş gün der. Yazarın değerlendirmesine göre kanun hükmü yönetmelikten önce geldiği için otuz günü esas almak güvenli olandır; bu konuda doğrulanmış bir yargı kararı aktarılmamaktadır.
+Genel kurulda seçilen asıl ve yedek üyeler dernekler birimine bildirilir (5253 sayılı Kanun m. 23; Yönetmelik m. 17). Süre konusunda iki metin farklıdır: Kanun genel kurulu izleyen otuz gün öngörür, Yönetmelik m. 17 ise 2021 değişikliğinden beri kırk beş gün der. Bu nokta tartışmaya açıktır; burada bağlayıcı bir yargı kararı aktarılmamaktadır. Yazarın değerlendirmesine göre kanun yönetmelikten önce geldiği için otuz günü esas almak daha güvenlidir.
 
 ### Süre kaçırılırsa
 
-İlk genel kurul süresinde yapılmaz ve zorunlu organlar oluşturulmazsa dernek kendiliğinden sona erer; her ilgili bunun sulh hâkimince tespitini isteyebilir (TMK m. 87/1-2). Sona eren derneğin tasfiyesi için [TMK m. 52 yazısına](/yayinlar/mevzuat/tmk-madde-52-tasfiye-halinde-tuzel-kisi) bakabilirsiniz.
+İlk genel kurul süresinde yapılmaz ve zorunlu organlar oluşturulmazsa dernek kendiliğinden sona erer; her ilgili bunun sulh hâkimince tespitini isteyebilir (TMK m. 87, 2. bent ve son fıkra). Sona eren derneğin tasfiyesi için [TMK m. 52 yazısına](/yayinlar/mevzuat/tmk-madde-52-tasfiye-halinde-tuzel-kisi) bakabilirsiniz.
 
 ## Yurt dışında yaşayanlar için uygulamada önemli noktalar
 
-Üyeler Almanya'da veya Hollanda'da yaşıyorsa vekâletle oy kullanılamaz; oy şahsen kullanılır (Yönetmelik m. 15). Genel kurulun dernek merkezinin bulunduğu veya tüzükte belirtilen yer dışında yapılması dernek yöneticilerine idarî para cezası gerektirir ve mahkeme bu toplantının iptaline karar verebilir (5253 sayılı Kanun m. 32/b). Toplantı elektronik ortamda da yapılabilir, ancak yalnızca İçişleri Bakanlığı Bilgi Teknolojileri Genel Müdürlüğünce onaylanmış sistemlerle ve yöntemin çağrıda belirtilmesi şartıyla; üyeler sisteme güvenli elektronik imza veya iki faktörlü kimlik doğrulamayla girer (Yönetmelik m. 15/A).
+Üyeler Almanya'da veya Hollanda'da yaşıyorsa da oy şahsen kullanılır; kanun vekâletle oy kullanmaya yer vermez (TMK m. 69). Genel kurulun dernek merkezinin bulunduğu veya tüzükte belirtilen yer dışında yapılması dernek yöneticilerine idarî para cezası gerektirir ve mahkeme bu toplantının iptaline karar verebilir (5253 sayılı Kanun m. 32/b). Toplantı elektronik ortamda da yapılabilir, ancak yalnızca İçişleri Bakanlığı Bilgi Teknolojileri Genel Müdürlüğünce onaylanmış sistemlerle ve yöntemin çağrıda belirtilmesi şartıyla; üyeler sisteme güvenli elektronik imza veya iki faktörlü kimlik doğrulamayla girer (Yönetmelik m. 15/A).
 
 ## Sık sorulan sorular
 
@@ -65,7 +65,7 @@ Dernek kendiliğinden sona erer; her ilgili sulh hâkiminden bunun tespitini ist
 
 ### Yurt dışındaki üyeler ilk genel kurula online katılabilir mi?
 
-Onaylı bir elektronik sistem kullanılıyor ve bu yöntem çağrıda belirtilmişse evet (Dernekler Yönetmeliği m. 15/A). Vekâletle oy kullanılamaz (m. 15).
+Onaylı bir elektronik sistem kullanılıyor ve bu yöntem çağrıda belirtilmişse evet (Dernekler Yönetmeliği m. 15/A). Oy her durumda şahsen kullanılır (TMK m. 69).
 
 ## Kaynaklar
 
