@@ -47,7 +47,7 @@ Das Schriftstück und der Umschlag mit Zustellungsurkunde werden in die Sprache 
 
 Wird nicht gezahlt, hat das Folgen. Die Zahlung des Kostenvorschusses ist Prozessvoraussetzung (Art. 114 Abs. 1 Buchst. g der Zivilprozessordnung Nr. 6100, HMK). Reicht der Vorschuss nicht, setzt das Gericht eine Ausschlussfrist von zwei Wochen (Art. 120 Abs. 2 HMK); wird nicht nachgezahlt, wird die Klage als unzulässig abgewiesen (Art. 115 Abs. 2 HMK). Bei anderen Zustellungen als der Klageschrift gilt der Antrag als zurückgenommen (Art. 34 Abs. 2 Tebligat Kanunu; Art. 8 Abs. 2 der Verordnung).
 
-## Wie lange dauert die Zustellung in die Türkei-Verfahren aus Deutschland?
+## Wie lange dauert die Zustellung aus der Türkei?
 
 Eine gesetzliche Frist gibt es nicht. Nur für Termine gilt: Schriftstücke mit einem bestimmten Termin müssen mindestens drei Monate vorher an das Ministerium gehen (Art. 41 der Verordnung). Nach den praktischen Informationen, die Deutschland der HCCH mitgeteilt hat, ist die Zustellung einschließlich Versand in der Regel innerhalb von drei Monaten erledigt; die Niederlande geben durchschnittlich zwei bis drei Monate an. Diese Angaben betreffen nur den Teil im Empfangsstaat. Vorbereitung, Übersetzung und Schriftverkehr in der Türkei kommen hinzu.
 
@@ -69,7 +69,7 @@ Ein so verurteilter Beklagter kann von den Folgen des Ablaufs der Rechtsmittelfr
 
 Natürliche Personen außerhalb der Pflichtgruppen (etwa Anwälte und Gesellschaften) erhalten auf Antrag eine elektronische Zustelladresse; danach muss elektronisch zugestellt werden (Art. 7/a Abs. 2 Tebligat Kanunu). Ein Wohnsitz in der Türkei wird dafür nicht verlangt. Der Antrag ist auch über e-Devlet möglich (Art. 7 Abs. 3 der Verordnung über die elektronische Zustellung). Wer eine solche Adresse hat, erhält Zustellungen auch im Ausland dorthin; sie gelten am Ende des fünften Tages nach Eingang als bewirkt (Art. 7/a).
 
-Stand November 2026 ist keine Änderung des Zustellungsgesetzes im Amtsblatt erschienen, die jedem Staatsangehörigen eine elektronische Zustelladresse vorschreibt. Die Neuregelung durch Gesetz Nr. 7587 vom 01.07.2026 betrifft nur Art. 107/A der Abgabenordnung (Vergi Usul Kanunu), also Steuerzustellungen.
+Stand November 2026 ist keine Änderung des Zustellungsgesetzes im Amtsblatt erschienen, die jedem Staatsangehörigen eine elektronische Zustelladresse vorschreibt. Die Neuregelung durch Gesetz Nr. 7587 vom 01.07.2026 betrifft nur Art. 107/A des Steuerverfahrensgesetzes (Vergi Usul Kanunu), also Steuerzustellungen.
 
 Lassen Sie sich als Beklagter auf das Verfahren ein, müssen Sie in der Klageerwiderung eine Inlandsanschrift für das Verfahren angeben (Art. 129 Abs. 1 Buchst. b HMK). Wurde einem türkischen Staatsangehörigen schon an eine Auslandsanschrift zugestellt und teilt er die neue nicht mit, gilt 30 Tage nach dem belegten Zugang der Konsulatsmitteilung an der alten Anschrift als zugestellt (Art. 35 letzter Absatz Tebligat Kanunu).
 
