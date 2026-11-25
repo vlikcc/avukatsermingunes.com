@@ -11,7 +11,7 @@ draft: true
 
 Yurt dışında yapılan vasiyetname, yapıldığı ülkenin, mirasbırakanın vatandaşı olduğu devletin ya da Türkiye'deki taşınmazlar için Türk hukukunun şekil kurallarından birine uyuyorsa Türkiye'de şekil yönünden geçerlidir (MÖHUK m. 20/4, m. 7; 1961 tarihli Lahey Sözleşmesi m. 1). İçerik ayrı bir sorudur: Türkiye'deki taşınmazlarda saklı paylar Türk hukukuna göre hesaplanır ve vasiyetnameyi Türkiye'de kullanabilmek için açılma, apostil ve tercüme adımları gerekir.
 
-Vasiyetnamenin Türk hukukundaki şekillerini [vasiyetname nasıl yazılır](/yayinlar/vasiyetname-nasil-yazilir-sartlar-gecerlilik) yazısında, mirasa hangi hukukun uygulandığını [MÖHUK Madde 20](/yayinlar/mevzuat/mohuk-madde-20-miras) yazısında anlattım. Aşağıdaki sorular, Almanya'da veya Hollanda'da yapılmış bir vasiyetname Türkiye'ye getirildiğinde ortaya çıkanlardır.
+Vasiyetnamenin Türk hukukundaki şekillerini [vasiyetname nasıl yazılır](/yayinlar/vasiyetname-nasil-yazilir-sartlar-gecerlilik) yazısında, mirasa hangi hukukun uygulandığını [MÖHUK Madde 20](/yayinlar/mevzuat/mohuk-madde-20-miras) yazısında anlattım.
 
 ## Yurt dışında yapılan vasiyetname hangi şekil kurallarına göre geçerli?
 
@@ -27,23 +27,23 @@ Sözleşmenin 1. maddesine göre vasiyetname, şu hukuklardan **birinin** iç hu
 - aynı anlardan birinde mutad meskeninin bulunduğu yerin hukuku,
 - taşınmazlar için taşınmazın bulunduğu yerin hukuku.
 
-Vasiyetnameden dönen yeni bir tasarruf için de aynı seçenekler geçerlidir (m. 2). Sözleşme karşılıklılık aramaz (m. 6). Gösterilen hukuk ancak kamu düzenine açıkça aykırıysa uygulanmaz (m. 7).
+Gösterilen hukuk ancak kamu düzenine açıkça aykırıysa uygulanmaz (m. 7). Kasım 2026 itibarıyla MÖHUK m. 7 ve 20'de ve TMK'nın burada anılan maddelerinde yeni bir değişiklik yoktur.
 
 Türkiye katılırken üç çekince koymuştur (m. 9, 10 ve 12). Buna göre mirasbırakanın ikametgâhını Türk hukukuna göre belirler; yalnız Türk vatandaşı olan birinin olağanüstü durumlar dışında yaptığı sözlü vasiyeti tanımama hakkını saklı tutar; Türk hukukuna göre mirasla ilgisi olmayan hükümleri de Sözleşmenin dışında bırakır.
 
 ## Almanya'da ve Hollanda'da yapılan vasiyetname
 
-Almanya'da Alman hukukunun şekil kurallarına göre, el yazısıyla ya da noterde yapılmış vasiyetname, yapıldığı yer bağlantısıyla Türkiye'de de şekil yönünden geçerlidir. Mirasbırakan Türk vatandaşıysa TMK m. 538'e uygun el yazılı vasiyetname de geçerlidir: Metnin tamamı el yazısıyla yazılmış, yıl, ay ve gün gösterilmiş ve imzalanmış olmalıdır. Yani bir vasiyetnamenin Türk hukukunun şekil şartlarını tam karşılamaması tek başına sorun değildir; Sözleşmedeki bağlantılardan birine uyması yeter.
+Almanya'da Alman hukukunun şekil kurallarına göre, el yazısıyla ya da noterde yapılmış vasiyetname, yapıldığı yer bağlantısıyla Türkiye'de de şekil yönünden geçerlidir. Mirasbırakan Türk vatandaşıysa TMK m. 538'e uygun el yazılı vasiyetname de geçerlidir: Metnin tamamı el yazısıyla yazılmış, yıl, ay ve gün gösterilmiş ve imzalanmış olmalıdır. Türk hukukunun şekil şartlarını karşılamayan bir vasiyetname için de Sözleşmedeki bağlantılardan birine uyması yeter.
 
 Hollanda'da durum farklıdır. Hollanda hükümetinin resmî sitesine göre vasiyetname orada yalnızca notere yaptırılabilir ve kendi yazdığınız vasiyetname Hollanda'da hukuken geçerli değildir. Hollanda'da yaşayan bir Türk vatandaşının TMK m. 538'e uygun yazdığı vasiyetname ise Türk mahkemesi bakımından vatandaşlık bağlantısıyla şekil yönünden geçerlidir (Sözleşme m. 1; MÖHUK m. 20/4). Hollanda da Sözleşmeye taraftır; ama böyle bir belgenin Hollanda'daki mallar için Hollanda makamlarınca nasıl değerlendirileceği Hollanda hukukuna tabidir. Bunu orada bir notere sormalısınız.
 
 Sözleşme “vatandaşı olduğu devlet” derken herhangi bir vatandaşlığı yeterli sayar. Çifte vatandaş, iki devletten birinin şeklini seçebilir. Türk vatandaşlığından izinle çıkmış Mavi Kart sahipleri için ise Türk hukuku vatandaşlık bağlantısıyla uygulanamaz; Türkiye'deki taşınmazlar bakımından Türk hukukunun şekli yine yeterlidir (Sözleşme m. 1, taşınmaz bağlantısı).
 
-Yurt dışında noterlik işlerini konsoloslar görür (Noterlik Kanunu m. 191). M. 193, vasiyetnamelerin saklanmasına ilişkin m. 69'u da konsoloslara uygular. Türk konsolosluğunda resmî vasiyetname yapılıp yapılamayacağını önceki yazıda ayrıntılı anlattım; işlem ayrıntılarını bağlı olduğunuz konsolosluktan öğrenin.
+Yurt dışında noterlik işlerini konsoloslar görür (Noterlik Kanunu m. 191). M. 193, vasiyetnamelerin saklanmasına ilişkin m. 69'u da konsoloslara uygular. Türk konsolosluğunda resmî vasiyetname yapılıp yapılamayacağını vasiyetname nasıl yazılır yazısında anlattım; işlem ayrıntılarını bağlı olduğunuz konsolosluktan öğrenin.
 
 ## Türkiye'deki taşınmazlar: şekil geçerli, içerik Türk hukukuna bağlı
 
-Şekil yönünden geçerli olan vasiyetname, içeriğiyle de her şeyi çözmez. Türkiye'deki taşınmazlar hakkında her durumda Türk hukuku uygulanır (MÖHUK m. 20/1). Kimin mirasçı olduğu, saklı paylar ve tenkis bu taşınmazlar için Türk hukukuna göre belirlenir. Vasiyet yapma ehliyeti ise vasiyetnamenin yapıldığı andaki millî hukuka tabidir (MÖHUK m. 20/5).
+Türkiye'deki taşınmazlar hakkında her durumda Türk hukuku uygulanır (MÖHUK m. 20/1). Kimin mirasçı olduğu, saklı paylar ve tenkis bu taşınmazlar için Türk hukukuna göre belirlenir. Vasiyet yapma ehliyeti ise vasiyetnamenin yapıldığı andaki millî hukuka tabidir (MÖHUK m. 20/5).
 
 Vasiyetnamede ne yazdığı da önemlidir. Mirasbırakan mirasının tamamı veya bir oranı için mirasçı atayabilir (TMK m. 516) ya da birine mirasçı atamadan belirli bir mal bırakabilir (TMK m. 517). Belirli bir mal bırakılan kişi (vasiyet alacaklısı) malın maliki olmaz; vasiyeti yerine getirme görevlisine ya da mirasçılara karşı kişisel bir istem hakkı kazanır ve malın teslimini dava edebilir (TMK m. 600). Atanmış mirasçıya ise, tasarrufa bildirimden itibaren bir ay içinde itiraz edilmezse sulh mahkemesince bu sıfatını gösteren bir belge verilir (TMK m. 598/2).
 
@@ -55,9 +55,9 @@ Almanya'da eşlerin tek belgede birlikte yaptığı vasiyetname (gemeinschaftlic
 
 Türk Medeni Kanunu ise ortak vasiyetnameyi düzenlemez. Vasiyetin şekilleri resmî, el yazılı ve sözlü vasiyettir (TMK m. 531); iki kişinin bağlayıcı tasarrufu için kanunun öngördüğü yol, resmî vasiyetname şeklinde yapılan miras sözleşmesidir (TMK m. 545).
 
-> Bu konu tartışmalıdır. Aşağıda aktarılanlar doktrinde ileri sürülen görüşlerdir; kanunda bu konuda açık bir hüküm ve bağlayıcı bir yargı kararı bulunmamaktadır. Somut bir uyuşmazlıkta mahkemenin hangi görüşü benimseyeceği kesin değildir.
+Bu konu tartışmalıdır. Aşağıdaki iki olasılık ve değerlendirme yazarın görüşüdür; kanunda bu konuda açık bir hüküm ve bağlayıcı bir yargı kararı bulunmamaktadır. Somut bir uyuşmazlıkta mahkemenin hangi görüşü benimseyeceği kesin değildir.
 
-Ortak vasiyetnamenin yasak olup olmadığı bir şekil sorunu sayılırsa Sözleşme m. 4 gereği Alman hukukuna uygun ortak vasiyetname Türkiye'de de geçerlidir. Bunun içerikle ilgili bir sorun olduğu kabul edilirse Türkiye'deki taşınmazlar için Türk hukukuna bakılır. Eşlerden birinin ölümünden sonra diğerinin vasiyetnameyle bağlı kalıp kalmadığı da Türk hukukunda tartışmalıdır. Benim değerlendirmem: Türkiye'de taşınmazı olan eşler, bu mallar için ayrı ayrı vasiyetname ya da Türk hukukuna uygun bir miras sözleşmesi yaparsa sonradan çıkabilecek tartışma azalır.
+Ortak vasiyetnamenin Türk hukukunda düzenlenmemiş olması bir şekil sorunu sayılırsa Sözleşme m. 4 gereği Alman hukukuna uygun ortak vasiyetname Türkiye'de de geçerlidir. Bunun içerikle ilgili bir sorun olduğu kabul edilirse Türkiye'deki taşınmazlar için Türk hukukuna bakılır. Eşlerden birinin ölümünden sonra diğerinin vasiyetnameyle bağlı kalıp kalmayacağını da TMK düzenlemez. Benim değerlendirmem: Türkiye'de taşınmazı olan eşler, bu mallar için ayrı ayrı vasiyetname ya da Türk hukukuna uygun bir miras sözleşmesi yaparsa sonradan çıkabilecek tartışma azalır.
 
 ## Yurt dışında açılan vasiyetname Türkiye'de yeniden açılır mı?
 
@@ -65,19 +65,19 @@ Almanya'da Nachlassgericht, sakladığı vasiyetnameyi mirasbırakanın ölümü
 
 Kanunda yurt dışında açılmış bir vasiyetnameye ya da yerleşim yeri yurt dışında olan mirasbırakana ilişkin ayrı bir hüküm yoktur.
 
-> Bu konu tartışmalıdır. Aşağıda aktarılanlar doktrinde ileri sürülen görüşlerdir; kanunda bu konuda açık bir hüküm ve bağlayıcı bir yargı kararı bulunmamaktadır. Somut bir uyuşmazlıkta mahkemenin hangi görüşü benimseyeceği kesin değildir.
+Bu konu tartışmalıdır. Aşağıdaki değerlendirme yazarın görüşüdür; kanunda bu konuda açık bir hüküm ve bağlayıcı bir yargı kararı bulunmamaktadır. Somut bir uyuşmazlıkta mahkemenin hangi görüşü benimseyeceği kesin değildir.
 
-Benim değerlendirmem şöyledir. Vasiyetnameye dayanarak Türkiye'de işlem yapılacaksa, örneğin TMK m. 598/2'deki belge istenecekse, vasiyetnamenin bir Türk sulh hukuk mahkemesinde açılmasını istemek daha öngörülebilir bir yoldur. Asıl belge yabancı mahkemede kaldığından başvuruya onaylı örnek, açılış tutanağı, apostil ve Türkçe tercüme eklenir. Yetkili mahkeme için MÖHUK m. 43'teki ölçü (Türkiye'deki son yerleşim yeri, o da yoksa terekedeki malların bulunduğu yer) yol gösterebilir. Alman açılış tutanağının MÖHUK m. 58/2 anlamında tanınması gereken bir “ihtilafsız kaza kararı” olup olmadığı da açık değildir.
+Benim değerlendirmem şöyledir. Vasiyetnameye dayanarak Türkiye'de işlem yapılacaksa, örneğin TMK m. 598/2'deki belge istenecekse, vasiyetnamenin bir Türk sulh hukuk mahkemesinde açılmasını istemek daha öngörülebilir bir yoldur. Asıl belge yurt dışında kaldığından başvuruya onaylı örnek, açılış tutanağı, apostil ve Türkçe tercüme eklenir. Yetkili mahkeme için MÖHUK m. 43'teki ölçü (Türkiye'deki son yerleşim yeri, o da yoksa terekedeki malların bulunduğu yer) yol gösterebilir. Alman açılış tutanağının MÖHUK m. 58/2 anlamında tanınması gereken bir “ihtilafsız kaza kararı” olup olmadığı da açık değildir.
 
-Süre hesabında da dikkat gerekir. İptal davasının on ve yirmi yıllık üst süreleri vasiyetnamenin “açılma tarihinden” işler (TMK m. 559/1). Hangi açılmanın esas alınacağı belirsiz olduğundan daha erken olan yurt dışındaki açılma tarihine göre hesap yapmak temkinli olur.
+Süre hesabında da dikkat gerekir. İptal davasının on ve yirmi yıllık üst süreleri vasiyetnamenin “açılma tarihinden” işler (TMK m. 559/1). Hangi açılmanın esas alınacağı belirsiz olduğundan daha erken olan yurt dışındaki açılma tarihine göre hesap yapmak temkinli olur. Yasal mirasçıların Türkiye'deki işlemler için mirasçılık belgesini nasıl alacağını [veraset ilamı yurt dışından](/yayinlar/veraset-ilami-yurt-disindan-noter-mahkeme) yazısında anlattım.
 
-Apostil, Türkiye, Almanya ve Hollanda'nın taraf olduğu 5 Ekim 1961 tarihli Apostil Sözleşmesine dayanır (HCCH durum tablosu: Türkiye için yürürlük 29 Eylül 1985). Sözleşme mahkemelerden çıkan belgeleri ve noter senetlerini resmî belge sayar (m. 1). El yazılı vasiyetnamenin kendisi resmî belge değildir; apostil, mahkemenin verdiği onaylı örneğe ve açılış tutanağına konur. Türk konsolosluğunda düzenlenen belgeler ise bu Sözleşmenin dışındadır (m. 1).
+Apostil, Türkiye, Almanya ve Hollanda'nın taraf olduğu 5 Ekim 1961 tarihli Apostil Sözleşmesine dayanır (HCCH durum tablosu: Türkiye için yürürlük 29 Eylül 1985). Sözleşme mahkemelerden çıkan belgeleri ve noter senetlerini resmî belge sayar (m. 1). El yazılı vasiyetnamenin kendisi resmî belge değildir; apostil, mahkemenin ya da noterin verdiği onaylı örneğe ve varsa açılış tutanağına konur. Türk konsolosluğunda düzenlenen belgeler ise bu Sözleşmenin dışındadır (m. 1).
 
 ## Sık sorulan sorular
 
 ### Almanya'da noterde yapılan vasiyetname Türkiye'de geçerli mi?
 
-Şekil yönünden evet: Yapıldığı yerin hukukuna uyan vasiyetname geçerlidir (1961 Lahey Sözleşmesi m. 1; MÖHUK m. 20/4). Türkiye'deki taşınmazlar bakımından içerik, özellikle saklı paylar, Türk hukukuna göre değerlendirilir (MÖHUK m. 20/1).
+Şekil yönünden evet, çünkü yapıldığı yerin hukukuna uyar (1961 Lahey Sözleşmesi m. 1). Türkiye'deki taşınmazlarda içerik, özellikle saklı paylar, Türk hukukuna tabidir (MÖHUK m. 20/1).
 
 ### Hollanda'da kendi elimle yazdığım vasiyetname Türkiye'de geçerli mi?
 
@@ -111,4 +111,4 @@ Almanya'da ya da Hollanda'da yapılmış bir vasiyetnamenin Türkiye'deki taşı
 - mirasbırakanın ölüm tarihindeki vatandaşlığı ve son yerleşim yeri,
 - Türkiye'deki taşınmazların tapu bilgileri.
 
-Vasiyetnamenin Almanya'daki ya da Hollanda'daki mallar için değerlendirilmesi o ülkenin hukukuna tabidir; bunun için orada yetkili bir notere ya da avukata başvurmanız gerekir. Diğer konular için [miras hukuku](/calisma-alanlari/miras-hukuku) sayfasına bakabilirsiniz.
+Almanya'daki ya da Hollanda'daki mallar için orada yetkili bir notere ya da avukata başvurmanız gerekir. Diğer konular: [miras hukuku](/calisma-alanlari/miras-hukuku).
