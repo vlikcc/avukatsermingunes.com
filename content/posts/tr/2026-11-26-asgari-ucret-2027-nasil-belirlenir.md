@@ -10,7 +10,7 @@ publish_at: 2026-11-26T08:00:00+03:00
 draft: true
 ---
 
-2027 asgari ücretini Çalışma ve Sosyal Güvenlik Bakanlığı bünyesindeki Asgari Ücret Tespit Komisyonu belirleyecek. Kararı kesindir, Resmî Gazete'de yayımlanır ve kararda yazan tarihte yürürlüğe girer (4857 sayılı İş Kanunu m. 39; Asgari Ücret Yönetmeliği m. 11). Bakanlık 3 Kasım 2026 tarihli duyurusunda komisyonun kamu, işçi ve işveren temsilcileriyle Aralık ayında toplanacağını açıkladı; duyuruda gün belirtilmedi.
+2027 asgari ücretini Çalışma ve Sosyal Güvenlik Bakanlığı bünyesindeki Asgari Ücret Tespit Komisyonu belirleyecek. Komisyonun kararı kesindir, Resmî Gazete'de yayımlanır ve kararda yazan tarihte yürürlüğe girer (4857 sayılı İş Kanunu m. 39; Asgari Ücret Yönetmeliği m. 11). Bakanlık 3 Kasım 2026 tarihli duyurusunda komisyonun kamu, işçi ve işveren temsilcileriyle Aralık ayında toplanacağını açıkladı; duyuruda gün belirtilmedi.
 
 2027 için bugün söylenebilecek bir rakam yoktur. Bu yazıda tahmin ya da oran bulamazsınız. Anlatılan, Kasım 2026 itibarıyla yürürlükte olan kurallar ve 2026 yılı için Resmî Gazete'de yayımlanmış tutardır.
 

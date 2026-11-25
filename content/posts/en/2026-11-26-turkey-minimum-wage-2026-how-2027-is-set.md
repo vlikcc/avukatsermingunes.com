@@ -1,6 +1,6 @@
 ---
 title: Turkey minimum wage 2026 and how the 2027 rate is set
-description: Turkey minimum wage 2026 is 1,101 TL gross per day under the Official Gazette. Who sets the 2027 rate, how the commission decides and how it links to SGK limits.
+description: Turkey minimum wage 2026 is 1,101 TL gross per day under the Official Gazette. Who sets the 2027 rate, how the commission decides and the link to SGK limits.
 date: 2026-11-26
 slug: turkey-minimum-wage-2026-how-2027-is-set
 pair: 2026-11-26-asgari-ucret

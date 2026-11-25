@@ -1,6 +1,6 @@
 ---
 title: Mindestlohn Türkei 2026 und wie 2027 festgelegt wird
-description: Mindestlohn Türkei: 2026 laut Amtsblatt 1.101 TL brutto pro Tag. Wer den Satz für 2027 festlegt, wie die Kommission entscheidet und was das für Ihre SGK-Zeiten bedeutet.
+description: Mindestlohn Türkei: 2026 laut Amtsblatt 1.101 TL brutto pro Tag. Wer den Satz für 2027 festlegt, wie die Kommission entscheidet und was das für SGK heißt.
 date: 2026-11-26
 slug: mindestlohn-tuerkei-2026-2027-festlegung
 pair: 2026-11-26-asgari-ucret
