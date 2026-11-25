@@ -1,6 +1,6 @@
 ---
 title: Art. 65 TMK – Vereinsmitgliedschaft endet von selbst
-description: Art. 65 türkisches ZGB: Wer eine gesetzliche oder satzungsmäßige Voraussetzung der Mitgliedschaft verliert, ist automatisch kein Vereinsmitglied mehr. Beispiele, Meldung.
+description: Art. 65 türkisches ZGB: Wer eine Voraussetzung aus Gesetz oder Satzung verliert, ist automatisch kein Vereinsmitglied mehr. Beispiele und Meldepflicht.
 date: 2026-11-26
 slug: art-65-tmk-ende-vereinsmitgliedschaft
 pair: 2026-11-26-tmk-65

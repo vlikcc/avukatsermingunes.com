@@ -1,6 +1,6 @@
 ---
 title: Art. 66 TMK – Austritt aus einem Verein in der Türkei
-description: Art. 66 türkisches ZGB: Niemand muss Vereinsmitglied bleiben, eine schriftliche Erklärung genügt für den Austritt. Aufgehobene Sechsmonatsfrist, Folgen, Austritt aus dem Ausland.
+description: Art. 66 türkisches ZGB: Niemand muss Vereinsmitglied bleiben, eine schriftliche Erklärung genügt. Aufgehobene Sechsmonatsfrist und Folgen des Austritts.
 date: 2026-11-26
 slug: art-66-tmk-vereinsaustritt-tuerkei
 pair: 2026-11-26-tmk-66

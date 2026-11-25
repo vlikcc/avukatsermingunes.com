@@ -1,6 +1,6 @@
 ---
 title: Article 66 TMK – Leaving an association in Türkiye
-description: Article 66 Turkish Civil Code: no one has to remain a member, and written notice is enough to leave an association. The repealed six-month notice period and what follows.
+description: Article 66 Turkish Civil Code: no one has to stay a member, and written notice is enough to leave an association. The repealed six-month period and effects.
 date: 2026-11-26
 slug: article-66-tmk-leaving-association-turkey
 pair: 2026-11-26-tmk-66

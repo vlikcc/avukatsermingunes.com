@@ -1,6 +1,6 @@
 ---
 title: Article 65 TMK – Automatic end of association membership
-description: Article 65 Turkish Civil Code: a member who later loses a condition set by law or by the statute stops being a member automatically. Examples and reporting duties.
+description: Article 65 Turkish Civil Code: a member who later loses a condition set by law or the statute stops being a member automatically. Examples and reporting.
 date: 2026-11-26
 slug: article-65-tmk-automatic-end-association-membership
 pair: 2026-11-26-tmk-65
